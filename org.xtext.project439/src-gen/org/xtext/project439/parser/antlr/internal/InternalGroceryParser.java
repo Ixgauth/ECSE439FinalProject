@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalGroceryParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'store'", "'{'", "'}'", "'warehouse'", "'shelf'", "'backroom'", "'nonPerishableItem'", "'price'", "':'", "'perishableItem'", "'address'", "'street'", "'number'", "'city'", "'ExpirationDate'", "'month'", "'day'", "'year'", "'driver'", "'name'", "'vehicle'", "'plateNumber'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'store'", "'{'", "'}'", "'warehouse'", "'address'", "':'", "'shelf'", "'backroom'", "'nonPerishableItem'", "'price'", "'quantity'", "'perishableItem'", "'ExpirationDate'", "'date'", "'driver'", "'name'", "'vehicle'", "'plateNumber'", "'.'", "'/'", "','"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -37,7 +37,6 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
-    public static final int T__32=32;
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
@@ -204,7 +203,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==29||LA2_0==31) ) {
+                if ( (LA2_0==25||LA2_0==27) ) {
                     alt2=1;
                 }
 
@@ -454,10 +453,10 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==16) ) {
+            if ( (LA4_0==18) ) {
                 alt4=1;
             }
-            else if ( (LA4_0==15) ) {
+            else if ( (LA4_0==17) ) {
                 alt4=2;
             }
             else {
@@ -582,10 +581,10 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==29) ) {
+            if ( (LA5_0==25) ) {
                 alt5=1;
             }
-            else if ( (LA5_0==31) ) {
+            else if ( (LA5_0==27) ) {
                 alt5=2;
             }
             else {
@@ -751,7 +750,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( ((LA6_0>=15 && LA6_0<=16)) ) {
+                if ( ((LA6_0>=17 && LA6_0<=18)) ) {
                     alt6=1;
                 }
 
@@ -857,28 +856,30 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWarehouse"
-    // InternalGrocery.g:304:1: ruleWarehouse returns [EObject current=null] : (otherlv_0= 'warehouse' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_address_3_0= ruleAddress ) ) ( (lv_elements_4_0= ruleItem ) )* otherlv_5= '}' ) ;
+    // InternalGrocery.g:304:1: ruleWarehouse returns [EObject current=null] : (otherlv_0= 'warehouse' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'address' otherlv_4= ':' ( (lv_address_5_0= ruleADDRESS ) ) ( (lv_elements_6_0= ruleItem ) )* otherlv_7= '}' ) ;
     public final EObject ruleWarehouse() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_name_1_0=null;
         Token otherlv_2=null;
-        Token otherlv_5=null;
-        EObject lv_address_3_0 = null;
+        Token otherlv_3=null;
+        Token otherlv_4=null;
+        Token otherlv_7=null;
+        AntlrDatatypeRuleToken lv_address_5_0 = null;
 
-        EObject lv_elements_4_0 = null;
+        EObject lv_elements_6_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalGrocery.g:310:2: ( (otherlv_0= 'warehouse' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_address_3_0= ruleAddress ) ) ( (lv_elements_4_0= ruleItem ) )* otherlv_5= '}' ) )
-            // InternalGrocery.g:311:2: (otherlv_0= 'warehouse' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_address_3_0= ruleAddress ) ) ( (lv_elements_4_0= ruleItem ) )* otherlv_5= '}' )
+            // InternalGrocery.g:310:2: ( (otherlv_0= 'warehouse' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'address' otherlv_4= ':' ( (lv_address_5_0= ruleADDRESS ) ) ( (lv_elements_6_0= ruleItem ) )* otherlv_7= '}' ) )
+            // InternalGrocery.g:311:2: (otherlv_0= 'warehouse' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'address' otherlv_4= ':' ( (lv_address_5_0= ruleADDRESS ) ) ( (lv_elements_6_0= ruleItem ) )* otherlv_7= '}' )
             {
-            // InternalGrocery.g:311:2: (otherlv_0= 'warehouse' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_address_3_0= ruleAddress ) ) ( (lv_elements_4_0= ruleItem ) )* otherlv_5= '}' )
-            // InternalGrocery.g:312:3: otherlv_0= 'warehouse' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_address_3_0= ruleAddress ) ) ( (lv_elements_4_0= ruleItem ) )* otherlv_5= '}'
+            // InternalGrocery.g:311:2: (otherlv_0= 'warehouse' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'address' otherlv_4= ':' ( (lv_address_5_0= ruleADDRESS ) ) ( (lv_elements_6_0= ruleItem ) )* otherlv_7= '}' )
+            // InternalGrocery.g:312:3: otherlv_0= 'warehouse' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'address' otherlv_4= ':' ( (lv_address_5_0= ruleADDRESS ) ) ( (lv_elements_6_0= ruleItem ) )* otherlv_7= '}'
             {
             otherlv_0=(Token)match(input,14,FOLLOW_5); 
 
@@ -914,17 +915,25 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getWarehouseAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalGrocery.g:338:3: ( (lv_address_3_0= ruleAddress ) )
-            // InternalGrocery.g:339:4: (lv_address_3_0= ruleAddress )
+            otherlv_3=(Token)match(input,15,FOLLOW_9); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getWarehouseAccess().getAddressKeyword_3());
+            		
+            otherlv_4=(Token)match(input,16,FOLLOW_10); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getWarehouseAccess().getColonKeyword_4());
+            		
+            // InternalGrocery.g:346:3: ( (lv_address_5_0= ruleADDRESS ) )
+            // InternalGrocery.g:347:4: (lv_address_5_0= ruleADDRESS )
             {
-            // InternalGrocery.g:339:4: (lv_address_3_0= ruleAddress )
-            // InternalGrocery.g:340:5: lv_address_3_0= ruleAddress
+            // InternalGrocery.g:347:4: (lv_address_5_0= ruleADDRESS )
+            // InternalGrocery.g:348:5: lv_address_5_0= ruleADDRESS
             {
 
-            					newCompositeNode(grammarAccess.getWarehouseAccess().getAddressAddressParserRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getWarehouseAccess().getAddressADDRESSParserRuleCall_5_0());
             				
-            pushFollow(FOLLOW_9);
-            lv_address_3_0=ruleAddress();
+            pushFollow(FOLLOW_11);
+            lv_address_5_0=ruleADDRESS();
 
             state._fsp--;
 
@@ -932,11 +941,11 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
             					if (current==null) {
             						current = createModelElementForParent(grammarAccess.getWarehouseRule());
             					}
-            					add(
+            					set(
             						current,
             						"address",
-            						lv_address_3_0,
-            						"org.xtext.project439.Grocery.Address");
+            						lv_address_5_0,
+            						"org.xtext.project439.Grocery.ADDRESS");
             					afterParserOrEnumRuleCall();
             				
 
@@ -945,29 +954,29 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGrocery.g:357:3: ( (lv_elements_4_0= ruleItem ) )*
+            // InternalGrocery.g:365:3: ( (lv_elements_6_0= ruleItem ) )*
             loop7:
             do {
                 int alt7=2;
                 int LA7_0 = input.LA(1);
 
-                if ( (LA7_0==17||LA7_0==20) ) {
+                if ( (LA7_0==19||LA7_0==22) ) {
                     alt7=1;
                 }
 
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalGrocery.g:358:4: (lv_elements_4_0= ruleItem )
+            	    // InternalGrocery.g:366:4: (lv_elements_6_0= ruleItem )
             	    {
-            	    // InternalGrocery.g:358:4: (lv_elements_4_0= ruleItem )
-            	    // InternalGrocery.g:359:5: lv_elements_4_0= ruleItem
+            	    // InternalGrocery.g:366:4: (lv_elements_6_0= ruleItem )
+            	    // InternalGrocery.g:367:5: lv_elements_6_0= ruleItem
             	    {
 
-            	    					newCompositeNode(grammarAccess.getWarehouseAccess().getElementsItemParserRuleCall_4_0());
+            	    					newCompositeNode(grammarAccess.getWarehouseAccess().getElementsItemParserRuleCall_6_0());
             	    				
-            	    pushFollow(FOLLOW_9);
-            	    lv_elements_4_0=ruleItem();
+            	    pushFollow(FOLLOW_11);
+            	    lv_elements_6_0=ruleItem();
 
             	    state._fsp--;
 
@@ -978,7 +987,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
             	    					add(
             	    						current,
             	    						"elements",
-            	    						lv_elements_4_0,
+            	    						lv_elements_6_0,
             	    						"org.xtext.project439.Grocery.Item");
             	    					afterParserOrEnumRuleCall();
             	    				
@@ -994,9 +1003,9 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,13,FOLLOW_2); 
+            otherlv_7=(Token)match(input,13,FOLLOW_2); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getWarehouseAccess().getRightCurlyBracketKeyword_5());
+            			newLeafNode(otherlv_7, grammarAccess.getWarehouseAccess().getRightCurlyBracketKeyword_7());
             		
 
             }
@@ -1021,7 +1030,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleShelf"
-    // InternalGrocery.g:384:1: entryRuleShelf returns [EObject current=null] : iv_ruleShelf= ruleShelf EOF ;
+    // InternalGrocery.g:392:1: entryRuleShelf returns [EObject current=null] : iv_ruleShelf= ruleShelf EOF ;
     public final EObject entryRuleShelf() throws RecognitionException {
         EObject current = null;
 
@@ -1029,8 +1038,8 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGrocery.g:384:46: (iv_ruleShelf= ruleShelf EOF )
-            // InternalGrocery.g:385:2: iv_ruleShelf= ruleShelf EOF
+            // InternalGrocery.g:392:46: (iv_ruleShelf= ruleShelf EOF )
+            // InternalGrocery.g:393:2: iv_ruleShelf= ruleShelf EOF
             {
              newCompositeNode(grammarAccess.getShelfRule()); 
             pushFollow(FOLLOW_1);
@@ -1057,7 +1066,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleShelf"
-    // InternalGrocery.g:391:1: ruleShelf returns [EObject current=null] : (otherlv_0= 'shelf' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}' ) ;
+    // InternalGrocery.g:399:1: ruleShelf returns [EObject current=null] : (otherlv_0= 'shelf' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}' ) ;
     public final EObject ruleShelf() throws RecognitionException {
         EObject current = null;
 
@@ -1072,21 +1081,21 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGrocery.g:397:2: ( (otherlv_0= 'shelf' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}' ) )
-            // InternalGrocery.g:398:2: (otherlv_0= 'shelf' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}' )
+            // InternalGrocery.g:405:2: ( (otherlv_0= 'shelf' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}' ) )
+            // InternalGrocery.g:406:2: (otherlv_0= 'shelf' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}' )
             {
-            // InternalGrocery.g:398:2: (otherlv_0= 'shelf' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}' )
-            // InternalGrocery.g:399:3: otherlv_0= 'shelf' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}'
+            // InternalGrocery.g:406:2: (otherlv_0= 'shelf' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}' )
+            // InternalGrocery.g:407:3: otherlv_0= 'shelf' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,15,FOLLOW_5); 
+            otherlv_0=(Token)match(input,17,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getShelfAccess().getShelfKeyword_0());
             		
-            // InternalGrocery.g:403:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalGrocery.g:404:4: (lv_name_1_0= RULE_ID )
+            // InternalGrocery.g:411:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalGrocery.g:412:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalGrocery.g:404:4: (lv_name_1_0= RULE_ID )
-            // InternalGrocery.g:405:5: lv_name_1_0= RULE_ID
+            // InternalGrocery.g:412:4: (lv_name_1_0= RULE_ID )
+            // InternalGrocery.g:413:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_6); 
 
@@ -1108,32 +1117,32 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_9); 
+            otherlv_2=(Token)match(input,12,FOLLOW_11); 
 
             			newLeafNode(otherlv_2, grammarAccess.getShelfAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalGrocery.g:425:3: ( (lv_elements_3_0= ruleItem ) )*
+            // InternalGrocery.g:433:3: ( (lv_elements_3_0= ruleItem ) )*
             loop8:
             do {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==17||LA8_0==20) ) {
+                if ( (LA8_0==19||LA8_0==22) ) {
                     alt8=1;
                 }
 
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalGrocery.g:426:4: (lv_elements_3_0= ruleItem )
+            	    // InternalGrocery.g:434:4: (lv_elements_3_0= ruleItem )
             	    {
-            	    // InternalGrocery.g:426:4: (lv_elements_3_0= ruleItem )
-            	    // InternalGrocery.g:427:5: lv_elements_3_0= ruleItem
+            	    // InternalGrocery.g:434:4: (lv_elements_3_0= ruleItem )
+            	    // InternalGrocery.g:435:5: lv_elements_3_0= ruleItem
             	    {
 
             	    					newCompositeNode(grammarAccess.getShelfAccess().getElementsItemParserRuleCall_3_0());
             	    				
-            	    pushFollow(FOLLOW_9);
+            	    pushFollow(FOLLOW_11);
             	    lv_elements_3_0=ruleItem();
 
             	    state._fsp--;
@@ -1188,7 +1197,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBackroom"
-    // InternalGrocery.g:452:1: entryRuleBackroom returns [EObject current=null] : iv_ruleBackroom= ruleBackroom EOF ;
+    // InternalGrocery.g:460:1: entryRuleBackroom returns [EObject current=null] : iv_ruleBackroom= ruleBackroom EOF ;
     public final EObject entryRuleBackroom() throws RecognitionException {
         EObject current = null;
 
@@ -1196,8 +1205,8 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGrocery.g:452:49: (iv_ruleBackroom= ruleBackroom EOF )
-            // InternalGrocery.g:453:2: iv_ruleBackroom= ruleBackroom EOF
+            // InternalGrocery.g:460:49: (iv_ruleBackroom= ruleBackroom EOF )
+            // InternalGrocery.g:461:2: iv_ruleBackroom= ruleBackroom EOF
             {
              newCompositeNode(grammarAccess.getBackroomRule()); 
             pushFollow(FOLLOW_1);
@@ -1224,7 +1233,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBackroom"
-    // InternalGrocery.g:459:1: ruleBackroom returns [EObject current=null] : (otherlv_0= 'backroom' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}' ) ;
+    // InternalGrocery.g:467:1: ruleBackroom returns [EObject current=null] : (otherlv_0= 'backroom' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}' ) ;
     public final EObject ruleBackroom() throws RecognitionException {
         EObject current = null;
 
@@ -1239,21 +1248,21 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGrocery.g:465:2: ( (otherlv_0= 'backroom' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}' ) )
-            // InternalGrocery.g:466:2: (otherlv_0= 'backroom' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}' )
+            // InternalGrocery.g:473:2: ( (otherlv_0= 'backroom' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}' ) )
+            // InternalGrocery.g:474:2: (otherlv_0= 'backroom' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}' )
             {
-            // InternalGrocery.g:466:2: (otherlv_0= 'backroom' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}' )
-            // InternalGrocery.g:467:3: otherlv_0= 'backroom' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}'
+            // InternalGrocery.g:474:2: (otherlv_0= 'backroom' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}' )
+            // InternalGrocery.g:475:3: otherlv_0= 'backroom' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleItem ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_5); 
+            otherlv_0=(Token)match(input,18,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBackroomAccess().getBackroomKeyword_0());
             		
-            // InternalGrocery.g:471:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalGrocery.g:472:4: (lv_name_1_0= RULE_ID )
+            // InternalGrocery.g:479:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalGrocery.g:480:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalGrocery.g:472:4: (lv_name_1_0= RULE_ID )
-            // InternalGrocery.g:473:5: lv_name_1_0= RULE_ID
+            // InternalGrocery.g:480:4: (lv_name_1_0= RULE_ID )
+            // InternalGrocery.g:481:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_6); 
 
@@ -1275,32 +1284,32 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_9); 
+            otherlv_2=(Token)match(input,12,FOLLOW_11); 
 
             			newLeafNode(otherlv_2, grammarAccess.getBackroomAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalGrocery.g:493:3: ( (lv_elements_3_0= ruleItem ) )*
+            // InternalGrocery.g:501:3: ( (lv_elements_3_0= ruleItem ) )*
             loop9:
             do {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( (LA9_0==17||LA9_0==20) ) {
+                if ( (LA9_0==19||LA9_0==22) ) {
                     alt9=1;
                 }
 
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalGrocery.g:494:4: (lv_elements_3_0= ruleItem )
+            	    // InternalGrocery.g:502:4: (lv_elements_3_0= ruleItem )
             	    {
-            	    // InternalGrocery.g:494:4: (lv_elements_3_0= ruleItem )
-            	    // InternalGrocery.g:495:5: lv_elements_3_0= ruleItem
+            	    // InternalGrocery.g:502:4: (lv_elements_3_0= ruleItem )
+            	    // InternalGrocery.g:503:5: lv_elements_3_0= ruleItem
             	    {
 
             	    					newCompositeNode(grammarAccess.getBackroomAccess().getElementsItemParserRuleCall_3_0());
             	    				
-            	    pushFollow(FOLLOW_9);
+            	    pushFollow(FOLLOW_11);
             	    lv_elements_3_0=ruleItem();
 
             	    state._fsp--;
@@ -1355,7 +1364,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleItem"
-    // InternalGrocery.g:520:1: entryRuleItem returns [EObject current=null] : iv_ruleItem= ruleItem EOF ;
+    // InternalGrocery.g:528:1: entryRuleItem returns [EObject current=null] : iv_ruleItem= ruleItem EOF ;
     public final EObject entryRuleItem() throws RecognitionException {
         EObject current = null;
 
@@ -1363,8 +1372,8 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGrocery.g:520:45: (iv_ruleItem= ruleItem EOF )
-            // InternalGrocery.g:521:2: iv_ruleItem= ruleItem EOF
+            // InternalGrocery.g:528:45: (iv_ruleItem= ruleItem EOF )
+            // InternalGrocery.g:529:2: iv_ruleItem= ruleItem EOF
             {
              newCompositeNode(grammarAccess.getItemRule()); 
             pushFollow(FOLLOW_1);
@@ -1391,7 +1400,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleItem"
-    // InternalGrocery.g:527:1: ruleItem returns [EObject current=null] : (this_PerishableItem_0= rulePerishableItem | this_NonPerishableItem_1= ruleNonPerishableItem ) ;
+    // InternalGrocery.g:535:1: ruleItem returns [EObject current=null] : (this_PerishableItem_0= rulePerishableItem | this_NonPerishableItem_1= ruleNonPerishableItem ) ;
     public final EObject ruleItem() throws RecognitionException {
         EObject current = null;
 
@@ -1404,17 +1413,17 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGrocery.g:533:2: ( (this_PerishableItem_0= rulePerishableItem | this_NonPerishableItem_1= ruleNonPerishableItem ) )
-            // InternalGrocery.g:534:2: (this_PerishableItem_0= rulePerishableItem | this_NonPerishableItem_1= ruleNonPerishableItem )
+            // InternalGrocery.g:541:2: ( (this_PerishableItem_0= rulePerishableItem | this_NonPerishableItem_1= ruleNonPerishableItem ) )
+            // InternalGrocery.g:542:2: (this_PerishableItem_0= rulePerishableItem | this_NonPerishableItem_1= ruleNonPerishableItem )
             {
-            // InternalGrocery.g:534:2: (this_PerishableItem_0= rulePerishableItem | this_NonPerishableItem_1= ruleNonPerishableItem )
+            // InternalGrocery.g:542:2: (this_PerishableItem_0= rulePerishableItem | this_NonPerishableItem_1= ruleNonPerishableItem )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==20) ) {
+            if ( (LA10_0==22) ) {
                 alt10=1;
             }
-            else if ( (LA10_0==17) ) {
+            else if ( (LA10_0==19) ) {
                 alt10=2;
             }
             else {
@@ -1425,7 +1434,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalGrocery.g:535:3: this_PerishableItem_0= rulePerishableItem
+                    // InternalGrocery.g:543:3: this_PerishableItem_0= rulePerishableItem
                     {
 
                     			newCompositeNode(grammarAccess.getItemAccess().getPerishableItemParserRuleCall_0());
@@ -1443,7 +1452,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGrocery.g:544:3: this_NonPerishableItem_1= ruleNonPerishableItem
+                    // InternalGrocery.g:552:3: this_NonPerishableItem_1= ruleNonPerishableItem
                     {
 
                     			newCompositeNode(grammarAccess.getItemAccess().getNonPerishableItemParserRuleCall_1());
@@ -1483,7 +1492,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNonPerishableItem"
-    // InternalGrocery.g:556:1: entryRuleNonPerishableItem returns [EObject current=null] : iv_ruleNonPerishableItem= ruleNonPerishableItem EOF ;
+    // InternalGrocery.g:564:1: entryRuleNonPerishableItem returns [EObject current=null] : iv_ruleNonPerishableItem= ruleNonPerishableItem EOF ;
     public final EObject entryRuleNonPerishableItem() throws RecognitionException {
         EObject current = null;
 
@@ -1491,8 +1500,8 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGrocery.g:556:58: (iv_ruleNonPerishableItem= ruleNonPerishableItem EOF )
-            // InternalGrocery.g:557:2: iv_ruleNonPerishableItem= ruleNonPerishableItem EOF
+            // InternalGrocery.g:564:58: (iv_ruleNonPerishableItem= ruleNonPerishableItem EOF )
+            // InternalGrocery.g:565:2: iv_ruleNonPerishableItem= ruleNonPerishableItem EOF
             {
              newCompositeNode(grammarAccess.getNonPerishableItemRule()); 
             pushFollow(FOLLOW_1);
@@ -1519,7 +1528,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNonPerishableItem"
-    // InternalGrocery.g:563:1: ruleNonPerishableItem returns [EObject current=null] : (otherlv_0= 'nonPerishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= RULE_INT ) ) otherlv_6= '}' ) ;
+    // InternalGrocery.g:571:1: ruleNonPerishableItem returns [EObject current=null] : (otherlv_0= 'nonPerishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= ruleDECIMAL ) ) otherlv_6= 'quantity' otherlv_7= ':' ( (lv_quantity_8_0= RULE_INT ) ) otherlv_9= '}' ) ;
     public final EObject ruleNonPerishableItem() throws RecognitionException {
         EObject current = null;
 
@@ -1528,28 +1537,32 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
         Token otherlv_2=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
-        Token lv_price_5_0=null;
         Token otherlv_6=null;
+        Token otherlv_7=null;
+        Token lv_quantity_8_0=null;
+        Token otherlv_9=null;
+        AntlrDatatypeRuleToken lv_price_5_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalGrocery.g:569:2: ( (otherlv_0= 'nonPerishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= RULE_INT ) ) otherlv_6= '}' ) )
-            // InternalGrocery.g:570:2: (otherlv_0= 'nonPerishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= RULE_INT ) ) otherlv_6= '}' )
+            // InternalGrocery.g:577:2: ( (otherlv_0= 'nonPerishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= ruleDECIMAL ) ) otherlv_6= 'quantity' otherlv_7= ':' ( (lv_quantity_8_0= RULE_INT ) ) otherlv_9= '}' ) )
+            // InternalGrocery.g:578:2: (otherlv_0= 'nonPerishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= ruleDECIMAL ) ) otherlv_6= 'quantity' otherlv_7= ':' ( (lv_quantity_8_0= RULE_INT ) ) otherlv_9= '}' )
             {
-            // InternalGrocery.g:570:2: (otherlv_0= 'nonPerishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= RULE_INT ) ) otherlv_6= '}' )
-            // InternalGrocery.g:571:3: otherlv_0= 'nonPerishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= RULE_INT ) ) otherlv_6= '}'
+            // InternalGrocery.g:578:2: (otherlv_0= 'nonPerishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= ruleDECIMAL ) ) otherlv_6= 'quantity' otherlv_7= ':' ( (lv_quantity_8_0= RULE_INT ) ) otherlv_9= '}' )
+            // InternalGrocery.g:579:3: otherlv_0= 'nonPerishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= ruleDECIMAL ) ) otherlv_6= 'quantity' otherlv_7= ':' ( (lv_quantity_8_0= RULE_INT ) ) otherlv_9= '}'
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_5); 
+            otherlv_0=(Token)match(input,19,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getNonPerishableItemAccess().getNonPerishableItemKeyword_0());
             		
-            // InternalGrocery.g:575:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalGrocery.g:576:4: (lv_name_1_0= RULE_ID )
+            // InternalGrocery.g:583:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalGrocery.g:584:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalGrocery.g:576:4: (lv_name_1_0= RULE_ID )
-            // InternalGrocery.g:577:5: lv_name_1_0= RULE_ID
+            // InternalGrocery.g:584:4: (lv_name_1_0= RULE_ID )
+            // InternalGrocery.g:585:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_6); 
 
@@ -1571,27 +1584,66 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_10); 
+            otherlv_2=(Token)match(input,12,FOLLOW_12); 
 
             			newLeafNode(otherlv_2, grammarAccess.getNonPerishableItemAccess().getLeftCurlyBracketKeyword_2());
             		
-            otherlv_3=(Token)match(input,18,FOLLOW_11); 
+            otherlv_3=(Token)match(input,20,FOLLOW_9); 
 
             			newLeafNode(otherlv_3, grammarAccess.getNonPerishableItemAccess().getPriceKeyword_3());
             		
-            otherlv_4=(Token)match(input,19,FOLLOW_12); 
+            otherlv_4=(Token)match(input,16,FOLLOW_13); 
 
             			newLeafNode(otherlv_4, grammarAccess.getNonPerishableItemAccess().getColonKeyword_4());
             		
-            // InternalGrocery.g:605:3: ( (lv_price_5_0= RULE_INT ) )
-            // InternalGrocery.g:606:4: (lv_price_5_0= RULE_INT )
+            // InternalGrocery.g:613:3: ( (lv_price_5_0= ruleDECIMAL ) )
+            // InternalGrocery.g:614:4: (lv_price_5_0= ruleDECIMAL )
             {
-            // InternalGrocery.g:606:4: (lv_price_5_0= RULE_INT )
-            // InternalGrocery.g:607:5: lv_price_5_0= RULE_INT
+            // InternalGrocery.g:614:4: (lv_price_5_0= ruleDECIMAL )
+            // InternalGrocery.g:615:5: lv_price_5_0= ruleDECIMAL
             {
-            lv_price_5_0=(Token)match(input,RULE_INT,FOLLOW_13); 
 
-            					newLeafNode(lv_price_5_0, grammarAccess.getNonPerishableItemAccess().getPriceINTTerminalRuleCall_5_0());
+            					newCompositeNode(grammarAccess.getNonPerishableItemAccess().getPriceDECIMALParserRuleCall_5_0());
+            				
+            pushFollow(FOLLOW_14);
+            lv_price_5_0=ruleDECIMAL();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getNonPerishableItemRule());
+            					}
+            					set(
+            						current,
+            						"price",
+            						lv_price_5_0,
+            						"org.xtext.project439.Grocery.DECIMAL");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_6=(Token)match(input,21,FOLLOW_9); 
+
+            			newLeafNode(otherlv_6, grammarAccess.getNonPerishableItemAccess().getQuantityKeyword_6());
+            		
+            otherlv_7=(Token)match(input,16,FOLLOW_13); 
+
+            			newLeafNode(otherlv_7, grammarAccess.getNonPerishableItemAccess().getColonKeyword_7());
+            		
+            // InternalGrocery.g:640:3: ( (lv_quantity_8_0= RULE_INT ) )
+            // InternalGrocery.g:641:4: (lv_quantity_8_0= RULE_INT )
+            {
+            // InternalGrocery.g:641:4: (lv_quantity_8_0= RULE_INT )
+            // InternalGrocery.g:642:5: lv_quantity_8_0= RULE_INT
+            {
+            lv_quantity_8_0=(Token)match(input,RULE_INT,FOLLOW_15); 
+
+            					newLeafNode(lv_quantity_8_0, grammarAccess.getNonPerishableItemAccess().getQuantityINTTerminalRuleCall_8_0());
             				
 
             					if (current==null) {
@@ -1599,8 +1651,8 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
             					}
             					setWithLastConsumed(
             						current,
-            						"price",
-            						lv_price_5_0,
+            						"quantity",
+            						lv_quantity_8_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -1609,9 +1661,9 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,13,FOLLOW_2); 
+            otherlv_9=(Token)match(input,13,FOLLOW_2); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getNonPerishableItemAccess().getRightCurlyBracketKeyword_6());
+            			newLeafNode(otherlv_9, grammarAccess.getNonPerishableItemAccess().getRightCurlyBracketKeyword_9());
             		
 
             }
@@ -1636,7 +1688,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePerishableItem"
-    // InternalGrocery.g:631:1: entryRulePerishableItem returns [EObject current=null] : iv_rulePerishableItem= rulePerishableItem EOF ;
+    // InternalGrocery.g:666:1: entryRulePerishableItem returns [EObject current=null] : iv_rulePerishableItem= rulePerishableItem EOF ;
     public final EObject entryRulePerishableItem() throws RecognitionException {
         EObject current = null;
 
@@ -1644,8 +1696,8 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGrocery.g:631:55: (iv_rulePerishableItem= rulePerishableItem EOF )
-            // InternalGrocery.g:632:2: iv_rulePerishableItem= rulePerishableItem EOF
+            // InternalGrocery.g:666:55: (iv_rulePerishableItem= rulePerishableItem EOF )
+            // InternalGrocery.g:667:2: iv_rulePerishableItem= rulePerishableItem EOF
             {
              newCompositeNode(grammarAccess.getPerishableItemRule()); 
             pushFollow(FOLLOW_1);
@@ -1672,7 +1724,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePerishableItem"
-    // InternalGrocery.g:638:1: rulePerishableItem returns [EObject current=null] : (otherlv_0= 'perishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= RULE_INT ) ) ( (lv_experationDate_6_0= ruleExperationDate ) ) otherlv_7= '}' ) ;
+    // InternalGrocery.g:673:1: rulePerishableItem returns [EObject current=null] : (otherlv_0= 'perishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= RULE_INT ) ) ( (lv_experationDate_6_0= ruleExperationDate ) ) otherlv_7= '}' ) ;
     public final EObject rulePerishableItem() throws RecognitionException {
         EObject current = null;
 
@@ -1690,21 +1742,21 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGrocery.g:644:2: ( (otherlv_0= 'perishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= RULE_INT ) ) ( (lv_experationDate_6_0= ruleExperationDate ) ) otherlv_7= '}' ) )
-            // InternalGrocery.g:645:2: (otherlv_0= 'perishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= RULE_INT ) ) ( (lv_experationDate_6_0= ruleExperationDate ) ) otherlv_7= '}' )
+            // InternalGrocery.g:679:2: ( (otherlv_0= 'perishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= RULE_INT ) ) ( (lv_experationDate_6_0= ruleExperationDate ) ) otherlv_7= '}' ) )
+            // InternalGrocery.g:680:2: (otherlv_0= 'perishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= RULE_INT ) ) ( (lv_experationDate_6_0= ruleExperationDate ) ) otherlv_7= '}' )
             {
-            // InternalGrocery.g:645:2: (otherlv_0= 'perishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= RULE_INT ) ) ( (lv_experationDate_6_0= ruleExperationDate ) ) otherlv_7= '}' )
-            // InternalGrocery.g:646:3: otherlv_0= 'perishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= RULE_INT ) ) ( (lv_experationDate_6_0= ruleExperationDate ) ) otherlv_7= '}'
+            // InternalGrocery.g:680:2: (otherlv_0= 'perishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= RULE_INT ) ) ( (lv_experationDate_6_0= ruleExperationDate ) ) otherlv_7= '}' )
+            // InternalGrocery.g:681:3: otherlv_0= 'perishableItem' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'price' otherlv_4= ':' ( (lv_price_5_0= RULE_INT ) ) ( (lv_experationDate_6_0= ruleExperationDate ) ) otherlv_7= '}'
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_5); 
+            otherlv_0=(Token)match(input,22,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPerishableItemAccess().getPerishableItemKeyword_0());
             		
-            // InternalGrocery.g:650:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalGrocery.g:651:4: (lv_name_1_0= RULE_ID )
+            // InternalGrocery.g:685:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalGrocery.g:686:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalGrocery.g:651:4: (lv_name_1_0= RULE_ID )
-            // InternalGrocery.g:652:5: lv_name_1_0= RULE_ID
+            // InternalGrocery.g:686:4: (lv_name_1_0= RULE_ID )
+            // InternalGrocery.g:687:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_6); 
 
@@ -1726,25 +1778,25 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_10); 
+            otherlv_2=(Token)match(input,12,FOLLOW_12); 
 
             			newLeafNode(otherlv_2, grammarAccess.getPerishableItemAccess().getLeftCurlyBracketKeyword_2());
             		
-            otherlv_3=(Token)match(input,18,FOLLOW_11); 
+            otherlv_3=(Token)match(input,20,FOLLOW_9); 
 
             			newLeafNode(otherlv_3, grammarAccess.getPerishableItemAccess().getPriceKeyword_3());
             		
-            otherlv_4=(Token)match(input,19,FOLLOW_12); 
+            otherlv_4=(Token)match(input,16,FOLLOW_13); 
 
             			newLeafNode(otherlv_4, grammarAccess.getPerishableItemAccess().getColonKeyword_4());
             		
-            // InternalGrocery.g:680:3: ( (lv_price_5_0= RULE_INT ) )
-            // InternalGrocery.g:681:4: (lv_price_5_0= RULE_INT )
+            // InternalGrocery.g:715:3: ( (lv_price_5_0= RULE_INT ) )
+            // InternalGrocery.g:716:4: (lv_price_5_0= RULE_INT )
             {
-            // InternalGrocery.g:681:4: (lv_price_5_0= RULE_INT )
-            // InternalGrocery.g:682:5: lv_price_5_0= RULE_INT
+            // InternalGrocery.g:716:4: (lv_price_5_0= RULE_INT )
+            // InternalGrocery.g:717:5: lv_price_5_0= RULE_INT
             {
-            lv_price_5_0=(Token)match(input,RULE_INT,FOLLOW_14); 
+            lv_price_5_0=(Token)match(input,RULE_INT,FOLLOW_16); 
 
             					newLeafNode(lv_price_5_0, grammarAccess.getPerishableItemAccess().getPriceINTTerminalRuleCall_5_0());
             				
@@ -1764,16 +1816,16 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGrocery.g:698:3: ( (lv_experationDate_6_0= ruleExperationDate ) )
-            // InternalGrocery.g:699:4: (lv_experationDate_6_0= ruleExperationDate )
+            // InternalGrocery.g:733:3: ( (lv_experationDate_6_0= ruleExperationDate ) )
+            // InternalGrocery.g:734:4: (lv_experationDate_6_0= ruleExperationDate )
             {
-            // InternalGrocery.g:699:4: (lv_experationDate_6_0= ruleExperationDate )
-            // InternalGrocery.g:700:5: lv_experationDate_6_0= ruleExperationDate
+            // InternalGrocery.g:734:4: (lv_experationDate_6_0= ruleExperationDate )
+            // InternalGrocery.g:735:5: lv_experationDate_6_0= ruleExperationDate
             {
 
             					newCompositeNode(grammarAccess.getPerishableItemAccess().getExperationDateExperationDateParserRuleCall_6_0());
             				
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_15);
             lv_experationDate_6_0=ruleExperationDate();
 
             state._fsp--;
@@ -1821,208 +1873,8 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
     // $ANTLR end "rulePerishableItem"
 
 
-    // $ANTLR start "entryRuleAddress"
-    // InternalGrocery.g:725:1: entryRuleAddress returns [EObject current=null] : iv_ruleAddress= ruleAddress EOF ;
-    public final EObject entryRuleAddress() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleAddress = null;
-
-
-        try {
-            // InternalGrocery.g:725:48: (iv_ruleAddress= ruleAddress EOF )
-            // InternalGrocery.g:726:2: iv_ruleAddress= ruleAddress EOF
-            {
-             newCompositeNode(grammarAccess.getAddressRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleAddress=ruleAddress();
-
-            state._fsp--;
-
-             current =iv_ruleAddress; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleAddress"
-
-
-    // $ANTLR start "ruleAddress"
-    // InternalGrocery.g:732:1: ruleAddress returns [EObject current=null] : (otherlv_0= 'address' otherlv_1= '{' otherlv_2= 'street' otherlv_3= ':' ( (lv_street_4_0= RULE_STRING ) ) otherlv_5= 'number' otherlv_6= ':' ( (lv_number_7_0= RULE_INT ) ) otherlv_8= 'city' otherlv_9= ':' ( (lv_city_10_0= RULE_STRING ) ) otherlv_11= '}' ) ;
-    public final EObject ruleAddress() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_3=null;
-        Token lv_street_4_0=null;
-        Token otherlv_5=null;
-        Token otherlv_6=null;
-        Token lv_number_7_0=null;
-        Token otherlv_8=null;
-        Token otherlv_9=null;
-        Token lv_city_10_0=null;
-        Token otherlv_11=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalGrocery.g:738:2: ( (otherlv_0= 'address' otherlv_1= '{' otherlv_2= 'street' otherlv_3= ':' ( (lv_street_4_0= RULE_STRING ) ) otherlv_5= 'number' otherlv_6= ':' ( (lv_number_7_0= RULE_INT ) ) otherlv_8= 'city' otherlv_9= ':' ( (lv_city_10_0= RULE_STRING ) ) otherlv_11= '}' ) )
-            // InternalGrocery.g:739:2: (otherlv_0= 'address' otherlv_1= '{' otherlv_2= 'street' otherlv_3= ':' ( (lv_street_4_0= RULE_STRING ) ) otherlv_5= 'number' otherlv_6= ':' ( (lv_number_7_0= RULE_INT ) ) otherlv_8= 'city' otherlv_9= ':' ( (lv_city_10_0= RULE_STRING ) ) otherlv_11= '}' )
-            {
-            // InternalGrocery.g:739:2: (otherlv_0= 'address' otherlv_1= '{' otherlv_2= 'street' otherlv_3= ':' ( (lv_street_4_0= RULE_STRING ) ) otherlv_5= 'number' otherlv_6= ':' ( (lv_number_7_0= RULE_INT ) ) otherlv_8= 'city' otherlv_9= ':' ( (lv_city_10_0= RULE_STRING ) ) otherlv_11= '}' )
-            // InternalGrocery.g:740:3: otherlv_0= 'address' otherlv_1= '{' otherlv_2= 'street' otherlv_3= ':' ( (lv_street_4_0= RULE_STRING ) ) otherlv_5= 'number' otherlv_6= ':' ( (lv_number_7_0= RULE_INT ) ) otherlv_8= 'city' otherlv_9= ':' ( (lv_city_10_0= RULE_STRING ) ) otherlv_11= '}'
-            {
-            otherlv_0=(Token)match(input,21,FOLLOW_6); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getAddressAccess().getAddressKeyword_0());
-            		
-            otherlv_1=(Token)match(input,12,FOLLOW_15); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getAddressAccess().getLeftCurlyBracketKeyword_1());
-            		
-            otherlv_2=(Token)match(input,22,FOLLOW_11); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getAddressAccess().getStreetKeyword_2());
-            		
-            otherlv_3=(Token)match(input,19,FOLLOW_16); 
-
-            			newLeafNode(otherlv_3, grammarAccess.getAddressAccess().getColonKeyword_3());
-            		
-            // InternalGrocery.g:756:3: ( (lv_street_4_0= RULE_STRING ) )
-            // InternalGrocery.g:757:4: (lv_street_4_0= RULE_STRING )
-            {
-            // InternalGrocery.g:757:4: (lv_street_4_0= RULE_STRING )
-            // InternalGrocery.g:758:5: lv_street_4_0= RULE_STRING
-            {
-            lv_street_4_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
-
-            					newLeafNode(lv_street_4_0, grammarAccess.getAddressAccess().getStreetSTRINGTerminalRuleCall_4_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getAddressRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"street",
-            						lv_street_4_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
-            				
-
-            }
-
-
-            }
-
-            otherlv_5=(Token)match(input,23,FOLLOW_11); 
-
-            			newLeafNode(otherlv_5, grammarAccess.getAddressAccess().getNumberKeyword_5());
-            		
-            otherlv_6=(Token)match(input,19,FOLLOW_12); 
-
-            			newLeafNode(otherlv_6, grammarAccess.getAddressAccess().getColonKeyword_6());
-            		
-            // InternalGrocery.g:782:3: ( (lv_number_7_0= RULE_INT ) )
-            // InternalGrocery.g:783:4: (lv_number_7_0= RULE_INT )
-            {
-            // InternalGrocery.g:783:4: (lv_number_7_0= RULE_INT )
-            // InternalGrocery.g:784:5: lv_number_7_0= RULE_INT
-            {
-            lv_number_7_0=(Token)match(input,RULE_INT,FOLLOW_18); 
-
-            					newLeafNode(lv_number_7_0, grammarAccess.getAddressAccess().getNumberINTTerminalRuleCall_7_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getAddressRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"number",
-            						lv_number_7_0,
-            						"org.eclipse.xtext.common.Terminals.INT");
-            				
-
-            }
-
-
-            }
-
-            otherlv_8=(Token)match(input,24,FOLLOW_11); 
-
-            			newLeafNode(otherlv_8, grammarAccess.getAddressAccess().getCityKeyword_8());
-            		
-            otherlv_9=(Token)match(input,19,FOLLOW_16); 
-
-            			newLeafNode(otherlv_9, grammarAccess.getAddressAccess().getColonKeyword_9());
-            		
-            // InternalGrocery.g:808:3: ( (lv_city_10_0= RULE_STRING ) )
-            // InternalGrocery.g:809:4: (lv_city_10_0= RULE_STRING )
-            {
-            // InternalGrocery.g:809:4: (lv_city_10_0= RULE_STRING )
-            // InternalGrocery.g:810:5: lv_city_10_0= RULE_STRING
-            {
-            lv_city_10_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
-
-            					newLeafNode(lv_city_10_0, grammarAccess.getAddressAccess().getCitySTRINGTerminalRuleCall_10_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getAddressRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"city",
-            						lv_city_10_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
-            				
-
-            }
-
-
-            }
-
-            otherlv_11=(Token)match(input,13,FOLLOW_2); 
-
-            			newLeafNode(otherlv_11, grammarAccess.getAddressAccess().getRightCurlyBracketKeyword_11());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleAddress"
-
-
     // $ANTLR start "entryRuleExperationDate"
-    // InternalGrocery.g:834:1: entryRuleExperationDate returns [EObject current=null] : iv_ruleExperationDate= ruleExperationDate EOF ;
+    // InternalGrocery.g:760:1: entryRuleExperationDate returns [EObject current=null] : iv_ruleExperationDate= ruleExperationDate EOF ;
     public final EObject entryRuleExperationDate() throws RecognitionException {
         EObject current = null;
 
@@ -2030,8 +1882,8 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGrocery.g:834:55: (iv_ruleExperationDate= ruleExperationDate EOF )
-            // InternalGrocery.g:835:2: iv_ruleExperationDate= ruleExperationDate EOF
+            // InternalGrocery.g:760:55: (iv_ruleExperationDate= ruleExperationDate EOF )
+            // InternalGrocery.g:761:2: iv_ruleExperationDate= ruleExperationDate EOF
             {
              newCompositeNode(grammarAccess.getExperationDateRule()); 
             pushFollow(FOLLOW_1);
@@ -2058,7 +1910,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExperationDate"
-    // InternalGrocery.g:841:1: ruleExperationDate returns [EObject current=null] : (otherlv_0= 'ExpirationDate' otherlv_1= '{' otherlv_2= 'month' otherlv_3= ':' ( (lv_month_4_0= RULE_INT ) ) otherlv_5= 'day' otherlv_6= ':' ( (lv_day_7_0= RULE_INT ) ) otherlv_8= 'year' otherlv_9= ':' ( (lv_year_10_0= RULE_INT ) ) otherlv_11= '}' ) ;
+    // InternalGrocery.g:767:1: ruleExperationDate returns [EObject current=null] : (otherlv_0= 'ExpirationDate' otherlv_1= '{' otherlv_2= 'date' otherlv_3= ':' ( (lv_date_4_0= ruleDATE ) ) otherlv_5= '}' ) ;
     public final EObject ruleExperationDate() throws RecognitionException {
         EObject current = null;
 
@@ -2066,60 +1918,60 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
-        Token lv_month_4_0=null;
         Token otherlv_5=null;
-        Token otherlv_6=null;
-        Token lv_day_7_0=null;
-        Token otherlv_8=null;
-        Token otherlv_9=null;
-        Token lv_year_10_0=null;
-        Token otherlv_11=null;
+        AntlrDatatypeRuleToken lv_date_4_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalGrocery.g:847:2: ( (otherlv_0= 'ExpirationDate' otherlv_1= '{' otherlv_2= 'month' otherlv_3= ':' ( (lv_month_4_0= RULE_INT ) ) otherlv_5= 'day' otherlv_6= ':' ( (lv_day_7_0= RULE_INT ) ) otherlv_8= 'year' otherlv_9= ':' ( (lv_year_10_0= RULE_INT ) ) otherlv_11= '}' ) )
-            // InternalGrocery.g:848:2: (otherlv_0= 'ExpirationDate' otherlv_1= '{' otherlv_2= 'month' otherlv_3= ':' ( (lv_month_4_0= RULE_INT ) ) otherlv_5= 'day' otherlv_6= ':' ( (lv_day_7_0= RULE_INT ) ) otherlv_8= 'year' otherlv_9= ':' ( (lv_year_10_0= RULE_INT ) ) otherlv_11= '}' )
+            // InternalGrocery.g:773:2: ( (otherlv_0= 'ExpirationDate' otherlv_1= '{' otherlv_2= 'date' otherlv_3= ':' ( (lv_date_4_0= ruleDATE ) ) otherlv_5= '}' ) )
+            // InternalGrocery.g:774:2: (otherlv_0= 'ExpirationDate' otherlv_1= '{' otherlv_2= 'date' otherlv_3= ':' ( (lv_date_4_0= ruleDATE ) ) otherlv_5= '}' )
             {
-            // InternalGrocery.g:848:2: (otherlv_0= 'ExpirationDate' otherlv_1= '{' otherlv_2= 'month' otherlv_3= ':' ( (lv_month_4_0= RULE_INT ) ) otherlv_5= 'day' otherlv_6= ':' ( (lv_day_7_0= RULE_INT ) ) otherlv_8= 'year' otherlv_9= ':' ( (lv_year_10_0= RULE_INT ) ) otherlv_11= '}' )
-            // InternalGrocery.g:849:3: otherlv_0= 'ExpirationDate' otherlv_1= '{' otherlv_2= 'month' otherlv_3= ':' ( (lv_month_4_0= RULE_INT ) ) otherlv_5= 'day' otherlv_6= ':' ( (lv_day_7_0= RULE_INT ) ) otherlv_8= 'year' otherlv_9= ':' ( (lv_year_10_0= RULE_INT ) ) otherlv_11= '}'
+            // InternalGrocery.g:774:2: (otherlv_0= 'ExpirationDate' otherlv_1= '{' otherlv_2= 'date' otherlv_3= ':' ( (lv_date_4_0= ruleDATE ) ) otherlv_5= '}' )
+            // InternalGrocery.g:775:3: otherlv_0= 'ExpirationDate' otherlv_1= '{' otherlv_2= 'date' otherlv_3= ':' ( (lv_date_4_0= ruleDATE ) ) otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_6); 
+            otherlv_0=(Token)match(input,23,FOLLOW_6); 
 
             			newLeafNode(otherlv_0, grammarAccess.getExperationDateAccess().getExpirationDateKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_19); 
+            otherlv_1=(Token)match(input,12,FOLLOW_17); 
 
             			newLeafNode(otherlv_1, grammarAccess.getExperationDateAccess().getLeftCurlyBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,26,FOLLOW_11); 
+            otherlv_2=(Token)match(input,24,FOLLOW_9); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getExperationDateAccess().getMonthKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getExperationDateAccess().getDateKeyword_2());
             		
-            otherlv_3=(Token)match(input,19,FOLLOW_12); 
+            otherlv_3=(Token)match(input,16,FOLLOW_13); 
 
             			newLeafNode(otherlv_3, grammarAccess.getExperationDateAccess().getColonKeyword_3());
             		
-            // InternalGrocery.g:865:3: ( (lv_month_4_0= RULE_INT ) )
-            // InternalGrocery.g:866:4: (lv_month_4_0= RULE_INT )
+            // InternalGrocery.g:791:3: ( (lv_date_4_0= ruleDATE ) )
+            // InternalGrocery.g:792:4: (lv_date_4_0= ruleDATE )
             {
-            // InternalGrocery.g:866:4: (lv_month_4_0= RULE_INT )
-            // InternalGrocery.g:867:5: lv_month_4_0= RULE_INT
+            // InternalGrocery.g:792:4: (lv_date_4_0= ruleDATE )
+            // InternalGrocery.g:793:5: lv_date_4_0= ruleDATE
             {
-            lv_month_4_0=(Token)match(input,RULE_INT,FOLLOW_20); 
 
-            					newLeafNode(lv_month_4_0, grammarAccess.getExperationDateAccess().getMonthINTTerminalRuleCall_4_0());
+            					newCompositeNode(grammarAccess.getExperationDateAccess().getDateDATEParserRuleCall_4_0());
             				
+            pushFollow(FOLLOW_15);
+            lv_date_4_0=ruleDATE();
+
+            state._fsp--;
+
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getExperationDateRule());
+            						current = createModelElementForParent(grammarAccess.getExperationDateRule());
             					}
-            					setWithLastConsumed(
+            					set(
             						current,
-            						"month",
-            						lv_month_4_0,
-            						"org.eclipse.xtext.common.Terminals.INT");
+            						"date",
+            						lv_date_4_0,
+            						"org.xtext.project439.Grocery.DATE");
+            					afterParserOrEnumRuleCall();
             				
 
             }
@@ -2127,77 +1979,9 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,27,FOLLOW_11); 
+            otherlv_5=(Token)match(input,13,FOLLOW_2); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getExperationDateAccess().getDayKeyword_5());
-            		
-            otherlv_6=(Token)match(input,19,FOLLOW_12); 
-
-            			newLeafNode(otherlv_6, grammarAccess.getExperationDateAccess().getColonKeyword_6());
-            		
-            // InternalGrocery.g:891:3: ( (lv_day_7_0= RULE_INT ) )
-            // InternalGrocery.g:892:4: (lv_day_7_0= RULE_INT )
-            {
-            // InternalGrocery.g:892:4: (lv_day_7_0= RULE_INT )
-            // InternalGrocery.g:893:5: lv_day_7_0= RULE_INT
-            {
-            lv_day_7_0=(Token)match(input,RULE_INT,FOLLOW_21); 
-
-            					newLeafNode(lv_day_7_0, grammarAccess.getExperationDateAccess().getDayINTTerminalRuleCall_7_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getExperationDateRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"day",
-            						lv_day_7_0,
-            						"org.eclipse.xtext.common.Terminals.INT");
-            				
-
-            }
-
-
-            }
-
-            otherlv_8=(Token)match(input,28,FOLLOW_11); 
-
-            			newLeafNode(otherlv_8, grammarAccess.getExperationDateAccess().getYearKeyword_8());
-            		
-            otherlv_9=(Token)match(input,19,FOLLOW_12); 
-
-            			newLeafNode(otherlv_9, grammarAccess.getExperationDateAccess().getColonKeyword_9());
-            		
-            // InternalGrocery.g:917:3: ( (lv_year_10_0= RULE_INT ) )
-            // InternalGrocery.g:918:4: (lv_year_10_0= RULE_INT )
-            {
-            // InternalGrocery.g:918:4: (lv_year_10_0= RULE_INT )
-            // InternalGrocery.g:919:5: lv_year_10_0= RULE_INT
-            {
-            lv_year_10_0=(Token)match(input,RULE_INT,FOLLOW_13); 
-
-            					newLeafNode(lv_year_10_0, grammarAccess.getExperationDateAccess().getYearINTTerminalRuleCall_10_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getExperationDateRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"year",
-            						lv_year_10_0,
-            						"org.eclipse.xtext.common.Terminals.INT");
-            				
-
-            }
-
-
-            }
-
-            otherlv_11=(Token)match(input,13,FOLLOW_2); 
-
-            			newLeafNode(otherlv_11, grammarAccess.getExperationDateAccess().getRightCurlyBracketKeyword_11());
+            			newLeafNode(otherlv_5, grammarAccess.getExperationDateAccess().getRightCurlyBracketKeyword_5());
             		
 
             }
@@ -2222,7 +2006,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDriver"
-    // InternalGrocery.g:943:1: entryRuleDriver returns [EObject current=null] : iv_ruleDriver= ruleDriver EOF ;
+    // InternalGrocery.g:818:1: entryRuleDriver returns [EObject current=null] : iv_ruleDriver= ruleDriver EOF ;
     public final EObject entryRuleDriver() throws RecognitionException {
         EObject current = null;
 
@@ -2230,8 +2014,8 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGrocery.g:943:47: (iv_ruleDriver= ruleDriver EOF )
-            // InternalGrocery.g:944:2: iv_ruleDriver= ruleDriver EOF
+            // InternalGrocery.g:818:47: (iv_ruleDriver= ruleDriver EOF )
+            // InternalGrocery.g:819:2: iv_ruleDriver= ruleDriver EOF
             {
              newCompositeNode(grammarAccess.getDriverRule()); 
             pushFollow(FOLLOW_1);
@@ -2258,7 +2042,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDriver"
-    // InternalGrocery.g:950:1: ruleDriver returns [EObject current=null] : (otherlv_0= 'driver' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_driverName_5_0= RULE_STRING ) ) otherlv_6= '}' ) ;
+    // InternalGrocery.g:825:1: ruleDriver returns [EObject current=null] : (otherlv_0= 'driver' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_driverName_5_0= RULE_STRING ) ) otherlv_6= '}' ) ;
     public final EObject ruleDriver() throws RecognitionException {
         EObject current = null;
 
@@ -2274,21 +2058,21 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGrocery.g:956:2: ( (otherlv_0= 'driver' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_driverName_5_0= RULE_STRING ) ) otherlv_6= '}' ) )
-            // InternalGrocery.g:957:2: (otherlv_0= 'driver' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_driverName_5_0= RULE_STRING ) ) otherlv_6= '}' )
+            // InternalGrocery.g:831:2: ( (otherlv_0= 'driver' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_driverName_5_0= RULE_STRING ) ) otherlv_6= '}' ) )
+            // InternalGrocery.g:832:2: (otherlv_0= 'driver' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_driverName_5_0= RULE_STRING ) ) otherlv_6= '}' )
             {
-            // InternalGrocery.g:957:2: (otherlv_0= 'driver' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_driverName_5_0= RULE_STRING ) ) otherlv_6= '}' )
-            // InternalGrocery.g:958:3: otherlv_0= 'driver' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_driverName_5_0= RULE_STRING ) ) otherlv_6= '}'
+            // InternalGrocery.g:832:2: (otherlv_0= 'driver' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_driverName_5_0= RULE_STRING ) ) otherlv_6= '}' )
+            // InternalGrocery.g:833:3: otherlv_0= 'driver' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_driverName_5_0= RULE_STRING ) ) otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,29,FOLLOW_5); 
+            otherlv_0=(Token)match(input,25,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDriverAccess().getDriverKeyword_0());
             		
-            // InternalGrocery.g:962:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalGrocery.g:963:4: (lv_name_1_0= RULE_ID )
+            // InternalGrocery.g:837:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalGrocery.g:838:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalGrocery.g:963:4: (lv_name_1_0= RULE_ID )
-            // InternalGrocery.g:964:5: lv_name_1_0= RULE_ID
+            // InternalGrocery.g:838:4: (lv_name_1_0= RULE_ID )
+            // InternalGrocery.g:839:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_6); 
 
@@ -2310,25 +2094,25 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_22); 
+            otherlv_2=(Token)match(input,12,FOLLOW_18); 
 
             			newLeafNode(otherlv_2, grammarAccess.getDriverAccess().getLeftCurlyBracketKeyword_2());
             		
-            otherlv_3=(Token)match(input,30,FOLLOW_11); 
+            otherlv_3=(Token)match(input,26,FOLLOW_9); 
 
             			newLeafNode(otherlv_3, grammarAccess.getDriverAccess().getNameKeyword_3());
             		
-            otherlv_4=(Token)match(input,19,FOLLOW_16); 
+            otherlv_4=(Token)match(input,16,FOLLOW_10); 
 
             			newLeafNode(otherlv_4, grammarAccess.getDriverAccess().getColonKeyword_4());
             		
-            // InternalGrocery.g:992:3: ( (lv_driverName_5_0= RULE_STRING ) )
-            // InternalGrocery.g:993:4: (lv_driverName_5_0= RULE_STRING )
+            // InternalGrocery.g:867:3: ( (lv_driverName_5_0= RULE_STRING ) )
+            // InternalGrocery.g:868:4: (lv_driverName_5_0= RULE_STRING )
             {
-            // InternalGrocery.g:993:4: (lv_driverName_5_0= RULE_STRING )
-            // InternalGrocery.g:994:5: lv_driverName_5_0= RULE_STRING
+            // InternalGrocery.g:868:4: (lv_driverName_5_0= RULE_STRING )
+            // InternalGrocery.g:869:5: lv_driverName_5_0= RULE_STRING
             {
-            lv_driverName_5_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
+            lv_driverName_5_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
 
             					newLeafNode(lv_driverName_5_0, grammarAccess.getDriverAccess().getDriverNameSTRINGTerminalRuleCall_5_0());
             				
@@ -2375,7 +2159,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVehicle"
-    // InternalGrocery.g:1018:1: entryRuleVehicle returns [EObject current=null] : iv_ruleVehicle= ruleVehicle EOF ;
+    // InternalGrocery.g:893:1: entryRuleVehicle returns [EObject current=null] : iv_ruleVehicle= ruleVehicle EOF ;
     public final EObject entryRuleVehicle() throws RecognitionException {
         EObject current = null;
 
@@ -2383,8 +2167,8 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGrocery.g:1018:48: (iv_ruleVehicle= ruleVehicle EOF )
-            // InternalGrocery.g:1019:2: iv_ruleVehicle= ruleVehicle EOF
+            // InternalGrocery.g:893:48: (iv_ruleVehicle= ruleVehicle EOF )
+            // InternalGrocery.g:894:2: iv_ruleVehicle= ruleVehicle EOF
             {
              newCompositeNode(grammarAccess.getVehicleRule()); 
             pushFollow(FOLLOW_1);
@@ -2411,7 +2195,7 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVehicle"
-    // InternalGrocery.g:1025:1: ruleVehicle returns [EObject current=null] : (otherlv_0= 'vehicle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'plateNumber' otherlv_4= ':' ( (lv_plateNumber_5_0= RULE_STRING ) ) otherlv_6= '}' ) ;
+    // InternalGrocery.g:900:1: ruleVehicle returns [EObject current=null] : (otherlv_0= 'vehicle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'plateNumber' otherlv_4= ':' ( (lv_plateNumber_5_0= RULE_STRING ) ) otherlv_6= '}' ) ;
     public final EObject ruleVehicle() throws RecognitionException {
         EObject current = null;
 
@@ -2427,21 +2211,21 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGrocery.g:1031:2: ( (otherlv_0= 'vehicle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'plateNumber' otherlv_4= ':' ( (lv_plateNumber_5_0= RULE_STRING ) ) otherlv_6= '}' ) )
-            // InternalGrocery.g:1032:2: (otherlv_0= 'vehicle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'plateNumber' otherlv_4= ':' ( (lv_plateNumber_5_0= RULE_STRING ) ) otherlv_6= '}' )
+            // InternalGrocery.g:906:2: ( (otherlv_0= 'vehicle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'plateNumber' otherlv_4= ':' ( (lv_plateNumber_5_0= RULE_STRING ) ) otherlv_6= '}' ) )
+            // InternalGrocery.g:907:2: (otherlv_0= 'vehicle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'plateNumber' otherlv_4= ':' ( (lv_plateNumber_5_0= RULE_STRING ) ) otherlv_6= '}' )
             {
-            // InternalGrocery.g:1032:2: (otherlv_0= 'vehicle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'plateNumber' otherlv_4= ':' ( (lv_plateNumber_5_0= RULE_STRING ) ) otherlv_6= '}' )
-            // InternalGrocery.g:1033:3: otherlv_0= 'vehicle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'plateNumber' otherlv_4= ':' ( (lv_plateNumber_5_0= RULE_STRING ) ) otherlv_6= '}'
+            // InternalGrocery.g:907:2: (otherlv_0= 'vehicle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'plateNumber' otherlv_4= ':' ( (lv_plateNumber_5_0= RULE_STRING ) ) otherlv_6= '}' )
+            // InternalGrocery.g:908:3: otherlv_0= 'vehicle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'plateNumber' otherlv_4= ':' ( (lv_plateNumber_5_0= RULE_STRING ) ) otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,31,FOLLOW_5); 
+            otherlv_0=(Token)match(input,27,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getVehicleAccess().getVehicleKeyword_0());
             		
-            // InternalGrocery.g:1037:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalGrocery.g:1038:4: (lv_name_1_0= RULE_ID )
+            // InternalGrocery.g:912:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalGrocery.g:913:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalGrocery.g:1038:4: (lv_name_1_0= RULE_ID )
-            // InternalGrocery.g:1039:5: lv_name_1_0= RULE_ID
+            // InternalGrocery.g:913:4: (lv_name_1_0= RULE_ID )
+            // InternalGrocery.g:914:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_6); 
 
@@ -2463,25 +2247,25 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_23); 
+            otherlv_2=(Token)match(input,12,FOLLOW_19); 
 
             			newLeafNode(otherlv_2, grammarAccess.getVehicleAccess().getLeftCurlyBracketKeyword_2());
             		
-            otherlv_3=(Token)match(input,32,FOLLOW_11); 
+            otherlv_3=(Token)match(input,28,FOLLOW_9); 
 
             			newLeafNode(otherlv_3, grammarAccess.getVehicleAccess().getPlateNumberKeyword_3());
             		
-            otherlv_4=(Token)match(input,19,FOLLOW_16); 
+            otherlv_4=(Token)match(input,16,FOLLOW_10); 
 
             			newLeafNode(otherlv_4, grammarAccess.getVehicleAccess().getColonKeyword_4());
             		
-            // InternalGrocery.g:1067:3: ( (lv_plateNumber_5_0= RULE_STRING ) )
-            // InternalGrocery.g:1068:4: (lv_plateNumber_5_0= RULE_STRING )
+            // InternalGrocery.g:942:3: ( (lv_plateNumber_5_0= RULE_STRING ) )
+            // InternalGrocery.g:943:4: (lv_plateNumber_5_0= RULE_STRING )
             {
-            // InternalGrocery.g:1068:4: (lv_plateNumber_5_0= RULE_STRING )
-            // InternalGrocery.g:1069:5: lv_plateNumber_5_0= RULE_STRING
+            // InternalGrocery.g:943:4: (lv_plateNumber_5_0= RULE_STRING )
+            // InternalGrocery.g:944:5: lv_plateNumber_5_0= RULE_STRING
             {
-            lv_plateNumber_5_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
+            lv_plateNumber_5_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
 
             					newLeafNode(lv_plateNumber_5_0, grammarAccess.getVehicleAccess().getPlateNumberSTRINGTerminalRuleCall_5_0());
             				
@@ -2526,6 +2310,315 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleVehicle"
 
+
+    // $ANTLR start "entryRuleDECIMAL"
+    // InternalGrocery.g:968:1: entryRuleDECIMAL returns [String current=null] : iv_ruleDECIMAL= ruleDECIMAL EOF ;
+    public final String entryRuleDECIMAL() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleDECIMAL = null;
+
+
+        try {
+            // InternalGrocery.g:968:47: (iv_ruleDECIMAL= ruleDECIMAL EOF )
+            // InternalGrocery.g:969:2: iv_ruleDECIMAL= ruleDECIMAL EOF
+            {
+             newCompositeNode(grammarAccess.getDECIMALRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleDECIMAL=ruleDECIMAL();
+
+            state._fsp--;
+
+             current =iv_ruleDECIMAL.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleDECIMAL"
+
+
+    // $ANTLR start "ruleDECIMAL"
+    // InternalGrocery.g:975:1: ruleDECIMAL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) ;
+    public final AntlrDatatypeRuleToken ruleDECIMAL() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_INT_0=null;
+        Token kw=null;
+        Token this_INT_2=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalGrocery.g:981:2: ( (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) )
+            // InternalGrocery.g:982:2: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
+            {
+            // InternalGrocery.g:982:2: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
+            // InternalGrocery.g:983:3: this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT
+            {
+            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_20); 
+
+            			current.merge(this_INT_0);
+            		
+
+            			newLeafNode(this_INT_0, grammarAccess.getDECIMALAccess().getINTTerminalRuleCall_0());
+            		
+            kw=(Token)match(input,29,FOLLOW_13); 
+
+            			current.merge(kw);
+            			newLeafNode(kw, grammarAccess.getDECIMALAccess().getFullStopKeyword_1());
+            		
+            this_INT_2=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+            			current.merge(this_INT_2);
+            		
+
+            			newLeafNode(this_INT_2, grammarAccess.getDECIMALAccess().getINTTerminalRuleCall_2());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleDECIMAL"
+
+
+    // $ANTLR start "entryRuleDATE"
+    // InternalGrocery.g:1006:1: entryRuleDATE returns [String current=null] : iv_ruleDATE= ruleDATE EOF ;
+    public final String entryRuleDATE() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleDATE = null;
+
+
+        try {
+            // InternalGrocery.g:1006:44: (iv_ruleDATE= ruleDATE EOF )
+            // InternalGrocery.g:1007:2: iv_ruleDATE= ruleDATE EOF
+            {
+             newCompositeNode(grammarAccess.getDATERule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleDATE=ruleDATE();
+
+            state._fsp--;
+
+             current =iv_ruleDATE.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleDATE"
+
+
+    // $ANTLR start "ruleDATE"
+    // InternalGrocery.g:1013:1: ruleDATE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT kw= '/' this_INT_2= RULE_INT kw= '/' this_INT_4= RULE_INT ) ;
+    public final AntlrDatatypeRuleToken ruleDATE() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_INT_0=null;
+        Token kw=null;
+        Token this_INT_2=null;
+        Token this_INT_4=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalGrocery.g:1019:2: ( (this_INT_0= RULE_INT kw= '/' this_INT_2= RULE_INT kw= '/' this_INT_4= RULE_INT ) )
+            // InternalGrocery.g:1020:2: (this_INT_0= RULE_INT kw= '/' this_INT_2= RULE_INT kw= '/' this_INT_4= RULE_INT )
+            {
+            // InternalGrocery.g:1020:2: (this_INT_0= RULE_INT kw= '/' this_INT_2= RULE_INT kw= '/' this_INT_4= RULE_INT )
+            // InternalGrocery.g:1021:3: this_INT_0= RULE_INT kw= '/' this_INT_2= RULE_INT kw= '/' this_INT_4= RULE_INT
+            {
+            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_21); 
+
+            			current.merge(this_INT_0);
+            		
+
+            			newLeafNode(this_INT_0, grammarAccess.getDATEAccess().getINTTerminalRuleCall_0());
+            		
+            kw=(Token)match(input,30,FOLLOW_13); 
+
+            			current.merge(kw);
+            			newLeafNode(kw, grammarAccess.getDATEAccess().getSolidusKeyword_1());
+            		
+            this_INT_2=(Token)match(input,RULE_INT,FOLLOW_21); 
+
+            			current.merge(this_INT_2);
+            		
+
+            			newLeafNode(this_INT_2, grammarAccess.getDATEAccess().getINTTerminalRuleCall_2());
+            		
+            kw=(Token)match(input,30,FOLLOW_13); 
+
+            			current.merge(kw);
+            			newLeafNode(kw, grammarAccess.getDATEAccess().getSolidusKeyword_3());
+            		
+            this_INT_4=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+            			current.merge(this_INT_4);
+            		
+
+            			newLeafNode(this_INT_4, grammarAccess.getDATEAccess().getINTTerminalRuleCall_4());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleDATE"
+
+
+    // $ANTLR start "entryRuleADDRESS"
+    // InternalGrocery.g:1056:1: entryRuleADDRESS returns [String current=null] : iv_ruleADDRESS= ruleADDRESS EOF ;
+    public final String entryRuleADDRESS() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleADDRESS = null;
+
+
+        try {
+            // InternalGrocery.g:1056:47: (iv_ruleADDRESS= ruleADDRESS EOF )
+            // InternalGrocery.g:1057:2: iv_ruleADDRESS= ruleADDRESS EOF
+            {
+             newCompositeNode(grammarAccess.getADDRESSRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleADDRESS=ruleADDRESS();
+
+            state._fsp--;
+
+             current =iv_ruleADDRESS.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleADDRESS"
+
+
+    // $ANTLR start "ruleADDRESS"
+    // InternalGrocery.g:1063:1: ruleADDRESS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING this_INT_1= RULE_INT kw= ',' this_STRING_3= RULE_STRING ) ;
+    public final AntlrDatatypeRuleToken ruleADDRESS() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_STRING_0=null;
+        Token this_INT_1=null;
+        Token kw=null;
+        Token this_STRING_3=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalGrocery.g:1069:2: ( (this_STRING_0= RULE_STRING this_INT_1= RULE_INT kw= ',' this_STRING_3= RULE_STRING ) )
+            // InternalGrocery.g:1070:2: (this_STRING_0= RULE_STRING this_INT_1= RULE_INT kw= ',' this_STRING_3= RULE_STRING )
+            {
+            // InternalGrocery.g:1070:2: (this_STRING_0= RULE_STRING this_INT_1= RULE_INT kw= ',' this_STRING_3= RULE_STRING )
+            // InternalGrocery.g:1071:3: this_STRING_0= RULE_STRING this_INT_1= RULE_INT kw= ',' this_STRING_3= RULE_STRING
+            {
+            this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
+
+            			current.merge(this_STRING_0);
+            		
+
+            			newLeafNode(this_STRING_0, grammarAccess.getADDRESSAccess().getSTRINGTerminalRuleCall_0());
+            		
+            this_INT_1=(Token)match(input,RULE_INT,FOLLOW_22); 
+
+            			current.merge(this_INT_1);
+            		
+
+            			newLeafNode(this_INT_1, grammarAccess.getADDRESSAccess().getINTTerminalRuleCall_1());
+            		
+            kw=(Token)match(input,31,FOLLOW_10); 
+
+            			current.merge(kw);
+            			newLeafNode(kw, grammarAccess.getADDRESSAccess().getCommaKeyword_2());
+            		
+            this_STRING_3=(Token)match(input,RULE_STRING,FOLLOW_2); 
+
+            			current.merge(this_STRING_3);
+            		
+
+            			newLeafNode(this_STRING_3, grammarAccess.getADDRESSAccess().getSTRINGTerminalRuleCall_3());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleADDRESS"
+
     // Delegated rules
 
 
@@ -2533,26 +2626,25 @@ public class InternalGroceryParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000000A0004802L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x00000000A0000002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x000000000A004802L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x000000000A000002L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000000001A000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000122000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000062000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000482000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000080000000L});
 
 }

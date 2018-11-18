@@ -76,7 +76,6 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
       case GroceryPackage.ITEM: return createItem();
       case GroceryPackage.NON_PERISHABLE_ITEM: return createNonPerishableItem();
       case GroceryPackage.PERISHABLE_ITEM: return createPerishableItem();
-      case GroceryPackage.ADDRESS: return createAddress();
       case GroceryPackage.EXPERATION_DATE: return createExperationDate();
       case GroceryPackage.DRIVER: return createDriver();
       case GroceryPackage.VEHICLE: return createVehicle();
@@ -204,17 +203,6 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
   {
     PerishableItemImpl perishableItem = new PerishableItemImpl();
     return perishableItem;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Address createAddress()
-  {
-    AddressImpl address = new AddressImpl();
-    return address;
   }
 
   /**

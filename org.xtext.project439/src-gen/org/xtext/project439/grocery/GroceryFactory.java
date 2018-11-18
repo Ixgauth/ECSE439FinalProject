@@ -123,15 +123,6 @@ public interface GroceryFactory extends EFactory
   PerishableItem createPerishableItem();
 
   /**
-   * Returns a new object of class '<em>Address</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Address</em>'.
-   * @generated
-   */
-  Address createAddress();
-
-  /**
    * Returns a new object of class '<em>Experation Date</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

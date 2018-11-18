@@ -8,14 +8,18 @@ Building: Store | Warehouse;
 
 StoreElements: Backroom | Shelf;
 
-DeliveryElement: Driver | Vehicle;
+DeliveryElement: Driver | Vehicle | ScheduledDelivery;
+
+Item : FoodItem | NonFoodItem;
+
+FoodItem : PerishableItem | NonPerishableItem;
 
 Store: 'store' name=ID '{'
 	(elements+=StoreElements)* 
 '}';
 
 Warehouse: 'warehouse' name=ID '{'
-	address+=Address
+	'address' ':' address=ADDRESS
 	(elements+=Item)*
 '}';
 
@@ -27,24 +31,24 @@ Backroom: 'backroom' name=ID '{'
 	(elements+=Item)*
 '}';
 
-Item : PerishableItem | NonPerishableItem;
-
 NonPerishableItem: 'nonPerishableItem' name=ID '{'
-	'price' ':' price=INT
+	'price' ':' price=DECIMAL
 	'quantity' ':' quantity=INT
 '}';
 
 PerishableItem: 'perishableItem' name=ID '{'
-	'price' ':' price=INT
+	'price' ':' price=DECIMAL
+	'quantity' ':' quantity=INT
 	experationDate+=ExperationDate
 '}';
 
-Address: 'address' '{'
-	'street' ':' street=STRING 'number' ':' number=INT 'city' ':' city=STRING
+NonFoodItem: 'nonFoodItem' name=ID '{'
+	'price' ':' price=DECIMAL
+	'quantity' ':' quantity=INT
 '}';
 
-ExperationDate: 'ExpirationDate''{'
-	'month' ':' month=INT 'day' ':' day=INT 'year' ':' year=INT
+ExperationDate: 'expirationDate''{'
+	'date' ':' date=DATE
 '}';
 
 Driver: 'driver' name=ID '{'
@@ -55,8 +59,15 @@ Vehicle: 'vehicle' name=ID '{'
 	'plateNumber' ':' plateNumber=STRING
 '}';
 
+ScheduledDelivery: 'delivery' name=ID '{'
+	'type' ':' type=STRING
+'}';
 
+DECIMAL: INT '.' INT;
 
+DATE:INT '/' INT '/' INT;
+
+ADDRESS: INT STRING ',' STRING;
 
 
 

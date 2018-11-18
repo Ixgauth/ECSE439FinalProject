@@ -22,7 +22,6 @@ import org.xtext.project439.grocery.Item;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.project439.grocery.impl.ItemImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.project439.grocery.impl.ItemImpl#getPrice <em>Price</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,26 +47,6 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPrice()
-   * @generated
-   * @ordered
-   */
-  protected static final int PRICE_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getPrice() <em>Price</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPrice()
-   * @generated
-   * @ordered
-   */
-  protected int price = PRICE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -118,29 +97,6 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getPrice()
-  {
-    return price;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPrice(int newPrice)
-  {
-    int oldPrice = price;
-    price = newPrice;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.ITEM__PRICE, oldPrice, price));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -148,8 +104,6 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
     {
       case GroceryPackage.ITEM__NAME:
         return getName();
-      case GroceryPackage.ITEM__PRICE:
-        return getPrice();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -166,9 +120,6 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
     {
       case GroceryPackage.ITEM__NAME:
         setName((String)newValue);
-        return;
-      case GroceryPackage.ITEM__PRICE:
-        setPrice((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -187,9 +138,6 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
       case GroceryPackage.ITEM__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case GroceryPackage.ITEM__PRICE:
-        setPrice(PRICE_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -206,8 +154,6 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
     {
       case GroceryPackage.ITEM__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case GroceryPackage.ITEM__PRICE:
-        return price != PRICE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -225,8 +171,6 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", price: ");
-    result.append(price);
     result.append(')');
     return result.toString();
   }

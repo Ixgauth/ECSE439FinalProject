@@ -14,7 +14,6 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import org.xtext.project439.grocery.Address;
 import org.xtext.project439.grocery.Backroom;
 import org.xtext.project439.grocery.Driver;
 import org.xtext.project439.grocery.ExperationDate;
@@ -42,9 +41,6 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == GroceryPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case GroceryPackage.ADDRESS:
-				sequence_Address(context, (Address) semanticObject); 
-				return; 
 			case GroceryPackage.BACKROOM:
 				sequence_Backroom(context, (Backroom) semanticObject); 
 				return; 
@@ -79,30 +75,6 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
-	
-	/**
-	 * Contexts:
-	 *     Address returns Address
-	 *
-	 * Constraint:
-	 *     (street=STRING number=INT city=STRING)
-	 */
-	protected void sequence_Address(ISerializationContext context, Address semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ADDRESS__STREET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ADDRESS__STREET));
-			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ADDRESS__NUMBER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ADDRESS__NUMBER));
-			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ADDRESS__CITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ADDRESS__CITY));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAddressAccess().getStreetSTRINGTerminalRuleCall_4_0(), semanticObject.getStreet());
-		feeder.accept(grammarAccess.getAddressAccess().getNumberINTTerminalRuleCall_7_0(), semanticObject.getNumber());
-		feeder.accept(grammarAccess.getAddressAccess().getCitySTRINGTerminalRuleCall_10_0(), semanticObject.getCity());
-		feeder.finish();
-	}
-	
 	
 	/**
 	 * Contexts:
@@ -144,21 +116,15 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ExperationDate returns ExperationDate
 	 *
 	 * Constraint:
-	 *     (month=INT day=INT year=INT)
+	 *     date=DATE
 	 */
 	protected void sequence_ExperationDate(ISerializationContext context, ExperationDate semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.EXPERATION_DATE__MONTH) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.EXPERATION_DATE__MONTH));
-			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.EXPERATION_DATE__DAY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.EXPERATION_DATE__DAY));
-			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.EXPERATION_DATE__YEAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.EXPERATION_DATE__YEAR));
+			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.EXPERATION_DATE__DATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.EXPERATION_DATE__DATE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getExperationDateAccess().getMonthINTTerminalRuleCall_4_0(), semanticObject.getMonth());
-		feeder.accept(grammarAccess.getExperationDateAccess().getDayINTTerminalRuleCall_7_0(), semanticObject.getDay());
-		feeder.accept(grammarAccess.getExperationDateAccess().getYearINTTerminalRuleCall_10_0(), semanticObject.getYear());
+		feeder.accept(grammarAccess.getExperationDateAccess().getDateDATEParserRuleCall_4_0(), semanticObject.getDate());
 		feeder.finish();
 	}
 	
@@ -181,18 +147,21 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     NonPerishableItem returns NonPerishableItem
 	 *
 	 * Constraint:
-	 *     (name=ID price=INT)
+	 *     (name=ID price=DECIMAL quantity=INT)
 	 */
 	protected void sequence_NonPerishableItem(ISerializationContext context, NonPerishableItem semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ITEM__NAME));
-			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__PRICE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ITEM__PRICE));
+			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.NON_PERISHABLE_ITEM__PRICE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.NON_PERISHABLE_ITEM__PRICE));
+			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.NON_PERISHABLE_ITEM__QUANTITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.NON_PERISHABLE_ITEM__QUANTITY));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getNonPerishableItemAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getNonPerishableItemAccess().getPriceINTTerminalRuleCall_5_0(), semanticObject.getPrice());
+		feeder.accept(grammarAccess.getNonPerishableItemAccess().getPriceDECIMALParserRuleCall_5_0(), semanticObject.getPrice());
+		feeder.accept(grammarAccess.getNonPerishableItemAccess().getQuantityINTTerminalRuleCall_8_0(), semanticObject.getQuantity());
 		feeder.finish();
 	}
 	
@@ -264,7 +233,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Warehouse returns Warehouse
 	 *
 	 * Constraint:
-	 *     (name=ID address+=Address elements+=Item*)
+	 *     (name=ID address=ADDRESS elements+=Item*)
 	 */
 	protected void sequence_Warehouse(ISerializationContext context, Warehouse semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

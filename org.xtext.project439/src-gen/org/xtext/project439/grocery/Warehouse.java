@@ -25,20 +25,30 @@ import org.eclipse.emf.common.util.EList;
 public interface Warehouse extends Building
 {
   /**
-   * Returns the value of the '<em><b>Address</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.project439.grocery.Address}.
+   * Returns the value of the '<em><b>Address</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Address</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Address</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Address</em>' containment reference list.
+   * @return the value of the '<em>Address</em>' attribute.
+   * @see #setAddress(String)
    * @see org.xtext.project439.grocery.GroceryPackage#getWarehouse_Address()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  EList<Address> getAddress();
+  String getAddress();
+
+  /**
+   * Sets the value of the '{@link org.xtext.project439.grocery.Warehouse#getAddress <em>Address</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Address</em>' attribute.
+   * @see #getAddress()
+   * @generated
+   */
+  void setAddress(String value);
 
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

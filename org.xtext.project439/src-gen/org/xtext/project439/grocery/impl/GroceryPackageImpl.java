@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.xtext.project439.grocery.Address;
 import org.xtext.project439.grocery.Backroom;
 import org.xtext.project439.grocery.Building;
 import org.xtext.project439.grocery.DeliveryElement;
@@ -112,13 +111,6 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * @generated
    */
   private EClass perishableItemEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass addressEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -329,9 +321,9 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getWarehouse_Address()
+  public EAttribute getWarehouse_Address()
   {
-    return (EReference)warehouseEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)warehouseEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -389,9 +381,9 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getItem_Price()
+  public EClass getNonPerishableItem()
   {
-    return (EAttribute)itemEClass.getEStructuralFeatures().get(1);
+    return nonPerishableItemEClass;
   }
 
   /**
@@ -399,9 +391,19 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getNonPerishableItem()
+  public EAttribute getNonPerishableItem_Price()
   {
-    return nonPerishableItemEClass;
+    return (EAttribute)nonPerishableItemEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNonPerishableItem_Quantity()
+  {
+    return (EAttribute)nonPerishableItemEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -419,49 +421,19 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getPerishableItem_Price()
+  {
+    return (EAttribute)perishableItemEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getPerishableItem_ExperationDate()
   {
-    return (EReference)perishableItemEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getAddress()
-  {
-    return addressEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getAddress_Street()
-  {
-    return (EAttribute)addressEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getAddress_Number()
-  {
-    return (EAttribute)addressEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getAddress_City()
-  {
-    return (EAttribute)addressEClass.getEStructuralFeatures().get(2);
+    return (EReference)perishableItemEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -479,29 +451,9 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getExperationDate_Month()
+  public EAttribute getExperationDate_Date()
   {
     return (EAttribute)experationDateEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getExperationDate_Day()
-  {
-    return (EAttribute)experationDateEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getExperationDate_Year()
-  {
-    return (EAttribute)experationDateEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -591,7 +543,7 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
     createEReference(storeEClass, STORE__ELEMENTS);
 
     warehouseEClass = createEClass(WAREHOUSE);
-    createEReference(warehouseEClass, WAREHOUSE__ADDRESS);
+    createEAttribute(warehouseEClass, WAREHOUSE__ADDRESS);
     createEReference(warehouseEClass, WAREHOUSE__ELEMENTS);
 
     shelfEClass = createEClass(SHELF);
@@ -600,22 +552,17 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
 
     itemEClass = createEClass(ITEM);
     createEAttribute(itemEClass, ITEM__NAME);
-    createEAttribute(itemEClass, ITEM__PRICE);
 
     nonPerishableItemEClass = createEClass(NON_PERISHABLE_ITEM);
+    createEAttribute(nonPerishableItemEClass, NON_PERISHABLE_ITEM__PRICE);
+    createEAttribute(nonPerishableItemEClass, NON_PERISHABLE_ITEM__QUANTITY);
 
     perishableItemEClass = createEClass(PERISHABLE_ITEM);
+    createEAttribute(perishableItemEClass, PERISHABLE_ITEM__PRICE);
     createEReference(perishableItemEClass, PERISHABLE_ITEM__EXPERATION_DATE);
 
-    addressEClass = createEClass(ADDRESS);
-    createEAttribute(addressEClass, ADDRESS__STREET);
-    createEAttribute(addressEClass, ADDRESS__NUMBER);
-    createEAttribute(addressEClass, ADDRESS__CITY);
-
     experationDateEClass = createEClass(EXPERATION_DATE);
-    createEAttribute(experationDateEClass, EXPERATION_DATE__MONTH);
-    createEAttribute(experationDateEClass, EXPERATION_DATE__DAY);
-    createEAttribute(experationDateEClass, EXPERATION_DATE__YEAR);
+    createEAttribute(experationDateEClass, EXPERATION_DATE__DATE);
 
     driverEClass = createEClass(DRIVER);
     createEAttribute(driverEClass, DRIVER__DRIVER_NAME);
@@ -680,7 +627,7 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
     initEReference(getStore_Elements(), this.getStoreElements(), null, "elements", null, 0, -1, Store.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(warehouseEClass, Warehouse.class, "Warehouse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getWarehouse_Address(), this.getAddress(), null, "address", null, 0, -1, Warehouse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWarehouse_Address(), ecorePackage.getEString(), "address", null, 0, 1, Warehouse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWarehouse_Elements(), this.getItem(), null, "elements", null, 0, -1, Warehouse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(shelfEClass, Shelf.class, "Shelf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -689,22 +636,17 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
 
     initEClass(itemEClass, Item.class, "Item", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getItem_Name(), ecorePackage.getEString(), "name", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getItem_Price(), ecorePackage.getEInt(), "price", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nonPerishableItemEClass, NonPerishableItem.class, "NonPerishableItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNonPerishableItem_Price(), ecorePackage.getEString(), "price", null, 0, 1, NonPerishableItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNonPerishableItem_Quantity(), ecorePackage.getEInt(), "quantity", null, 0, 1, NonPerishableItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(perishableItemEClass, PerishableItem.class, "PerishableItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPerishableItem_Price(), ecorePackage.getEInt(), "price", null, 0, 1, PerishableItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPerishableItem_ExperationDate(), this.getExperationDate(), null, "experationDate", null, 0, -1, PerishableItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(addressEClass, Address.class, "Address", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAddress_Street(), ecorePackage.getEString(), "street", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAddress_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAddress_City(), ecorePackage.getEString(), "city", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(experationDateEClass, ExperationDate.class, "ExperationDate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getExperationDate_Month(), ecorePackage.getEInt(), "month", null, 0, 1, ExperationDate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExperationDate_Day(), ecorePackage.getEInt(), "day", null, 0, 1, ExperationDate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExperationDate_Year(), ecorePackage.getEInt(), "year", null, 0, 1, ExperationDate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExperationDate_Date(), ecorePackage.getEString(), "date", null, 0, 1, ExperationDate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(driverEClass, Driver.class, "Driver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDriver_DriverName(), ecorePackage.getEString(), "driverName", null, 0, 1, Driver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

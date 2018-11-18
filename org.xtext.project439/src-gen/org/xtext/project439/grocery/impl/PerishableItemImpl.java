@@ -5,12 +5,15 @@ package org.xtext.project439.grocery.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -27,6 +30,7 @@ import org.xtext.project439.grocery.PerishableItem;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.project439.grocery.impl.PerishableItemImpl#getPrice <em>Price</em>}</li>
  *   <li>{@link org.xtext.project439.grocery.impl.PerishableItemImpl#getExperationDate <em>Experation Date</em>}</li>
  * </ul>
  *
@@ -34,6 +38,26 @@ import org.xtext.project439.grocery.PerishableItem;
  */
 public class PerishableItemImpl extends ItemImpl implements PerishableItem
 {
+  /**
+   * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrice()
+   * @generated
+   * @ordered
+   */
+  protected static final int PRICE_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getPrice() <em>Price</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrice()
+   * @generated
+   * @ordered
+   */
+  protected int price = PRICE_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getExperationDate() <em>Experation Date</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -63,6 +87,29 @@ public class PerishableItemImpl extends ItemImpl implements PerishableItem
   protected EClass eStaticClass()
   {
     return GroceryPackage.Literals.PERISHABLE_ITEM;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getPrice()
+  {
+    return price;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPrice(int newPrice)
+  {
+    int oldPrice = price;
+    price = newPrice;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.PERISHABLE_ITEM__PRICE, oldPrice, price));
   }
 
   /**
@@ -105,6 +152,8 @@ public class PerishableItemImpl extends ItemImpl implements PerishableItem
   {
     switch (featureID)
     {
+      case GroceryPackage.PERISHABLE_ITEM__PRICE:
+        return getPrice();
       case GroceryPackage.PERISHABLE_ITEM__EXPERATION_DATE:
         return getExperationDate();
     }
@@ -122,6 +171,9 @@ public class PerishableItemImpl extends ItemImpl implements PerishableItem
   {
     switch (featureID)
     {
+      case GroceryPackage.PERISHABLE_ITEM__PRICE:
+        setPrice((Integer)newValue);
+        return;
       case GroceryPackage.PERISHABLE_ITEM__EXPERATION_DATE:
         getExperationDate().clear();
         getExperationDate().addAll((Collection<? extends ExperationDate>)newValue);
@@ -140,6 +192,9 @@ public class PerishableItemImpl extends ItemImpl implements PerishableItem
   {
     switch (featureID)
     {
+      case GroceryPackage.PERISHABLE_ITEM__PRICE:
+        setPrice(PRICE_EDEFAULT);
+        return;
       case GroceryPackage.PERISHABLE_ITEM__EXPERATION_DATE:
         getExperationDate().clear();
         return;
@@ -157,10 +212,29 @@ public class PerishableItemImpl extends ItemImpl implements PerishableItem
   {
     switch (featureID)
     {
+      case GroceryPackage.PERISHABLE_ITEM__PRICE:
+        return price != PRICE_EDEFAULT;
       case GroceryPackage.PERISHABLE_ITEM__EXPERATION_DATE:
         return experationDate != null && !experationDate.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (price: ");
+    result.append(price);
+    result.append(')');
+    return result.toString();
   }
 
 } //PerishableItemImpl

@@ -131,11 +131,6 @@ public class GroceryAdapterFactory extends AdapterFactoryImpl
         return createPerishableItemAdapter();
       }
       @Override
-      public Adapter caseAddress(Address object)
-      {
-        return createAddressAdapter();
-      }
-      @Override
       public Adapter caseExperationDate(ExperationDate object)
       {
         return createExperationDateAdapter();
@@ -333,21 +328,6 @@ public class GroceryAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPerishableItemAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.project439.grocery.Address <em>Address</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.project439.grocery.Address
-   * @generated
-   */
-  public Adapter createAddressAdapter()
   {
     return null;
   }

@@ -22,9 +22,9 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalGroceryParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'store'", "'{'", "'}'", "'warehouse'", "'shelf'", "'backroom'", "'nonPerishableItem'", "'price'", "':'", "'perishableItem'", "'address'", "'street'", "'number'", "'city'", "'ExpirationDate'", "'month'", "'day'", "'year'", "'driver'", "'name'", "'vehicle'", "'plateNumber'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'store'", "'{'", "'}'", "'warehouse'", "'address'", "':'", "'shelf'", "'backroom'", "'nonPerishableItem'", "'price'", "'quantity'", "'perishableItem'", "'ExpirationDate'", "'date'", "'driver'", "'name'", "'vehicle'", "'plateNumber'", "'.'", "'/'", "','"
     };
-    public static final int RULE_STRING=6;
+    public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
@@ -38,14 +38,13 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
-    public static final int T__32=32;
-    public static final int RULE_ID=4;
+    public static final int RULE_ID=6;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=5;
+    public static final int RULE_INT=4;
     public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
@@ -937,89 +936,12 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rulePerishableItem"
 
 
-    // $ANTLR start "entryRuleAddress"
-    // InternalGrocery.g:328:1: entryRuleAddress : ruleAddress EOF ;
-    public final void entryRuleAddress() throws RecognitionException {
-        try {
-            // InternalGrocery.g:329:1: ( ruleAddress EOF )
-            // InternalGrocery.g:330:1: ruleAddress EOF
-            {
-             before(grammarAccess.getAddressRule()); 
-            pushFollow(FOLLOW_1);
-            ruleAddress();
-
-            state._fsp--;
-
-             after(grammarAccess.getAddressRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleAddress"
-
-
-    // $ANTLR start "ruleAddress"
-    // InternalGrocery.g:337:1: ruleAddress : ( ( rule__Address__Group__0 ) ) ;
-    public final void ruleAddress() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:341:2: ( ( ( rule__Address__Group__0 ) ) )
-            // InternalGrocery.g:342:2: ( ( rule__Address__Group__0 ) )
-            {
-            // InternalGrocery.g:342:2: ( ( rule__Address__Group__0 ) )
-            // InternalGrocery.g:343:3: ( rule__Address__Group__0 )
-            {
-             before(grammarAccess.getAddressAccess().getGroup()); 
-            // InternalGrocery.g:344:3: ( rule__Address__Group__0 )
-            // InternalGrocery.g:344:4: rule__Address__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Address__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAddressAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleAddress"
-
-
     // $ANTLR start "entryRuleExperationDate"
-    // InternalGrocery.g:353:1: entryRuleExperationDate : ruleExperationDate EOF ;
+    // InternalGrocery.g:328:1: entryRuleExperationDate : ruleExperationDate EOF ;
     public final void entryRuleExperationDate() throws RecognitionException {
         try {
-            // InternalGrocery.g:354:1: ( ruleExperationDate EOF )
-            // InternalGrocery.g:355:1: ruleExperationDate EOF
+            // InternalGrocery.g:329:1: ( ruleExperationDate EOF )
+            // InternalGrocery.g:330:1: ruleExperationDate EOF
             {
              before(grammarAccess.getExperationDateRule()); 
             pushFollow(FOLLOW_1);
@@ -1045,21 +967,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleExperationDate"
-    // InternalGrocery.g:362:1: ruleExperationDate : ( ( rule__ExperationDate__Group__0 ) ) ;
+    // InternalGrocery.g:337:1: ruleExperationDate : ( ( rule__ExperationDate__Group__0 ) ) ;
     public final void ruleExperationDate() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:366:2: ( ( ( rule__ExperationDate__Group__0 ) ) )
-            // InternalGrocery.g:367:2: ( ( rule__ExperationDate__Group__0 ) )
+            // InternalGrocery.g:341:2: ( ( ( rule__ExperationDate__Group__0 ) ) )
+            // InternalGrocery.g:342:2: ( ( rule__ExperationDate__Group__0 ) )
             {
-            // InternalGrocery.g:367:2: ( ( rule__ExperationDate__Group__0 ) )
-            // InternalGrocery.g:368:3: ( rule__ExperationDate__Group__0 )
+            // InternalGrocery.g:342:2: ( ( rule__ExperationDate__Group__0 ) )
+            // InternalGrocery.g:343:3: ( rule__ExperationDate__Group__0 )
             {
              before(grammarAccess.getExperationDateAccess().getGroup()); 
-            // InternalGrocery.g:369:3: ( rule__ExperationDate__Group__0 )
-            // InternalGrocery.g:369:4: rule__ExperationDate__Group__0
+            // InternalGrocery.g:344:3: ( rule__ExperationDate__Group__0 )
+            // InternalGrocery.g:344:4: rule__ExperationDate__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ExperationDate__Group__0();
@@ -1092,11 +1014,11 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleDriver"
-    // InternalGrocery.g:378:1: entryRuleDriver : ruleDriver EOF ;
+    // InternalGrocery.g:353:1: entryRuleDriver : ruleDriver EOF ;
     public final void entryRuleDriver() throws RecognitionException {
         try {
-            // InternalGrocery.g:379:1: ( ruleDriver EOF )
-            // InternalGrocery.g:380:1: ruleDriver EOF
+            // InternalGrocery.g:354:1: ( ruleDriver EOF )
+            // InternalGrocery.g:355:1: ruleDriver EOF
             {
              before(grammarAccess.getDriverRule()); 
             pushFollow(FOLLOW_1);
@@ -1122,21 +1044,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleDriver"
-    // InternalGrocery.g:387:1: ruleDriver : ( ( rule__Driver__Group__0 ) ) ;
+    // InternalGrocery.g:362:1: ruleDriver : ( ( rule__Driver__Group__0 ) ) ;
     public final void ruleDriver() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:391:2: ( ( ( rule__Driver__Group__0 ) ) )
-            // InternalGrocery.g:392:2: ( ( rule__Driver__Group__0 ) )
+            // InternalGrocery.g:366:2: ( ( ( rule__Driver__Group__0 ) ) )
+            // InternalGrocery.g:367:2: ( ( rule__Driver__Group__0 ) )
             {
-            // InternalGrocery.g:392:2: ( ( rule__Driver__Group__0 ) )
-            // InternalGrocery.g:393:3: ( rule__Driver__Group__0 )
+            // InternalGrocery.g:367:2: ( ( rule__Driver__Group__0 ) )
+            // InternalGrocery.g:368:3: ( rule__Driver__Group__0 )
             {
              before(grammarAccess.getDriverAccess().getGroup()); 
-            // InternalGrocery.g:394:3: ( rule__Driver__Group__0 )
-            // InternalGrocery.g:394:4: rule__Driver__Group__0
+            // InternalGrocery.g:369:3: ( rule__Driver__Group__0 )
+            // InternalGrocery.g:369:4: rule__Driver__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Driver__Group__0();
@@ -1169,11 +1091,11 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleVehicle"
-    // InternalGrocery.g:403:1: entryRuleVehicle : ruleVehicle EOF ;
+    // InternalGrocery.g:378:1: entryRuleVehicle : ruleVehicle EOF ;
     public final void entryRuleVehicle() throws RecognitionException {
         try {
-            // InternalGrocery.g:404:1: ( ruleVehicle EOF )
-            // InternalGrocery.g:405:1: ruleVehicle EOF
+            // InternalGrocery.g:379:1: ( ruleVehicle EOF )
+            // InternalGrocery.g:380:1: ruleVehicle EOF
             {
              before(grammarAccess.getVehicleRule()); 
             pushFollow(FOLLOW_1);
@@ -1199,21 +1121,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleVehicle"
-    // InternalGrocery.g:412:1: ruleVehicle : ( ( rule__Vehicle__Group__0 ) ) ;
+    // InternalGrocery.g:387:1: ruleVehicle : ( ( rule__Vehicle__Group__0 ) ) ;
     public final void ruleVehicle() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:416:2: ( ( ( rule__Vehicle__Group__0 ) ) )
-            // InternalGrocery.g:417:2: ( ( rule__Vehicle__Group__0 ) )
+            // InternalGrocery.g:391:2: ( ( ( rule__Vehicle__Group__0 ) ) )
+            // InternalGrocery.g:392:2: ( ( rule__Vehicle__Group__0 ) )
             {
-            // InternalGrocery.g:417:2: ( ( rule__Vehicle__Group__0 ) )
-            // InternalGrocery.g:418:3: ( rule__Vehicle__Group__0 )
+            // InternalGrocery.g:392:2: ( ( rule__Vehicle__Group__0 ) )
+            // InternalGrocery.g:393:3: ( rule__Vehicle__Group__0 )
             {
              before(grammarAccess.getVehicleAccess().getGroup()); 
-            // InternalGrocery.g:419:3: ( rule__Vehicle__Group__0 )
-            // InternalGrocery.g:419:4: rule__Vehicle__Group__0
+            // InternalGrocery.g:394:3: ( rule__Vehicle__Group__0 )
+            // InternalGrocery.g:394:4: rule__Vehicle__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Vehicle__Group__0();
@@ -1245,14 +1167,245 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleVehicle"
 
 
+    // $ANTLR start "entryRuleDECIMAL"
+    // InternalGrocery.g:403:1: entryRuleDECIMAL : ruleDECIMAL EOF ;
+    public final void entryRuleDECIMAL() throws RecognitionException {
+        try {
+            // InternalGrocery.g:404:1: ( ruleDECIMAL EOF )
+            // InternalGrocery.g:405:1: ruleDECIMAL EOF
+            {
+             before(grammarAccess.getDECIMALRule()); 
+            pushFollow(FOLLOW_1);
+            ruleDECIMAL();
+
+            state._fsp--;
+
+             after(grammarAccess.getDECIMALRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleDECIMAL"
+
+
+    // $ANTLR start "ruleDECIMAL"
+    // InternalGrocery.g:412:1: ruleDECIMAL : ( ( rule__DECIMAL__Group__0 ) ) ;
+    public final void ruleDECIMAL() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:416:2: ( ( ( rule__DECIMAL__Group__0 ) ) )
+            // InternalGrocery.g:417:2: ( ( rule__DECIMAL__Group__0 ) )
+            {
+            // InternalGrocery.g:417:2: ( ( rule__DECIMAL__Group__0 ) )
+            // InternalGrocery.g:418:3: ( rule__DECIMAL__Group__0 )
+            {
+             before(grammarAccess.getDECIMALAccess().getGroup()); 
+            // InternalGrocery.g:419:3: ( rule__DECIMAL__Group__0 )
+            // InternalGrocery.g:419:4: rule__DECIMAL__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__DECIMAL__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getDECIMALAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleDECIMAL"
+
+
+    // $ANTLR start "entryRuleDATE"
+    // InternalGrocery.g:428:1: entryRuleDATE : ruleDATE EOF ;
+    public final void entryRuleDATE() throws RecognitionException {
+        try {
+            // InternalGrocery.g:429:1: ( ruleDATE EOF )
+            // InternalGrocery.g:430:1: ruleDATE EOF
+            {
+             before(grammarAccess.getDATERule()); 
+            pushFollow(FOLLOW_1);
+            ruleDATE();
+
+            state._fsp--;
+
+             after(grammarAccess.getDATERule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleDATE"
+
+
+    // $ANTLR start "ruleDATE"
+    // InternalGrocery.g:437:1: ruleDATE : ( ( rule__DATE__Group__0 ) ) ;
+    public final void ruleDATE() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:441:2: ( ( ( rule__DATE__Group__0 ) ) )
+            // InternalGrocery.g:442:2: ( ( rule__DATE__Group__0 ) )
+            {
+            // InternalGrocery.g:442:2: ( ( rule__DATE__Group__0 ) )
+            // InternalGrocery.g:443:3: ( rule__DATE__Group__0 )
+            {
+             before(grammarAccess.getDATEAccess().getGroup()); 
+            // InternalGrocery.g:444:3: ( rule__DATE__Group__0 )
+            // InternalGrocery.g:444:4: rule__DATE__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__DATE__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getDATEAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleDATE"
+
+
+    // $ANTLR start "entryRuleADDRESS"
+    // InternalGrocery.g:453:1: entryRuleADDRESS : ruleADDRESS EOF ;
+    public final void entryRuleADDRESS() throws RecognitionException {
+        try {
+            // InternalGrocery.g:454:1: ( ruleADDRESS EOF )
+            // InternalGrocery.g:455:1: ruleADDRESS EOF
+            {
+             before(grammarAccess.getADDRESSRule()); 
+            pushFollow(FOLLOW_1);
+            ruleADDRESS();
+
+            state._fsp--;
+
+             after(grammarAccess.getADDRESSRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleADDRESS"
+
+
+    // $ANTLR start "ruleADDRESS"
+    // InternalGrocery.g:462:1: ruleADDRESS : ( ( rule__ADDRESS__Group__0 ) ) ;
+    public final void ruleADDRESS() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:466:2: ( ( ( rule__ADDRESS__Group__0 ) ) )
+            // InternalGrocery.g:467:2: ( ( rule__ADDRESS__Group__0 ) )
+            {
+            // InternalGrocery.g:467:2: ( ( rule__ADDRESS__Group__0 ) )
+            // InternalGrocery.g:468:3: ( rule__ADDRESS__Group__0 )
+            {
+             before(grammarAccess.getADDRESSAccess().getGroup()); 
+            // InternalGrocery.g:469:3: ( rule__ADDRESS__Group__0 )
+            // InternalGrocery.g:469:4: rule__ADDRESS__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__ADDRESS__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getADDRESSAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleADDRESS"
+
+
     // $ANTLR start "rule__Building__Alternatives"
-    // InternalGrocery.g:427:1: rule__Building__Alternatives : ( ( ruleStore ) | ( ruleWarehouse ) );
+    // InternalGrocery.g:477:1: rule__Building__Alternatives : ( ( ruleStore ) | ( ruleWarehouse ) );
     public final void rule__Building__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:431:1: ( ( ruleStore ) | ( ruleWarehouse ) )
+            // InternalGrocery.g:481:1: ( ( ruleStore ) | ( ruleWarehouse ) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1270,10 +1423,10 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalGrocery.g:432:2: ( ruleStore )
+                    // InternalGrocery.g:482:2: ( ruleStore )
                     {
-                    // InternalGrocery.g:432:2: ( ruleStore )
-                    // InternalGrocery.g:433:3: ruleStore
+                    // InternalGrocery.g:482:2: ( ruleStore )
+                    // InternalGrocery.g:483:3: ruleStore
                     {
                      before(grammarAccess.getBuildingAccess().getStoreParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1289,10 +1442,10 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalGrocery.g:438:2: ( ruleWarehouse )
+                    // InternalGrocery.g:488:2: ( ruleWarehouse )
                     {
-                    // InternalGrocery.g:438:2: ( ruleWarehouse )
-                    // InternalGrocery.g:439:3: ruleWarehouse
+                    // InternalGrocery.g:488:2: ( ruleWarehouse )
+                    // InternalGrocery.g:489:3: ruleWarehouse
                     {
                      before(grammarAccess.getBuildingAccess().getWarehouseParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1325,20 +1478,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StoreElements__Alternatives"
-    // InternalGrocery.g:448:1: rule__StoreElements__Alternatives : ( ( ruleBackroom ) | ( ruleShelf ) );
+    // InternalGrocery.g:498:1: rule__StoreElements__Alternatives : ( ( ruleBackroom ) | ( ruleShelf ) );
     public final void rule__StoreElements__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:452:1: ( ( ruleBackroom ) | ( ruleShelf ) )
+            // InternalGrocery.g:502:1: ( ( ruleBackroom ) | ( ruleShelf ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==16) ) {
+            if ( (LA2_0==18) ) {
                 alt2=1;
             }
-            else if ( (LA2_0==15) ) {
+            else if ( (LA2_0==17) ) {
                 alt2=2;
             }
             else {
@@ -1349,10 +1502,10 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalGrocery.g:453:2: ( ruleBackroom )
+                    // InternalGrocery.g:503:2: ( ruleBackroom )
                     {
-                    // InternalGrocery.g:453:2: ( ruleBackroom )
-                    // InternalGrocery.g:454:3: ruleBackroom
+                    // InternalGrocery.g:503:2: ( ruleBackroom )
+                    // InternalGrocery.g:504:3: ruleBackroom
                     {
                      before(grammarAccess.getStoreElementsAccess().getBackroomParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1368,10 +1521,10 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalGrocery.g:459:2: ( ruleShelf )
+                    // InternalGrocery.g:509:2: ( ruleShelf )
                     {
-                    // InternalGrocery.g:459:2: ( ruleShelf )
-                    // InternalGrocery.g:460:3: ruleShelf
+                    // InternalGrocery.g:509:2: ( ruleShelf )
+                    // InternalGrocery.g:510:3: ruleShelf
                     {
                      before(grammarAccess.getStoreElementsAccess().getShelfParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1404,20 +1557,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeliveryElement__Alternatives"
-    // InternalGrocery.g:469:1: rule__DeliveryElement__Alternatives : ( ( ruleDriver ) | ( ruleVehicle ) );
+    // InternalGrocery.g:519:1: rule__DeliveryElement__Alternatives : ( ( ruleDriver ) | ( ruleVehicle ) );
     public final void rule__DeliveryElement__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:473:1: ( ( ruleDriver ) | ( ruleVehicle ) )
+            // InternalGrocery.g:523:1: ( ( ruleDriver ) | ( ruleVehicle ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==29) ) {
+            if ( (LA3_0==25) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==31) ) {
+            else if ( (LA3_0==27) ) {
                 alt3=2;
             }
             else {
@@ -1428,10 +1581,10 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalGrocery.g:474:2: ( ruleDriver )
+                    // InternalGrocery.g:524:2: ( ruleDriver )
                     {
-                    // InternalGrocery.g:474:2: ( ruleDriver )
-                    // InternalGrocery.g:475:3: ruleDriver
+                    // InternalGrocery.g:524:2: ( ruleDriver )
+                    // InternalGrocery.g:525:3: ruleDriver
                     {
                      before(grammarAccess.getDeliveryElementAccess().getDriverParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1447,10 +1600,10 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalGrocery.g:480:2: ( ruleVehicle )
+                    // InternalGrocery.g:530:2: ( ruleVehicle )
                     {
-                    // InternalGrocery.g:480:2: ( ruleVehicle )
-                    // InternalGrocery.g:481:3: ruleVehicle
+                    // InternalGrocery.g:530:2: ( ruleVehicle )
+                    // InternalGrocery.g:531:3: ruleVehicle
                     {
                      before(grammarAccess.getDeliveryElementAccess().getVehicleParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1483,20 +1636,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Item__Alternatives"
-    // InternalGrocery.g:490:1: rule__Item__Alternatives : ( ( rulePerishableItem ) | ( ruleNonPerishableItem ) );
+    // InternalGrocery.g:540:1: rule__Item__Alternatives : ( ( rulePerishableItem ) | ( ruleNonPerishableItem ) );
     public final void rule__Item__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:494:1: ( ( rulePerishableItem ) | ( ruleNonPerishableItem ) )
+            // InternalGrocery.g:544:1: ( ( rulePerishableItem ) | ( ruleNonPerishableItem ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==20) ) {
+            if ( (LA4_0==22) ) {
                 alt4=1;
             }
-            else if ( (LA4_0==17) ) {
+            else if ( (LA4_0==19) ) {
                 alt4=2;
             }
             else {
@@ -1507,10 +1660,10 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalGrocery.g:495:2: ( rulePerishableItem )
+                    // InternalGrocery.g:545:2: ( rulePerishableItem )
                     {
-                    // InternalGrocery.g:495:2: ( rulePerishableItem )
-                    // InternalGrocery.g:496:3: rulePerishableItem
+                    // InternalGrocery.g:545:2: ( rulePerishableItem )
+                    // InternalGrocery.g:546:3: rulePerishableItem
                     {
                      before(grammarAccess.getItemAccess().getPerishableItemParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1526,10 +1679,10 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalGrocery.g:501:2: ( ruleNonPerishableItem )
+                    // InternalGrocery.g:551:2: ( ruleNonPerishableItem )
                     {
-                    // InternalGrocery.g:501:2: ( ruleNonPerishableItem )
-                    // InternalGrocery.g:502:3: ruleNonPerishableItem
+                    // InternalGrocery.g:551:2: ( ruleNonPerishableItem )
+                    // InternalGrocery.g:552:3: ruleNonPerishableItem
                     {
                      before(grammarAccess.getItemAccess().getNonPerishableItemParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1562,14 +1715,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Grocery__Group__0"
-    // InternalGrocery.g:511:1: rule__Grocery__Group__0 : rule__Grocery__Group__0__Impl rule__Grocery__Group__1 ;
+    // InternalGrocery.g:561:1: rule__Grocery__Group__0 : rule__Grocery__Group__0__Impl rule__Grocery__Group__1 ;
     public final void rule__Grocery__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:515:1: ( rule__Grocery__Group__0__Impl rule__Grocery__Group__1 )
-            // InternalGrocery.g:516:2: rule__Grocery__Group__0__Impl rule__Grocery__Group__1
+            // InternalGrocery.g:565:1: ( rule__Grocery__Group__0__Impl rule__Grocery__Group__1 )
+            // InternalGrocery.g:566:2: rule__Grocery__Group__0__Impl rule__Grocery__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Grocery__Group__0__Impl();
@@ -1600,20 +1753,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Grocery__Group__0__Impl"
-    // InternalGrocery.g:523:1: rule__Grocery__Group__0__Impl : ( ( rule__Grocery__ElementsAssignment_0 )* ) ;
+    // InternalGrocery.g:573:1: rule__Grocery__Group__0__Impl : ( ( rule__Grocery__ElementsAssignment_0 )* ) ;
     public final void rule__Grocery__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:527:1: ( ( ( rule__Grocery__ElementsAssignment_0 )* ) )
-            // InternalGrocery.g:528:1: ( ( rule__Grocery__ElementsAssignment_0 )* )
+            // InternalGrocery.g:577:1: ( ( ( rule__Grocery__ElementsAssignment_0 )* ) )
+            // InternalGrocery.g:578:1: ( ( rule__Grocery__ElementsAssignment_0 )* )
             {
-            // InternalGrocery.g:528:1: ( ( rule__Grocery__ElementsAssignment_0 )* )
-            // InternalGrocery.g:529:2: ( rule__Grocery__ElementsAssignment_0 )*
+            // InternalGrocery.g:578:1: ( ( rule__Grocery__ElementsAssignment_0 )* )
+            // InternalGrocery.g:579:2: ( rule__Grocery__ElementsAssignment_0 )*
             {
              before(grammarAccess.getGroceryAccess().getElementsAssignment_0()); 
-            // InternalGrocery.g:530:2: ( rule__Grocery__ElementsAssignment_0 )*
+            // InternalGrocery.g:580:2: ( rule__Grocery__ElementsAssignment_0 )*
             loop5:
             do {
                 int alt5=2;
@@ -1626,7 +1779,7 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalGrocery.g:530:3: rule__Grocery__ElementsAssignment_0
+            	    // InternalGrocery.g:580:3: rule__Grocery__ElementsAssignment_0
             	    {
             	    pushFollow(FOLLOW_4);
             	    rule__Grocery__ElementsAssignment_0();
@@ -1665,14 +1818,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Grocery__Group__1"
-    // InternalGrocery.g:538:1: rule__Grocery__Group__1 : rule__Grocery__Group__1__Impl ;
+    // InternalGrocery.g:588:1: rule__Grocery__Group__1 : rule__Grocery__Group__1__Impl ;
     public final void rule__Grocery__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:542:1: ( rule__Grocery__Group__1__Impl )
-            // InternalGrocery.g:543:2: rule__Grocery__Group__1__Impl
+            // InternalGrocery.g:592:1: ( rule__Grocery__Group__1__Impl )
+            // InternalGrocery.g:593:2: rule__Grocery__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Grocery__Group__1__Impl();
@@ -1698,33 +1851,33 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Grocery__Group__1__Impl"
-    // InternalGrocery.g:549:1: rule__Grocery__Group__1__Impl : ( ( rule__Grocery__ElementsAssignment_1 )* ) ;
+    // InternalGrocery.g:599:1: rule__Grocery__Group__1__Impl : ( ( rule__Grocery__ElementsAssignment_1 )* ) ;
     public final void rule__Grocery__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:553:1: ( ( ( rule__Grocery__ElementsAssignment_1 )* ) )
-            // InternalGrocery.g:554:1: ( ( rule__Grocery__ElementsAssignment_1 )* )
+            // InternalGrocery.g:603:1: ( ( ( rule__Grocery__ElementsAssignment_1 )* ) )
+            // InternalGrocery.g:604:1: ( ( rule__Grocery__ElementsAssignment_1 )* )
             {
-            // InternalGrocery.g:554:1: ( ( rule__Grocery__ElementsAssignment_1 )* )
-            // InternalGrocery.g:555:2: ( rule__Grocery__ElementsAssignment_1 )*
+            // InternalGrocery.g:604:1: ( ( rule__Grocery__ElementsAssignment_1 )* )
+            // InternalGrocery.g:605:2: ( rule__Grocery__ElementsAssignment_1 )*
             {
              before(grammarAccess.getGroceryAccess().getElementsAssignment_1()); 
-            // InternalGrocery.g:556:2: ( rule__Grocery__ElementsAssignment_1 )*
+            // InternalGrocery.g:606:2: ( rule__Grocery__ElementsAssignment_1 )*
             loop6:
             do {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( (LA6_0==29||LA6_0==31) ) {
+                if ( (LA6_0==25||LA6_0==27) ) {
                     alt6=1;
                 }
 
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalGrocery.g:556:3: rule__Grocery__ElementsAssignment_1
+            	    // InternalGrocery.g:606:3: rule__Grocery__ElementsAssignment_1
             	    {
             	    pushFollow(FOLLOW_5);
             	    rule__Grocery__ElementsAssignment_1();
@@ -1763,14 +1916,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Store__Group__0"
-    // InternalGrocery.g:565:1: rule__Store__Group__0 : rule__Store__Group__0__Impl rule__Store__Group__1 ;
+    // InternalGrocery.g:615:1: rule__Store__Group__0 : rule__Store__Group__0__Impl rule__Store__Group__1 ;
     public final void rule__Store__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:569:1: ( rule__Store__Group__0__Impl rule__Store__Group__1 )
-            // InternalGrocery.g:570:2: rule__Store__Group__0__Impl rule__Store__Group__1
+            // InternalGrocery.g:619:1: ( rule__Store__Group__0__Impl rule__Store__Group__1 )
+            // InternalGrocery.g:620:2: rule__Store__Group__0__Impl rule__Store__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Store__Group__0__Impl();
@@ -1801,17 +1954,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Store__Group__0__Impl"
-    // InternalGrocery.g:577:1: rule__Store__Group__0__Impl : ( 'store' ) ;
+    // InternalGrocery.g:627:1: rule__Store__Group__0__Impl : ( 'store' ) ;
     public final void rule__Store__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:581:1: ( ( 'store' ) )
-            // InternalGrocery.g:582:1: ( 'store' )
+            // InternalGrocery.g:631:1: ( ( 'store' ) )
+            // InternalGrocery.g:632:1: ( 'store' )
             {
-            // InternalGrocery.g:582:1: ( 'store' )
-            // InternalGrocery.g:583:2: 'store'
+            // InternalGrocery.g:632:1: ( 'store' )
+            // InternalGrocery.g:633:2: 'store'
             {
              before(grammarAccess.getStoreAccess().getStoreKeyword_0()); 
             match(input,11,FOLLOW_2); 
@@ -1838,14 +1991,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Store__Group__1"
-    // InternalGrocery.g:592:1: rule__Store__Group__1 : rule__Store__Group__1__Impl rule__Store__Group__2 ;
+    // InternalGrocery.g:642:1: rule__Store__Group__1 : rule__Store__Group__1__Impl rule__Store__Group__2 ;
     public final void rule__Store__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:596:1: ( rule__Store__Group__1__Impl rule__Store__Group__2 )
-            // InternalGrocery.g:597:2: rule__Store__Group__1__Impl rule__Store__Group__2
+            // InternalGrocery.g:646:1: ( rule__Store__Group__1__Impl rule__Store__Group__2 )
+            // InternalGrocery.g:647:2: rule__Store__Group__1__Impl rule__Store__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__Store__Group__1__Impl();
@@ -1876,21 +2029,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Store__Group__1__Impl"
-    // InternalGrocery.g:604:1: rule__Store__Group__1__Impl : ( ( rule__Store__NameAssignment_1 ) ) ;
+    // InternalGrocery.g:654:1: rule__Store__Group__1__Impl : ( ( rule__Store__NameAssignment_1 ) ) ;
     public final void rule__Store__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:608:1: ( ( ( rule__Store__NameAssignment_1 ) ) )
-            // InternalGrocery.g:609:1: ( ( rule__Store__NameAssignment_1 ) )
+            // InternalGrocery.g:658:1: ( ( ( rule__Store__NameAssignment_1 ) ) )
+            // InternalGrocery.g:659:1: ( ( rule__Store__NameAssignment_1 ) )
             {
-            // InternalGrocery.g:609:1: ( ( rule__Store__NameAssignment_1 ) )
-            // InternalGrocery.g:610:2: ( rule__Store__NameAssignment_1 )
+            // InternalGrocery.g:659:1: ( ( rule__Store__NameAssignment_1 ) )
+            // InternalGrocery.g:660:2: ( rule__Store__NameAssignment_1 )
             {
              before(grammarAccess.getStoreAccess().getNameAssignment_1()); 
-            // InternalGrocery.g:611:2: ( rule__Store__NameAssignment_1 )
-            // InternalGrocery.g:611:3: rule__Store__NameAssignment_1
+            // InternalGrocery.g:661:2: ( rule__Store__NameAssignment_1 )
+            // InternalGrocery.g:661:3: rule__Store__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Store__NameAssignment_1();
@@ -1923,14 +2076,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Store__Group__2"
-    // InternalGrocery.g:619:1: rule__Store__Group__2 : rule__Store__Group__2__Impl rule__Store__Group__3 ;
+    // InternalGrocery.g:669:1: rule__Store__Group__2 : rule__Store__Group__2__Impl rule__Store__Group__3 ;
     public final void rule__Store__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:623:1: ( rule__Store__Group__2__Impl rule__Store__Group__3 )
-            // InternalGrocery.g:624:2: rule__Store__Group__2__Impl rule__Store__Group__3
+            // InternalGrocery.g:673:1: ( rule__Store__Group__2__Impl rule__Store__Group__3 )
+            // InternalGrocery.g:674:2: rule__Store__Group__2__Impl rule__Store__Group__3
             {
             pushFollow(FOLLOW_8);
             rule__Store__Group__2__Impl();
@@ -1961,17 +2114,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Store__Group__2__Impl"
-    // InternalGrocery.g:631:1: rule__Store__Group__2__Impl : ( '{' ) ;
+    // InternalGrocery.g:681:1: rule__Store__Group__2__Impl : ( '{' ) ;
     public final void rule__Store__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:635:1: ( ( '{' ) )
-            // InternalGrocery.g:636:1: ( '{' )
+            // InternalGrocery.g:685:1: ( ( '{' ) )
+            // InternalGrocery.g:686:1: ( '{' )
             {
-            // InternalGrocery.g:636:1: ( '{' )
-            // InternalGrocery.g:637:2: '{'
+            // InternalGrocery.g:686:1: ( '{' )
+            // InternalGrocery.g:687:2: '{'
             {
              before(grammarAccess.getStoreAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,12,FOLLOW_2); 
@@ -1998,14 +2151,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Store__Group__3"
-    // InternalGrocery.g:646:1: rule__Store__Group__3 : rule__Store__Group__3__Impl rule__Store__Group__4 ;
+    // InternalGrocery.g:696:1: rule__Store__Group__3 : rule__Store__Group__3__Impl rule__Store__Group__4 ;
     public final void rule__Store__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:650:1: ( rule__Store__Group__3__Impl rule__Store__Group__4 )
-            // InternalGrocery.g:651:2: rule__Store__Group__3__Impl rule__Store__Group__4
+            // InternalGrocery.g:700:1: ( rule__Store__Group__3__Impl rule__Store__Group__4 )
+            // InternalGrocery.g:701:2: rule__Store__Group__3__Impl rule__Store__Group__4
             {
             pushFollow(FOLLOW_8);
             rule__Store__Group__3__Impl();
@@ -2036,33 +2189,33 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Store__Group__3__Impl"
-    // InternalGrocery.g:658:1: rule__Store__Group__3__Impl : ( ( rule__Store__ElementsAssignment_3 )* ) ;
+    // InternalGrocery.g:708:1: rule__Store__Group__3__Impl : ( ( rule__Store__ElementsAssignment_3 )* ) ;
     public final void rule__Store__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:662:1: ( ( ( rule__Store__ElementsAssignment_3 )* ) )
-            // InternalGrocery.g:663:1: ( ( rule__Store__ElementsAssignment_3 )* )
+            // InternalGrocery.g:712:1: ( ( ( rule__Store__ElementsAssignment_3 )* ) )
+            // InternalGrocery.g:713:1: ( ( rule__Store__ElementsAssignment_3 )* )
             {
-            // InternalGrocery.g:663:1: ( ( rule__Store__ElementsAssignment_3 )* )
-            // InternalGrocery.g:664:2: ( rule__Store__ElementsAssignment_3 )*
+            // InternalGrocery.g:713:1: ( ( rule__Store__ElementsAssignment_3 )* )
+            // InternalGrocery.g:714:2: ( rule__Store__ElementsAssignment_3 )*
             {
              before(grammarAccess.getStoreAccess().getElementsAssignment_3()); 
-            // InternalGrocery.g:665:2: ( rule__Store__ElementsAssignment_3 )*
+            // InternalGrocery.g:715:2: ( rule__Store__ElementsAssignment_3 )*
             loop7:
             do {
                 int alt7=2;
                 int LA7_0 = input.LA(1);
 
-                if ( ((LA7_0>=15 && LA7_0<=16)) ) {
+                if ( ((LA7_0>=17 && LA7_0<=18)) ) {
                     alt7=1;
                 }
 
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalGrocery.g:665:3: rule__Store__ElementsAssignment_3
+            	    // InternalGrocery.g:715:3: rule__Store__ElementsAssignment_3
             	    {
             	    pushFollow(FOLLOW_9);
             	    rule__Store__ElementsAssignment_3();
@@ -2101,14 +2254,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Store__Group__4"
-    // InternalGrocery.g:673:1: rule__Store__Group__4 : rule__Store__Group__4__Impl ;
+    // InternalGrocery.g:723:1: rule__Store__Group__4 : rule__Store__Group__4__Impl ;
     public final void rule__Store__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:677:1: ( rule__Store__Group__4__Impl )
-            // InternalGrocery.g:678:2: rule__Store__Group__4__Impl
+            // InternalGrocery.g:727:1: ( rule__Store__Group__4__Impl )
+            // InternalGrocery.g:728:2: rule__Store__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Store__Group__4__Impl();
@@ -2134,17 +2287,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Store__Group__4__Impl"
-    // InternalGrocery.g:684:1: rule__Store__Group__4__Impl : ( '}' ) ;
+    // InternalGrocery.g:734:1: rule__Store__Group__4__Impl : ( '}' ) ;
     public final void rule__Store__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:688:1: ( ( '}' ) )
-            // InternalGrocery.g:689:1: ( '}' )
+            // InternalGrocery.g:738:1: ( ( '}' ) )
+            // InternalGrocery.g:739:1: ( '}' )
             {
-            // InternalGrocery.g:689:1: ( '}' )
-            // InternalGrocery.g:690:2: '}'
+            // InternalGrocery.g:739:1: ( '}' )
+            // InternalGrocery.g:740:2: '}'
             {
              before(grammarAccess.getStoreAccess().getRightCurlyBracketKeyword_4()); 
             match(input,13,FOLLOW_2); 
@@ -2171,14 +2324,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Warehouse__Group__0"
-    // InternalGrocery.g:700:1: rule__Warehouse__Group__0 : rule__Warehouse__Group__0__Impl rule__Warehouse__Group__1 ;
+    // InternalGrocery.g:750:1: rule__Warehouse__Group__0 : rule__Warehouse__Group__0__Impl rule__Warehouse__Group__1 ;
     public final void rule__Warehouse__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:704:1: ( rule__Warehouse__Group__0__Impl rule__Warehouse__Group__1 )
-            // InternalGrocery.g:705:2: rule__Warehouse__Group__0__Impl rule__Warehouse__Group__1
+            // InternalGrocery.g:754:1: ( rule__Warehouse__Group__0__Impl rule__Warehouse__Group__1 )
+            // InternalGrocery.g:755:2: rule__Warehouse__Group__0__Impl rule__Warehouse__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Warehouse__Group__0__Impl();
@@ -2209,17 +2362,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Warehouse__Group__0__Impl"
-    // InternalGrocery.g:712:1: rule__Warehouse__Group__0__Impl : ( 'warehouse' ) ;
+    // InternalGrocery.g:762:1: rule__Warehouse__Group__0__Impl : ( 'warehouse' ) ;
     public final void rule__Warehouse__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:716:1: ( ( 'warehouse' ) )
-            // InternalGrocery.g:717:1: ( 'warehouse' )
+            // InternalGrocery.g:766:1: ( ( 'warehouse' ) )
+            // InternalGrocery.g:767:1: ( 'warehouse' )
             {
-            // InternalGrocery.g:717:1: ( 'warehouse' )
-            // InternalGrocery.g:718:2: 'warehouse'
+            // InternalGrocery.g:767:1: ( 'warehouse' )
+            // InternalGrocery.g:768:2: 'warehouse'
             {
              before(grammarAccess.getWarehouseAccess().getWarehouseKeyword_0()); 
             match(input,14,FOLLOW_2); 
@@ -2246,14 +2399,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Warehouse__Group__1"
-    // InternalGrocery.g:727:1: rule__Warehouse__Group__1 : rule__Warehouse__Group__1__Impl rule__Warehouse__Group__2 ;
+    // InternalGrocery.g:777:1: rule__Warehouse__Group__1 : rule__Warehouse__Group__1__Impl rule__Warehouse__Group__2 ;
     public final void rule__Warehouse__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:731:1: ( rule__Warehouse__Group__1__Impl rule__Warehouse__Group__2 )
-            // InternalGrocery.g:732:2: rule__Warehouse__Group__1__Impl rule__Warehouse__Group__2
+            // InternalGrocery.g:781:1: ( rule__Warehouse__Group__1__Impl rule__Warehouse__Group__2 )
+            // InternalGrocery.g:782:2: rule__Warehouse__Group__1__Impl rule__Warehouse__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__Warehouse__Group__1__Impl();
@@ -2284,21 +2437,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Warehouse__Group__1__Impl"
-    // InternalGrocery.g:739:1: rule__Warehouse__Group__1__Impl : ( ( rule__Warehouse__NameAssignment_1 ) ) ;
+    // InternalGrocery.g:789:1: rule__Warehouse__Group__1__Impl : ( ( rule__Warehouse__NameAssignment_1 ) ) ;
     public final void rule__Warehouse__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:743:1: ( ( ( rule__Warehouse__NameAssignment_1 ) ) )
-            // InternalGrocery.g:744:1: ( ( rule__Warehouse__NameAssignment_1 ) )
+            // InternalGrocery.g:793:1: ( ( ( rule__Warehouse__NameAssignment_1 ) ) )
+            // InternalGrocery.g:794:1: ( ( rule__Warehouse__NameAssignment_1 ) )
             {
-            // InternalGrocery.g:744:1: ( ( rule__Warehouse__NameAssignment_1 ) )
-            // InternalGrocery.g:745:2: ( rule__Warehouse__NameAssignment_1 )
+            // InternalGrocery.g:794:1: ( ( rule__Warehouse__NameAssignment_1 ) )
+            // InternalGrocery.g:795:2: ( rule__Warehouse__NameAssignment_1 )
             {
              before(grammarAccess.getWarehouseAccess().getNameAssignment_1()); 
-            // InternalGrocery.g:746:2: ( rule__Warehouse__NameAssignment_1 )
-            // InternalGrocery.g:746:3: rule__Warehouse__NameAssignment_1
+            // InternalGrocery.g:796:2: ( rule__Warehouse__NameAssignment_1 )
+            // InternalGrocery.g:796:3: rule__Warehouse__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Warehouse__NameAssignment_1();
@@ -2331,14 +2484,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Warehouse__Group__2"
-    // InternalGrocery.g:754:1: rule__Warehouse__Group__2 : rule__Warehouse__Group__2__Impl rule__Warehouse__Group__3 ;
+    // InternalGrocery.g:804:1: rule__Warehouse__Group__2 : rule__Warehouse__Group__2__Impl rule__Warehouse__Group__3 ;
     public final void rule__Warehouse__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:758:1: ( rule__Warehouse__Group__2__Impl rule__Warehouse__Group__3 )
-            // InternalGrocery.g:759:2: rule__Warehouse__Group__2__Impl rule__Warehouse__Group__3
+            // InternalGrocery.g:808:1: ( rule__Warehouse__Group__2__Impl rule__Warehouse__Group__3 )
+            // InternalGrocery.g:809:2: rule__Warehouse__Group__2__Impl rule__Warehouse__Group__3
             {
             pushFollow(FOLLOW_10);
             rule__Warehouse__Group__2__Impl();
@@ -2369,17 +2522,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Warehouse__Group__2__Impl"
-    // InternalGrocery.g:766:1: rule__Warehouse__Group__2__Impl : ( '{' ) ;
+    // InternalGrocery.g:816:1: rule__Warehouse__Group__2__Impl : ( '{' ) ;
     public final void rule__Warehouse__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:770:1: ( ( '{' ) )
-            // InternalGrocery.g:771:1: ( '{' )
+            // InternalGrocery.g:820:1: ( ( '{' ) )
+            // InternalGrocery.g:821:1: ( '{' )
             {
-            // InternalGrocery.g:771:1: ( '{' )
-            // InternalGrocery.g:772:2: '{'
+            // InternalGrocery.g:821:1: ( '{' )
+            // InternalGrocery.g:822:2: '{'
             {
              before(grammarAccess.getWarehouseAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,12,FOLLOW_2); 
@@ -2406,14 +2559,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Warehouse__Group__3"
-    // InternalGrocery.g:781:1: rule__Warehouse__Group__3 : rule__Warehouse__Group__3__Impl rule__Warehouse__Group__4 ;
+    // InternalGrocery.g:831:1: rule__Warehouse__Group__3 : rule__Warehouse__Group__3__Impl rule__Warehouse__Group__4 ;
     public final void rule__Warehouse__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:785:1: ( rule__Warehouse__Group__3__Impl rule__Warehouse__Group__4 )
-            // InternalGrocery.g:786:2: rule__Warehouse__Group__3__Impl rule__Warehouse__Group__4
+            // InternalGrocery.g:835:1: ( rule__Warehouse__Group__3__Impl rule__Warehouse__Group__4 )
+            // InternalGrocery.g:836:2: rule__Warehouse__Group__3__Impl rule__Warehouse__Group__4
             {
             pushFollow(FOLLOW_11);
             rule__Warehouse__Group__3__Impl();
@@ -2444,31 +2597,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Warehouse__Group__3__Impl"
-    // InternalGrocery.g:793:1: rule__Warehouse__Group__3__Impl : ( ( rule__Warehouse__AddressAssignment_3 ) ) ;
+    // InternalGrocery.g:843:1: rule__Warehouse__Group__3__Impl : ( 'address' ) ;
     public final void rule__Warehouse__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:797:1: ( ( ( rule__Warehouse__AddressAssignment_3 ) ) )
-            // InternalGrocery.g:798:1: ( ( rule__Warehouse__AddressAssignment_3 ) )
+            // InternalGrocery.g:847:1: ( ( 'address' ) )
+            // InternalGrocery.g:848:1: ( 'address' )
             {
-            // InternalGrocery.g:798:1: ( ( rule__Warehouse__AddressAssignment_3 ) )
-            // InternalGrocery.g:799:2: ( rule__Warehouse__AddressAssignment_3 )
+            // InternalGrocery.g:848:1: ( 'address' )
+            // InternalGrocery.g:849:2: 'address'
             {
-             before(grammarAccess.getWarehouseAccess().getAddressAssignment_3()); 
-            // InternalGrocery.g:800:2: ( rule__Warehouse__AddressAssignment_3 )
-            // InternalGrocery.g:800:3: rule__Warehouse__AddressAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__Warehouse__AddressAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getWarehouseAccess().getAddressAssignment_3()); 
+             before(grammarAccess.getWarehouseAccess().getAddressKeyword_3()); 
+            match(input,15,FOLLOW_2); 
+             after(grammarAccess.getWarehouseAccess().getAddressKeyword_3()); 
 
             }
 
@@ -2491,16 +2634,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Warehouse__Group__4"
-    // InternalGrocery.g:808:1: rule__Warehouse__Group__4 : rule__Warehouse__Group__4__Impl rule__Warehouse__Group__5 ;
+    // InternalGrocery.g:858:1: rule__Warehouse__Group__4 : rule__Warehouse__Group__4__Impl rule__Warehouse__Group__5 ;
     public final void rule__Warehouse__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:812:1: ( rule__Warehouse__Group__4__Impl rule__Warehouse__Group__5 )
-            // InternalGrocery.g:813:2: rule__Warehouse__Group__4__Impl rule__Warehouse__Group__5
+            // InternalGrocery.g:862:1: ( rule__Warehouse__Group__4__Impl rule__Warehouse__Group__5 )
+            // InternalGrocery.g:863:2: rule__Warehouse__Group__4__Impl rule__Warehouse__Group__5
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             rule__Warehouse__Group__4__Impl();
 
             state._fsp--;
@@ -2529,49 +2672,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Warehouse__Group__4__Impl"
-    // InternalGrocery.g:820:1: rule__Warehouse__Group__4__Impl : ( ( rule__Warehouse__ElementsAssignment_4 )* ) ;
+    // InternalGrocery.g:870:1: rule__Warehouse__Group__4__Impl : ( ':' ) ;
     public final void rule__Warehouse__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:824:1: ( ( ( rule__Warehouse__ElementsAssignment_4 )* ) )
-            // InternalGrocery.g:825:1: ( ( rule__Warehouse__ElementsAssignment_4 )* )
+            // InternalGrocery.g:874:1: ( ( ':' ) )
+            // InternalGrocery.g:875:1: ( ':' )
             {
-            // InternalGrocery.g:825:1: ( ( rule__Warehouse__ElementsAssignment_4 )* )
-            // InternalGrocery.g:826:2: ( rule__Warehouse__ElementsAssignment_4 )*
+            // InternalGrocery.g:875:1: ( ':' )
+            // InternalGrocery.g:876:2: ':'
             {
-             before(grammarAccess.getWarehouseAccess().getElementsAssignment_4()); 
-            // InternalGrocery.g:827:2: ( rule__Warehouse__ElementsAssignment_4 )*
-            loop8:
-            do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
-
-                if ( (LA8_0==17||LA8_0==20) ) {
-                    alt8=1;
-                }
-
-
-                switch (alt8) {
-            	case 1 :
-            	    // InternalGrocery.g:827:3: rule__Warehouse__ElementsAssignment_4
-            	    {
-            	    pushFollow(FOLLOW_12);
-            	    rule__Warehouse__ElementsAssignment_4();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop8;
-                }
-            } while (true);
-
-             after(grammarAccess.getWarehouseAccess().getElementsAssignment_4()); 
+             before(grammarAccess.getWarehouseAccess().getColonKeyword_4()); 
+            match(input,16,FOLLOW_2); 
+             after(grammarAccess.getWarehouseAccess().getColonKeyword_4()); 
 
             }
 
@@ -2594,17 +2709,22 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Warehouse__Group__5"
-    // InternalGrocery.g:835:1: rule__Warehouse__Group__5 : rule__Warehouse__Group__5__Impl ;
+    // InternalGrocery.g:885:1: rule__Warehouse__Group__5 : rule__Warehouse__Group__5__Impl rule__Warehouse__Group__6 ;
     public final void rule__Warehouse__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:839:1: ( rule__Warehouse__Group__5__Impl )
-            // InternalGrocery.g:840:2: rule__Warehouse__Group__5__Impl
+            // InternalGrocery.g:889:1: ( rule__Warehouse__Group__5__Impl rule__Warehouse__Group__6 )
+            // InternalGrocery.g:890:2: rule__Warehouse__Group__5__Impl rule__Warehouse__Group__6
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_13);
             rule__Warehouse__Group__5__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Warehouse__Group__6();
 
             state._fsp--;
 
@@ -2627,21 +2747,31 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Warehouse__Group__5__Impl"
-    // InternalGrocery.g:846:1: rule__Warehouse__Group__5__Impl : ( '}' ) ;
+    // InternalGrocery.g:897:1: rule__Warehouse__Group__5__Impl : ( ( rule__Warehouse__AddressAssignment_5 ) ) ;
     public final void rule__Warehouse__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:850:1: ( ( '}' ) )
-            // InternalGrocery.g:851:1: ( '}' )
+            // InternalGrocery.g:901:1: ( ( ( rule__Warehouse__AddressAssignment_5 ) ) )
+            // InternalGrocery.g:902:1: ( ( rule__Warehouse__AddressAssignment_5 ) )
             {
-            // InternalGrocery.g:851:1: ( '}' )
-            // InternalGrocery.g:852:2: '}'
+            // InternalGrocery.g:902:1: ( ( rule__Warehouse__AddressAssignment_5 ) )
+            // InternalGrocery.g:903:2: ( rule__Warehouse__AddressAssignment_5 )
             {
-             before(grammarAccess.getWarehouseAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,13,FOLLOW_2); 
-             after(grammarAccess.getWarehouseAccess().getRightCurlyBracketKeyword_5()); 
+             before(grammarAccess.getWarehouseAccess().getAddressAssignment_5()); 
+            // InternalGrocery.g:904:2: ( rule__Warehouse__AddressAssignment_5 )
+            // InternalGrocery.g:904:3: rule__Warehouse__AddressAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__Warehouse__AddressAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getWarehouseAccess().getAddressAssignment_5()); 
 
             }
 
@@ -2663,15 +2793,188 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Warehouse__Group__5__Impl"
 
 
+    // $ANTLR start "rule__Warehouse__Group__6"
+    // InternalGrocery.g:912:1: rule__Warehouse__Group__6 : rule__Warehouse__Group__6__Impl rule__Warehouse__Group__7 ;
+    public final void rule__Warehouse__Group__6() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:916:1: ( rule__Warehouse__Group__6__Impl rule__Warehouse__Group__7 )
+            // InternalGrocery.g:917:2: rule__Warehouse__Group__6__Impl rule__Warehouse__Group__7
+            {
+            pushFollow(FOLLOW_13);
+            rule__Warehouse__Group__6__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Warehouse__Group__7();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Warehouse__Group__6"
+
+
+    // $ANTLR start "rule__Warehouse__Group__6__Impl"
+    // InternalGrocery.g:924:1: rule__Warehouse__Group__6__Impl : ( ( rule__Warehouse__ElementsAssignment_6 )* ) ;
+    public final void rule__Warehouse__Group__6__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:928:1: ( ( ( rule__Warehouse__ElementsAssignment_6 )* ) )
+            // InternalGrocery.g:929:1: ( ( rule__Warehouse__ElementsAssignment_6 )* )
+            {
+            // InternalGrocery.g:929:1: ( ( rule__Warehouse__ElementsAssignment_6 )* )
+            // InternalGrocery.g:930:2: ( rule__Warehouse__ElementsAssignment_6 )*
+            {
+             before(grammarAccess.getWarehouseAccess().getElementsAssignment_6()); 
+            // InternalGrocery.g:931:2: ( rule__Warehouse__ElementsAssignment_6 )*
+            loop8:
+            do {
+                int alt8=2;
+                int LA8_0 = input.LA(1);
+
+                if ( (LA8_0==19||LA8_0==22) ) {
+                    alt8=1;
+                }
+
+
+                switch (alt8) {
+            	case 1 :
+            	    // InternalGrocery.g:931:3: rule__Warehouse__ElementsAssignment_6
+            	    {
+            	    pushFollow(FOLLOW_14);
+            	    rule__Warehouse__ElementsAssignment_6();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop8;
+                }
+            } while (true);
+
+             after(grammarAccess.getWarehouseAccess().getElementsAssignment_6()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Warehouse__Group__6__Impl"
+
+
+    // $ANTLR start "rule__Warehouse__Group__7"
+    // InternalGrocery.g:939:1: rule__Warehouse__Group__7 : rule__Warehouse__Group__7__Impl ;
+    public final void rule__Warehouse__Group__7() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:943:1: ( rule__Warehouse__Group__7__Impl )
+            // InternalGrocery.g:944:2: rule__Warehouse__Group__7__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Warehouse__Group__7__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Warehouse__Group__7"
+
+
+    // $ANTLR start "rule__Warehouse__Group__7__Impl"
+    // InternalGrocery.g:950:1: rule__Warehouse__Group__7__Impl : ( '}' ) ;
+    public final void rule__Warehouse__Group__7__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:954:1: ( ( '}' ) )
+            // InternalGrocery.g:955:1: ( '}' )
+            {
+            // InternalGrocery.g:955:1: ( '}' )
+            // InternalGrocery.g:956:2: '}'
+            {
+             before(grammarAccess.getWarehouseAccess().getRightCurlyBracketKeyword_7()); 
+            match(input,13,FOLLOW_2); 
+             after(grammarAccess.getWarehouseAccess().getRightCurlyBracketKeyword_7()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Warehouse__Group__7__Impl"
+
+
     // $ANTLR start "rule__Shelf__Group__0"
-    // InternalGrocery.g:862:1: rule__Shelf__Group__0 : rule__Shelf__Group__0__Impl rule__Shelf__Group__1 ;
+    // InternalGrocery.g:966:1: rule__Shelf__Group__0 : rule__Shelf__Group__0__Impl rule__Shelf__Group__1 ;
     public final void rule__Shelf__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:866:1: ( rule__Shelf__Group__0__Impl rule__Shelf__Group__1 )
-            // InternalGrocery.g:867:2: rule__Shelf__Group__0__Impl rule__Shelf__Group__1
+            // InternalGrocery.g:970:1: ( rule__Shelf__Group__0__Impl rule__Shelf__Group__1 )
+            // InternalGrocery.g:971:2: rule__Shelf__Group__0__Impl rule__Shelf__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Shelf__Group__0__Impl();
@@ -2702,20 +3005,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shelf__Group__0__Impl"
-    // InternalGrocery.g:874:1: rule__Shelf__Group__0__Impl : ( 'shelf' ) ;
+    // InternalGrocery.g:978:1: rule__Shelf__Group__0__Impl : ( 'shelf' ) ;
     public final void rule__Shelf__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:878:1: ( ( 'shelf' ) )
-            // InternalGrocery.g:879:1: ( 'shelf' )
+            // InternalGrocery.g:982:1: ( ( 'shelf' ) )
+            // InternalGrocery.g:983:1: ( 'shelf' )
             {
-            // InternalGrocery.g:879:1: ( 'shelf' )
-            // InternalGrocery.g:880:2: 'shelf'
+            // InternalGrocery.g:983:1: ( 'shelf' )
+            // InternalGrocery.g:984:2: 'shelf'
             {
              before(grammarAccess.getShelfAccess().getShelfKeyword_0()); 
-            match(input,15,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getShelfAccess().getShelfKeyword_0()); 
 
             }
@@ -2739,14 +3042,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shelf__Group__1"
-    // InternalGrocery.g:889:1: rule__Shelf__Group__1 : rule__Shelf__Group__1__Impl rule__Shelf__Group__2 ;
+    // InternalGrocery.g:993:1: rule__Shelf__Group__1 : rule__Shelf__Group__1__Impl rule__Shelf__Group__2 ;
     public final void rule__Shelf__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:893:1: ( rule__Shelf__Group__1__Impl rule__Shelf__Group__2 )
-            // InternalGrocery.g:894:2: rule__Shelf__Group__1__Impl rule__Shelf__Group__2
+            // InternalGrocery.g:997:1: ( rule__Shelf__Group__1__Impl rule__Shelf__Group__2 )
+            // InternalGrocery.g:998:2: rule__Shelf__Group__1__Impl rule__Shelf__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__Shelf__Group__1__Impl();
@@ -2777,21 +3080,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shelf__Group__1__Impl"
-    // InternalGrocery.g:901:1: rule__Shelf__Group__1__Impl : ( ( rule__Shelf__NameAssignment_1 ) ) ;
+    // InternalGrocery.g:1005:1: rule__Shelf__Group__1__Impl : ( ( rule__Shelf__NameAssignment_1 ) ) ;
     public final void rule__Shelf__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:905:1: ( ( ( rule__Shelf__NameAssignment_1 ) ) )
-            // InternalGrocery.g:906:1: ( ( rule__Shelf__NameAssignment_1 ) )
+            // InternalGrocery.g:1009:1: ( ( ( rule__Shelf__NameAssignment_1 ) ) )
+            // InternalGrocery.g:1010:1: ( ( rule__Shelf__NameAssignment_1 ) )
             {
-            // InternalGrocery.g:906:1: ( ( rule__Shelf__NameAssignment_1 ) )
-            // InternalGrocery.g:907:2: ( rule__Shelf__NameAssignment_1 )
+            // InternalGrocery.g:1010:1: ( ( rule__Shelf__NameAssignment_1 ) )
+            // InternalGrocery.g:1011:2: ( rule__Shelf__NameAssignment_1 )
             {
              before(grammarAccess.getShelfAccess().getNameAssignment_1()); 
-            // InternalGrocery.g:908:2: ( rule__Shelf__NameAssignment_1 )
-            // InternalGrocery.g:908:3: rule__Shelf__NameAssignment_1
+            // InternalGrocery.g:1012:2: ( rule__Shelf__NameAssignment_1 )
+            // InternalGrocery.g:1012:3: rule__Shelf__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Shelf__NameAssignment_1();
@@ -2824,16 +3127,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shelf__Group__2"
-    // InternalGrocery.g:916:1: rule__Shelf__Group__2 : rule__Shelf__Group__2__Impl rule__Shelf__Group__3 ;
+    // InternalGrocery.g:1020:1: rule__Shelf__Group__2 : rule__Shelf__Group__2__Impl rule__Shelf__Group__3 ;
     public final void rule__Shelf__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:920:1: ( rule__Shelf__Group__2__Impl rule__Shelf__Group__3 )
-            // InternalGrocery.g:921:2: rule__Shelf__Group__2__Impl rule__Shelf__Group__3
+            // InternalGrocery.g:1024:1: ( rule__Shelf__Group__2__Impl rule__Shelf__Group__3 )
+            // InternalGrocery.g:1025:2: rule__Shelf__Group__2__Impl rule__Shelf__Group__3
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_13);
             rule__Shelf__Group__2__Impl();
 
             state._fsp--;
@@ -2862,17 +3165,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shelf__Group__2__Impl"
-    // InternalGrocery.g:928:1: rule__Shelf__Group__2__Impl : ( '{' ) ;
+    // InternalGrocery.g:1032:1: rule__Shelf__Group__2__Impl : ( '{' ) ;
     public final void rule__Shelf__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:932:1: ( ( '{' ) )
-            // InternalGrocery.g:933:1: ( '{' )
+            // InternalGrocery.g:1036:1: ( ( '{' ) )
+            // InternalGrocery.g:1037:1: ( '{' )
             {
-            // InternalGrocery.g:933:1: ( '{' )
-            // InternalGrocery.g:934:2: '{'
+            // InternalGrocery.g:1037:1: ( '{' )
+            // InternalGrocery.g:1038:2: '{'
             {
              before(grammarAccess.getShelfAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,12,FOLLOW_2); 
@@ -2899,16 +3202,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shelf__Group__3"
-    // InternalGrocery.g:943:1: rule__Shelf__Group__3 : rule__Shelf__Group__3__Impl rule__Shelf__Group__4 ;
+    // InternalGrocery.g:1047:1: rule__Shelf__Group__3 : rule__Shelf__Group__3__Impl rule__Shelf__Group__4 ;
     public final void rule__Shelf__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:947:1: ( rule__Shelf__Group__3__Impl rule__Shelf__Group__4 )
-            // InternalGrocery.g:948:2: rule__Shelf__Group__3__Impl rule__Shelf__Group__4
+            // InternalGrocery.g:1051:1: ( rule__Shelf__Group__3__Impl rule__Shelf__Group__4 )
+            // InternalGrocery.g:1052:2: rule__Shelf__Group__3__Impl rule__Shelf__Group__4
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_13);
             rule__Shelf__Group__3__Impl();
 
             state._fsp--;
@@ -2937,35 +3240,35 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shelf__Group__3__Impl"
-    // InternalGrocery.g:955:1: rule__Shelf__Group__3__Impl : ( ( rule__Shelf__ElementsAssignment_3 )* ) ;
+    // InternalGrocery.g:1059:1: rule__Shelf__Group__3__Impl : ( ( rule__Shelf__ElementsAssignment_3 )* ) ;
     public final void rule__Shelf__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:959:1: ( ( ( rule__Shelf__ElementsAssignment_3 )* ) )
-            // InternalGrocery.g:960:1: ( ( rule__Shelf__ElementsAssignment_3 )* )
+            // InternalGrocery.g:1063:1: ( ( ( rule__Shelf__ElementsAssignment_3 )* ) )
+            // InternalGrocery.g:1064:1: ( ( rule__Shelf__ElementsAssignment_3 )* )
             {
-            // InternalGrocery.g:960:1: ( ( rule__Shelf__ElementsAssignment_3 )* )
-            // InternalGrocery.g:961:2: ( rule__Shelf__ElementsAssignment_3 )*
+            // InternalGrocery.g:1064:1: ( ( rule__Shelf__ElementsAssignment_3 )* )
+            // InternalGrocery.g:1065:2: ( rule__Shelf__ElementsAssignment_3 )*
             {
              before(grammarAccess.getShelfAccess().getElementsAssignment_3()); 
-            // InternalGrocery.g:962:2: ( rule__Shelf__ElementsAssignment_3 )*
+            // InternalGrocery.g:1066:2: ( rule__Shelf__ElementsAssignment_3 )*
             loop9:
             do {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( (LA9_0==17||LA9_0==20) ) {
+                if ( (LA9_0==19||LA9_0==22) ) {
                     alt9=1;
                 }
 
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalGrocery.g:962:3: rule__Shelf__ElementsAssignment_3
+            	    // InternalGrocery.g:1066:3: rule__Shelf__ElementsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_12);
+            	    pushFollow(FOLLOW_14);
             	    rule__Shelf__ElementsAssignment_3();
 
             	    state._fsp--;
@@ -3002,14 +3305,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shelf__Group__4"
-    // InternalGrocery.g:970:1: rule__Shelf__Group__4 : rule__Shelf__Group__4__Impl ;
+    // InternalGrocery.g:1074:1: rule__Shelf__Group__4 : rule__Shelf__Group__4__Impl ;
     public final void rule__Shelf__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:974:1: ( rule__Shelf__Group__4__Impl )
-            // InternalGrocery.g:975:2: rule__Shelf__Group__4__Impl
+            // InternalGrocery.g:1078:1: ( rule__Shelf__Group__4__Impl )
+            // InternalGrocery.g:1079:2: rule__Shelf__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Shelf__Group__4__Impl();
@@ -3035,17 +3338,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shelf__Group__4__Impl"
-    // InternalGrocery.g:981:1: rule__Shelf__Group__4__Impl : ( '}' ) ;
+    // InternalGrocery.g:1085:1: rule__Shelf__Group__4__Impl : ( '}' ) ;
     public final void rule__Shelf__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:985:1: ( ( '}' ) )
-            // InternalGrocery.g:986:1: ( '}' )
+            // InternalGrocery.g:1089:1: ( ( '}' ) )
+            // InternalGrocery.g:1090:1: ( '}' )
             {
-            // InternalGrocery.g:986:1: ( '}' )
-            // InternalGrocery.g:987:2: '}'
+            // InternalGrocery.g:1090:1: ( '}' )
+            // InternalGrocery.g:1091:2: '}'
             {
              before(grammarAccess.getShelfAccess().getRightCurlyBracketKeyword_4()); 
             match(input,13,FOLLOW_2); 
@@ -3072,14 +3375,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Backroom__Group__0"
-    // InternalGrocery.g:997:1: rule__Backroom__Group__0 : rule__Backroom__Group__0__Impl rule__Backroom__Group__1 ;
+    // InternalGrocery.g:1101:1: rule__Backroom__Group__0 : rule__Backroom__Group__0__Impl rule__Backroom__Group__1 ;
     public final void rule__Backroom__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1001:1: ( rule__Backroom__Group__0__Impl rule__Backroom__Group__1 )
-            // InternalGrocery.g:1002:2: rule__Backroom__Group__0__Impl rule__Backroom__Group__1
+            // InternalGrocery.g:1105:1: ( rule__Backroom__Group__0__Impl rule__Backroom__Group__1 )
+            // InternalGrocery.g:1106:2: rule__Backroom__Group__0__Impl rule__Backroom__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Backroom__Group__0__Impl();
@@ -3110,20 +3413,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Backroom__Group__0__Impl"
-    // InternalGrocery.g:1009:1: rule__Backroom__Group__0__Impl : ( 'backroom' ) ;
+    // InternalGrocery.g:1113:1: rule__Backroom__Group__0__Impl : ( 'backroom' ) ;
     public final void rule__Backroom__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1013:1: ( ( 'backroom' ) )
-            // InternalGrocery.g:1014:1: ( 'backroom' )
+            // InternalGrocery.g:1117:1: ( ( 'backroom' ) )
+            // InternalGrocery.g:1118:1: ( 'backroom' )
             {
-            // InternalGrocery.g:1014:1: ( 'backroom' )
-            // InternalGrocery.g:1015:2: 'backroom'
+            // InternalGrocery.g:1118:1: ( 'backroom' )
+            // InternalGrocery.g:1119:2: 'backroom'
             {
              before(grammarAccess.getBackroomAccess().getBackroomKeyword_0()); 
-            match(input,16,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getBackroomAccess().getBackroomKeyword_0()); 
 
             }
@@ -3147,14 +3450,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Backroom__Group__1"
-    // InternalGrocery.g:1024:1: rule__Backroom__Group__1 : rule__Backroom__Group__1__Impl rule__Backroom__Group__2 ;
+    // InternalGrocery.g:1128:1: rule__Backroom__Group__1 : rule__Backroom__Group__1__Impl rule__Backroom__Group__2 ;
     public final void rule__Backroom__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1028:1: ( rule__Backroom__Group__1__Impl rule__Backroom__Group__2 )
-            // InternalGrocery.g:1029:2: rule__Backroom__Group__1__Impl rule__Backroom__Group__2
+            // InternalGrocery.g:1132:1: ( rule__Backroom__Group__1__Impl rule__Backroom__Group__2 )
+            // InternalGrocery.g:1133:2: rule__Backroom__Group__1__Impl rule__Backroom__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__Backroom__Group__1__Impl();
@@ -3185,21 +3488,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Backroom__Group__1__Impl"
-    // InternalGrocery.g:1036:1: rule__Backroom__Group__1__Impl : ( ( rule__Backroom__NameAssignment_1 ) ) ;
+    // InternalGrocery.g:1140:1: rule__Backroom__Group__1__Impl : ( ( rule__Backroom__NameAssignment_1 ) ) ;
     public final void rule__Backroom__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1040:1: ( ( ( rule__Backroom__NameAssignment_1 ) ) )
-            // InternalGrocery.g:1041:1: ( ( rule__Backroom__NameAssignment_1 ) )
+            // InternalGrocery.g:1144:1: ( ( ( rule__Backroom__NameAssignment_1 ) ) )
+            // InternalGrocery.g:1145:1: ( ( rule__Backroom__NameAssignment_1 ) )
             {
-            // InternalGrocery.g:1041:1: ( ( rule__Backroom__NameAssignment_1 ) )
-            // InternalGrocery.g:1042:2: ( rule__Backroom__NameAssignment_1 )
+            // InternalGrocery.g:1145:1: ( ( rule__Backroom__NameAssignment_1 ) )
+            // InternalGrocery.g:1146:2: ( rule__Backroom__NameAssignment_1 )
             {
              before(grammarAccess.getBackroomAccess().getNameAssignment_1()); 
-            // InternalGrocery.g:1043:2: ( rule__Backroom__NameAssignment_1 )
-            // InternalGrocery.g:1043:3: rule__Backroom__NameAssignment_1
+            // InternalGrocery.g:1147:2: ( rule__Backroom__NameAssignment_1 )
+            // InternalGrocery.g:1147:3: rule__Backroom__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Backroom__NameAssignment_1();
@@ -3232,16 +3535,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Backroom__Group__2"
-    // InternalGrocery.g:1051:1: rule__Backroom__Group__2 : rule__Backroom__Group__2__Impl rule__Backroom__Group__3 ;
+    // InternalGrocery.g:1155:1: rule__Backroom__Group__2 : rule__Backroom__Group__2__Impl rule__Backroom__Group__3 ;
     public final void rule__Backroom__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1055:1: ( rule__Backroom__Group__2__Impl rule__Backroom__Group__3 )
-            // InternalGrocery.g:1056:2: rule__Backroom__Group__2__Impl rule__Backroom__Group__3
+            // InternalGrocery.g:1159:1: ( rule__Backroom__Group__2__Impl rule__Backroom__Group__3 )
+            // InternalGrocery.g:1160:2: rule__Backroom__Group__2__Impl rule__Backroom__Group__3
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_13);
             rule__Backroom__Group__2__Impl();
 
             state._fsp--;
@@ -3270,17 +3573,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Backroom__Group__2__Impl"
-    // InternalGrocery.g:1063:1: rule__Backroom__Group__2__Impl : ( '{' ) ;
+    // InternalGrocery.g:1167:1: rule__Backroom__Group__2__Impl : ( '{' ) ;
     public final void rule__Backroom__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1067:1: ( ( '{' ) )
-            // InternalGrocery.g:1068:1: ( '{' )
+            // InternalGrocery.g:1171:1: ( ( '{' ) )
+            // InternalGrocery.g:1172:1: ( '{' )
             {
-            // InternalGrocery.g:1068:1: ( '{' )
-            // InternalGrocery.g:1069:2: '{'
+            // InternalGrocery.g:1172:1: ( '{' )
+            // InternalGrocery.g:1173:2: '{'
             {
              before(grammarAccess.getBackroomAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,12,FOLLOW_2); 
@@ -3307,16 +3610,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Backroom__Group__3"
-    // InternalGrocery.g:1078:1: rule__Backroom__Group__3 : rule__Backroom__Group__3__Impl rule__Backroom__Group__4 ;
+    // InternalGrocery.g:1182:1: rule__Backroom__Group__3 : rule__Backroom__Group__3__Impl rule__Backroom__Group__4 ;
     public final void rule__Backroom__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1082:1: ( rule__Backroom__Group__3__Impl rule__Backroom__Group__4 )
-            // InternalGrocery.g:1083:2: rule__Backroom__Group__3__Impl rule__Backroom__Group__4
+            // InternalGrocery.g:1186:1: ( rule__Backroom__Group__3__Impl rule__Backroom__Group__4 )
+            // InternalGrocery.g:1187:2: rule__Backroom__Group__3__Impl rule__Backroom__Group__4
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_13);
             rule__Backroom__Group__3__Impl();
 
             state._fsp--;
@@ -3345,35 +3648,35 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Backroom__Group__3__Impl"
-    // InternalGrocery.g:1090:1: rule__Backroom__Group__3__Impl : ( ( rule__Backroom__ElementsAssignment_3 )* ) ;
+    // InternalGrocery.g:1194:1: rule__Backroom__Group__3__Impl : ( ( rule__Backroom__ElementsAssignment_3 )* ) ;
     public final void rule__Backroom__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1094:1: ( ( ( rule__Backroom__ElementsAssignment_3 )* ) )
-            // InternalGrocery.g:1095:1: ( ( rule__Backroom__ElementsAssignment_3 )* )
+            // InternalGrocery.g:1198:1: ( ( ( rule__Backroom__ElementsAssignment_3 )* ) )
+            // InternalGrocery.g:1199:1: ( ( rule__Backroom__ElementsAssignment_3 )* )
             {
-            // InternalGrocery.g:1095:1: ( ( rule__Backroom__ElementsAssignment_3 )* )
-            // InternalGrocery.g:1096:2: ( rule__Backroom__ElementsAssignment_3 )*
+            // InternalGrocery.g:1199:1: ( ( rule__Backroom__ElementsAssignment_3 )* )
+            // InternalGrocery.g:1200:2: ( rule__Backroom__ElementsAssignment_3 )*
             {
              before(grammarAccess.getBackroomAccess().getElementsAssignment_3()); 
-            // InternalGrocery.g:1097:2: ( rule__Backroom__ElementsAssignment_3 )*
+            // InternalGrocery.g:1201:2: ( rule__Backroom__ElementsAssignment_3 )*
             loop10:
             do {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( (LA10_0==17||LA10_0==20) ) {
+                if ( (LA10_0==19||LA10_0==22) ) {
                     alt10=1;
                 }
 
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalGrocery.g:1097:3: rule__Backroom__ElementsAssignment_3
+            	    // InternalGrocery.g:1201:3: rule__Backroom__ElementsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_12);
+            	    pushFollow(FOLLOW_14);
             	    rule__Backroom__ElementsAssignment_3();
 
             	    state._fsp--;
@@ -3410,14 +3713,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Backroom__Group__4"
-    // InternalGrocery.g:1105:1: rule__Backroom__Group__4 : rule__Backroom__Group__4__Impl ;
+    // InternalGrocery.g:1209:1: rule__Backroom__Group__4 : rule__Backroom__Group__4__Impl ;
     public final void rule__Backroom__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1109:1: ( rule__Backroom__Group__4__Impl )
-            // InternalGrocery.g:1110:2: rule__Backroom__Group__4__Impl
+            // InternalGrocery.g:1213:1: ( rule__Backroom__Group__4__Impl )
+            // InternalGrocery.g:1214:2: rule__Backroom__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Backroom__Group__4__Impl();
@@ -3443,17 +3746,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Backroom__Group__4__Impl"
-    // InternalGrocery.g:1116:1: rule__Backroom__Group__4__Impl : ( '}' ) ;
+    // InternalGrocery.g:1220:1: rule__Backroom__Group__4__Impl : ( '}' ) ;
     public final void rule__Backroom__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1120:1: ( ( '}' ) )
-            // InternalGrocery.g:1121:1: ( '}' )
+            // InternalGrocery.g:1224:1: ( ( '}' ) )
+            // InternalGrocery.g:1225:1: ( '}' )
             {
-            // InternalGrocery.g:1121:1: ( '}' )
-            // InternalGrocery.g:1122:2: '}'
+            // InternalGrocery.g:1225:1: ( '}' )
+            // InternalGrocery.g:1226:2: '}'
             {
              before(grammarAccess.getBackroomAccess().getRightCurlyBracketKeyword_4()); 
             match(input,13,FOLLOW_2); 
@@ -3480,14 +3783,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NonPerishableItem__Group__0"
-    // InternalGrocery.g:1132:1: rule__NonPerishableItem__Group__0 : rule__NonPerishableItem__Group__0__Impl rule__NonPerishableItem__Group__1 ;
+    // InternalGrocery.g:1236:1: rule__NonPerishableItem__Group__0 : rule__NonPerishableItem__Group__0__Impl rule__NonPerishableItem__Group__1 ;
     public final void rule__NonPerishableItem__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1136:1: ( rule__NonPerishableItem__Group__0__Impl rule__NonPerishableItem__Group__1 )
-            // InternalGrocery.g:1137:2: rule__NonPerishableItem__Group__0__Impl rule__NonPerishableItem__Group__1
+            // InternalGrocery.g:1240:1: ( rule__NonPerishableItem__Group__0__Impl rule__NonPerishableItem__Group__1 )
+            // InternalGrocery.g:1241:2: rule__NonPerishableItem__Group__0__Impl rule__NonPerishableItem__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__NonPerishableItem__Group__0__Impl();
@@ -3518,20 +3821,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NonPerishableItem__Group__0__Impl"
-    // InternalGrocery.g:1144:1: rule__NonPerishableItem__Group__0__Impl : ( 'nonPerishableItem' ) ;
+    // InternalGrocery.g:1248:1: rule__NonPerishableItem__Group__0__Impl : ( 'nonPerishableItem' ) ;
     public final void rule__NonPerishableItem__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1148:1: ( ( 'nonPerishableItem' ) )
-            // InternalGrocery.g:1149:1: ( 'nonPerishableItem' )
+            // InternalGrocery.g:1252:1: ( ( 'nonPerishableItem' ) )
+            // InternalGrocery.g:1253:1: ( 'nonPerishableItem' )
             {
-            // InternalGrocery.g:1149:1: ( 'nonPerishableItem' )
-            // InternalGrocery.g:1150:2: 'nonPerishableItem'
+            // InternalGrocery.g:1253:1: ( 'nonPerishableItem' )
+            // InternalGrocery.g:1254:2: 'nonPerishableItem'
             {
              before(grammarAccess.getNonPerishableItemAccess().getNonPerishableItemKeyword_0()); 
-            match(input,17,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getNonPerishableItemAccess().getNonPerishableItemKeyword_0()); 
 
             }
@@ -3555,14 +3858,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NonPerishableItem__Group__1"
-    // InternalGrocery.g:1159:1: rule__NonPerishableItem__Group__1 : rule__NonPerishableItem__Group__1__Impl rule__NonPerishableItem__Group__2 ;
+    // InternalGrocery.g:1263:1: rule__NonPerishableItem__Group__1 : rule__NonPerishableItem__Group__1__Impl rule__NonPerishableItem__Group__2 ;
     public final void rule__NonPerishableItem__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1163:1: ( rule__NonPerishableItem__Group__1__Impl rule__NonPerishableItem__Group__2 )
-            // InternalGrocery.g:1164:2: rule__NonPerishableItem__Group__1__Impl rule__NonPerishableItem__Group__2
+            // InternalGrocery.g:1267:1: ( rule__NonPerishableItem__Group__1__Impl rule__NonPerishableItem__Group__2 )
+            // InternalGrocery.g:1268:2: rule__NonPerishableItem__Group__1__Impl rule__NonPerishableItem__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__NonPerishableItem__Group__1__Impl();
@@ -3593,21 +3896,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NonPerishableItem__Group__1__Impl"
-    // InternalGrocery.g:1171:1: rule__NonPerishableItem__Group__1__Impl : ( ( rule__NonPerishableItem__NameAssignment_1 ) ) ;
+    // InternalGrocery.g:1275:1: rule__NonPerishableItem__Group__1__Impl : ( ( rule__NonPerishableItem__NameAssignment_1 ) ) ;
     public final void rule__NonPerishableItem__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1175:1: ( ( ( rule__NonPerishableItem__NameAssignment_1 ) ) )
-            // InternalGrocery.g:1176:1: ( ( rule__NonPerishableItem__NameAssignment_1 ) )
+            // InternalGrocery.g:1279:1: ( ( ( rule__NonPerishableItem__NameAssignment_1 ) ) )
+            // InternalGrocery.g:1280:1: ( ( rule__NonPerishableItem__NameAssignment_1 ) )
             {
-            // InternalGrocery.g:1176:1: ( ( rule__NonPerishableItem__NameAssignment_1 ) )
-            // InternalGrocery.g:1177:2: ( rule__NonPerishableItem__NameAssignment_1 )
+            // InternalGrocery.g:1280:1: ( ( rule__NonPerishableItem__NameAssignment_1 ) )
+            // InternalGrocery.g:1281:2: ( rule__NonPerishableItem__NameAssignment_1 )
             {
              before(grammarAccess.getNonPerishableItemAccess().getNameAssignment_1()); 
-            // InternalGrocery.g:1178:2: ( rule__NonPerishableItem__NameAssignment_1 )
-            // InternalGrocery.g:1178:3: rule__NonPerishableItem__NameAssignment_1
+            // InternalGrocery.g:1282:2: ( rule__NonPerishableItem__NameAssignment_1 )
+            // InternalGrocery.g:1282:3: rule__NonPerishableItem__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__NonPerishableItem__NameAssignment_1();
@@ -3640,16 +3943,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NonPerishableItem__Group__2"
-    // InternalGrocery.g:1186:1: rule__NonPerishableItem__Group__2 : rule__NonPerishableItem__Group__2__Impl rule__NonPerishableItem__Group__3 ;
+    // InternalGrocery.g:1290:1: rule__NonPerishableItem__Group__2 : rule__NonPerishableItem__Group__2__Impl rule__NonPerishableItem__Group__3 ;
     public final void rule__NonPerishableItem__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1190:1: ( rule__NonPerishableItem__Group__2__Impl rule__NonPerishableItem__Group__3 )
-            // InternalGrocery.g:1191:2: rule__NonPerishableItem__Group__2__Impl rule__NonPerishableItem__Group__3
+            // InternalGrocery.g:1294:1: ( rule__NonPerishableItem__Group__2__Impl rule__NonPerishableItem__Group__3 )
+            // InternalGrocery.g:1295:2: rule__NonPerishableItem__Group__2__Impl rule__NonPerishableItem__Group__3
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_15);
             rule__NonPerishableItem__Group__2__Impl();
 
             state._fsp--;
@@ -3678,17 +3981,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NonPerishableItem__Group__2__Impl"
-    // InternalGrocery.g:1198:1: rule__NonPerishableItem__Group__2__Impl : ( '{' ) ;
+    // InternalGrocery.g:1302:1: rule__NonPerishableItem__Group__2__Impl : ( '{' ) ;
     public final void rule__NonPerishableItem__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1202:1: ( ( '{' ) )
-            // InternalGrocery.g:1203:1: ( '{' )
+            // InternalGrocery.g:1306:1: ( ( '{' ) )
+            // InternalGrocery.g:1307:1: ( '{' )
             {
-            // InternalGrocery.g:1203:1: ( '{' )
-            // InternalGrocery.g:1204:2: '{'
+            // InternalGrocery.g:1307:1: ( '{' )
+            // InternalGrocery.g:1308:2: '{'
             {
              before(grammarAccess.getNonPerishableItemAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,12,FOLLOW_2); 
@@ -3715,16 +4018,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NonPerishableItem__Group__3"
-    // InternalGrocery.g:1213:1: rule__NonPerishableItem__Group__3 : rule__NonPerishableItem__Group__3__Impl rule__NonPerishableItem__Group__4 ;
+    // InternalGrocery.g:1317:1: rule__NonPerishableItem__Group__3 : rule__NonPerishableItem__Group__3__Impl rule__NonPerishableItem__Group__4 ;
     public final void rule__NonPerishableItem__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1217:1: ( rule__NonPerishableItem__Group__3__Impl rule__NonPerishableItem__Group__4 )
-            // InternalGrocery.g:1218:2: rule__NonPerishableItem__Group__3__Impl rule__NonPerishableItem__Group__4
+            // InternalGrocery.g:1321:1: ( rule__NonPerishableItem__Group__3__Impl rule__NonPerishableItem__Group__4 )
+            // InternalGrocery.g:1322:2: rule__NonPerishableItem__Group__3__Impl rule__NonPerishableItem__Group__4
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_11);
             rule__NonPerishableItem__Group__3__Impl();
 
             state._fsp--;
@@ -3753,20 +4056,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NonPerishableItem__Group__3__Impl"
-    // InternalGrocery.g:1225:1: rule__NonPerishableItem__Group__3__Impl : ( 'price' ) ;
+    // InternalGrocery.g:1329:1: rule__NonPerishableItem__Group__3__Impl : ( 'price' ) ;
     public final void rule__NonPerishableItem__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1229:1: ( ( 'price' ) )
-            // InternalGrocery.g:1230:1: ( 'price' )
+            // InternalGrocery.g:1333:1: ( ( 'price' ) )
+            // InternalGrocery.g:1334:1: ( 'price' )
             {
-            // InternalGrocery.g:1230:1: ( 'price' )
-            // InternalGrocery.g:1231:2: 'price'
+            // InternalGrocery.g:1334:1: ( 'price' )
+            // InternalGrocery.g:1335:2: 'price'
             {
              before(grammarAccess.getNonPerishableItemAccess().getPriceKeyword_3()); 
-            match(input,18,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getNonPerishableItemAccess().getPriceKeyword_3()); 
 
             }
@@ -3790,16 +4093,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NonPerishableItem__Group__4"
-    // InternalGrocery.g:1240:1: rule__NonPerishableItem__Group__4 : rule__NonPerishableItem__Group__4__Impl rule__NonPerishableItem__Group__5 ;
+    // InternalGrocery.g:1344:1: rule__NonPerishableItem__Group__4 : rule__NonPerishableItem__Group__4__Impl rule__NonPerishableItem__Group__5 ;
     public final void rule__NonPerishableItem__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1244:1: ( rule__NonPerishableItem__Group__4__Impl rule__NonPerishableItem__Group__5 )
-            // InternalGrocery.g:1245:2: rule__NonPerishableItem__Group__4__Impl rule__NonPerishableItem__Group__5
+            // InternalGrocery.g:1348:1: ( rule__NonPerishableItem__Group__4__Impl rule__NonPerishableItem__Group__5 )
+            // InternalGrocery.g:1349:2: rule__NonPerishableItem__Group__4__Impl rule__NonPerishableItem__Group__5
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__NonPerishableItem__Group__4__Impl();
 
             state._fsp--;
@@ -3828,20 +4131,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NonPerishableItem__Group__4__Impl"
-    // InternalGrocery.g:1252:1: rule__NonPerishableItem__Group__4__Impl : ( ':' ) ;
+    // InternalGrocery.g:1356:1: rule__NonPerishableItem__Group__4__Impl : ( ':' ) ;
     public final void rule__NonPerishableItem__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1256:1: ( ( ':' ) )
-            // InternalGrocery.g:1257:1: ( ':' )
+            // InternalGrocery.g:1360:1: ( ( ':' ) )
+            // InternalGrocery.g:1361:1: ( ':' )
             {
-            // InternalGrocery.g:1257:1: ( ':' )
-            // InternalGrocery.g:1258:2: ':'
+            // InternalGrocery.g:1361:1: ( ':' )
+            // InternalGrocery.g:1362:2: ':'
             {
              before(grammarAccess.getNonPerishableItemAccess().getColonKeyword_4()); 
-            match(input,19,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getNonPerishableItemAccess().getColonKeyword_4()); 
 
             }
@@ -3865,16 +4168,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NonPerishableItem__Group__5"
-    // InternalGrocery.g:1267:1: rule__NonPerishableItem__Group__5 : rule__NonPerishableItem__Group__5__Impl rule__NonPerishableItem__Group__6 ;
+    // InternalGrocery.g:1371:1: rule__NonPerishableItem__Group__5 : rule__NonPerishableItem__Group__5__Impl rule__NonPerishableItem__Group__6 ;
     public final void rule__NonPerishableItem__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1271:1: ( rule__NonPerishableItem__Group__5__Impl rule__NonPerishableItem__Group__6 )
-            // InternalGrocery.g:1272:2: rule__NonPerishableItem__Group__5__Impl rule__NonPerishableItem__Group__6
+            // InternalGrocery.g:1375:1: ( rule__NonPerishableItem__Group__5__Impl rule__NonPerishableItem__Group__6 )
+            // InternalGrocery.g:1376:2: rule__NonPerishableItem__Group__5__Impl rule__NonPerishableItem__Group__6
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_17);
             rule__NonPerishableItem__Group__5__Impl();
 
             state._fsp--;
@@ -3903,21 +4206,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NonPerishableItem__Group__5__Impl"
-    // InternalGrocery.g:1279:1: rule__NonPerishableItem__Group__5__Impl : ( ( rule__NonPerishableItem__PriceAssignment_5 ) ) ;
+    // InternalGrocery.g:1383:1: rule__NonPerishableItem__Group__5__Impl : ( ( rule__NonPerishableItem__PriceAssignment_5 ) ) ;
     public final void rule__NonPerishableItem__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1283:1: ( ( ( rule__NonPerishableItem__PriceAssignment_5 ) ) )
-            // InternalGrocery.g:1284:1: ( ( rule__NonPerishableItem__PriceAssignment_5 ) )
+            // InternalGrocery.g:1387:1: ( ( ( rule__NonPerishableItem__PriceAssignment_5 ) ) )
+            // InternalGrocery.g:1388:1: ( ( rule__NonPerishableItem__PriceAssignment_5 ) )
             {
-            // InternalGrocery.g:1284:1: ( ( rule__NonPerishableItem__PriceAssignment_5 ) )
-            // InternalGrocery.g:1285:2: ( rule__NonPerishableItem__PriceAssignment_5 )
+            // InternalGrocery.g:1388:1: ( ( rule__NonPerishableItem__PriceAssignment_5 ) )
+            // InternalGrocery.g:1389:2: ( rule__NonPerishableItem__PriceAssignment_5 )
             {
              before(grammarAccess.getNonPerishableItemAccess().getPriceAssignment_5()); 
-            // InternalGrocery.g:1286:2: ( rule__NonPerishableItem__PriceAssignment_5 )
-            // InternalGrocery.g:1286:3: rule__NonPerishableItem__PriceAssignment_5
+            // InternalGrocery.g:1390:2: ( rule__NonPerishableItem__PriceAssignment_5 )
+            // InternalGrocery.g:1390:3: rule__NonPerishableItem__PriceAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__NonPerishableItem__PriceAssignment_5();
@@ -3950,17 +4253,22 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NonPerishableItem__Group__6"
-    // InternalGrocery.g:1294:1: rule__NonPerishableItem__Group__6 : rule__NonPerishableItem__Group__6__Impl ;
+    // InternalGrocery.g:1398:1: rule__NonPerishableItem__Group__6 : rule__NonPerishableItem__Group__6__Impl rule__NonPerishableItem__Group__7 ;
     public final void rule__NonPerishableItem__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1298:1: ( rule__NonPerishableItem__Group__6__Impl )
-            // InternalGrocery.g:1299:2: rule__NonPerishableItem__Group__6__Impl
+            // InternalGrocery.g:1402:1: ( rule__NonPerishableItem__Group__6__Impl rule__NonPerishableItem__Group__7 )
+            // InternalGrocery.g:1403:2: rule__NonPerishableItem__Group__6__Impl rule__NonPerishableItem__Group__7
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_11);
             rule__NonPerishableItem__Group__6__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__NonPerishableItem__Group__7();
 
             state._fsp--;
 
@@ -3983,21 +4291,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NonPerishableItem__Group__6__Impl"
-    // InternalGrocery.g:1305:1: rule__NonPerishableItem__Group__6__Impl : ( '}' ) ;
+    // InternalGrocery.g:1410:1: rule__NonPerishableItem__Group__6__Impl : ( 'quantity' ) ;
     public final void rule__NonPerishableItem__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1309:1: ( ( '}' ) )
-            // InternalGrocery.g:1310:1: ( '}' )
+            // InternalGrocery.g:1414:1: ( ( 'quantity' ) )
+            // InternalGrocery.g:1415:1: ( 'quantity' )
             {
-            // InternalGrocery.g:1310:1: ( '}' )
-            // InternalGrocery.g:1311:2: '}'
+            // InternalGrocery.g:1415:1: ( 'quantity' )
+            // InternalGrocery.g:1416:2: 'quantity'
             {
-             before(grammarAccess.getNonPerishableItemAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,13,FOLLOW_2); 
-             after(grammarAccess.getNonPerishableItemAccess().getRightCurlyBracketKeyword_6()); 
+             before(grammarAccess.getNonPerishableItemAccess().getQuantityKeyword_6()); 
+            match(input,21,FOLLOW_2); 
+             after(grammarAccess.getNonPerishableItemAccess().getQuantityKeyword_6()); 
 
             }
 
@@ -4019,15 +4327,245 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__NonPerishableItem__Group__6__Impl"
 
 
+    // $ANTLR start "rule__NonPerishableItem__Group__7"
+    // InternalGrocery.g:1425:1: rule__NonPerishableItem__Group__7 : rule__NonPerishableItem__Group__7__Impl rule__NonPerishableItem__Group__8 ;
+    public final void rule__NonPerishableItem__Group__7() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:1429:1: ( rule__NonPerishableItem__Group__7__Impl rule__NonPerishableItem__Group__8 )
+            // InternalGrocery.g:1430:2: rule__NonPerishableItem__Group__7__Impl rule__NonPerishableItem__Group__8
+            {
+            pushFollow(FOLLOW_16);
+            rule__NonPerishableItem__Group__7__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__NonPerishableItem__Group__8();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NonPerishableItem__Group__7"
+
+
+    // $ANTLR start "rule__NonPerishableItem__Group__7__Impl"
+    // InternalGrocery.g:1437:1: rule__NonPerishableItem__Group__7__Impl : ( ':' ) ;
+    public final void rule__NonPerishableItem__Group__7__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:1441:1: ( ( ':' ) )
+            // InternalGrocery.g:1442:1: ( ':' )
+            {
+            // InternalGrocery.g:1442:1: ( ':' )
+            // InternalGrocery.g:1443:2: ':'
+            {
+             before(grammarAccess.getNonPerishableItemAccess().getColonKeyword_7()); 
+            match(input,16,FOLLOW_2); 
+             after(grammarAccess.getNonPerishableItemAccess().getColonKeyword_7()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NonPerishableItem__Group__7__Impl"
+
+
+    // $ANTLR start "rule__NonPerishableItem__Group__8"
+    // InternalGrocery.g:1452:1: rule__NonPerishableItem__Group__8 : rule__NonPerishableItem__Group__8__Impl rule__NonPerishableItem__Group__9 ;
+    public final void rule__NonPerishableItem__Group__8() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:1456:1: ( rule__NonPerishableItem__Group__8__Impl rule__NonPerishableItem__Group__9 )
+            // InternalGrocery.g:1457:2: rule__NonPerishableItem__Group__8__Impl rule__NonPerishableItem__Group__9
+            {
+            pushFollow(FOLLOW_18);
+            rule__NonPerishableItem__Group__8__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__NonPerishableItem__Group__9();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NonPerishableItem__Group__8"
+
+
+    // $ANTLR start "rule__NonPerishableItem__Group__8__Impl"
+    // InternalGrocery.g:1464:1: rule__NonPerishableItem__Group__8__Impl : ( ( rule__NonPerishableItem__QuantityAssignment_8 ) ) ;
+    public final void rule__NonPerishableItem__Group__8__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:1468:1: ( ( ( rule__NonPerishableItem__QuantityAssignment_8 ) ) )
+            // InternalGrocery.g:1469:1: ( ( rule__NonPerishableItem__QuantityAssignment_8 ) )
+            {
+            // InternalGrocery.g:1469:1: ( ( rule__NonPerishableItem__QuantityAssignment_8 ) )
+            // InternalGrocery.g:1470:2: ( rule__NonPerishableItem__QuantityAssignment_8 )
+            {
+             before(grammarAccess.getNonPerishableItemAccess().getQuantityAssignment_8()); 
+            // InternalGrocery.g:1471:2: ( rule__NonPerishableItem__QuantityAssignment_8 )
+            // InternalGrocery.g:1471:3: rule__NonPerishableItem__QuantityAssignment_8
+            {
+            pushFollow(FOLLOW_2);
+            rule__NonPerishableItem__QuantityAssignment_8();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getNonPerishableItemAccess().getQuantityAssignment_8()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NonPerishableItem__Group__8__Impl"
+
+
+    // $ANTLR start "rule__NonPerishableItem__Group__9"
+    // InternalGrocery.g:1479:1: rule__NonPerishableItem__Group__9 : rule__NonPerishableItem__Group__9__Impl ;
+    public final void rule__NonPerishableItem__Group__9() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:1483:1: ( rule__NonPerishableItem__Group__9__Impl )
+            // InternalGrocery.g:1484:2: rule__NonPerishableItem__Group__9__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__NonPerishableItem__Group__9__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NonPerishableItem__Group__9"
+
+
+    // $ANTLR start "rule__NonPerishableItem__Group__9__Impl"
+    // InternalGrocery.g:1490:1: rule__NonPerishableItem__Group__9__Impl : ( '}' ) ;
+    public final void rule__NonPerishableItem__Group__9__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:1494:1: ( ( '}' ) )
+            // InternalGrocery.g:1495:1: ( '}' )
+            {
+            // InternalGrocery.g:1495:1: ( '}' )
+            // InternalGrocery.g:1496:2: '}'
+            {
+             before(grammarAccess.getNonPerishableItemAccess().getRightCurlyBracketKeyword_9()); 
+            match(input,13,FOLLOW_2); 
+             after(grammarAccess.getNonPerishableItemAccess().getRightCurlyBracketKeyword_9()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NonPerishableItem__Group__9__Impl"
+
+
     // $ANTLR start "rule__PerishableItem__Group__0"
-    // InternalGrocery.g:1321:1: rule__PerishableItem__Group__0 : rule__PerishableItem__Group__0__Impl rule__PerishableItem__Group__1 ;
+    // InternalGrocery.g:1506:1: rule__PerishableItem__Group__0 : rule__PerishableItem__Group__0__Impl rule__PerishableItem__Group__1 ;
     public final void rule__PerishableItem__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1325:1: ( rule__PerishableItem__Group__0__Impl rule__PerishableItem__Group__1 )
-            // InternalGrocery.g:1326:2: rule__PerishableItem__Group__0__Impl rule__PerishableItem__Group__1
+            // InternalGrocery.g:1510:1: ( rule__PerishableItem__Group__0__Impl rule__PerishableItem__Group__1 )
+            // InternalGrocery.g:1511:2: rule__PerishableItem__Group__0__Impl rule__PerishableItem__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__PerishableItem__Group__0__Impl();
@@ -4058,20 +4596,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__Group__0__Impl"
-    // InternalGrocery.g:1333:1: rule__PerishableItem__Group__0__Impl : ( 'perishableItem' ) ;
+    // InternalGrocery.g:1518:1: rule__PerishableItem__Group__0__Impl : ( 'perishableItem' ) ;
     public final void rule__PerishableItem__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1337:1: ( ( 'perishableItem' ) )
-            // InternalGrocery.g:1338:1: ( 'perishableItem' )
+            // InternalGrocery.g:1522:1: ( ( 'perishableItem' ) )
+            // InternalGrocery.g:1523:1: ( 'perishableItem' )
             {
-            // InternalGrocery.g:1338:1: ( 'perishableItem' )
-            // InternalGrocery.g:1339:2: 'perishableItem'
+            // InternalGrocery.g:1523:1: ( 'perishableItem' )
+            // InternalGrocery.g:1524:2: 'perishableItem'
             {
              before(grammarAccess.getPerishableItemAccess().getPerishableItemKeyword_0()); 
-            match(input,20,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getPerishableItemAccess().getPerishableItemKeyword_0()); 
 
             }
@@ -4095,14 +4633,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__Group__1"
-    // InternalGrocery.g:1348:1: rule__PerishableItem__Group__1 : rule__PerishableItem__Group__1__Impl rule__PerishableItem__Group__2 ;
+    // InternalGrocery.g:1533:1: rule__PerishableItem__Group__1 : rule__PerishableItem__Group__1__Impl rule__PerishableItem__Group__2 ;
     public final void rule__PerishableItem__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1352:1: ( rule__PerishableItem__Group__1__Impl rule__PerishableItem__Group__2 )
-            // InternalGrocery.g:1353:2: rule__PerishableItem__Group__1__Impl rule__PerishableItem__Group__2
+            // InternalGrocery.g:1537:1: ( rule__PerishableItem__Group__1__Impl rule__PerishableItem__Group__2 )
+            // InternalGrocery.g:1538:2: rule__PerishableItem__Group__1__Impl rule__PerishableItem__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__PerishableItem__Group__1__Impl();
@@ -4133,21 +4671,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__Group__1__Impl"
-    // InternalGrocery.g:1360:1: rule__PerishableItem__Group__1__Impl : ( ( rule__PerishableItem__NameAssignment_1 ) ) ;
+    // InternalGrocery.g:1545:1: rule__PerishableItem__Group__1__Impl : ( ( rule__PerishableItem__NameAssignment_1 ) ) ;
     public final void rule__PerishableItem__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1364:1: ( ( ( rule__PerishableItem__NameAssignment_1 ) ) )
-            // InternalGrocery.g:1365:1: ( ( rule__PerishableItem__NameAssignment_1 ) )
+            // InternalGrocery.g:1549:1: ( ( ( rule__PerishableItem__NameAssignment_1 ) ) )
+            // InternalGrocery.g:1550:1: ( ( rule__PerishableItem__NameAssignment_1 ) )
             {
-            // InternalGrocery.g:1365:1: ( ( rule__PerishableItem__NameAssignment_1 ) )
-            // InternalGrocery.g:1366:2: ( rule__PerishableItem__NameAssignment_1 )
+            // InternalGrocery.g:1550:1: ( ( rule__PerishableItem__NameAssignment_1 ) )
+            // InternalGrocery.g:1551:2: ( rule__PerishableItem__NameAssignment_1 )
             {
              before(grammarAccess.getPerishableItemAccess().getNameAssignment_1()); 
-            // InternalGrocery.g:1367:2: ( rule__PerishableItem__NameAssignment_1 )
-            // InternalGrocery.g:1367:3: rule__PerishableItem__NameAssignment_1
+            // InternalGrocery.g:1552:2: ( rule__PerishableItem__NameAssignment_1 )
+            // InternalGrocery.g:1552:3: rule__PerishableItem__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__PerishableItem__NameAssignment_1();
@@ -4180,16 +4718,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__Group__2"
-    // InternalGrocery.g:1375:1: rule__PerishableItem__Group__2 : rule__PerishableItem__Group__2__Impl rule__PerishableItem__Group__3 ;
+    // InternalGrocery.g:1560:1: rule__PerishableItem__Group__2 : rule__PerishableItem__Group__2__Impl rule__PerishableItem__Group__3 ;
     public final void rule__PerishableItem__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1379:1: ( rule__PerishableItem__Group__2__Impl rule__PerishableItem__Group__3 )
-            // InternalGrocery.g:1380:2: rule__PerishableItem__Group__2__Impl rule__PerishableItem__Group__3
+            // InternalGrocery.g:1564:1: ( rule__PerishableItem__Group__2__Impl rule__PerishableItem__Group__3 )
+            // InternalGrocery.g:1565:2: rule__PerishableItem__Group__2__Impl rule__PerishableItem__Group__3
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_15);
             rule__PerishableItem__Group__2__Impl();
 
             state._fsp--;
@@ -4218,17 +4756,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__Group__2__Impl"
-    // InternalGrocery.g:1387:1: rule__PerishableItem__Group__2__Impl : ( '{' ) ;
+    // InternalGrocery.g:1572:1: rule__PerishableItem__Group__2__Impl : ( '{' ) ;
     public final void rule__PerishableItem__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1391:1: ( ( '{' ) )
-            // InternalGrocery.g:1392:1: ( '{' )
+            // InternalGrocery.g:1576:1: ( ( '{' ) )
+            // InternalGrocery.g:1577:1: ( '{' )
             {
-            // InternalGrocery.g:1392:1: ( '{' )
-            // InternalGrocery.g:1393:2: '{'
+            // InternalGrocery.g:1577:1: ( '{' )
+            // InternalGrocery.g:1578:2: '{'
             {
              before(grammarAccess.getPerishableItemAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,12,FOLLOW_2); 
@@ -4255,16 +4793,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__Group__3"
-    // InternalGrocery.g:1402:1: rule__PerishableItem__Group__3 : rule__PerishableItem__Group__3__Impl rule__PerishableItem__Group__4 ;
+    // InternalGrocery.g:1587:1: rule__PerishableItem__Group__3 : rule__PerishableItem__Group__3__Impl rule__PerishableItem__Group__4 ;
     public final void rule__PerishableItem__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1406:1: ( rule__PerishableItem__Group__3__Impl rule__PerishableItem__Group__4 )
-            // InternalGrocery.g:1407:2: rule__PerishableItem__Group__3__Impl rule__PerishableItem__Group__4
+            // InternalGrocery.g:1591:1: ( rule__PerishableItem__Group__3__Impl rule__PerishableItem__Group__4 )
+            // InternalGrocery.g:1592:2: rule__PerishableItem__Group__3__Impl rule__PerishableItem__Group__4
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_11);
             rule__PerishableItem__Group__3__Impl();
 
             state._fsp--;
@@ -4293,20 +4831,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__Group__3__Impl"
-    // InternalGrocery.g:1414:1: rule__PerishableItem__Group__3__Impl : ( 'price' ) ;
+    // InternalGrocery.g:1599:1: rule__PerishableItem__Group__3__Impl : ( 'price' ) ;
     public final void rule__PerishableItem__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1418:1: ( ( 'price' ) )
-            // InternalGrocery.g:1419:1: ( 'price' )
+            // InternalGrocery.g:1603:1: ( ( 'price' ) )
+            // InternalGrocery.g:1604:1: ( 'price' )
             {
-            // InternalGrocery.g:1419:1: ( 'price' )
-            // InternalGrocery.g:1420:2: 'price'
+            // InternalGrocery.g:1604:1: ( 'price' )
+            // InternalGrocery.g:1605:2: 'price'
             {
              before(grammarAccess.getPerishableItemAccess().getPriceKeyword_3()); 
-            match(input,18,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getPerishableItemAccess().getPriceKeyword_3()); 
 
             }
@@ -4330,16 +4868,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__Group__4"
-    // InternalGrocery.g:1429:1: rule__PerishableItem__Group__4 : rule__PerishableItem__Group__4__Impl rule__PerishableItem__Group__5 ;
+    // InternalGrocery.g:1614:1: rule__PerishableItem__Group__4 : rule__PerishableItem__Group__4__Impl rule__PerishableItem__Group__5 ;
     public final void rule__PerishableItem__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1433:1: ( rule__PerishableItem__Group__4__Impl rule__PerishableItem__Group__5 )
-            // InternalGrocery.g:1434:2: rule__PerishableItem__Group__4__Impl rule__PerishableItem__Group__5
+            // InternalGrocery.g:1618:1: ( rule__PerishableItem__Group__4__Impl rule__PerishableItem__Group__5 )
+            // InternalGrocery.g:1619:2: rule__PerishableItem__Group__4__Impl rule__PerishableItem__Group__5
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__PerishableItem__Group__4__Impl();
 
             state._fsp--;
@@ -4368,20 +4906,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__Group__4__Impl"
-    // InternalGrocery.g:1441:1: rule__PerishableItem__Group__4__Impl : ( ':' ) ;
+    // InternalGrocery.g:1626:1: rule__PerishableItem__Group__4__Impl : ( ':' ) ;
     public final void rule__PerishableItem__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1445:1: ( ( ':' ) )
-            // InternalGrocery.g:1446:1: ( ':' )
+            // InternalGrocery.g:1630:1: ( ( ':' ) )
+            // InternalGrocery.g:1631:1: ( ':' )
             {
-            // InternalGrocery.g:1446:1: ( ':' )
-            // InternalGrocery.g:1447:2: ':'
+            // InternalGrocery.g:1631:1: ( ':' )
+            // InternalGrocery.g:1632:2: ':'
             {
              before(grammarAccess.getPerishableItemAccess().getColonKeyword_4()); 
-            match(input,19,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getPerishableItemAccess().getColonKeyword_4()); 
 
             }
@@ -4405,16 +4943,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__Group__5"
-    // InternalGrocery.g:1456:1: rule__PerishableItem__Group__5 : rule__PerishableItem__Group__5__Impl rule__PerishableItem__Group__6 ;
+    // InternalGrocery.g:1641:1: rule__PerishableItem__Group__5 : rule__PerishableItem__Group__5__Impl rule__PerishableItem__Group__6 ;
     public final void rule__PerishableItem__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1460:1: ( rule__PerishableItem__Group__5__Impl rule__PerishableItem__Group__6 )
-            // InternalGrocery.g:1461:2: rule__PerishableItem__Group__5__Impl rule__PerishableItem__Group__6
+            // InternalGrocery.g:1645:1: ( rule__PerishableItem__Group__5__Impl rule__PerishableItem__Group__6 )
+            // InternalGrocery.g:1646:2: rule__PerishableItem__Group__5__Impl rule__PerishableItem__Group__6
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_19);
             rule__PerishableItem__Group__5__Impl();
 
             state._fsp--;
@@ -4443,21 +4981,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__Group__5__Impl"
-    // InternalGrocery.g:1468:1: rule__PerishableItem__Group__5__Impl : ( ( rule__PerishableItem__PriceAssignment_5 ) ) ;
+    // InternalGrocery.g:1653:1: rule__PerishableItem__Group__5__Impl : ( ( rule__PerishableItem__PriceAssignment_5 ) ) ;
     public final void rule__PerishableItem__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1472:1: ( ( ( rule__PerishableItem__PriceAssignment_5 ) ) )
-            // InternalGrocery.g:1473:1: ( ( rule__PerishableItem__PriceAssignment_5 ) )
+            // InternalGrocery.g:1657:1: ( ( ( rule__PerishableItem__PriceAssignment_5 ) ) )
+            // InternalGrocery.g:1658:1: ( ( rule__PerishableItem__PriceAssignment_5 ) )
             {
-            // InternalGrocery.g:1473:1: ( ( rule__PerishableItem__PriceAssignment_5 ) )
-            // InternalGrocery.g:1474:2: ( rule__PerishableItem__PriceAssignment_5 )
+            // InternalGrocery.g:1658:1: ( ( rule__PerishableItem__PriceAssignment_5 ) )
+            // InternalGrocery.g:1659:2: ( rule__PerishableItem__PriceAssignment_5 )
             {
              before(grammarAccess.getPerishableItemAccess().getPriceAssignment_5()); 
-            // InternalGrocery.g:1475:2: ( rule__PerishableItem__PriceAssignment_5 )
-            // InternalGrocery.g:1475:3: rule__PerishableItem__PriceAssignment_5
+            // InternalGrocery.g:1660:2: ( rule__PerishableItem__PriceAssignment_5 )
+            // InternalGrocery.g:1660:3: rule__PerishableItem__PriceAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__PerishableItem__PriceAssignment_5();
@@ -4490,16 +5028,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__Group__6"
-    // InternalGrocery.g:1483:1: rule__PerishableItem__Group__6 : rule__PerishableItem__Group__6__Impl rule__PerishableItem__Group__7 ;
+    // InternalGrocery.g:1668:1: rule__PerishableItem__Group__6 : rule__PerishableItem__Group__6__Impl rule__PerishableItem__Group__7 ;
     public final void rule__PerishableItem__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1487:1: ( rule__PerishableItem__Group__6__Impl rule__PerishableItem__Group__7 )
-            // InternalGrocery.g:1488:2: rule__PerishableItem__Group__6__Impl rule__PerishableItem__Group__7
+            // InternalGrocery.g:1672:1: ( rule__PerishableItem__Group__6__Impl rule__PerishableItem__Group__7 )
+            // InternalGrocery.g:1673:2: rule__PerishableItem__Group__6__Impl rule__PerishableItem__Group__7
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_18);
             rule__PerishableItem__Group__6__Impl();
 
             state._fsp--;
@@ -4528,21 +5066,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__Group__6__Impl"
-    // InternalGrocery.g:1495:1: rule__PerishableItem__Group__6__Impl : ( ( rule__PerishableItem__ExperationDateAssignment_6 ) ) ;
+    // InternalGrocery.g:1680:1: rule__PerishableItem__Group__6__Impl : ( ( rule__PerishableItem__ExperationDateAssignment_6 ) ) ;
     public final void rule__PerishableItem__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1499:1: ( ( ( rule__PerishableItem__ExperationDateAssignment_6 ) ) )
-            // InternalGrocery.g:1500:1: ( ( rule__PerishableItem__ExperationDateAssignment_6 ) )
+            // InternalGrocery.g:1684:1: ( ( ( rule__PerishableItem__ExperationDateAssignment_6 ) ) )
+            // InternalGrocery.g:1685:1: ( ( rule__PerishableItem__ExperationDateAssignment_6 ) )
             {
-            // InternalGrocery.g:1500:1: ( ( rule__PerishableItem__ExperationDateAssignment_6 ) )
-            // InternalGrocery.g:1501:2: ( rule__PerishableItem__ExperationDateAssignment_6 )
+            // InternalGrocery.g:1685:1: ( ( rule__PerishableItem__ExperationDateAssignment_6 ) )
+            // InternalGrocery.g:1686:2: ( rule__PerishableItem__ExperationDateAssignment_6 )
             {
              before(grammarAccess.getPerishableItemAccess().getExperationDateAssignment_6()); 
-            // InternalGrocery.g:1502:2: ( rule__PerishableItem__ExperationDateAssignment_6 )
-            // InternalGrocery.g:1502:3: rule__PerishableItem__ExperationDateAssignment_6
+            // InternalGrocery.g:1687:2: ( rule__PerishableItem__ExperationDateAssignment_6 )
+            // InternalGrocery.g:1687:3: rule__PerishableItem__ExperationDateAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__PerishableItem__ExperationDateAssignment_6();
@@ -4575,14 +5113,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__Group__7"
-    // InternalGrocery.g:1510:1: rule__PerishableItem__Group__7 : rule__PerishableItem__Group__7__Impl ;
+    // InternalGrocery.g:1695:1: rule__PerishableItem__Group__7 : rule__PerishableItem__Group__7__Impl ;
     public final void rule__PerishableItem__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1514:1: ( rule__PerishableItem__Group__7__Impl )
-            // InternalGrocery.g:1515:2: rule__PerishableItem__Group__7__Impl
+            // InternalGrocery.g:1699:1: ( rule__PerishableItem__Group__7__Impl )
+            // InternalGrocery.g:1700:2: rule__PerishableItem__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PerishableItem__Group__7__Impl();
@@ -4608,17 +5146,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__Group__7__Impl"
-    // InternalGrocery.g:1521:1: rule__PerishableItem__Group__7__Impl : ( '}' ) ;
+    // InternalGrocery.g:1706:1: rule__PerishableItem__Group__7__Impl : ( '}' ) ;
     public final void rule__PerishableItem__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1525:1: ( ( '}' ) )
-            // InternalGrocery.g:1526:1: ( '}' )
+            // InternalGrocery.g:1710:1: ( ( '}' ) )
+            // InternalGrocery.g:1711:1: ( '}' )
             {
-            // InternalGrocery.g:1526:1: ( '}' )
-            // InternalGrocery.g:1527:2: '}'
+            // InternalGrocery.g:1711:1: ( '}' )
+            // InternalGrocery.g:1712:2: '}'
             {
              before(grammarAccess.getPerishableItemAccess().getRightCurlyBracketKeyword_7()); 
             match(input,13,FOLLOW_2); 
@@ -4644,940 +5182,15 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__PerishableItem__Group__7__Impl"
 
 
-    // $ANTLR start "rule__Address__Group__0"
-    // InternalGrocery.g:1537:1: rule__Address__Group__0 : rule__Address__Group__0__Impl rule__Address__Group__1 ;
-    public final void rule__Address__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1541:1: ( rule__Address__Group__0__Impl rule__Address__Group__1 )
-            // InternalGrocery.g:1542:2: rule__Address__Group__0__Impl rule__Address__Group__1
-            {
-            pushFollow(FOLLOW_7);
-            rule__Address__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Address__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__0"
-
-
-    // $ANTLR start "rule__Address__Group__0__Impl"
-    // InternalGrocery.g:1549:1: rule__Address__Group__0__Impl : ( 'address' ) ;
-    public final void rule__Address__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1553:1: ( ( 'address' ) )
-            // InternalGrocery.g:1554:1: ( 'address' )
-            {
-            // InternalGrocery.g:1554:1: ( 'address' )
-            // InternalGrocery.g:1555:2: 'address'
-            {
-             before(grammarAccess.getAddressAccess().getAddressKeyword_0()); 
-            match(input,21,FOLLOW_2); 
-             after(grammarAccess.getAddressAccess().getAddressKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__0__Impl"
-
-
-    // $ANTLR start "rule__Address__Group__1"
-    // InternalGrocery.g:1564:1: rule__Address__Group__1 : rule__Address__Group__1__Impl rule__Address__Group__2 ;
-    public final void rule__Address__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1568:1: ( rule__Address__Group__1__Impl rule__Address__Group__2 )
-            // InternalGrocery.g:1569:2: rule__Address__Group__1__Impl rule__Address__Group__2
-            {
-            pushFollow(FOLLOW_18);
-            rule__Address__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Address__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__1"
-
-
-    // $ANTLR start "rule__Address__Group__1__Impl"
-    // InternalGrocery.g:1576:1: rule__Address__Group__1__Impl : ( '{' ) ;
-    public final void rule__Address__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1580:1: ( ( '{' ) )
-            // InternalGrocery.g:1581:1: ( '{' )
-            {
-            // InternalGrocery.g:1581:1: ( '{' )
-            // InternalGrocery.g:1582:2: '{'
-            {
-             before(grammarAccess.getAddressAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,12,FOLLOW_2); 
-             after(grammarAccess.getAddressAccess().getLeftCurlyBracketKeyword_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__1__Impl"
-
-
-    // $ANTLR start "rule__Address__Group__2"
-    // InternalGrocery.g:1591:1: rule__Address__Group__2 : rule__Address__Group__2__Impl rule__Address__Group__3 ;
-    public final void rule__Address__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1595:1: ( rule__Address__Group__2__Impl rule__Address__Group__3 )
-            // InternalGrocery.g:1596:2: rule__Address__Group__2__Impl rule__Address__Group__3
-            {
-            pushFollow(FOLLOW_14);
-            rule__Address__Group__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Address__Group__3();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__2"
-
-
-    // $ANTLR start "rule__Address__Group__2__Impl"
-    // InternalGrocery.g:1603:1: rule__Address__Group__2__Impl : ( 'street' ) ;
-    public final void rule__Address__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1607:1: ( ( 'street' ) )
-            // InternalGrocery.g:1608:1: ( 'street' )
-            {
-            // InternalGrocery.g:1608:1: ( 'street' )
-            // InternalGrocery.g:1609:2: 'street'
-            {
-             before(grammarAccess.getAddressAccess().getStreetKeyword_2()); 
-            match(input,22,FOLLOW_2); 
-             after(grammarAccess.getAddressAccess().getStreetKeyword_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__2__Impl"
-
-
-    // $ANTLR start "rule__Address__Group__3"
-    // InternalGrocery.g:1618:1: rule__Address__Group__3 : rule__Address__Group__3__Impl rule__Address__Group__4 ;
-    public final void rule__Address__Group__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1622:1: ( rule__Address__Group__3__Impl rule__Address__Group__4 )
-            // InternalGrocery.g:1623:2: rule__Address__Group__3__Impl rule__Address__Group__4
-            {
-            pushFollow(FOLLOW_19);
-            rule__Address__Group__3__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Address__Group__4();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__3"
-
-
-    // $ANTLR start "rule__Address__Group__3__Impl"
-    // InternalGrocery.g:1630:1: rule__Address__Group__3__Impl : ( ':' ) ;
-    public final void rule__Address__Group__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1634:1: ( ( ':' ) )
-            // InternalGrocery.g:1635:1: ( ':' )
-            {
-            // InternalGrocery.g:1635:1: ( ':' )
-            // InternalGrocery.g:1636:2: ':'
-            {
-             before(grammarAccess.getAddressAccess().getColonKeyword_3()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getAddressAccess().getColonKeyword_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__3__Impl"
-
-
-    // $ANTLR start "rule__Address__Group__4"
-    // InternalGrocery.g:1645:1: rule__Address__Group__4 : rule__Address__Group__4__Impl rule__Address__Group__5 ;
-    public final void rule__Address__Group__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1649:1: ( rule__Address__Group__4__Impl rule__Address__Group__5 )
-            // InternalGrocery.g:1650:2: rule__Address__Group__4__Impl rule__Address__Group__5
-            {
-            pushFollow(FOLLOW_20);
-            rule__Address__Group__4__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Address__Group__5();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__4"
-
-
-    // $ANTLR start "rule__Address__Group__4__Impl"
-    // InternalGrocery.g:1657:1: rule__Address__Group__4__Impl : ( ( rule__Address__StreetAssignment_4 ) ) ;
-    public final void rule__Address__Group__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1661:1: ( ( ( rule__Address__StreetAssignment_4 ) ) )
-            // InternalGrocery.g:1662:1: ( ( rule__Address__StreetAssignment_4 ) )
-            {
-            // InternalGrocery.g:1662:1: ( ( rule__Address__StreetAssignment_4 ) )
-            // InternalGrocery.g:1663:2: ( rule__Address__StreetAssignment_4 )
-            {
-             before(grammarAccess.getAddressAccess().getStreetAssignment_4()); 
-            // InternalGrocery.g:1664:2: ( rule__Address__StreetAssignment_4 )
-            // InternalGrocery.g:1664:3: rule__Address__StreetAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__Address__StreetAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAddressAccess().getStreetAssignment_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__4__Impl"
-
-
-    // $ANTLR start "rule__Address__Group__5"
-    // InternalGrocery.g:1672:1: rule__Address__Group__5 : rule__Address__Group__5__Impl rule__Address__Group__6 ;
-    public final void rule__Address__Group__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1676:1: ( rule__Address__Group__5__Impl rule__Address__Group__6 )
-            // InternalGrocery.g:1677:2: rule__Address__Group__5__Impl rule__Address__Group__6
-            {
-            pushFollow(FOLLOW_14);
-            rule__Address__Group__5__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Address__Group__6();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__5"
-
-
-    // $ANTLR start "rule__Address__Group__5__Impl"
-    // InternalGrocery.g:1684:1: rule__Address__Group__5__Impl : ( 'number' ) ;
-    public final void rule__Address__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1688:1: ( ( 'number' ) )
-            // InternalGrocery.g:1689:1: ( 'number' )
-            {
-            // InternalGrocery.g:1689:1: ( 'number' )
-            // InternalGrocery.g:1690:2: 'number'
-            {
-             before(grammarAccess.getAddressAccess().getNumberKeyword_5()); 
-            match(input,23,FOLLOW_2); 
-             after(grammarAccess.getAddressAccess().getNumberKeyword_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__5__Impl"
-
-
-    // $ANTLR start "rule__Address__Group__6"
-    // InternalGrocery.g:1699:1: rule__Address__Group__6 : rule__Address__Group__6__Impl rule__Address__Group__7 ;
-    public final void rule__Address__Group__6() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1703:1: ( rule__Address__Group__6__Impl rule__Address__Group__7 )
-            // InternalGrocery.g:1704:2: rule__Address__Group__6__Impl rule__Address__Group__7
-            {
-            pushFollow(FOLLOW_15);
-            rule__Address__Group__6__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Address__Group__7();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__6"
-
-
-    // $ANTLR start "rule__Address__Group__6__Impl"
-    // InternalGrocery.g:1711:1: rule__Address__Group__6__Impl : ( ':' ) ;
-    public final void rule__Address__Group__6__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1715:1: ( ( ':' ) )
-            // InternalGrocery.g:1716:1: ( ':' )
-            {
-            // InternalGrocery.g:1716:1: ( ':' )
-            // InternalGrocery.g:1717:2: ':'
-            {
-             before(grammarAccess.getAddressAccess().getColonKeyword_6()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getAddressAccess().getColonKeyword_6()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__6__Impl"
-
-
-    // $ANTLR start "rule__Address__Group__7"
-    // InternalGrocery.g:1726:1: rule__Address__Group__7 : rule__Address__Group__7__Impl rule__Address__Group__8 ;
-    public final void rule__Address__Group__7() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1730:1: ( rule__Address__Group__7__Impl rule__Address__Group__8 )
-            // InternalGrocery.g:1731:2: rule__Address__Group__7__Impl rule__Address__Group__8
-            {
-            pushFollow(FOLLOW_21);
-            rule__Address__Group__7__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Address__Group__8();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__7"
-
-
-    // $ANTLR start "rule__Address__Group__7__Impl"
-    // InternalGrocery.g:1738:1: rule__Address__Group__7__Impl : ( ( rule__Address__NumberAssignment_7 ) ) ;
-    public final void rule__Address__Group__7__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1742:1: ( ( ( rule__Address__NumberAssignment_7 ) ) )
-            // InternalGrocery.g:1743:1: ( ( rule__Address__NumberAssignment_7 ) )
-            {
-            // InternalGrocery.g:1743:1: ( ( rule__Address__NumberAssignment_7 ) )
-            // InternalGrocery.g:1744:2: ( rule__Address__NumberAssignment_7 )
-            {
-             before(grammarAccess.getAddressAccess().getNumberAssignment_7()); 
-            // InternalGrocery.g:1745:2: ( rule__Address__NumberAssignment_7 )
-            // InternalGrocery.g:1745:3: rule__Address__NumberAssignment_7
-            {
-            pushFollow(FOLLOW_2);
-            rule__Address__NumberAssignment_7();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAddressAccess().getNumberAssignment_7()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__7__Impl"
-
-
-    // $ANTLR start "rule__Address__Group__8"
-    // InternalGrocery.g:1753:1: rule__Address__Group__8 : rule__Address__Group__8__Impl rule__Address__Group__9 ;
-    public final void rule__Address__Group__8() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1757:1: ( rule__Address__Group__8__Impl rule__Address__Group__9 )
-            // InternalGrocery.g:1758:2: rule__Address__Group__8__Impl rule__Address__Group__9
-            {
-            pushFollow(FOLLOW_14);
-            rule__Address__Group__8__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Address__Group__9();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__8"
-
-
-    // $ANTLR start "rule__Address__Group__8__Impl"
-    // InternalGrocery.g:1765:1: rule__Address__Group__8__Impl : ( 'city' ) ;
-    public final void rule__Address__Group__8__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1769:1: ( ( 'city' ) )
-            // InternalGrocery.g:1770:1: ( 'city' )
-            {
-            // InternalGrocery.g:1770:1: ( 'city' )
-            // InternalGrocery.g:1771:2: 'city'
-            {
-             before(grammarAccess.getAddressAccess().getCityKeyword_8()); 
-            match(input,24,FOLLOW_2); 
-             after(grammarAccess.getAddressAccess().getCityKeyword_8()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__8__Impl"
-
-
-    // $ANTLR start "rule__Address__Group__9"
-    // InternalGrocery.g:1780:1: rule__Address__Group__9 : rule__Address__Group__9__Impl rule__Address__Group__10 ;
-    public final void rule__Address__Group__9() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1784:1: ( rule__Address__Group__9__Impl rule__Address__Group__10 )
-            // InternalGrocery.g:1785:2: rule__Address__Group__9__Impl rule__Address__Group__10
-            {
-            pushFollow(FOLLOW_19);
-            rule__Address__Group__9__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Address__Group__10();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__9"
-
-
-    // $ANTLR start "rule__Address__Group__9__Impl"
-    // InternalGrocery.g:1792:1: rule__Address__Group__9__Impl : ( ':' ) ;
-    public final void rule__Address__Group__9__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1796:1: ( ( ':' ) )
-            // InternalGrocery.g:1797:1: ( ':' )
-            {
-            // InternalGrocery.g:1797:1: ( ':' )
-            // InternalGrocery.g:1798:2: ':'
-            {
-             before(grammarAccess.getAddressAccess().getColonKeyword_9()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getAddressAccess().getColonKeyword_9()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__9__Impl"
-
-
-    // $ANTLR start "rule__Address__Group__10"
-    // InternalGrocery.g:1807:1: rule__Address__Group__10 : rule__Address__Group__10__Impl rule__Address__Group__11 ;
-    public final void rule__Address__Group__10() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1811:1: ( rule__Address__Group__10__Impl rule__Address__Group__11 )
-            // InternalGrocery.g:1812:2: rule__Address__Group__10__Impl rule__Address__Group__11
-            {
-            pushFollow(FOLLOW_16);
-            rule__Address__Group__10__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Address__Group__11();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__10"
-
-
-    // $ANTLR start "rule__Address__Group__10__Impl"
-    // InternalGrocery.g:1819:1: rule__Address__Group__10__Impl : ( ( rule__Address__CityAssignment_10 ) ) ;
-    public final void rule__Address__Group__10__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1823:1: ( ( ( rule__Address__CityAssignment_10 ) ) )
-            // InternalGrocery.g:1824:1: ( ( rule__Address__CityAssignment_10 ) )
-            {
-            // InternalGrocery.g:1824:1: ( ( rule__Address__CityAssignment_10 ) )
-            // InternalGrocery.g:1825:2: ( rule__Address__CityAssignment_10 )
-            {
-             before(grammarAccess.getAddressAccess().getCityAssignment_10()); 
-            // InternalGrocery.g:1826:2: ( rule__Address__CityAssignment_10 )
-            // InternalGrocery.g:1826:3: rule__Address__CityAssignment_10
-            {
-            pushFollow(FOLLOW_2);
-            rule__Address__CityAssignment_10();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAddressAccess().getCityAssignment_10()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__10__Impl"
-
-
-    // $ANTLR start "rule__Address__Group__11"
-    // InternalGrocery.g:1834:1: rule__Address__Group__11 : rule__Address__Group__11__Impl ;
-    public final void rule__Address__Group__11() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1838:1: ( rule__Address__Group__11__Impl )
-            // InternalGrocery.g:1839:2: rule__Address__Group__11__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Address__Group__11__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__11"
-
-
-    // $ANTLR start "rule__Address__Group__11__Impl"
-    // InternalGrocery.g:1845:1: rule__Address__Group__11__Impl : ( '}' ) ;
-    public final void rule__Address__Group__11__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:1849:1: ( ( '}' ) )
-            // InternalGrocery.g:1850:1: ( '}' )
-            {
-            // InternalGrocery.g:1850:1: ( '}' )
-            // InternalGrocery.g:1851:2: '}'
-            {
-             before(grammarAccess.getAddressAccess().getRightCurlyBracketKeyword_11()); 
-            match(input,13,FOLLOW_2); 
-             after(grammarAccess.getAddressAccess().getRightCurlyBracketKeyword_11()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__Group__11__Impl"
-
-
     // $ANTLR start "rule__ExperationDate__Group__0"
-    // InternalGrocery.g:1861:1: rule__ExperationDate__Group__0 : rule__ExperationDate__Group__0__Impl rule__ExperationDate__Group__1 ;
+    // InternalGrocery.g:1722:1: rule__ExperationDate__Group__0 : rule__ExperationDate__Group__0__Impl rule__ExperationDate__Group__1 ;
     public final void rule__ExperationDate__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1865:1: ( rule__ExperationDate__Group__0__Impl rule__ExperationDate__Group__1 )
-            // InternalGrocery.g:1866:2: rule__ExperationDate__Group__0__Impl rule__ExperationDate__Group__1
+            // InternalGrocery.g:1726:1: ( rule__ExperationDate__Group__0__Impl rule__ExperationDate__Group__1 )
+            // InternalGrocery.g:1727:2: rule__ExperationDate__Group__0__Impl rule__ExperationDate__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__ExperationDate__Group__0__Impl();
@@ -5608,20 +5221,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExperationDate__Group__0__Impl"
-    // InternalGrocery.g:1873:1: rule__ExperationDate__Group__0__Impl : ( 'ExpirationDate' ) ;
+    // InternalGrocery.g:1734:1: rule__ExperationDate__Group__0__Impl : ( 'ExpirationDate' ) ;
     public final void rule__ExperationDate__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1877:1: ( ( 'ExpirationDate' ) )
-            // InternalGrocery.g:1878:1: ( 'ExpirationDate' )
+            // InternalGrocery.g:1738:1: ( ( 'ExpirationDate' ) )
+            // InternalGrocery.g:1739:1: ( 'ExpirationDate' )
             {
-            // InternalGrocery.g:1878:1: ( 'ExpirationDate' )
-            // InternalGrocery.g:1879:2: 'ExpirationDate'
+            // InternalGrocery.g:1739:1: ( 'ExpirationDate' )
+            // InternalGrocery.g:1740:2: 'ExpirationDate'
             {
              before(grammarAccess.getExperationDateAccess().getExpirationDateKeyword_0()); 
-            match(input,25,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getExperationDateAccess().getExpirationDateKeyword_0()); 
 
             }
@@ -5645,16 +5258,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExperationDate__Group__1"
-    // InternalGrocery.g:1888:1: rule__ExperationDate__Group__1 : rule__ExperationDate__Group__1__Impl rule__ExperationDate__Group__2 ;
+    // InternalGrocery.g:1749:1: rule__ExperationDate__Group__1 : rule__ExperationDate__Group__1__Impl rule__ExperationDate__Group__2 ;
     public final void rule__ExperationDate__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1892:1: ( rule__ExperationDate__Group__1__Impl rule__ExperationDate__Group__2 )
-            // InternalGrocery.g:1893:2: rule__ExperationDate__Group__1__Impl rule__ExperationDate__Group__2
+            // InternalGrocery.g:1753:1: ( rule__ExperationDate__Group__1__Impl rule__ExperationDate__Group__2 )
+            // InternalGrocery.g:1754:2: rule__ExperationDate__Group__1__Impl rule__ExperationDate__Group__2
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_20);
             rule__ExperationDate__Group__1__Impl();
 
             state._fsp--;
@@ -5683,17 +5296,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExperationDate__Group__1__Impl"
-    // InternalGrocery.g:1900:1: rule__ExperationDate__Group__1__Impl : ( '{' ) ;
+    // InternalGrocery.g:1761:1: rule__ExperationDate__Group__1__Impl : ( '{' ) ;
     public final void rule__ExperationDate__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1904:1: ( ( '{' ) )
-            // InternalGrocery.g:1905:1: ( '{' )
+            // InternalGrocery.g:1765:1: ( ( '{' ) )
+            // InternalGrocery.g:1766:1: ( '{' )
             {
-            // InternalGrocery.g:1905:1: ( '{' )
-            // InternalGrocery.g:1906:2: '{'
+            // InternalGrocery.g:1766:1: ( '{' )
+            // InternalGrocery.g:1767:2: '{'
             {
              before(grammarAccess.getExperationDateAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,12,FOLLOW_2); 
@@ -5720,16 +5333,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExperationDate__Group__2"
-    // InternalGrocery.g:1915:1: rule__ExperationDate__Group__2 : rule__ExperationDate__Group__2__Impl rule__ExperationDate__Group__3 ;
+    // InternalGrocery.g:1776:1: rule__ExperationDate__Group__2 : rule__ExperationDate__Group__2__Impl rule__ExperationDate__Group__3 ;
     public final void rule__ExperationDate__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1919:1: ( rule__ExperationDate__Group__2__Impl rule__ExperationDate__Group__3 )
-            // InternalGrocery.g:1920:2: rule__ExperationDate__Group__2__Impl rule__ExperationDate__Group__3
+            // InternalGrocery.g:1780:1: ( rule__ExperationDate__Group__2__Impl rule__ExperationDate__Group__3 )
+            // InternalGrocery.g:1781:2: rule__ExperationDate__Group__2__Impl rule__ExperationDate__Group__3
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_11);
             rule__ExperationDate__Group__2__Impl();
 
             state._fsp--;
@@ -5758,21 +5371,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExperationDate__Group__2__Impl"
-    // InternalGrocery.g:1927:1: rule__ExperationDate__Group__2__Impl : ( 'month' ) ;
+    // InternalGrocery.g:1788:1: rule__ExperationDate__Group__2__Impl : ( 'date' ) ;
     public final void rule__ExperationDate__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1931:1: ( ( 'month' ) )
-            // InternalGrocery.g:1932:1: ( 'month' )
+            // InternalGrocery.g:1792:1: ( ( 'date' ) )
+            // InternalGrocery.g:1793:1: ( 'date' )
             {
-            // InternalGrocery.g:1932:1: ( 'month' )
-            // InternalGrocery.g:1933:2: 'month'
+            // InternalGrocery.g:1793:1: ( 'date' )
+            // InternalGrocery.g:1794:2: 'date'
             {
-             before(grammarAccess.getExperationDateAccess().getMonthKeyword_2()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getExperationDateAccess().getMonthKeyword_2()); 
+             before(grammarAccess.getExperationDateAccess().getDateKeyword_2()); 
+            match(input,24,FOLLOW_2); 
+             after(grammarAccess.getExperationDateAccess().getDateKeyword_2()); 
 
             }
 
@@ -5795,16 +5408,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExperationDate__Group__3"
-    // InternalGrocery.g:1942:1: rule__ExperationDate__Group__3 : rule__ExperationDate__Group__3__Impl rule__ExperationDate__Group__4 ;
+    // InternalGrocery.g:1803:1: rule__ExperationDate__Group__3 : rule__ExperationDate__Group__3__Impl rule__ExperationDate__Group__4 ;
     public final void rule__ExperationDate__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1946:1: ( rule__ExperationDate__Group__3__Impl rule__ExperationDate__Group__4 )
-            // InternalGrocery.g:1947:2: rule__ExperationDate__Group__3__Impl rule__ExperationDate__Group__4
+            // InternalGrocery.g:1807:1: ( rule__ExperationDate__Group__3__Impl rule__ExperationDate__Group__4 )
+            // InternalGrocery.g:1808:2: rule__ExperationDate__Group__3__Impl rule__ExperationDate__Group__4
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__ExperationDate__Group__3__Impl();
 
             state._fsp--;
@@ -5833,20 +5446,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExperationDate__Group__3__Impl"
-    // InternalGrocery.g:1954:1: rule__ExperationDate__Group__3__Impl : ( ':' ) ;
+    // InternalGrocery.g:1815:1: rule__ExperationDate__Group__3__Impl : ( ':' ) ;
     public final void rule__ExperationDate__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1958:1: ( ( ':' ) )
-            // InternalGrocery.g:1959:1: ( ':' )
+            // InternalGrocery.g:1819:1: ( ( ':' ) )
+            // InternalGrocery.g:1820:1: ( ':' )
             {
-            // InternalGrocery.g:1959:1: ( ':' )
-            // InternalGrocery.g:1960:2: ':'
+            // InternalGrocery.g:1820:1: ( ':' )
+            // InternalGrocery.g:1821:2: ':'
             {
              before(grammarAccess.getExperationDateAccess().getColonKeyword_3()); 
-            match(input,19,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getExperationDateAccess().getColonKeyword_3()); 
 
             }
@@ -5870,16 +5483,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExperationDate__Group__4"
-    // InternalGrocery.g:1969:1: rule__ExperationDate__Group__4 : rule__ExperationDate__Group__4__Impl rule__ExperationDate__Group__5 ;
+    // InternalGrocery.g:1830:1: rule__ExperationDate__Group__4 : rule__ExperationDate__Group__4__Impl rule__ExperationDate__Group__5 ;
     public final void rule__ExperationDate__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1973:1: ( rule__ExperationDate__Group__4__Impl rule__ExperationDate__Group__5 )
-            // InternalGrocery.g:1974:2: rule__ExperationDate__Group__4__Impl rule__ExperationDate__Group__5
+            // InternalGrocery.g:1834:1: ( rule__ExperationDate__Group__4__Impl rule__ExperationDate__Group__5 )
+            // InternalGrocery.g:1835:2: rule__ExperationDate__Group__4__Impl rule__ExperationDate__Group__5
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_18);
             rule__ExperationDate__Group__4__Impl();
 
             state._fsp--;
@@ -5908,31 +5521,31 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExperationDate__Group__4__Impl"
-    // InternalGrocery.g:1981:1: rule__ExperationDate__Group__4__Impl : ( ( rule__ExperationDate__MonthAssignment_4 ) ) ;
+    // InternalGrocery.g:1842:1: rule__ExperationDate__Group__4__Impl : ( ( rule__ExperationDate__DateAssignment_4 ) ) ;
     public final void rule__ExperationDate__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:1985:1: ( ( ( rule__ExperationDate__MonthAssignment_4 ) ) )
-            // InternalGrocery.g:1986:1: ( ( rule__ExperationDate__MonthAssignment_4 ) )
+            // InternalGrocery.g:1846:1: ( ( ( rule__ExperationDate__DateAssignment_4 ) ) )
+            // InternalGrocery.g:1847:1: ( ( rule__ExperationDate__DateAssignment_4 ) )
             {
-            // InternalGrocery.g:1986:1: ( ( rule__ExperationDate__MonthAssignment_4 ) )
-            // InternalGrocery.g:1987:2: ( rule__ExperationDate__MonthAssignment_4 )
+            // InternalGrocery.g:1847:1: ( ( rule__ExperationDate__DateAssignment_4 ) )
+            // InternalGrocery.g:1848:2: ( rule__ExperationDate__DateAssignment_4 )
             {
-             before(grammarAccess.getExperationDateAccess().getMonthAssignment_4()); 
-            // InternalGrocery.g:1988:2: ( rule__ExperationDate__MonthAssignment_4 )
-            // InternalGrocery.g:1988:3: rule__ExperationDate__MonthAssignment_4
+             before(grammarAccess.getExperationDateAccess().getDateAssignment_4()); 
+            // InternalGrocery.g:1849:2: ( rule__ExperationDate__DateAssignment_4 )
+            // InternalGrocery.g:1849:3: rule__ExperationDate__DateAssignment_4
             {
             pushFollow(FOLLOW_2);
-            rule__ExperationDate__MonthAssignment_4();
+            rule__ExperationDate__DateAssignment_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getExperationDateAccess().getMonthAssignment_4()); 
+             after(grammarAccess.getExperationDateAccess().getDateAssignment_4()); 
 
             }
 
@@ -5955,22 +5568,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExperationDate__Group__5"
-    // InternalGrocery.g:1996:1: rule__ExperationDate__Group__5 : rule__ExperationDate__Group__5__Impl rule__ExperationDate__Group__6 ;
+    // InternalGrocery.g:1857:1: rule__ExperationDate__Group__5 : rule__ExperationDate__Group__5__Impl ;
     public final void rule__ExperationDate__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2000:1: ( rule__ExperationDate__Group__5__Impl rule__ExperationDate__Group__6 )
-            // InternalGrocery.g:2001:2: rule__ExperationDate__Group__5__Impl rule__ExperationDate__Group__6
+            // InternalGrocery.g:1861:1: ( rule__ExperationDate__Group__5__Impl )
+            // InternalGrocery.g:1862:2: rule__ExperationDate__Group__5__Impl
             {
-            pushFollow(FOLLOW_14);
-            rule__ExperationDate__Group__5__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__ExperationDate__Group__6();
+            rule__ExperationDate__Group__5__Impl();
 
             state._fsp--;
 
@@ -5993,21 +5601,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExperationDate__Group__5__Impl"
-    // InternalGrocery.g:2008:1: rule__ExperationDate__Group__5__Impl : ( 'day' ) ;
+    // InternalGrocery.g:1868:1: rule__ExperationDate__Group__5__Impl : ( '}' ) ;
     public final void rule__ExperationDate__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2012:1: ( ( 'day' ) )
-            // InternalGrocery.g:2013:1: ( 'day' )
+            // InternalGrocery.g:1872:1: ( ( '}' ) )
+            // InternalGrocery.g:1873:1: ( '}' )
             {
-            // InternalGrocery.g:2013:1: ( 'day' )
-            // InternalGrocery.g:2014:2: 'day'
+            // InternalGrocery.g:1873:1: ( '}' )
+            // InternalGrocery.g:1874:2: '}'
             {
-             before(grammarAccess.getExperationDateAccess().getDayKeyword_5()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getExperationDateAccess().getDayKeyword_5()); 
+             before(grammarAccess.getExperationDateAccess().getRightCurlyBracketKeyword_5()); 
+            match(input,13,FOLLOW_2); 
+             after(grammarAccess.getExperationDateAccess().getRightCurlyBracketKeyword_5()); 
 
             }
 
@@ -6029,480 +5637,15 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ExperationDate__Group__5__Impl"
 
 
-    // $ANTLR start "rule__ExperationDate__Group__6"
-    // InternalGrocery.g:2023:1: rule__ExperationDate__Group__6 : rule__ExperationDate__Group__6__Impl rule__ExperationDate__Group__7 ;
-    public final void rule__ExperationDate__Group__6() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2027:1: ( rule__ExperationDate__Group__6__Impl rule__ExperationDate__Group__7 )
-            // InternalGrocery.g:2028:2: rule__ExperationDate__Group__6__Impl rule__ExperationDate__Group__7
-            {
-            pushFollow(FOLLOW_15);
-            rule__ExperationDate__Group__6__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ExperationDate__Group__7();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ExperationDate__Group__6"
-
-
-    // $ANTLR start "rule__ExperationDate__Group__6__Impl"
-    // InternalGrocery.g:2035:1: rule__ExperationDate__Group__6__Impl : ( ':' ) ;
-    public final void rule__ExperationDate__Group__6__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2039:1: ( ( ':' ) )
-            // InternalGrocery.g:2040:1: ( ':' )
-            {
-            // InternalGrocery.g:2040:1: ( ':' )
-            // InternalGrocery.g:2041:2: ':'
-            {
-             before(grammarAccess.getExperationDateAccess().getColonKeyword_6()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getExperationDateAccess().getColonKeyword_6()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ExperationDate__Group__6__Impl"
-
-
-    // $ANTLR start "rule__ExperationDate__Group__7"
-    // InternalGrocery.g:2050:1: rule__ExperationDate__Group__7 : rule__ExperationDate__Group__7__Impl rule__ExperationDate__Group__8 ;
-    public final void rule__ExperationDate__Group__7() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2054:1: ( rule__ExperationDate__Group__7__Impl rule__ExperationDate__Group__8 )
-            // InternalGrocery.g:2055:2: rule__ExperationDate__Group__7__Impl rule__ExperationDate__Group__8
-            {
-            pushFollow(FOLLOW_24);
-            rule__ExperationDate__Group__7__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ExperationDate__Group__8();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ExperationDate__Group__7"
-
-
-    // $ANTLR start "rule__ExperationDate__Group__7__Impl"
-    // InternalGrocery.g:2062:1: rule__ExperationDate__Group__7__Impl : ( ( rule__ExperationDate__DayAssignment_7 ) ) ;
-    public final void rule__ExperationDate__Group__7__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2066:1: ( ( ( rule__ExperationDate__DayAssignment_7 ) ) )
-            // InternalGrocery.g:2067:1: ( ( rule__ExperationDate__DayAssignment_7 ) )
-            {
-            // InternalGrocery.g:2067:1: ( ( rule__ExperationDate__DayAssignment_7 ) )
-            // InternalGrocery.g:2068:2: ( rule__ExperationDate__DayAssignment_7 )
-            {
-             before(grammarAccess.getExperationDateAccess().getDayAssignment_7()); 
-            // InternalGrocery.g:2069:2: ( rule__ExperationDate__DayAssignment_7 )
-            // InternalGrocery.g:2069:3: rule__ExperationDate__DayAssignment_7
-            {
-            pushFollow(FOLLOW_2);
-            rule__ExperationDate__DayAssignment_7();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getExperationDateAccess().getDayAssignment_7()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ExperationDate__Group__7__Impl"
-
-
-    // $ANTLR start "rule__ExperationDate__Group__8"
-    // InternalGrocery.g:2077:1: rule__ExperationDate__Group__8 : rule__ExperationDate__Group__8__Impl rule__ExperationDate__Group__9 ;
-    public final void rule__ExperationDate__Group__8() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2081:1: ( rule__ExperationDate__Group__8__Impl rule__ExperationDate__Group__9 )
-            // InternalGrocery.g:2082:2: rule__ExperationDate__Group__8__Impl rule__ExperationDate__Group__9
-            {
-            pushFollow(FOLLOW_14);
-            rule__ExperationDate__Group__8__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ExperationDate__Group__9();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ExperationDate__Group__8"
-
-
-    // $ANTLR start "rule__ExperationDate__Group__8__Impl"
-    // InternalGrocery.g:2089:1: rule__ExperationDate__Group__8__Impl : ( 'year' ) ;
-    public final void rule__ExperationDate__Group__8__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2093:1: ( ( 'year' ) )
-            // InternalGrocery.g:2094:1: ( 'year' )
-            {
-            // InternalGrocery.g:2094:1: ( 'year' )
-            // InternalGrocery.g:2095:2: 'year'
-            {
-             before(grammarAccess.getExperationDateAccess().getYearKeyword_8()); 
-            match(input,28,FOLLOW_2); 
-             after(grammarAccess.getExperationDateAccess().getYearKeyword_8()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ExperationDate__Group__8__Impl"
-
-
-    // $ANTLR start "rule__ExperationDate__Group__9"
-    // InternalGrocery.g:2104:1: rule__ExperationDate__Group__9 : rule__ExperationDate__Group__9__Impl rule__ExperationDate__Group__10 ;
-    public final void rule__ExperationDate__Group__9() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2108:1: ( rule__ExperationDate__Group__9__Impl rule__ExperationDate__Group__10 )
-            // InternalGrocery.g:2109:2: rule__ExperationDate__Group__9__Impl rule__ExperationDate__Group__10
-            {
-            pushFollow(FOLLOW_15);
-            rule__ExperationDate__Group__9__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ExperationDate__Group__10();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ExperationDate__Group__9"
-
-
-    // $ANTLR start "rule__ExperationDate__Group__9__Impl"
-    // InternalGrocery.g:2116:1: rule__ExperationDate__Group__9__Impl : ( ':' ) ;
-    public final void rule__ExperationDate__Group__9__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2120:1: ( ( ':' ) )
-            // InternalGrocery.g:2121:1: ( ':' )
-            {
-            // InternalGrocery.g:2121:1: ( ':' )
-            // InternalGrocery.g:2122:2: ':'
-            {
-             before(grammarAccess.getExperationDateAccess().getColonKeyword_9()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getExperationDateAccess().getColonKeyword_9()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ExperationDate__Group__9__Impl"
-
-
-    // $ANTLR start "rule__ExperationDate__Group__10"
-    // InternalGrocery.g:2131:1: rule__ExperationDate__Group__10 : rule__ExperationDate__Group__10__Impl rule__ExperationDate__Group__11 ;
-    public final void rule__ExperationDate__Group__10() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2135:1: ( rule__ExperationDate__Group__10__Impl rule__ExperationDate__Group__11 )
-            // InternalGrocery.g:2136:2: rule__ExperationDate__Group__10__Impl rule__ExperationDate__Group__11
-            {
-            pushFollow(FOLLOW_16);
-            rule__ExperationDate__Group__10__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ExperationDate__Group__11();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ExperationDate__Group__10"
-
-
-    // $ANTLR start "rule__ExperationDate__Group__10__Impl"
-    // InternalGrocery.g:2143:1: rule__ExperationDate__Group__10__Impl : ( ( rule__ExperationDate__YearAssignment_10 ) ) ;
-    public final void rule__ExperationDate__Group__10__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2147:1: ( ( ( rule__ExperationDate__YearAssignment_10 ) ) )
-            // InternalGrocery.g:2148:1: ( ( rule__ExperationDate__YearAssignment_10 ) )
-            {
-            // InternalGrocery.g:2148:1: ( ( rule__ExperationDate__YearAssignment_10 ) )
-            // InternalGrocery.g:2149:2: ( rule__ExperationDate__YearAssignment_10 )
-            {
-             before(grammarAccess.getExperationDateAccess().getYearAssignment_10()); 
-            // InternalGrocery.g:2150:2: ( rule__ExperationDate__YearAssignment_10 )
-            // InternalGrocery.g:2150:3: rule__ExperationDate__YearAssignment_10
-            {
-            pushFollow(FOLLOW_2);
-            rule__ExperationDate__YearAssignment_10();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getExperationDateAccess().getYearAssignment_10()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ExperationDate__Group__10__Impl"
-
-
-    // $ANTLR start "rule__ExperationDate__Group__11"
-    // InternalGrocery.g:2158:1: rule__ExperationDate__Group__11 : rule__ExperationDate__Group__11__Impl ;
-    public final void rule__ExperationDate__Group__11() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2162:1: ( rule__ExperationDate__Group__11__Impl )
-            // InternalGrocery.g:2163:2: rule__ExperationDate__Group__11__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__ExperationDate__Group__11__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ExperationDate__Group__11"
-
-
-    // $ANTLR start "rule__ExperationDate__Group__11__Impl"
-    // InternalGrocery.g:2169:1: rule__ExperationDate__Group__11__Impl : ( '}' ) ;
-    public final void rule__ExperationDate__Group__11__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2173:1: ( ( '}' ) )
-            // InternalGrocery.g:2174:1: ( '}' )
-            {
-            // InternalGrocery.g:2174:1: ( '}' )
-            // InternalGrocery.g:2175:2: '}'
-            {
-             before(grammarAccess.getExperationDateAccess().getRightCurlyBracketKeyword_11()); 
-            match(input,13,FOLLOW_2); 
-             after(grammarAccess.getExperationDateAccess().getRightCurlyBracketKeyword_11()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ExperationDate__Group__11__Impl"
-
-
     // $ANTLR start "rule__Driver__Group__0"
-    // InternalGrocery.g:2185:1: rule__Driver__Group__0 : rule__Driver__Group__0__Impl rule__Driver__Group__1 ;
+    // InternalGrocery.g:1884:1: rule__Driver__Group__0 : rule__Driver__Group__0__Impl rule__Driver__Group__1 ;
     public final void rule__Driver__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2189:1: ( rule__Driver__Group__0__Impl rule__Driver__Group__1 )
-            // InternalGrocery.g:2190:2: rule__Driver__Group__0__Impl rule__Driver__Group__1
+            // InternalGrocery.g:1888:1: ( rule__Driver__Group__0__Impl rule__Driver__Group__1 )
+            // InternalGrocery.g:1889:2: rule__Driver__Group__0__Impl rule__Driver__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Driver__Group__0__Impl();
@@ -6533,20 +5676,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Driver__Group__0__Impl"
-    // InternalGrocery.g:2197:1: rule__Driver__Group__0__Impl : ( 'driver' ) ;
+    // InternalGrocery.g:1896:1: rule__Driver__Group__0__Impl : ( 'driver' ) ;
     public final void rule__Driver__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2201:1: ( ( 'driver' ) )
-            // InternalGrocery.g:2202:1: ( 'driver' )
+            // InternalGrocery.g:1900:1: ( ( 'driver' ) )
+            // InternalGrocery.g:1901:1: ( 'driver' )
             {
-            // InternalGrocery.g:2202:1: ( 'driver' )
-            // InternalGrocery.g:2203:2: 'driver'
+            // InternalGrocery.g:1901:1: ( 'driver' )
+            // InternalGrocery.g:1902:2: 'driver'
             {
              before(grammarAccess.getDriverAccess().getDriverKeyword_0()); 
-            match(input,29,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getDriverAccess().getDriverKeyword_0()); 
 
             }
@@ -6570,14 +5713,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Driver__Group__1"
-    // InternalGrocery.g:2212:1: rule__Driver__Group__1 : rule__Driver__Group__1__Impl rule__Driver__Group__2 ;
+    // InternalGrocery.g:1911:1: rule__Driver__Group__1 : rule__Driver__Group__1__Impl rule__Driver__Group__2 ;
     public final void rule__Driver__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2216:1: ( rule__Driver__Group__1__Impl rule__Driver__Group__2 )
-            // InternalGrocery.g:2217:2: rule__Driver__Group__1__Impl rule__Driver__Group__2
+            // InternalGrocery.g:1915:1: ( rule__Driver__Group__1__Impl rule__Driver__Group__2 )
+            // InternalGrocery.g:1916:2: rule__Driver__Group__1__Impl rule__Driver__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__Driver__Group__1__Impl();
@@ -6608,21 +5751,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Driver__Group__1__Impl"
-    // InternalGrocery.g:2224:1: rule__Driver__Group__1__Impl : ( ( rule__Driver__NameAssignment_1 ) ) ;
+    // InternalGrocery.g:1923:1: rule__Driver__Group__1__Impl : ( ( rule__Driver__NameAssignment_1 ) ) ;
     public final void rule__Driver__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2228:1: ( ( ( rule__Driver__NameAssignment_1 ) ) )
-            // InternalGrocery.g:2229:1: ( ( rule__Driver__NameAssignment_1 ) )
+            // InternalGrocery.g:1927:1: ( ( ( rule__Driver__NameAssignment_1 ) ) )
+            // InternalGrocery.g:1928:1: ( ( rule__Driver__NameAssignment_1 ) )
             {
-            // InternalGrocery.g:2229:1: ( ( rule__Driver__NameAssignment_1 ) )
-            // InternalGrocery.g:2230:2: ( rule__Driver__NameAssignment_1 )
+            // InternalGrocery.g:1928:1: ( ( rule__Driver__NameAssignment_1 ) )
+            // InternalGrocery.g:1929:2: ( rule__Driver__NameAssignment_1 )
             {
              before(grammarAccess.getDriverAccess().getNameAssignment_1()); 
-            // InternalGrocery.g:2231:2: ( rule__Driver__NameAssignment_1 )
-            // InternalGrocery.g:2231:3: rule__Driver__NameAssignment_1
+            // InternalGrocery.g:1930:2: ( rule__Driver__NameAssignment_1 )
+            // InternalGrocery.g:1930:3: rule__Driver__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Driver__NameAssignment_1();
@@ -6655,16 +5798,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Driver__Group__2"
-    // InternalGrocery.g:2239:1: rule__Driver__Group__2 : rule__Driver__Group__2__Impl rule__Driver__Group__3 ;
+    // InternalGrocery.g:1938:1: rule__Driver__Group__2 : rule__Driver__Group__2__Impl rule__Driver__Group__3 ;
     public final void rule__Driver__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2243:1: ( rule__Driver__Group__2__Impl rule__Driver__Group__3 )
-            // InternalGrocery.g:2244:2: rule__Driver__Group__2__Impl rule__Driver__Group__3
+            // InternalGrocery.g:1942:1: ( rule__Driver__Group__2__Impl rule__Driver__Group__3 )
+            // InternalGrocery.g:1943:2: rule__Driver__Group__2__Impl rule__Driver__Group__3
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_21);
             rule__Driver__Group__2__Impl();
 
             state._fsp--;
@@ -6693,17 +5836,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Driver__Group__2__Impl"
-    // InternalGrocery.g:2251:1: rule__Driver__Group__2__Impl : ( '{' ) ;
+    // InternalGrocery.g:1950:1: rule__Driver__Group__2__Impl : ( '{' ) ;
     public final void rule__Driver__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2255:1: ( ( '{' ) )
-            // InternalGrocery.g:2256:1: ( '{' )
+            // InternalGrocery.g:1954:1: ( ( '{' ) )
+            // InternalGrocery.g:1955:1: ( '{' )
             {
-            // InternalGrocery.g:2256:1: ( '{' )
-            // InternalGrocery.g:2257:2: '{'
+            // InternalGrocery.g:1955:1: ( '{' )
+            // InternalGrocery.g:1956:2: '{'
             {
              before(grammarAccess.getDriverAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,12,FOLLOW_2); 
@@ -6730,16 +5873,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Driver__Group__3"
-    // InternalGrocery.g:2266:1: rule__Driver__Group__3 : rule__Driver__Group__3__Impl rule__Driver__Group__4 ;
+    // InternalGrocery.g:1965:1: rule__Driver__Group__3 : rule__Driver__Group__3__Impl rule__Driver__Group__4 ;
     public final void rule__Driver__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2270:1: ( rule__Driver__Group__3__Impl rule__Driver__Group__4 )
-            // InternalGrocery.g:2271:2: rule__Driver__Group__3__Impl rule__Driver__Group__4
+            // InternalGrocery.g:1969:1: ( rule__Driver__Group__3__Impl rule__Driver__Group__4 )
+            // InternalGrocery.g:1970:2: rule__Driver__Group__3__Impl rule__Driver__Group__4
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_11);
             rule__Driver__Group__3__Impl();
 
             state._fsp--;
@@ -6768,20 +5911,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Driver__Group__3__Impl"
-    // InternalGrocery.g:2278:1: rule__Driver__Group__3__Impl : ( 'name' ) ;
+    // InternalGrocery.g:1977:1: rule__Driver__Group__3__Impl : ( 'name' ) ;
     public final void rule__Driver__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2282:1: ( ( 'name' ) )
-            // InternalGrocery.g:2283:1: ( 'name' )
+            // InternalGrocery.g:1981:1: ( ( 'name' ) )
+            // InternalGrocery.g:1982:1: ( 'name' )
             {
-            // InternalGrocery.g:2283:1: ( 'name' )
-            // InternalGrocery.g:2284:2: 'name'
+            // InternalGrocery.g:1982:1: ( 'name' )
+            // InternalGrocery.g:1983:2: 'name'
             {
              before(grammarAccess.getDriverAccess().getNameKeyword_3()); 
-            match(input,30,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getDriverAccess().getNameKeyword_3()); 
 
             }
@@ -6805,16 +5948,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Driver__Group__4"
-    // InternalGrocery.g:2293:1: rule__Driver__Group__4 : rule__Driver__Group__4__Impl rule__Driver__Group__5 ;
+    // InternalGrocery.g:1992:1: rule__Driver__Group__4 : rule__Driver__Group__4__Impl rule__Driver__Group__5 ;
     public final void rule__Driver__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2297:1: ( rule__Driver__Group__4__Impl rule__Driver__Group__5 )
-            // InternalGrocery.g:2298:2: rule__Driver__Group__4__Impl rule__Driver__Group__5
+            // InternalGrocery.g:1996:1: ( rule__Driver__Group__4__Impl rule__Driver__Group__5 )
+            // InternalGrocery.g:1997:2: rule__Driver__Group__4__Impl rule__Driver__Group__5
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_12);
             rule__Driver__Group__4__Impl();
 
             state._fsp--;
@@ -6843,20 +5986,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Driver__Group__4__Impl"
-    // InternalGrocery.g:2305:1: rule__Driver__Group__4__Impl : ( ':' ) ;
+    // InternalGrocery.g:2004:1: rule__Driver__Group__4__Impl : ( ':' ) ;
     public final void rule__Driver__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2309:1: ( ( ':' ) )
-            // InternalGrocery.g:2310:1: ( ':' )
+            // InternalGrocery.g:2008:1: ( ( ':' ) )
+            // InternalGrocery.g:2009:1: ( ':' )
             {
-            // InternalGrocery.g:2310:1: ( ':' )
-            // InternalGrocery.g:2311:2: ':'
+            // InternalGrocery.g:2009:1: ( ':' )
+            // InternalGrocery.g:2010:2: ':'
             {
              before(grammarAccess.getDriverAccess().getColonKeyword_4()); 
-            match(input,19,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getDriverAccess().getColonKeyword_4()); 
 
             }
@@ -6880,16 +6023,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Driver__Group__5"
-    // InternalGrocery.g:2320:1: rule__Driver__Group__5 : rule__Driver__Group__5__Impl rule__Driver__Group__6 ;
+    // InternalGrocery.g:2019:1: rule__Driver__Group__5 : rule__Driver__Group__5__Impl rule__Driver__Group__6 ;
     public final void rule__Driver__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2324:1: ( rule__Driver__Group__5__Impl rule__Driver__Group__6 )
-            // InternalGrocery.g:2325:2: rule__Driver__Group__5__Impl rule__Driver__Group__6
+            // InternalGrocery.g:2023:1: ( rule__Driver__Group__5__Impl rule__Driver__Group__6 )
+            // InternalGrocery.g:2024:2: rule__Driver__Group__5__Impl rule__Driver__Group__6
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_18);
             rule__Driver__Group__5__Impl();
 
             state._fsp--;
@@ -6918,21 +6061,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Driver__Group__5__Impl"
-    // InternalGrocery.g:2332:1: rule__Driver__Group__5__Impl : ( ( rule__Driver__DriverNameAssignment_5 ) ) ;
+    // InternalGrocery.g:2031:1: rule__Driver__Group__5__Impl : ( ( rule__Driver__DriverNameAssignment_5 ) ) ;
     public final void rule__Driver__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2336:1: ( ( ( rule__Driver__DriverNameAssignment_5 ) ) )
-            // InternalGrocery.g:2337:1: ( ( rule__Driver__DriverNameAssignment_5 ) )
+            // InternalGrocery.g:2035:1: ( ( ( rule__Driver__DriverNameAssignment_5 ) ) )
+            // InternalGrocery.g:2036:1: ( ( rule__Driver__DriverNameAssignment_5 ) )
             {
-            // InternalGrocery.g:2337:1: ( ( rule__Driver__DriverNameAssignment_5 ) )
-            // InternalGrocery.g:2338:2: ( rule__Driver__DriverNameAssignment_5 )
+            // InternalGrocery.g:2036:1: ( ( rule__Driver__DriverNameAssignment_5 ) )
+            // InternalGrocery.g:2037:2: ( rule__Driver__DriverNameAssignment_5 )
             {
              before(grammarAccess.getDriverAccess().getDriverNameAssignment_5()); 
-            // InternalGrocery.g:2339:2: ( rule__Driver__DriverNameAssignment_5 )
-            // InternalGrocery.g:2339:3: rule__Driver__DriverNameAssignment_5
+            // InternalGrocery.g:2038:2: ( rule__Driver__DriverNameAssignment_5 )
+            // InternalGrocery.g:2038:3: rule__Driver__DriverNameAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__Driver__DriverNameAssignment_5();
@@ -6965,14 +6108,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Driver__Group__6"
-    // InternalGrocery.g:2347:1: rule__Driver__Group__6 : rule__Driver__Group__6__Impl ;
+    // InternalGrocery.g:2046:1: rule__Driver__Group__6 : rule__Driver__Group__6__Impl ;
     public final void rule__Driver__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2351:1: ( rule__Driver__Group__6__Impl )
-            // InternalGrocery.g:2352:2: rule__Driver__Group__6__Impl
+            // InternalGrocery.g:2050:1: ( rule__Driver__Group__6__Impl )
+            // InternalGrocery.g:2051:2: rule__Driver__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Driver__Group__6__Impl();
@@ -6998,17 +6141,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Driver__Group__6__Impl"
-    // InternalGrocery.g:2358:1: rule__Driver__Group__6__Impl : ( '}' ) ;
+    // InternalGrocery.g:2057:1: rule__Driver__Group__6__Impl : ( '}' ) ;
     public final void rule__Driver__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2362:1: ( ( '}' ) )
-            // InternalGrocery.g:2363:1: ( '}' )
+            // InternalGrocery.g:2061:1: ( ( '}' ) )
+            // InternalGrocery.g:2062:1: ( '}' )
             {
-            // InternalGrocery.g:2363:1: ( '}' )
-            // InternalGrocery.g:2364:2: '}'
+            // InternalGrocery.g:2062:1: ( '}' )
+            // InternalGrocery.g:2063:2: '}'
             {
              before(grammarAccess.getDriverAccess().getRightCurlyBracketKeyword_6()); 
             match(input,13,FOLLOW_2); 
@@ -7035,14 +6178,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vehicle__Group__0"
-    // InternalGrocery.g:2374:1: rule__Vehicle__Group__0 : rule__Vehicle__Group__0__Impl rule__Vehicle__Group__1 ;
+    // InternalGrocery.g:2073:1: rule__Vehicle__Group__0 : rule__Vehicle__Group__0__Impl rule__Vehicle__Group__1 ;
     public final void rule__Vehicle__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2378:1: ( rule__Vehicle__Group__0__Impl rule__Vehicle__Group__1 )
-            // InternalGrocery.g:2379:2: rule__Vehicle__Group__0__Impl rule__Vehicle__Group__1
+            // InternalGrocery.g:2077:1: ( rule__Vehicle__Group__0__Impl rule__Vehicle__Group__1 )
+            // InternalGrocery.g:2078:2: rule__Vehicle__Group__0__Impl rule__Vehicle__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Vehicle__Group__0__Impl();
@@ -7073,20 +6216,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vehicle__Group__0__Impl"
-    // InternalGrocery.g:2386:1: rule__Vehicle__Group__0__Impl : ( 'vehicle' ) ;
+    // InternalGrocery.g:2085:1: rule__Vehicle__Group__0__Impl : ( 'vehicle' ) ;
     public final void rule__Vehicle__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2390:1: ( ( 'vehicle' ) )
-            // InternalGrocery.g:2391:1: ( 'vehicle' )
+            // InternalGrocery.g:2089:1: ( ( 'vehicle' ) )
+            // InternalGrocery.g:2090:1: ( 'vehicle' )
             {
-            // InternalGrocery.g:2391:1: ( 'vehicle' )
-            // InternalGrocery.g:2392:2: 'vehicle'
+            // InternalGrocery.g:2090:1: ( 'vehicle' )
+            // InternalGrocery.g:2091:2: 'vehicle'
             {
              before(grammarAccess.getVehicleAccess().getVehicleKeyword_0()); 
-            match(input,31,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getVehicleAccess().getVehicleKeyword_0()); 
 
             }
@@ -7110,14 +6253,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vehicle__Group__1"
-    // InternalGrocery.g:2401:1: rule__Vehicle__Group__1 : rule__Vehicle__Group__1__Impl rule__Vehicle__Group__2 ;
+    // InternalGrocery.g:2100:1: rule__Vehicle__Group__1 : rule__Vehicle__Group__1__Impl rule__Vehicle__Group__2 ;
     public final void rule__Vehicle__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2405:1: ( rule__Vehicle__Group__1__Impl rule__Vehicle__Group__2 )
-            // InternalGrocery.g:2406:2: rule__Vehicle__Group__1__Impl rule__Vehicle__Group__2
+            // InternalGrocery.g:2104:1: ( rule__Vehicle__Group__1__Impl rule__Vehicle__Group__2 )
+            // InternalGrocery.g:2105:2: rule__Vehicle__Group__1__Impl rule__Vehicle__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__Vehicle__Group__1__Impl();
@@ -7148,21 +6291,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vehicle__Group__1__Impl"
-    // InternalGrocery.g:2413:1: rule__Vehicle__Group__1__Impl : ( ( rule__Vehicle__NameAssignment_1 ) ) ;
+    // InternalGrocery.g:2112:1: rule__Vehicle__Group__1__Impl : ( ( rule__Vehicle__NameAssignment_1 ) ) ;
     public final void rule__Vehicle__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2417:1: ( ( ( rule__Vehicle__NameAssignment_1 ) ) )
-            // InternalGrocery.g:2418:1: ( ( rule__Vehicle__NameAssignment_1 ) )
+            // InternalGrocery.g:2116:1: ( ( ( rule__Vehicle__NameAssignment_1 ) ) )
+            // InternalGrocery.g:2117:1: ( ( rule__Vehicle__NameAssignment_1 ) )
             {
-            // InternalGrocery.g:2418:1: ( ( rule__Vehicle__NameAssignment_1 ) )
-            // InternalGrocery.g:2419:2: ( rule__Vehicle__NameAssignment_1 )
+            // InternalGrocery.g:2117:1: ( ( rule__Vehicle__NameAssignment_1 ) )
+            // InternalGrocery.g:2118:2: ( rule__Vehicle__NameAssignment_1 )
             {
              before(grammarAccess.getVehicleAccess().getNameAssignment_1()); 
-            // InternalGrocery.g:2420:2: ( rule__Vehicle__NameAssignment_1 )
-            // InternalGrocery.g:2420:3: rule__Vehicle__NameAssignment_1
+            // InternalGrocery.g:2119:2: ( rule__Vehicle__NameAssignment_1 )
+            // InternalGrocery.g:2119:3: rule__Vehicle__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Vehicle__NameAssignment_1();
@@ -7195,16 +6338,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vehicle__Group__2"
-    // InternalGrocery.g:2428:1: rule__Vehicle__Group__2 : rule__Vehicle__Group__2__Impl rule__Vehicle__Group__3 ;
+    // InternalGrocery.g:2127:1: rule__Vehicle__Group__2 : rule__Vehicle__Group__2__Impl rule__Vehicle__Group__3 ;
     public final void rule__Vehicle__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2432:1: ( rule__Vehicle__Group__2__Impl rule__Vehicle__Group__3 )
-            // InternalGrocery.g:2433:2: rule__Vehicle__Group__2__Impl rule__Vehicle__Group__3
+            // InternalGrocery.g:2131:1: ( rule__Vehicle__Group__2__Impl rule__Vehicle__Group__3 )
+            // InternalGrocery.g:2132:2: rule__Vehicle__Group__2__Impl rule__Vehicle__Group__3
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_22);
             rule__Vehicle__Group__2__Impl();
 
             state._fsp--;
@@ -7233,17 +6376,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vehicle__Group__2__Impl"
-    // InternalGrocery.g:2440:1: rule__Vehicle__Group__2__Impl : ( '{' ) ;
+    // InternalGrocery.g:2139:1: rule__Vehicle__Group__2__Impl : ( '{' ) ;
     public final void rule__Vehicle__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2444:1: ( ( '{' ) )
-            // InternalGrocery.g:2445:1: ( '{' )
+            // InternalGrocery.g:2143:1: ( ( '{' ) )
+            // InternalGrocery.g:2144:1: ( '{' )
             {
-            // InternalGrocery.g:2445:1: ( '{' )
-            // InternalGrocery.g:2446:2: '{'
+            // InternalGrocery.g:2144:1: ( '{' )
+            // InternalGrocery.g:2145:2: '{'
             {
              before(grammarAccess.getVehicleAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,12,FOLLOW_2); 
@@ -7270,16 +6413,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vehicle__Group__3"
-    // InternalGrocery.g:2455:1: rule__Vehicle__Group__3 : rule__Vehicle__Group__3__Impl rule__Vehicle__Group__4 ;
+    // InternalGrocery.g:2154:1: rule__Vehicle__Group__3 : rule__Vehicle__Group__3__Impl rule__Vehicle__Group__4 ;
     public final void rule__Vehicle__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2459:1: ( rule__Vehicle__Group__3__Impl rule__Vehicle__Group__4 )
-            // InternalGrocery.g:2460:2: rule__Vehicle__Group__3__Impl rule__Vehicle__Group__4
+            // InternalGrocery.g:2158:1: ( rule__Vehicle__Group__3__Impl rule__Vehicle__Group__4 )
+            // InternalGrocery.g:2159:2: rule__Vehicle__Group__3__Impl rule__Vehicle__Group__4
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_11);
             rule__Vehicle__Group__3__Impl();
 
             state._fsp--;
@@ -7308,20 +6451,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vehicle__Group__3__Impl"
-    // InternalGrocery.g:2467:1: rule__Vehicle__Group__3__Impl : ( 'plateNumber' ) ;
+    // InternalGrocery.g:2166:1: rule__Vehicle__Group__3__Impl : ( 'plateNumber' ) ;
     public final void rule__Vehicle__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2471:1: ( ( 'plateNumber' ) )
-            // InternalGrocery.g:2472:1: ( 'plateNumber' )
+            // InternalGrocery.g:2170:1: ( ( 'plateNumber' ) )
+            // InternalGrocery.g:2171:1: ( 'plateNumber' )
             {
-            // InternalGrocery.g:2472:1: ( 'plateNumber' )
-            // InternalGrocery.g:2473:2: 'plateNumber'
+            // InternalGrocery.g:2171:1: ( 'plateNumber' )
+            // InternalGrocery.g:2172:2: 'plateNumber'
             {
              before(grammarAccess.getVehicleAccess().getPlateNumberKeyword_3()); 
-            match(input,32,FOLLOW_2); 
+            match(input,28,FOLLOW_2); 
              after(grammarAccess.getVehicleAccess().getPlateNumberKeyword_3()); 
 
             }
@@ -7345,16 +6488,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vehicle__Group__4"
-    // InternalGrocery.g:2482:1: rule__Vehicle__Group__4 : rule__Vehicle__Group__4__Impl rule__Vehicle__Group__5 ;
+    // InternalGrocery.g:2181:1: rule__Vehicle__Group__4 : rule__Vehicle__Group__4__Impl rule__Vehicle__Group__5 ;
     public final void rule__Vehicle__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2486:1: ( rule__Vehicle__Group__4__Impl rule__Vehicle__Group__5 )
-            // InternalGrocery.g:2487:2: rule__Vehicle__Group__4__Impl rule__Vehicle__Group__5
+            // InternalGrocery.g:2185:1: ( rule__Vehicle__Group__4__Impl rule__Vehicle__Group__5 )
+            // InternalGrocery.g:2186:2: rule__Vehicle__Group__4__Impl rule__Vehicle__Group__5
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_12);
             rule__Vehicle__Group__4__Impl();
 
             state._fsp--;
@@ -7383,20 +6526,20 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vehicle__Group__4__Impl"
-    // InternalGrocery.g:2494:1: rule__Vehicle__Group__4__Impl : ( ':' ) ;
+    // InternalGrocery.g:2193:1: rule__Vehicle__Group__4__Impl : ( ':' ) ;
     public final void rule__Vehicle__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2498:1: ( ( ':' ) )
-            // InternalGrocery.g:2499:1: ( ':' )
+            // InternalGrocery.g:2197:1: ( ( ':' ) )
+            // InternalGrocery.g:2198:1: ( ':' )
             {
-            // InternalGrocery.g:2499:1: ( ':' )
-            // InternalGrocery.g:2500:2: ':'
+            // InternalGrocery.g:2198:1: ( ':' )
+            // InternalGrocery.g:2199:2: ':'
             {
              before(grammarAccess.getVehicleAccess().getColonKeyword_4()); 
-            match(input,19,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getVehicleAccess().getColonKeyword_4()); 
 
             }
@@ -7420,16 +6563,16 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vehicle__Group__5"
-    // InternalGrocery.g:2509:1: rule__Vehicle__Group__5 : rule__Vehicle__Group__5__Impl rule__Vehicle__Group__6 ;
+    // InternalGrocery.g:2208:1: rule__Vehicle__Group__5 : rule__Vehicle__Group__5__Impl rule__Vehicle__Group__6 ;
     public final void rule__Vehicle__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2513:1: ( rule__Vehicle__Group__5__Impl rule__Vehicle__Group__6 )
-            // InternalGrocery.g:2514:2: rule__Vehicle__Group__5__Impl rule__Vehicle__Group__6
+            // InternalGrocery.g:2212:1: ( rule__Vehicle__Group__5__Impl rule__Vehicle__Group__6 )
+            // InternalGrocery.g:2213:2: rule__Vehicle__Group__5__Impl rule__Vehicle__Group__6
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_18);
             rule__Vehicle__Group__5__Impl();
 
             state._fsp--;
@@ -7458,21 +6601,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vehicle__Group__5__Impl"
-    // InternalGrocery.g:2521:1: rule__Vehicle__Group__5__Impl : ( ( rule__Vehicle__PlateNumberAssignment_5 ) ) ;
+    // InternalGrocery.g:2220:1: rule__Vehicle__Group__5__Impl : ( ( rule__Vehicle__PlateNumberAssignment_5 ) ) ;
     public final void rule__Vehicle__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2525:1: ( ( ( rule__Vehicle__PlateNumberAssignment_5 ) ) )
-            // InternalGrocery.g:2526:1: ( ( rule__Vehicle__PlateNumberAssignment_5 ) )
+            // InternalGrocery.g:2224:1: ( ( ( rule__Vehicle__PlateNumberAssignment_5 ) ) )
+            // InternalGrocery.g:2225:1: ( ( rule__Vehicle__PlateNumberAssignment_5 ) )
             {
-            // InternalGrocery.g:2526:1: ( ( rule__Vehicle__PlateNumberAssignment_5 ) )
-            // InternalGrocery.g:2527:2: ( rule__Vehicle__PlateNumberAssignment_5 )
+            // InternalGrocery.g:2225:1: ( ( rule__Vehicle__PlateNumberAssignment_5 ) )
+            // InternalGrocery.g:2226:2: ( rule__Vehicle__PlateNumberAssignment_5 )
             {
              before(grammarAccess.getVehicleAccess().getPlateNumberAssignment_5()); 
-            // InternalGrocery.g:2528:2: ( rule__Vehicle__PlateNumberAssignment_5 )
-            // InternalGrocery.g:2528:3: rule__Vehicle__PlateNumberAssignment_5
+            // InternalGrocery.g:2227:2: ( rule__Vehicle__PlateNumberAssignment_5 )
+            // InternalGrocery.g:2227:3: rule__Vehicle__PlateNumberAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__Vehicle__PlateNumberAssignment_5();
@@ -7505,14 +6648,14 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vehicle__Group__6"
-    // InternalGrocery.g:2536:1: rule__Vehicle__Group__6 : rule__Vehicle__Group__6__Impl ;
+    // InternalGrocery.g:2235:1: rule__Vehicle__Group__6 : rule__Vehicle__Group__6__Impl ;
     public final void rule__Vehicle__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2540:1: ( rule__Vehicle__Group__6__Impl )
-            // InternalGrocery.g:2541:2: rule__Vehicle__Group__6__Impl
+            // InternalGrocery.g:2239:1: ( rule__Vehicle__Group__6__Impl )
+            // InternalGrocery.g:2240:2: rule__Vehicle__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Vehicle__Group__6__Impl();
@@ -7538,17 +6681,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vehicle__Group__6__Impl"
-    // InternalGrocery.g:2547:1: rule__Vehicle__Group__6__Impl : ( '}' ) ;
+    // InternalGrocery.g:2246:1: rule__Vehicle__Group__6__Impl : ( '}' ) ;
     public final void rule__Vehicle__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2551:1: ( ( '}' ) )
-            // InternalGrocery.g:2552:1: ( '}' )
+            // InternalGrocery.g:2250:1: ( ( '}' ) )
+            // InternalGrocery.g:2251:1: ( '}' )
             {
-            // InternalGrocery.g:2552:1: ( '}' )
-            // InternalGrocery.g:2553:2: '}'
+            // InternalGrocery.g:2251:1: ( '}' )
+            // InternalGrocery.g:2252:2: '}'
             {
              before(grammarAccess.getVehicleAccess().getRightCurlyBracketKeyword_6()); 
             match(input,13,FOLLOW_2); 
@@ -7574,18 +6717,903 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Vehicle__Group__6__Impl"
 
 
+    // $ANTLR start "rule__DECIMAL__Group__0"
+    // InternalGrocery.g:2262:1: rule__DECIMAL__Group__0 : rule__DECIMAL__Group__0__Impl rule__DECIMAL__Group__1 ;
+    public final void rule__DECIMAL__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2266:1: ( rule__DECIMAL__Group__0__Impl rule__DECIMAL__Group__1 )
+            // InternalGrocery.g:2267:2: rule__DECIMAL__Group__0__Impl rule__DECIMAL__Group__1
+            {
+            pushFollow(FOLLOW_23);
+            rule__DECIMAL__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__DECIMAL__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DECIMAL__Group__0"
+
+
+    // $ANTLR start "rule__DECIMAL__Group__0__Impl"
+    // InternalGrocery.g:2274:1: rule__DECIMAL__Group__0__Impl : ( RULE_INT ) ;
+    public final void rule__DECIMAL__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2278:1: ( ( RULE_INT ) )
+            // InternalGrocery.g:2279:1: ( RULE_INT )
+            {
+            // InternalGrocery.g:2279:1: ( RULE_INT )
+            // InternalGrocery.g:2280:2: RULE_INT
+            {
+             before(grammarAccess.getDECIMALAccess().getINTTerminalRuleCall_0()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getDECIMALAccess().getINTTerminalRuleCall_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DECIMAL__Group__0__Impl"
+
+
+    // $ANTLR start "rule__DECIMAL__Group__1"
+    // InternalGrocery.g:2289:1: rule__DECIMAL__Group__1 : rule__DECIMAL__Group__1__Impl rule__DECIMAL__Group__2 ;
+    public final void rule__DECIMAL__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2293:1: ( rule__DECIMAL__Group__1__Impl rule__DECIMAL__Group__2 )
+            // InternalGrocery.g:2294:2: rule__DECIMAL__Group__1__Impl rule__DECIMAL__Group__2
+            {
+            pushFollow(FOLLOW_16);
+            rule__DECIMAL__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__DECIMAL__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DECIMAL__Group__1"
+
+
+    // $ANTLR start "rule__DECIMAL__Group__1__Impl"
+    // InternalGrocery.g:2301:1: rule__DECIMAL__Group__1__Impl : ( '.' ) ;
+    public final void rule__DECIMAL__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2305:1: ( ( '.' ) )
+            // InternalGrocery.g:2306:1: ( '.' )
+            {
+            // InternalGrocery.g:2306:1: ( '.' )
+            // InternalGrocery.g:2307:2: '.'
+            {
+             before(grammarAccess.getDECIMALAccess().getFullStopKeyword_1()); 
+            match(input,29,FOLLOW_2); 
+             after(grammarAccess.getDECIMALAccess().getFullStopKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DECIMAL__Group__1__Impl"
+
+
+    // $ANTLR start "rule__DECIMAL__Group__2"
+    // InternalGrocery.g:2316:1: rule__DECIMAL__Group__2 : rule__DECIMAL__Group__2__Impl ;
+    public final void rule__DECIMAL__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2320:1: ( rule__DECIMAL__Group__2__Impl )
+            // InternalGrocery.g:2321:2: rule__DECIMAL__Group__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__DECIMAL__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DECIMAL__Group__2"
+
+
+    // $ANTLR start "rule__DECIMAL__Group__2__Impl"
+    // InternalGrocery.g:2327:1: rule__DECIMAL__Group__2__Impl : ( RULE_INT ) ;
+    public final void rule__DECIMAL__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2331:1: ( ( RULE_INT ) )
+            // InternalGrocery.g:2332:1: ( RULE_INT )
+            {
+            // InternalGrocery.g:2332:1: ( RULE_INT )
+            // InternalGrocery.g:2333:2: RULE_INT
+            {
+             before(grammarAccess.getDECIMALAccess().getINTTerminalRuleCall_2()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getDECIMALAccess().getINTTerminalRuleCall_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DECIMAL__Group__2__Impl"
+
+
+    // $ANTLR start "rule__DATE__Group__0"
+    // InternalGrocery.g:2343:1: rule__DATE__Group__0 : rule__DATE__Group__0__Impl rule__DATE__Group__1 ;
+    public final void rule__DATE__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2347:1: ( rule__DATE__Group__0__Impl rule__DATE__Group__1 )
+            // InternalGrocery.g:2348:2: rule__DATE__Group__0__Impl rule__DATE__Group__1
+            {
+            pushFollow(FOLLOW_24);
+            rule__DATE__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__DATE__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DATE__Group__0"
+
+
+    // $ANTLR start "rule__DATE__Group__0__Impl"
+    // InternalGrocery.g:2355:1: rule__DATE__Group__0__Impl : ( RULE_INT ) ;
+    public final void rule__DATE__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2359:1: ( ( RULE_INT ) )
+            // InternalGrocery.g:2360:1: ( RULE_INT )
+            {
+            // InternalGrocery.g:2360:1: ( RULE_INT )
+            // InternalGrocery.g:2361:2: RULE_INT
+            {
+             before(grammarAccess.getDATEAccess().getINTTerminalRuleCall_0()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getDATEAccess().getINTTerminalRuleCall_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DATE__Group__0__Impl"
+
+
+    // $ANTLR start "rule__DATE__Group__1"
+    // InternalGrocery.g:2370:1: rule__DATE__Group__1 : rule__DATE__Group__1__Impl rule__DATE__Group__2 ;
+    public final void rule__DATE__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2374:1: ( rule__DATE__Group__1__Impl rule__DATE__Group__2 )
+            // InternalGrocery.g:2375:2: rule__DATE__Group__1__Impl rule__DATE__Group__2
+            {
+            pushFollow(FOLLOW_16);
+            rule__DATE__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__DATE__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DATE__Group__1"
+
+
+    // $ANTLR start "rule__DATE__Group__1__Impl"
+    // InternalGrocery.g:2382:1: rule__DATE__Group__1__Impl : ( '/' ) ;
+    public final void rule__DATE__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2386:1: ( ( '/' ) )
+            // InternalGrocery.g:2387:1: ( '/' )
+            {
+            // InternalGrocery.g:2387:1: ( '/' )
+            // InternalGrocery.g:2388:2: '/'
+            {
+             before(grammarAccess.getDATEAccess().getSolidusKeyword_1()); 
+            match(input,30,FOLLOW_2); 
+             after(grammarAccess.getDATEAccess().getSolidusKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DATE__Group__1__Impl"
+
+
+    // $ANTLR start "rule__DATE__Group__2"
+    // InternalGrocery.g:2397:1: rule__DATE__Group__2 : rule__DATE__Group__2__Impl rule__DATE__Group__3 ;
+    public final void rule__DATE__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2401:1: ( rule__DATE__Group__2__Impl rule__DATE__Group__3 )
+            // InternalGrocery.g:2402:2: rule__DATE__Group__2__Impl rule__DATE__Group__3
+            {
+            pushFollow(FOLLOW_24);
+            rule__DATE__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__DATE__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DATE__Group__2"
+
+
+    // $ANTLR start "rule__DATE__Group__2__Impl"
+    // InternalGrocery.g:2409:1: rule__DATE__Group__2__Impl : ( RULE_INT ) ;
+    public final void rule__DATE__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2413:1: ( ( RULE_INT ) )
+            // InternalGrocery.g:2414:1: ( RULE_INT )
+            {
+            // InternalGrocery.g:2414:1: ( RULE_INT )
+            // InternalGrocery.g:2415:2: RULE_INT
+            {
+             before(grammarAccess.getDATEAccess().getINTTerminalRuleCall_2()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getDATEAccess().getINTTerminalRuleCall_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DATE__Group__2__Impl"
+
+
+    // $ANTLR start "rule__DATE__Group__3"
+    // InternalGrocery.g:2424:1: rule__DATE__Group__3 : rule__DATE__Group__3__Impl rule__DATE__Group__4 ;
+    public final void rule__DATE__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2428:1: ( rule__DATE__Group__3__Impl rule__DATE__Group__4 )
+            // InternalGrocery.g:2429:2: rule__DATE__Group__3__Impl rule__DATE__Group__4
+            {
+            pushFollow(FOLLOW_16);
+            rule__DATE__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__DATE__Group__4();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DATE__Group__3"
+
+
+    // $ANTLR start "rule__DATE__Group__3__Impl"
+    // InternalGrocery.g:2436:1: rule__DATE__Group__3__Impl : ( '/' ) ;
+    public final void rule__DATE__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2440:1: ( ( '/' ) )
+            // InternalGrocery.g:2441:1: ( '/' )
+            {
+            // InternalGrocery.g:2441:1: ( '/' )
+            // InternalGrocery.g:2442:2: '/'
+            {
+             before(grammarAccess.getDATEAccess().getSolidusKeyword_3()); 
+            match(input,30,FOLLOW_2); 
+             after(grammarAccess.getDATEAccess().getSolidusKeyword_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DATE__Group__3__Impl"
+
+
+    // $ANTLR start "rule__DATE__Group__4"
+    // InternalGrocery.g:2451:1: rule__DATE__Group__4 : rule__DATE__Group__4__Impl ;
+    public final void rule__DATE__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2455:1: ( rule__DATE__Group__4__Impl )
+            // InternalGrocery.g:2456:2: rule__DATE__Group__4__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__DATE__Group__4__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DATE__Group__4"
+
+
+    // $ANTLR start "rule__DATE__Group__4__Impl"
+    // InternalGrocery.g:2462:1: rule__DATE__Group__4__Impl : ( RULE_INT ) ;
+    public final void rule__DATE__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2466:1: ( ( RULE_INT ) )
+            // InternalGrocery.g:2467:1: ( RULE_INT )
+            {
+            // InternalGrocery.g:2467:1: ( RULE_INT )
+            // InternalGrocery.g:2468:2: RULE_INT
+            {
+             before(grammarAccess.getDATEAccess().getINTTerminalRuleCall_4()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getDATEAccess().getINTTerminalRuleCall_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DATE__Group__4__Impl"
+
+
+    // $ANTLR start "rule__ADDRESS__Group__0"
+    // InternalGrocery.g:2478:1: rule__ADDRESS__Group__0 : rule__ADDRESS__Group__0__Impl rule__ADDRESS__Group__1 ;
+    public final void rule__ADDRESS__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2482:1: ( rule__ADDRESS__Group__0__Impl rule__ADDRESS__Group__1 )
+            // InternalGrocery.g:2483:2: rule__ADDRESS__Group__0__Impl rule__ADDRESS__Group__1
+            {
+            pushFollow(FOLLOW_16);
+            rule__ADDRESS__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ADDRESS__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ADDRESS__Group__0"
+
+
+    // $ANTLR start "rule__ADDRESS__Group__0__Impl"
+    // InternalGrocery.g:2490:1: rule__ADDRESS__Group__0__Impl : ( RULE_STRING ) ;
+    public final void rule__ADDRESS__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2494:1: ( ( RULE_STRING ) )
+            // InternalGrocery.g:2495:1: ( RULE_STRING )
+            {
+            // InternalGrocery.g:2495:1: ( RULE_STRING )
+            // InternalGrocery.g:2496:2: RULE_STRING
+            {
+             before(grammarAccess.getADDRESSAccess().getSTRINGTerminalRuleCall_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getADDRESSAccess().getSTRINGTerminalRuleCall_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ADDRESS__Group__0__Impl"
+
+
+    // $ANTLR start "rule__ADDRESS__Group__1"
+    // InternalGrocery.g:2505:1: rule__ADDRESS__Group__1 : rule__ADDRESS__Group__1__Impl rule__ADDRESS__Group__2 ;
+    public final void rule__ADDRESS__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2509:1: ( rule__ADDRESS__Group__1__Impl rule__ADDRESS__Group__2 )
+            // InternalGrocery.g:2510:2: rule__ADDRESS__Group__1__Impl rule__ADDRESS__Group__2
+            {
+            pushFollow(FOLLOW_25);
+            rule__ADDRESS__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ADDRESS__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ADDRESS__Group__1"
+
+
+    // $ANTLR start "rule__ADDRESS__Group__1__Impl"
+    // InternalGrocery.g:2517:1: rule__ADDRESS__Group__1__Impl : ( RULE_INT ) ;
+    public final void rule__ADDRESS__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2521:1: ( ( RULE_INT ) )
+            // InternalGrocery.g:2522:1: ( RULE_INT )
+            {
+            // InternalGrocery.g:2522:1: ( RULE_INT )
+            // InternalGrocery.g:2523:2: RULE_INT
+            {
+             before(grammarAccess.getADDRESSAccess().getINTTerminalRuleCall_1()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getADDRESSAccess().getINTTerminalRuleCall_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ADDRESS__Group__1__Impl"
+
+
+    // $ANTLR start "rule__ADDRESS__Group__2"
+    // InternalGrocery.g:2532:1: rule__ADDRESS__Group__2 : rule__ADDRESS__Group__2__Impl rule__ADDRESS__Group__3 ;
+    public final void rule__ADDRESS__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2536:1: ( rule__ADDRESS__Group__2__Impl rule__ADDRESS__Group__3 )
+            // InternalGrocery.g:2537:2: rule__ADDRESS__Group__2__Impl rule__ADDRESS__Group__3
+            {
+            pushFollow(FOLLOW_12);
+            rule__ADDRESS__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ADDRESS__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ADDRESS__Group__2"
+
+
+    // $ANTLR start "rule__ADDRESS__Group__2__Impl"
+    // InternalGrocery.g:2544:1: rule__ADDRESS__Group__2__Impl : ( ',' ) ;
+    public final void rule__ADDRESS__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2548:1: ( ( ',' ) )
+            // InternalGrocery.g:2549:1: ( ',' )
+            {
+            // InternalGrocery.g:2549:1: ( ',' )
+            // InternalGrocery.g:2550:2: ','
+            {
+             before(grammarAccess.getADDRESSAccess().getCommaKeyword_2()); 
+            match(input,31,FOLLOW_2); 
+             after(grammarAccess.getADDRESSAccess().getCommaKeyword_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ADDRESS__Group__2__Impl"
+
+
+    // $ANTLR start "rule__ADDRESS__Group__3"
+    // InternalGrocery.g:2559:1: rule__ADDRESS__Group__3 : rule__ADDRESS__Group__3__Impl ;
+    public final void rule__ADDRESS__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2563:1: ( rule__ADDRESS__Group__3__Impl )
+            // InternalGrocery.g:2564:2: rule__ADDRESS__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__ADDRESS__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ADDRESS__Group__3"
+
+
+    // $ANTLR start "rule__ADDRESS__Group__3__Impl"
+    // InternalGrocery.g:2570:1: rule__ADDRESS__Group__3__Impl : ( RULE_STRING ) ;
+    public final void rule__ADDRESS__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2574:1: ( ( RULE_STRING ) )
+            // InternalGrocery.g:2575:1: ( RULE_STRING )
+            {
+            // InternalGrocery.g:2575:1: ( RULE_STRING )
+            // InternalGrocery.g:2576:2: RULE_STRING
+            {
+             before(grammarAccess.getADDRESSAccess().getSTRINGTerminalRuleCall_3()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getADDRESSAccess().getSTRINGTerminalRuleCall_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ADDRESS__Group__3__Impl"
+
+
     // $ANTLR start "rule__Grocery__ElementsAssignment_0"
-    // InternalGrocery.g:2563:1: rule__Grocery__ElementsAssignment_0 : ( ruleBuilding ) ;
+    // InternalGrocery.g:2586:1: rule__Grocery__ElementsAssignment_0 : ( ruleBuilding ) ;
     public final void rule__Grocery__ElementsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2567:1: ( ( ruleBuilding ) )
-            // InternalGrocery.g:2568:2: ( ruleBuilding )
+            // InternalGrocery.g:2590:1: ( ( ruleBuilding ) )
+            // InternalGrocery.g:2591:2: ( ruleBuilding )
             {
-            // InternalGrocery.g:2568:2: ( ruleBuilding )
-            // InternalGrocery.g:2569:3: ruleBuilding
+            // InternalGrocery.g:2591:2: ( ruleBuilding )
+            // InternalGrocery.g:2592:3: ruleBuilding
             {
              before(grammarAccess.getGroceryAccess().getElementsBuildingParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -7616,17 +7644,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Grocery__ElementsAssignment_1"
-    // InternalGrocery.g:2578:1: rule__Grocery__ElementsAssignment_1 : ( ruleDeliveryElement ) ;
+    // InternalGrocery.g:2601:1: rule__Grocery__ElementsAssignment_1 : ( ruleDeliveryElement ) ;
     public final void rule__Grocery__ElementsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2582:1: ( ( ruleDeliveryElement ) )
-            // InternalGrocery.g:2583:2: ( ruleDeliveryElement )
+            // InternalGrocery.g:2605:1: ( ( ruleDeliveryElement ) )
+            // InternalGrocery.g:2606:2: ( ruleDeliveryElement )
             {
-            // InternalGrocery.g:2583:2: ( ruleDeliveryElement )
-            // InternalGrocery.g:2584:3: ruleDeliveryElement
+            // InternalGrocery.g:2606:2: ( ruleDeliveryElement )
+            // InternalGrocery.g:2607:3: ruleDeliveryElement
             {
              before(grammarAccess.getGroceryAccess().getElementsDeliveryElementParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7657,17 +7685,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Store__NameAssignment_1"
-    // InternalGrocery.g:2593:1: rule__Store__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalGrocery.g:2616:1: rule__Store__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Store__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2597:1: ( ( RULE_ID ) )
-            // InternalGrocery.g:2598:2: ( RULE_ID )
+            // InternalGrocery.g:2620:1: ( ( RULE_ID ) )
+            // InternalGrocery.g:2621:2: ( RULE_ID )
             {
-            // InternalGrocery.g:2598:2: ( RULE_ID )
-            // InternalGrocery.g:2599:3: RULE_ID
+            // InternalGrocery.g:2621:2: ( RULE_ID )
+            // InternalGrocery.g:2622:3: RULE_ID
             {
              before(grammarAccess.getStoreAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7694,17 +7722,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Store__ElementsAssignment_3"
-    // InternalGrocery.g:2608:1: rule__Store__ElementsAssignment_3 : ( ruleStoreElements ) ;
+    // InternalGrocery.g:2631:1: rule__Store__ElementsAssignment_3 : ( ruleStoreElements ) ;
     public final void rule__Store__ElementsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2612:1: ( ( ruleStoreElements ) )
-            // InternalGrocery.g:2613:2: ( ruleStoreElements )
+            // InternalGrocery.g:2635:1: ( ( ruleStoreElements ) )
+            // InternalGrocery.g:2636:2: ( ruleStoreElements )
             {
-            // InternalGrocery.g:2613:2: ( ruleStoreElements )
-            // InternalGrocery.g:2614:3: ruleStoreElements
+            // InternalGrocery.g:2636:2: ( ruleStoreElements )
+            // InternalGrocery.g:2637:3: ruleStoreElements
             {
              before(grammarAccess.getStoreAccess().getElementsStoreElementsParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -7735,17 +7763,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Warehouse__NameAssignment_1"
-    // InternalGrocery.g:2623:1: rule__Warehouse__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalGrocery.g:2646:1: rule__Warehouse__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Warehouse__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2627:1: ( ( RULE_ID ) )
-            // InternalGrocery.g:2628:2: ( RULE_ID )
+            // InternalGrocery.g:2650:1: ( ( RULE_ID ) )
+            // InternalGrocery.g:2651:2: ( RULE_ID )
             {
-            // InternalGrocery.g:2628:2: ( RULE_ID )
-            // InternalGrocery.g:2629:3: RULE_ID
+            // InternalGrocery.g:2651:2: ( RULE_ID )
+            // InternalGrocery.g:2652:3: RULE_ID
             {
              before(grammarAccess.getWarehouseAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7771,26 +7799,26 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Warehouse__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Warehouse__AddressAssignment_3"
-    // InternalGrocery.g:2638:1: rule__Warehouse__AddressAssignment_3 : ( ruleAddress ) ;
-    public final void rule__Warehouse__AddressAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Warehouse__AddressAssignment_5"
+    // InternalGrocery.g:2661:1: rule__Warehouse__AddressAssignment_5 : ( ruleADDRESS ) ;
+    public final void rule__Warehouse__AddressAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2642:1: ( ( ruleAddress ) )
-            // InternalGrocery.g:2643:2: ( ruleAddress )
+            // InternalGrocery.g:2665:1: ( ( ruleADDRESS ) )
+            // InternalGrocery.g:2666:2: ( ruleADDRESS )
             {
-            // InternalGrocery.g:2643:2: ( ruleAddress )
-            // InternalGrocery.g:2644:3: ruleAddress
+            // InternalGrocery.g:2666:2: ( ruleADDRESS )
+            // InternalGrocery.g:2667:3: ruleADDRESS
             {
-             before(grammarAccess.getWarehouseAccess().getAddressAddressParserRuleCall_3_0()); 
+             before(grammarAccess.getWarehouseAccess().getAddressADDRESSParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
-            ruleAddress();
+            ruleADDRESS();
 
             state._fsp--;
 
-             after(grammarAccess.getWarehouseAccess().getAddressAddressParserRuleCall_3_0()); 
+             after(grammarAccess.getWarehouseAccess().getAddressADDRESSParserRuleCall_5_0()); 
 
             }
 
@@ -7809,29 +7837,29 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Warehouse__AddressAssignment_3"
+    // $ANTLR end "rule__Warehouse__AddressAssignment_5"
 
 
-    // $ANTLR start "rule__Warehouse__ElementsAssignment_4"
-    // InternalGrocery.g:2653:1: rule__Warehouse__ElementsAssignment_4 : ( ruleItem ) ;
-    public final void rule__Warehouse__ElementsAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__Warehouse__ElementsAssignment_6"
+    // InternalGrocery.g:2676:1: rule__Warehouse__ElementsAssignment_6 : ( ruleItem ) ;
+    public final void rule__Warehouse__ElementsAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2657:1: ( ( ruleItem ) )
-            // InternalGrocery.g:2658:2: ( ruleItem )
+            // InternalGrocery.g:2680:1: ( ( ruleItem ) )
+            // InternalGrocery.g:2681:2: ( ruleItem )
             {
-            // InternalGrocery.g:2658:2: ( ruleItem )
-            // InternalGrocery.g:2659:3: ruleItem
+            // InternalGrocery.g:2681:2: ( ruleItem )
+            // InternalGrocery.g:2682:3: ruleItem
             {
-             before(grammarAccess.getWarehouseAccess().getElementsItemParserRuleCall_4_0()); 
+             before(grammarAccess.getWarehouseAccess().getElementsItemParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
             ruleItem();
 
             state._fsp--;
 
-             after(grammarAccess.getWarehouseAccess().getElementsItemParserRuleCall_4_0()); 
+             after(grammarAccess.getWarehouseAccess().getElementsItemParserRuleCall_6_0()); 
 
             }
 
@@ -7850,21 +7878,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Warehouse__ElementsAssignment_4"
+    // $ANTLR end "rule__Warehouse__ElementsAssignment_6"
 
 
     // $ANTLR start "rule__Shelf__NameAssignment_1"
-    // InternalGrocery.g:2668:1: rule__Shelf__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalGrocery.g:2691:1: rule__Shelf__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Shelf__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2672:1: ( ( RULE_ID ) )
-            // InternalGrocery.g:2673:2: ( RULE_ID )
+            // InternalGrocery.g:2695:1: ( ( RULE_ID ) )
+            // InternalGrocery.g:2696:2: ( RULE_ID )
             {
-            // InternalGrocery.g:2673:2: ( RULE_ID )
-            // InternalGrocery.g:2674:3: RULE_ID
+            // InternalGrocery.g:2696:2: ( RULE_ID )
+            // InternalGrocery.g:2697:3: RULE_ID
             {
              before(grammarAccess.getShelfAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7891,17 +7919,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shelf__ElementsAssignment_3"
-    // InternalGrocery.g:2683:1: rule__Shelf__ElementsAssignment_3 : ( ruleItem ) ;
+    // InternalGrocery.g:2706:1: rule__Shelf__ElementsAssignment_3 : ( ruleItem ) ;
     public final void rule__Shelf__ElementsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2687:1: ( ( ruleItem ) )
-            // InternalGrocery.g:2688:2: ( ruleItem )
+            // InternalGrocery.g:2710:1: ( ( ruleItem ) )
+            // InternalGrocery.g:2711:2: ( ruleItem )
             {
-            // InternalGrocery.g:2688:2: ( ruleItem )
-            // InternalGrocery.g:2689:3: ruleItem
+            // InternalGrocery.g:2711:2: ( ruleItem )
+            // InternalGrocery.g:2712:3: ruleItem
             {
              before(grammarAccess.getShelfAccess().getElementsItemParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -7932,17 +7960,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Backroom__NameAssignment_1"
-    // InternalGrocery.g:2698:1: rule__Backroom__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalGrocery.g:2721:1: rule__Backroom__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Backroom__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2702:1: ( ( RULE_ID ) )
-            // InternalGrocery.g:2703:2: ( RULE_ID )
+            // InternalGrocery.g:2725:1: ( ( RULE_ID ) )
+            // InternalGrocery.g:2726:2: ( RULE_ID )
             {
-            // InternalGrocery.g:2703:2: ( RULE_ID )
-            // InternalGrocery.g:2704:3: RULE_ID
+            // InternalGrocery.g:2726:2: ( RULE_ID )
+            // InternalGrocery.g:2727:3: RULE_ID
             {
              before(grammarAccess.getBackroomAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7969,17 +7997,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Backroom__ElementsAssignment_3"
-    // InternalGrocery.g:2713:1: rule__Backroom__ElementsAssignment_3 : ( ruleItem ) ;
+    // InternalGrocery.g:2736:1: rule__Backroom__ElementsAssignment_3 : ( ruleItem ) ;
     public final void rule__Backroom__ElementsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2717:1: ( ( ruleItem ) )
-            // InternalGrocery.g:2718:2: ( ruleItem )
+            // InternalGrocery.g:2740:1: ( ( ruleItem ) )
+            // InternalGrocery.g:2741:2: ( ruleItem )
             {
-            // InternalGrocery.g:2718:2: ( ruleItem )
-            // InternalGrocery.g:2719:3: ruleItem
+            // InternalGrocery.g:2741:2: ( ruleItem )
+            // InternalGrocery.g:2742:3: ruleItem
             {
              before(grammarAccess.getBackroomAccess().getElementsItemParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -8010,17 +8038,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NonPerishableItem__NameAssignment_1"
-    // InternalGrocery.g:2728:1: rule__NonPerishableItem__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalGrocery.g:2751:1: rule__NonPerishableItem__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__NonPerishableItem__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2732:1: ( ( RULE_ID ) )
-            // InternalGrocery.g:2733:2: ( RULE_ID )
+            // InternalGrocery.g:2755:1: ( ( RULE_ID ) )
+            // InternalGrocery.g:2756:2: ( RULE_ID )
             {
-            // InternalGrocery.g:2733:2: ( RULE_ID )
-            // InternalGrocery.g:2734:3: RULE_ID
+            // InternalGrocery.g:2756:2: ( RULE_ID )
+            // InternalGrocery.g:2757:3: RULE_ID
             {
              before(grammarAccess.getNonPerishableItemAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -8047,21 +8075,25 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NonPerishableItem__PriceAssignment_5"
-    // InternalGrocery.g:2743:1: rule__NonPerishableItem__PriceAssignment_5 : ( RULE_INT ) ;
+    // InternalGrocery.g:2766:1: rule__NonPerishableItem__PriceAssignment_5 : ( ruleDECIMAL ) ;
     public final void rule__NonPerishableItem__PriceAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2747:1: ( ( RULE_INT ) )
-            // InternalGrocery.g:2748:2: ( RULE_INT )
+            // InternalGrocery.g:2770:1: ( ( ruleDECIMAL ) )
+            // InternalGrocery.g:2771:2: ( ruleDECIMAL )
             {
-            // InternalGrocery.g:2748:2: ( RULE_INT )
-            // InternalGrocery.g:2749:3: RULE_INT
+            // InternalGrocery.g:2771:2: ( ruleDECIMAL )
+            // InternalGrocery.g:2772:3: ruleDECIMAL
             {
-             before(grammarAccess.getNonPerishableItemAccess().getPriceINTTerminalRuleCall_5_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getNonPerishableItemAccess().getPriceINTTerminalRuleCall_5_0()); 
+             before(grammarAccess.getNonPerishableItemAccess().getPriceDECIMALParserRuleCall_5_0()); 
+            pushFollow(FOLLOW_2);
+            ruleDECIMAL();
+
+            state._fsp--;
+
+             after(grammarAccess.getNonPerishableItemAccess().getPriceDECIMALParserRuleCall_5_0()); 
 
             }
 
@@ -8083,18 +8115,55 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__NonPerishableItem__PriceAssignment_5"
 
 
+    // $ANTLR start "rule__NonPerishableItem__QuantityAssignment_8"
+    // InternalGrocery.g:2781:1: rule__NonPerishableItem__QuantityAssignment_8 : ( RULE_INT ) ;
+    public final void rule__NonPerishableItem__QuantityAssignment_8() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalGrocery.g:2785:1: ( ( RULE_INT ) )
+            // InternalGrocery.g:2786:2: ( RULE_INT )
+            {
+            // InternalGrocery.g:2786:2: ( RULE_INT )
+            // InternalGrocery.g:2787:3: RULE_INT
+            {
+             before(grammarAccess.getNonPerishableItemAccess().getQuantityINTTerminalRuleCall_8_0()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getNonPerishableItemAccess().getQuantityINTTerminalRuleCall_8_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NonPerishableItem__QuantityAssignment_8"
+
+
     // $ANTLR start "rule__PerishableItem__NameAssignment_1"
-    // InternalGrocery.g:2758:1: rule__PerishableItem__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalGrocery.g:2796:1: rule__PerishableItem__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__PerishableItem__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2762:1: ( ( RULE_ID ) )
-            // InternalGrocery.g:2763:2: ( RULE_ID )
+            // InternalGrocery.g:2800:1: ( ( RULE_ID ) )
+            // InternalGrocery.g:2801:2: ( RULE_ID )
             {
-            // InternalGrocery.g:2763:2: ( RULE_ID )
-            // InternalGrocery.g:2764:3: RULE_ID
+            // InternalGrocery.g:2801:2: ( RULE_ID )
+            // InternalGrocery.g:2802:3: RULE_ID
             {
              before(grammarAccess.getPerishableItemAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -8121,17 +8190,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__PriceAssignment_5"
-    // InternalGrocery.g:2773:1: rule__PerishableItem__PriceAssignment_5 : ( RULE_INT ) ;
+    // InternalGrocery.g:2811:1: rule__PerishableItem__PriceAssignment_5 : ( RULE_INT ) ;
     public final void rule__PerishableItem__PriceAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2777:1: ( ( RULE_INT ) )
-            // InternalGrocery.g:2778:2: ( RULE_INT )
+            // InternalGrocery.g:2815:1: ( ( RULE_INT ) )
+            // InternalGrocery.g:2816:2: ( RULE_INT )
             {
-            // InternalGrocery.g:2778:2: ( RULE_INT )
-            // InternalGrocery.g:2779:3: RULE_INT
+            // InternalGrocery.g:2816:2: ( RULE_INT )
+            // InternalGrocery.g:2817:3: RULE_INT
             {
              before(grammarAccess.getPerishableItemAccess().getPriceINTTerminalRuleCall_5_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -8158,17 +8227,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PerishableItem__ExperationDateAssignment_6"
-    // InternalGrocery.g:2788:1: rule__PerishableItem__ExperationDateAssignment_6 : ( ruleExperationDate ) ;
+    // InternalGrocery.g:2826:1: rule__PerishableItem__ExperationDateAssignment_6 : ( ruleExperationDate ) ;
     public final void rule__PerishableItem__ExperationDateAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2792:1: ( ( ruleExperationDate ) )
-            // InternalGrocery.g:2793:2: ( ruleExperationDate )
+            // InternalGrocery.g:2830:1: ( ( ruleExperationDate ) )
+            // InternalGrocery.g:2831:2: ( ruleExperationDate )
             {
-            // InternalGrocery.g:2793:2: ( ruleExperationDate )
-            // InternalGrocery.g:2794:3: ruleExperationDate
+            // InternalGrocery.g:2831:2: ( ruleExperationDate )
+            // InternalGrocery.g:2832:3: ruleExperationDate
             {
              before(grammarAccess.getPerishableItemAccess().getExperationDateExperationDateParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -8198,22 +8267,26 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__PerishableItem__ExperationDateAssignment_6"
 
 
-    // $ANTLR start "rule__Address__StreetAssignment_4"
-    // InternalGrocery.g:2803:1: rule__Address__StreetAssignment_4 : ( RULE_STRING ) ;
-    public final void rule__Address__StreetAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__ExperationDate__DateAssignment_4"
+    // InternalGrocery.g:2841:1: rule__ExperationDate__DateAssignment_4 : ( ruleDATE ) ;
+    public final void rule__ExperationDate__DateAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2807:1: ( ( RULE_STRING ) )
-            // InternalGrocery.g:2808:2: ( RULE_STRING )
+            // InternalGrocery.g:2845:1: ( ( ruleDATE ) )
+            // InternalGrocery.g:2846:2: ( ruleDATE )
             {
-            // InternalGrocery.g:2808:2: ( RULE_STRING )
-            // InternalGrocery.g:2809:3: RULE_STRING
+            // InternalGrocery.g:2846:2: ( ruleDATE )
+            // InternalGrocery.g:2847:3: ruleDATE
             {
-             before(grammarAccess.getAddressAccess().getStreetSTRINGTerminalRuleCall_4_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getAddressAccess().getStreetSTRINGTerminalRuleCall_4_0()); 
+             before(grammarAccess.getExperationDateAccess().getDateDATEParserRuleCall_4_0()); 
+            pushFollow(FOLLOW_2);
+            ruleDATE();
+
+            state._fsp--;
+
+             after(grammarAccess.getExperationDateAccess().getDateDATEParserRuleCall_4_0()); 
 
             }
 
@@ -8232,206 +8305,21 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Address__StreetAssignment_4"
-
-
-    // $ANTLR start "rule__Address__NumberAssignment_7"
-    // InternalGrocery.g:2818:1: rule__Address__NumberAssignment_7 : ( RULE_INT ) ;
-    public final void rule__Address__NumberAssignment_7() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2822:1: ( ( RULE_INT ) )
-            // InternalGrocery.g:2823:2: ( RULE_INT )
-            {
-            // InternalGrocery.g:2823:2: ( RULE_INT )
-            // InternalGrocery.g:2824:3: RULE_INT
-            {
-             before(grammarAccess.getAddressAccess().getNumberINTTerminalRuleCall_7_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getAddressAccess().getNumberINTTerminalRuleCall_7_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__NumberAssignment_7"
-
-
-    // $ANTLR start "rule__Address__CityAssignment_10"
-    // InternalGrocery.g:2833:1: rule__Address__CityAssignment_10 : ( RULE_STRING ) ;
-    public final void rule__Address__CityAssignment_10() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2837:1: ( ( RULE_STRING ) )
-            // InternalGrocery.g:2838:2: ( RULE_STRING )
-            {
-            // InternalGrocery.g:2838:2: ( RULE_STRING )
-            // InternalGrocery.g:2839:3: RULE_STRING
-            {
-             before(grammarAccess.getAddressAccess().getCitySTRINGTerminalRuleCall_10_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getAddressAccess().getCitySTRINGTerminalRuleCall_10_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Address__CityAssignment_10"
-
-
-    // $ANTLR start "rule__ExperationDate__MonthAssignment_4"
-    // InternalGrocery.g:2848:1: rule__ExperationDate__MonthAssignment_4 : ( RULE_INT ) ;
-    public final void rule__ExperationDate__MonthAssignment_4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2852:1: ( ( RULE_INT ) )
-            // InternalGrocery.g:2853:2: ( RULE_INT )
-            {
-            // InternalGrocery.g:2853:2: ( RULE_INT )
-            // InternalGrocery.g:2854:3: RULE_INT
-            {
-             before(grammarAccess.getExperationDateAccess().getMonthINTTerminalRuleCall_4_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getExperationDateAccess().getMonthINTTerminalRuleCall_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ExperationDate__MonthAssignment_4"
-
-
-    // $ANTLR start "rule__ExperationDate__DayAssignment_7"
-    // InternalGrocery.g:2863:1: rule__ExperationDate__DayAssignment_7 : ( RULE_INT ) ;
-    public final void rule__ExperationDate__DayAssignment_7() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2867:1: ( ( RULE_INT ) )
-            // InternalGrocery.g:2868:2: ( RULE_INT )
-            {
-            // InternalGrocery.g:2868:2: ( RULE_INT )
-            // InternalGrocery.g:2869:3: RULE_INT
-            {
-             before(grammarAccess.getExperationDateAccess().getDayINTTerminalRuleCall_7_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getExperationDateAccess().getDayINTTerminalRuleCall_7_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ExperationDate__DayAssignment_7"
-
-
-    // $ANTLR start "rule__ExperationDate__YearAssignment_10"
-    // InternalGrocery.g:2878:1: rule__ExperationDate__YearAssignment_10 : ( RULE_INT ) ;
-    public final void rule__ExperationDate__YearAssignment_10() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalGrocery.g:2882:1: ( ( RULE_INT ) )
-            // InternalGrocery.g:2883:2: ( RULE_INT )
-            {
-            // InternalGrocery.g:2883:2: ( RULE_INT )
-            // InternalGrocery.g:2884:3: RULE_INT
-            {
-             before(grammarAccess.getExperationDateAccess().getYearINTTerminalRuleCall_10_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getExperationDateAccess().getYearINTTerminalRuleCall_10_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ExperationDate__YearAssignment_10"
+    // $ANTLR end "rule__ExperationDate__DateAssignment_4"
 
 
     // $ANTLR start "rule__Driver__NameAssignment_1"
-    // InternalGrocery.g:2893:1: rule__Driver__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalGrocery.g:2856:1: rule__Driver__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Driver__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2897:1: ( ( RULE_ID ) )
-            // InternalGrocery.g:2898:2: ( RULE_ID )
+            // InternalGrocery.g:2860:1: ( ( RULE_ID ) )
+            // InternalGrocery.g:2861:2: ( RULE_ID )
             {
-            // InternalGrocery.g:2898:2: ( RULE_ID )
-            // InternalGrocery.g:2899:3: RULE_ID
+            // InternalGrocery.g:2861:2: ( RULE_ID )
+            // InternalGrocery.g:2862:3: RULE_ID
             {
              before(grammarAccess.getDriverAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -8458,17 +8346,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Driver__DriverNameAssignment_5"
-    // InternalGrocery.g:2908:1: rule__Driver__DriverNameAssignment_5 : ( RULE_STRING ) ;
+    // InternalGrocery.g:2871:1: rule__Driver__DriverNameAssignment_5 : ( RULE_STRING ) ;
     public final void rule__Driver__DriverNameAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2912:1: ( ( RULE_STRING ) )
-            // InternalGrocery.g:2913:2: ( RULE_STRING )
+            // InternalGrocery.g:2875:1: ( ( RULE_STRING ) )
+            // InternalGrocery.g:2876:2: ( RULE_STRING )
             {
-            // InternalGrocery.g:2913:2: ( RULE_STRING )
-            // InternalGrocery.g:2914:3: RULE_STRING
+            // InternalGrocery.g:2876:2: ( RULE_STRING )
+            // InternalGrocery.g:2877:3: RULE_STRING
             {
              before(grammarAccess.getDriverAccess().getDriverNameSTRINGTerminalRuleCall_5_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -8495,17 +8383,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vehicle__NameAssignment_1"
-    // InternalGrocery.g:2923:1: rule__Vehicle__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalGrocery.g:2886:1: rule__Vehicle__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Vehicle__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2927:1: ( ( RULE_ID ) )
-            // InternalGrocery.g:2928:2: ( RULE_ID )
+            // InternalGrocery.g:2890:1: ( ( RULE_ID ) )
+            // InternalGrocery.g:2891:2: ( RULE_ID )
             {
-            // InternalGrocery.g:2928:2: ( RULE_ID )
-            // InternalGrocery.g:2929:3: RULE_ID
+            // InternalGrocery.g:2891:2: ( RULE_ID )
+            // InternalGrocery.g:2892:3: RULE_ID
             {
              before(grammarAccess.getVehicleAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -8532,17 +8420,17 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vehicle__PlateNumberAssignment_5"
-    // InternalGrocery.g:2938:1: rule__Vehicle__PlateNumberAssignment_5 : ( RULE_STRING ) ;
+    // InternalGrocery.g:2901:1: rule__Vehicle__PlateNumberAssignment_5 : ( RULE_STRING ) ;
     public final void rule__Vehicle__PlateNumberAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGrocery.g:2942:1: ( ( RULE_STRING ) )
-            // InternalGrocery.g:2943:2: ( RULE_STRING )
+            // InternalGrocery.g:2905:1: ( ( RULE_STRING ) )
+            // InternalGrocery.g:2906:2: ( RULE_STRING )
             {
-            // InternalGrocery.g:2943:2: ( RULE_STRING )
-            // InternalGrocery.g:2944:3: RULE_STRING
+            // InternalGrocery.g:2906:2: ( RULE_STRING )
+            // InternalGrocery.g:2907:3: RULE_STRING
             {
              before(grammarAccess.getVehicleAccess().getPlateNumberSTRINGTerminalRuleCall_5_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -8574,29 +8462,28 @@ public class InternalGroceryParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000000A0000000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x000000000A000000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000004802L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x00000000A0000002L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x000000000A000002L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x000000000001A000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000018002L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000122000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000120002L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000062000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000060002L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000482000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000480002L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000080000000L});
 
 }

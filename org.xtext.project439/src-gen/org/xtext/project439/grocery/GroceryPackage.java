@@ -235,7 +235,7 @@ public interface GroceryPackage extends EPackage
   int WAREHOUSE__NAME = BUILDING__NAME;
 
   /**
-   * The feature id for the '<em><b>Address</b></em>' containment reference list.
+   * The feature id for the '<em><b>Address</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -355,22 +355,13 @@ public interface GroceryPackage extends EPackage
   int ITEM__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Price</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITEM__PRICE = 1;
-
-  /**
    * The number of structural features of the '<em>Item</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ITEM_FEATURE_COUNT = 2;
+  int ITEM_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.project439.grocery.impl.NonPerishableItemImpl <em>Non Perishable Item</em>}' class.
@@ -398,7 +389,16 @@ public interface GroceryPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NON_PERISHABLE_ITEM__PRICE = ITEM__PRICE;
+  int NON_PERISHABLE_ITEM__PRICE = ITEM_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Quantity</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NON_PERISHABLE_ITEM__QUANTITY = ITEM_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Non Perishable Item</em>' class.
@@ -407,7 +407,7 @@ public interface GroceryPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NON_PERISHABLE_ITEM_FEATURE_COUNT = ITEM_FEATURE_COUNT + 0;
+  int NON_PERISHABLE_ITEM_FEATURE_COUNT = ITEM_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.project439.grocery.impl.PerishableItemImpl <em>Perishable Item</em>}' class.
@@ -435,7 +435,7 @@ public interface GroceryPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERISHABLE_ITEM__PRICE = ITEM__PRICE;
+  int PERISHABLE_ITEM__PRICE = ITEM_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Experation Date</b></em>' containment reference list.
@@ -444,7 +444,7 @@ public interface GroceryPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERISHABLE_ITEM__EXPERATION_DATE = ITEM_FEATURE_COUNT + 0;
+  int PERISHABLE_ITEM__EXPERATION_DATE = ITEM_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Perishable Item</em>' class.
@@ -453,53 +453,7 @@ public interface GroceryPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERISHABLE_ITEM_FEATURE_COUNT = ITEM_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.project439.grocery.impl.AddressImpl <em>Address</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.project439.grocery.impl.AddressImpl
-   * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getAddress()
-   * @generated
-   */
-  int ADDRESS = 11;
-
-  /**
-   * The feature id for the '<em><b>Street</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDRESS__STREET = 0;
-
-  /**
-   * The feature id for the '<em><b>Number</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDRESS__NUMBER = 1;
-
-  /**
-   * The feature id for the '<em><b>City</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDRESS__CITY = 2;
-
-  /**
-   * The number of structural features of the '<em>Address</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDRESS_FEATURE_COUNT = 3;
+  int PERISHABLE_ITEM_FEATURE_COUNT = ITEM_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.project439.grocery.impl.ExperationDateImpl <em>Experation Date</em>}' class.
@@ -509,34 +463,16 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getExperationDate()
    * @generated
    */
-  int EXPERATION_DATE = 12;
+  int EXPERATION_DATE = 11;
 
   /**
-   * The feature id for the '<em><b>Month</b></em>' attribute.
+   * The feature id for the '<em><b>Date</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPERATION_DATE__MONTH = 0;
-
-  /**
-   * The feature id for the '<em><b>Day</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPERATION_DATE__DAY = 1;
-
-  /**
-   * The feature id for the '<em><b>Year</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPERATION_DATE__YEAR = 2;
+  int EXPERATION_DATE__DATE = 0;
 
   /**
    * The number of structural features of the '<em>Experation Date</em>' class.
@@ -545,7 +481,7 @@ public interface GroceryPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPERATION_DATE_FEATURE_COUNT = 3;
+  int EXPERATION_DATE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.project439.grocery.impl.DriverImpl <em>Driver</em>}' class.
@@ -555,7 +491,7 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getDriver()
    * @generated
    */
-  int DRIVER = 13;
+  int DRIVER = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -592,7 +528,7 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getVehicle()
    * @generated
    */
-  int VEHICLE = 14;
+  int VEHICLE = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -749,15 +685,15 @@ public interface GroceryPackage extends EPackage
   EClass getWarehouse();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.project439.grocery.Warehouse#getAddress <em>Address</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.project439.grocery.Warehouse#getAddress <em>Address</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Address</em>'.
+   * @return the meta object for the attribute '<em>Address</em>'.
    * @see org.xtext.project439.grocery.Warehouse#getAddress()
    * @see #getWarehouse()
    * @generated
    */
-  EReference getWarehouse_Address();
+  EAttribute getWarehouse_Address();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.project439.grocery.Warehouse#getElements <em>Elements</em>}'.
@@ -812,17 +748,6 @@ public interface GroceryPackage extends EPackage
   EAttribute getItem_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.project439.grocery.Item#getPrice <em>Price</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Price</em>'.
-   * @see org.xtext.project439.grocery.Item#getPrice()
-   * @see #getItem()
-   * @generated
-   */
-  EAttribute getItem_Price();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.project439.grocery.NonPerishableItem <em>Non Perishable Item</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -833,6 +758,28 @@ public interface GroceryPackage extends EPackage
   EClass getNonPerishableItem();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.project439.grocery.NonPerishableItem#getPrice <em>Price</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Price</em>'.
+   * @see org.xtext.project439.grocery.NonPerishableItem#getPrice()
+   * @see #getNonPerishableItem()
+   * @generated
+   */
+  EAttribute getNonPerishableItem_Price();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project439.grocery.NonPerishableItem#getQuantity <em>Quantity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Quantity</em>'.
+   * @see org.xtext.project439.grocery.NonPerishableItem#getQuantity()
+   * @see #getNonPerishableItem()
+   * @generated
+   */
+  EAttribute getNonPerishableItem_Quantity();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.project439.grocery.PerishableItem <em>Perishable Item</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -841,6 +788,17 @@ public interface GroceryPackage extends EPackage
    * @generated
    */
   EClass getPerishableItem();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project439.grocery.PerishableItem#getPrice <em>Price</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Price</em>'.
+   * @see org.xtext.project439.grocery.PerishableItem#getPrice()
+   * @see #getPerishableItem()
+   * @generated
+   */
+  EAttribute getPerishableItem_Price();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.project439.grocery.PerishableItem#getExperationDate <em>Experation Date</em>}'.
@@ -854,49 +812,6 @@ public interface GroceryPackage extends EPackage
   EReference getPerishableItem_ExperationDate();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.project439.grocery.Address <em>Address</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Address</em>'.
-   * @see org.xtext.project439.grocery.Address
-   * @generated
-   */
-  EClass getAddress();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project439.grocery.Address#getStreet <em>Street</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Street</em>'.
-   * @see org.xtext.project439.grocery.Address#getStreet()
-   * @see #getAddress()
-   * @generated
-   */
-  EAttribute getAddress_Street();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project439.grocery.Address#getNumber <em>Number</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Number</em>'.
-   * @see org.xtext.project439.grocery.Address#getNumber()
-   * @see #getAddress()
-   * @generated
-   */
-  EAttribute getAddress_Number();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project439.grocery.Address#getCity <em>City</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>City</em>'.
-   * @see org.xtext.project439.grocery.Address#getCity()
-   * @see #getAddress()
-   * @generated
-   */
-  EAttribute getAddress_City();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.project439.grocery.ExperationDate <em>Experation Date</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -907,37 +822,15 @@ public interface GroceryPackage extends EPackage
   EClass getExperationDate();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.project439.grocery.ExperationDate#getMonth <em>Month</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.project439.grocery.ExperationDate#getDate <em>Date</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Month</em>'.
-   * @see org.xtext.project439.grocery.ExperationDate#getMonth()
+   * @return the meta object for the attribute '<em>Date</em>'.
+   * @see org.xtext.project439.grocery.ExperationDate#getDate()
    * @see #getExperationDate()
    * @generated
    */
-  EAttribute getExperationDate_Month();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project439.grocery.ExperationDate#getDay <em>Day</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Day</em>'.
-   * @see org.xtext.project439.grocery.ExperationDate#getDay()
-   * @see #getExperationDate()
-   * @generated
-   */
-  EAttribute getExperationDate_Day();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project439.grocery.ExperationDate#getYear <em>Year</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Year</em>'.
-   * @see org.xtext.project439.grocery.ExperationDate#getYear()
-   * @see #getExperationDate()
-   * @generated
-   */
-  EAttribute getExperationDate_Year();
+  EAttribute getExperationDate_Date();
 
   /**
    * Returns the meta object for class '{@link org.xtext.project439.grocery.Driver <em>Driver</em>}'.
@@ -1113,12 +1006,12 @@ public interface GroceryPackage extends EPackage
     EClass WAREHOUSE = eINSTANCE.getWarehouse();
 
     /**
-     * The meta object literal for the '<em><b>Address</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference WAREHOUSE__ADDRESS = eINSTANCE.getWarehouse_Address();
+    EAttribute WAREHOUSE__ADDRESS = eINSTANCE.getWarehouse_Address();
 
     /**
      * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
@@ -1167,14 +1060,6 @@ public interface GroceryPackage extends EPackage
     EAttribute ITEM__NAME = eINSTANCE.getItem_Name();
 
     /**
-     * The meta object literal for the '<em><b>Price</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ITEM__PRICE = eINSTANCE.getItem_Price();
-
-    /**
      * The meta object literal for the '{@link org.xtext.project439.grocery.impl.NonPerishableItemImpl <em>Non Perishable Item</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1183,6 +1068,22 @@ public interface GroceryPackage extends EPackage
      * @generated
      */
     EClass NON_PERISHABLE_ITEM = eINSTANCE.getNonPerishableItem();
+
+    /**
+     * The meta object literal for the '<em><b>Price</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NON_PERISHABLE_ITEM__PRICE = eINSTANCE.getNonPerishableItem_Price();
+
+    /**
+     * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NON_PERISHABLE_ITEM__QUANTITY = eINSTANCE.getNonPerishableItem_Quantity();
 
     /**
      * The meta object literal for the '{@link org.xtext.project439.grocery.impl.PerishableItemImpl <em>Perishable Item</em>}' class.
@@ -1195,46 +1096,20 @@ public interface GroceryPackage extends EPackage
     EClass PERISHABLE_ITEM = eINSTANCE.getPerishableItem();
 
     /**
+     * The meta object literal for the '<em><b>Price</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PERISHABLE_ITEM__PRICE = eINSTANCE.getPerishableItem_Price();
+
+    /**
      * The meta object literal for the '<em><b>Experation Date</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference PERISHABLE_ITEM__EXPERATION_DATE = eINSTANCE.getPerishableItem_ExperationDate();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.project439.grocery.impl.AddressImpl <em>Address</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.project439.grocery.impl.AddressImpl
-     * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getAddress()
-     * @generated
-     */
-    EClass ADDRESS = eINSTANCE.getAddress();
-
-    /**
-     * The meta object literal for the '<em><b>Street</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ADDRESS__STREET = eINSTANCE.getAddress_Street();
-
-    /**
-     * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ADDRESS__NUMBER = eINSTANCE.getAddress_Number();
-
-    /**
-     * The meta object literal for the '<em><b>City</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ADDRESS__CITY = eINSTANCE.getAddress_City();
 
     /**
      * The meta object literal for the '{@link org.xtext.project439.grocery.impl.ExperationDateImpl <em>Experation Date</em>}' class.
@@ -1247,28 +1122,12 @@ public interface GroceryPackage extends EPackage
     EClass EXPERATION_DATE = eINSTANCE.getExperationDate();
 
     /**
-     * The meta object literal for the '<em><b>Month</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXPERATION_DATE__MONTH = eINSTANCE.getExperationDate_Month();
-
-    /**
-     * The meta object literal for the '<em><b>Day</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXPERATION_DATE__DAY = eINSTANCE.getExperationDate_Day();
-
-    /**
-     * The meta object literal for the '<em><b>Year</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXPERATION_DATE__YEAR = eINSTANCE.getExperationDate_Year();
+    EAttribute EXPERATION_DATE__DATE = eINSTANCE.getExperationDate_Date();
 
     /**
      * The meta object literal for the '{@link org.xtext.project439.grocery.impl.DriverImpl <em>Driver</em>}' class.

@@ -335,21 +335,29 @@ ruleWarehouse returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getWarehouseAccess().getLeftCurlyBracketKeyword_2());
 		}
+		otherlv_3='address'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getWarehouseAccess().getAddressKeyword_3());
+		}
+		otherlv_4=':'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getWarehouseAccess().getColonKeyword_4());
+		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWarehouseAccess().getAddressAddressParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getWarehouseAccess().getAddressADDRESSParserRuleCall_5_0());
 				}
-				lv_address_3_0=ruleAddress
+				lv_address_5_0=ruleADDRESS
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWarehouseRule());
 					}
-					add(
+					set(
 						$current,
 						"address",
-						lv_address_3_0,
-						"org.xtext.project439.Grocery.Address");
+						lv_address_5_0,
+						"org.xtext.project439.Grocery.ADDRESS");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -357,9 +365,9 @@ ruleWarehouse returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWarehouseAccess().getElementsItemParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getWarehouseAccess().getElementsItemParserRuleCall_6_0());
 				}
-				lv_elements_4_0=ruleItem
+				lv_elements_6_0=ruleItem
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWarehouseRule());
@@ -367,15 +375,15 @@ ruleWarehouse returns [EObject current=null]
 					add(
 						$current,
 						"elements",
-						lv_elements_4_0,
+						lv_elements_6_0,
 						"org.xtext.project439.Grocery.Item");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_5='}'
+		otherlv_7='}'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getWarehouseAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_7, grammarAccess.getWarehouseAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;
@@ -604,9 +612,36 @@ ruleNonPerishableItem returns [EObject current=null]
 		}
 		(
 			(
-				lv_price_5_0=RULE_INT
 				{
-					newLeafNode(lv_price_5_0, grammarAccess.getNonPerishableItemAccess().getPriceINTTerminalRuleCall_5_0());
+					newCompositeNode(grammarAccess.getNonPerishableItemAccess().getPriceDECIMALParserRuleCall_5_0());
+				}
+				lv_price_5_0=ruleDECIMAL
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getNonPerishableItemRule());
+					}
+					set(
+						$current,
+						"price",
+						lv_price_5_0,
+						"org.xtext.project439.Grocery.DECIMAL");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_6='quantity'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getNonPerishableItemAccess().getQuantityKeyword_6());
+		}
+		otherlv_7=':'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getNonPerishableItemAccess().getColonKeyword_7());
+		}
+		(
+			(
+				lv_quantity_8_0=RULE_INT
+				{
+					newLeafNode(lv_quantity_8_0, grammarAccess.getNonPerishableItemAccess().getQuantityINTTerminalRuleCall_8_0());
 				}
 				{
 					if ($current==null) {
@@ -614,15 +649,15 @@ ruleNonPerishableItem returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"price",
-						lv_price_5_0,
+						"quantity",
+						lv_quantity_8_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_6='}'
+		otherlv_9='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getNonPerishableItemAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_9, grammarAccess.getNonPerishableItemAccess().getRightCurlyBracketKeyword_9());
 		}
 	)
 ;
@@ -721,115 +756,6 @@ rulePerishableItem returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleAddress
-entryRuleAddress returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAddressRule()); }
-	iv_ruleAddress=ruleAddress
-	{ $current=$iv_ruleAddress.current; }
-	EOF;
-
-// Rule Address
-ruleAddress returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='address'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getAddressAccess().getAddressKeyword_0());
-		}
-		otherlv_1='{'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getAddressAccess().getLeftCurlyBracketKeyword_1());
-		}
-		otherlv_2='street'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getAddressAccess().getStreetKeyword_2());
-		}
-		otherlv_3=':'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getAddressAccess().getColonKeyword_3());
-		}
-		(
-			(
-				lv_street_4_0=RULE_STRING
-				{
-					newLeafNode(lv_street_4_0, grammarAccess.getAddressAccess().getStreetSTRINGTerminalRuleCall_4_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAddressRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"street",
-						lv_street_4_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		otherlv_5='number'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getAddressAccess().getNumberKeyword_5());
-		}
-		otherlv_6=':'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getAddressAccess().getColonKeyword_6());
-		}
-		(
-			(
-				lv_number_7_0=RULE_INT
-				{
-					newLeafNode(lv_number_7_0, grammarAccess.getAddressAccess().getNumberINTTerminalRuleCall_7_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAddressRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"number",
-						lv_number_7_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_8='city'
-		{
-			newLeafNode(otherlv_8, grammarAccess.getAddressAccess().getCityKeyword_8());
-		}
-		otherlv_9=':'
-		{
-			newLeafNode(otherlv_9, grammarAccess.getAddressAccess().getColonKeyword_9());
-		}
-		(
-			(
-				lv_city_10_0=RULE_STRING
-				{
-					newLeafNode(lv_city_10_0, grammarAccess.getAddressAccess().getCitySTRINGTerminalRuleCall_10_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAddressRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"city",
-						lv_city_10_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		otherlv_11='}'
-		{
-			newLeafNode(otherlv_11, grammarAccess.getAddressAccess().getRightCurlyBracketKeyword_11());
-		}
-	)
-;
-
 // Entry rule entryRuleExperationDate
 entryRuleExperationDate returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getExperationDateRule()); }
@@ -854,9 +780,9 @@ ruleExperationDate returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getExperationDateAccess().getLeftCurlyBracketKeyword_1());
 		}
-		otherlv_2='month'
+		otherlv_2='date'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getExperationDateAccess().getMonthKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getExperationDateAccess().getDateKeyword_2());
 		}
 		otherlv_3=':'
 		{
@@ -864,77 +790,26 @@ ruleExperationDate returns [EObject current=null]
 		}
 		(
 			(
-				lv_month_4_0=RULE_INT
 				{
-					newLeafNode(lv_month_4_0, grammarAccess.getExperationDateAccess().getMonthINTTerminalRuleCall_4_0());
+					newCompositeNode(grammarAccess.getExperationDateAccess().getDateDATEParserRuleCall_4_0());
 				}
+				lv_date_4_0=ruleDATE
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getExperationDateRule());
+						$current = createModelElementForParent(grammarAccess.getExperationDateRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
-						"month",
-						lv_month_4_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"date",
+						lv_date_4_0,
+						"org.xtext.project439.Grocery.DATE");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_5='day'
+		otherlv_5='}'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getExperationDateAccess().getDayKeyword_5());
-		}
-		otherlv_6=':'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getExperationDateAccess().getColonKeyword_6());
-		}
-		(
-			(
-				lv_day_7_0=RULE_INT
-				{
-					newLeafNode(lv_day_7_0, grammarAccess.getExperationDateAccess().getDayINTTerminalRuleCall_7_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getExperationDateRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"day",
-						lv_day_7_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_8='year'
-		{
-			newLeafNode(otherlv_8, grammarAccess.getExperationDateAccess().getYearKeyword_8());
-		}
-		otherlv_9=':'
-		{
-			newLeafNode(otherlv_9, grammarAccess.getExperationDateAccess().getColonKeyword_9());
-		}
-		(
-			(
-				lv_year_10_0=RULE_INT
-				{
-					newLeafNode(lv_year_10_0, grammarAccess.getExperationDateAccess().getYearINTTerminalRuleCall_10_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getExperationDateRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"year",
-						lv_year_10_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_11='}'
-		{
-			newLeafNode(otherlv_11, grammarAccess.getExperationDateAccess().getRightCurlyBracketKeyword_11());
+			newLeafNode(otherlv_5, grammarAccess.getExperationDateAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;
@@ -1085,6 +960,139 @@ ruleVehicle returns [EObject current=null]
 		otherlv_6='}'
 		{
 			newLeafNode(otherlv_6, grammarAccess.getVehicleAccess().getRightCurlyBracketKeyword_6());
+		}
+	)
+;
+
+// Entry rule entryRuleDECIMAL
+entryRuleDECIMAL returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getDECIMALRule()); }
+	iv_ruleDECIMAL=ruleDECIMAL
+	{ $current=$iv_ruleDECIMAL.current.getText(); }
+	EOF;
+
+// Rule DECIMAL
+ruleDECIMAL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_INT_0=RULE_INT
+		{
+			$current.merge(this_INT_0);
+		}
+		{
+			newLeafNode(this_INT_0, grammarAccess.getDECIMALAccess().getINTTerminalRuleCall_0());
+		}
+		kw='.'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getDECIMALAccess().getFullStopKeyword_1());
+		}
+		this_INT_2=RULE_INT
+		{
+			$current.merge(this_INT_2);
+		}
+		{
+			newLeafNode(this_INT_2, grammarAccess.getDECIMALAccess().getINTTerminalRuleCall_2());
+		}
+	)
+;
+
+// Entry rule entryRuleDATE
+entryRuleDATE returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getDATERule()); }
+	iv_ruleDATE=ruleDATE
+	{ $current=$iv_ruleDATE.current.getText(); }
+	EOF;
+
+// Rule DATE
+ruleDATE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_INT_0=RULE_INT
+		{
+			$current.merge(this_INT_0);
+		}
+		{
+			newLeafNode(this_INT_0, grammarAccess.getDATEAccess().getINTTerminalRuleCall_0());
+		}
+		kw='/'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getDATEAccess().getSolidusKeyword_1());
+		}
+		this_INT_2=RULE_INT
+		{
+			$current.merge(this_INT_2);
+		}
+		{
+			newLeafNode(this_INT_2, grammarAccess.getDATEAccess().getINTTerminalRuleCall_2());
+		}
+		kw='/'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getDATEAccess().getSolidusKeyword_3());
+		}
+		this_INT_4=RULE_INT
+		{
+			$current.merge(this_INT_4);
+		}
+		{
+			newLeafNode(this_INT_4, grammarAccess.getDATEAccess().getINTTerminalRuleCall_4());
+		}
+	)
+;
+
+// Entry rule entryRuleADDRESS
+entryRuleADDRESS returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getADDRESSRule()); }
+	iv_ruleADDRESS=ruleADDRESS
+	{ $current=$iv_ruleADDRESS.current.getText(); }
+	EOF;
+
+// Rule ADDRESS
+ruleADDRESS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_STRING_0=RULE_STRING
+		{
+			$current.merge(this_STRING_0);
+		}
+		{
+			newLeafNode(this_STRING_0, grammarAccess.getADDRESSAccess().getSTRINGTerminalRuleCall_0());
+		}
+		this_INT_1=RULE_INT
+		{
+			$current.merge(this_INT_1);
+		}
+		{
+			newLeafNode(this_INT_1, grammarAccess.getADDRESSAccess().getINTTerminalRuleCall_1());
+		}
+		kw=','
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getADDRESSAccess().getCommaKeyword_2());
+		}
+		this_STRING_3=RULE_STRING
+		{
+			$current.merge(this_STRING_3);
+		}
+		{
+			newLeafNode(this_STRING_3, grammarAccess.getADDRESSAccess().getSTRINGTerminalRuleCall_3());
 		}
 	)
 ;

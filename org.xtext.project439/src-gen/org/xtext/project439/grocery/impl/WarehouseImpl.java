@@ -5,6 +5,7 @@ package org.xtext.project439.grocery.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,10 +13,11 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.project439.grocery.Address;
 import org.xtext.project439.grocery.GroceryPackage;
 import org.xtext.project439.grocery.Item;
 import org.xtext.project439.grocery.Warehouse;
@@ -37,14 +39,24 @@ import org.xtext.project439.grocery.Warehouse;
 public class WarehouseImpl extends BuildingImpl implements Warehouse
 {
   /**
-   * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference list.
+   * The default value of the '{@link #getAddress() <em>Address</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getAddress()
    * @generated
    * @ordered
    */
-  protected EList<Address> address;
+  protected static final String ADDRESS_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAddress() <em>Address</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAddress()
+   * @generated
+   * @ordered
+   */
+  protected String address = ADDRESS_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -82,13 +94,22 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Address> getAddress()
+  public String getAddress()
   {
-    if (address == null)
-    {
-      address = new EObjectContainmentEList<Address>(Address.class, this, GroceryPackage.WAREHOUSE__ADDRESS);
-    }
     return address;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAddress(String newAddress)
+  {
+    String oldAddress = address;
+    address = newAddress;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.WAREHOUSE__ADDRESS, oldAddress, address));
   }
 
   /**
@@ -115,8 +136,6 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
   {
     switch (featureID)
     {
-      case GroceryPackage.WAREHOUSE__ADDRESS:
-        return ((InternalEList<?>)getAddress()).basicRemove(otherEnd, msgs);
       case GroceryPackage.WAREHOUSE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
@@ -153,8 +172,7 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
     switch (featureID)
     {
       case GroceryPackage.WAREHOUSE__ADDRESS:
-        getAddress().clear();
-        getAddress().addAll((Collection<? extends Address>)newValue);
+        setAddress((String)newValue);
         return;
       case GroceryPackage.WAREHOUSE__ELEMENTS:
         getElements().clear();
@@ -175,7 +193,7 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
     switch (featureID)
     {
       case GroceryPackage.WAREHOUSE__ADDRESS:
-        getAddress().clear();
+        setAddress(ADDRESS_EDEFAULT);
         return;
       case GroceryPackage.WAREHOUSE__ELEMENTS:
         getElements().clear();
@@ -195,11 +213,28 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
     switch (featureID)
     {
       case GroceryPackage.WAREHOUSE__ADDRESS:
-        return address != null && !address.isEmpty();
+        return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
       case GroceryPackage.WAREHOUSE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (address: ");
+    result.append(address);
+    result.append(')');
+    return result.toString();
   }
 
 } //WarehouseImpl

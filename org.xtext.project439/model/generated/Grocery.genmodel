@@ -23,28 +23,24 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Grocery.ecore#//Store/elements"/>
     </genClasses>
     <genClasses ecoreClass="Grocery.ecore#//Warehouse">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Grocery.ecore#//Warehouse/address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Warehouse/address"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Grocery.ecore#//Warehouse/elements"/>
     </genClasses>
     <genClasses ecoreClass="Grocery.ecore#//Shelf"/>
     <genClasses ecoreClass="Grocery.ecore#//Backroom"/>
     <genClasses ecoreClass="Grocery.ecore#//Item">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Item/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Item/price"/>
     </genClasses>
-    <genClasses ecoreClass="Grocery.ecore#//NonPerishableItem"/>
+    <genClasses ecoreClass="Grocery.ecore#//NonPerishableItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//NonPerishableItem/price"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//NonPerishableItem/quantity"/>
+    </genClasses>
     <genClasses ecoreClass="Grocery.ecore#//PerishableItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//PerishableItem/price"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Grocery.ecore#//PerishableItem/experationDate"/>
     </genClasses>
-    <genClasses ecoreClass="Grocery.ecore#//Address">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Address/street"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Address/number"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Address/city"/>
-    </genClasses>
     <genClasses ecoreClass="Grocery.ecore#//ExperationDate">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//ExperationDate/month"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//ExperationDate/day"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//ExperationDate/year"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//ExperationDate/date"/>
     </genClasses>
     <genClasses ecoreClass="Grocery.ecore#//Driver">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Driver/driverName"/>

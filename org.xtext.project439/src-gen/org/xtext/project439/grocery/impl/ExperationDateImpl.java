@@ -21,9 +21,7 @@ import org.xtext.project439.grocery.GroceryPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.project439.grocery.impl.ExperationDateImpl#getMonth <em>Month</em>}</li>
- *   <li>{@link org.xtext.project439.grocery.impl.ExperationDateImpl#getDay <em>Day</em>}</li>
- *   <li>{@link org.xtext.project439.grocery.impl.ExperationDateImpl#getYear <em>Year</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.impl.ExperationDateImpl#getDate <em>Date</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,64 +29,24 @@ import org.xtext.project439.grocery.GroceryPackage;
 public class ExperationDateImpl extends MinimalEObjectImpl.Container implements ExperationDate
 {
   /**
-   * The default value of the '{@link #getMonth() <em>Month</em>}' attribute.
+   * The default value of the '{@link #getDate() <em>Date</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMonth()
+   * @see #getDate()
    * @generated
    * @ordered
    */
-  protected static final int MONTH_EDEFAULT = 0;
+  protected static final String DATE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getMonth() <em>Month</em>}' attribute.
+   * The cached value of the '{@link #getDate() <em>Date</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMonth()
+   * @see #getDate()
    * @generated
    * @ordered
    */
-  protected int month = MONTH_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getDay() <em>Day</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDay()
-   * @generated
-   * @ordered
-   */
-  protected static final int DAY_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getDay() <em>Day</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDay()
-   * @generated
-   * @ordered
-   */
-  protected int day = DAY_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getYear() <em>Year</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getYear()
-   * @generated
-   * @ordered
-   */
-  protected static final int YEAR_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getYear() <em>Year</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getYear()
-   * @generated
-   * @ordered
-   */
-  protected int year = YEAR_EDEFAULT;
+  protected String date = DATE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -116,9 +74,9 @@ public class ExperationDateImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getMonth()
+  public String getDate()
   {
-    return month;
+    return date;
   }
 
   /**
@@ -126,58 +84,12 @@ public class ExperationDateImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMonth(int newMonth)
+  public void setDate(String newDate)
   {
-    int oldMonth = month;
-    month = newMonth;
+    String oldDate = date;
+    date = newDate;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.EXPERATION_DATE__MONTH, oldMonth, month));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public int getDay()
-  {
-    return day;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setDay(int newDay)
-  {
-    int oldDay = day;
-    day = newDay;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.EXPERATION_DATE__DAY, oldDay, day));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public int getYear()
-  {
-    return year;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setYear(int newYear)
-  {
-    int oldYear = year;
-    year = newYear;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.EXPERATION_DATE__YEAR, oldYear, year));
+      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.EXPERATION_DATE__DATE, oldDate, date));
   }
 
   /**
@@ -190,12 +102,8 @@ public class ExperationDateImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case GroceryPackage.EXPERATION_DATE__MONTH:
-        return getMonth();
-      case GroceryPackage.EXPERATION_DATE__DAY:
-        return getDay();
-      case GroceryPackage.EXPERATION_DATE__YEAR:
-        return getYear();
+      case GroceryPackage.EXPERATION_DATE__DATE:
+        return getDate();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -210,14 +118,8 @@ public class ExperationDateImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case GroceryPackage.EXPERATION_DATE__MONTH:
-        setMonth((Integer)newValue);
-        return;
-      case GroceryPackage.EXPERATION_DATE__DAY:
-        setDay((Integer)newValue);
-        return;
-      case GroceryPackage.EXPERATION_DATE__YEAR:
-        setYear((Integer)newValue);
+      case GroceryPackage.EXPERATION_DATE__DATE:
+        setDate((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -233,14 +135,8 @@ public class ExperationDateImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case GroceryPackage.EXPERATION_DATE__MONTH:
-        setMonth(MONTH_EDEFAULT);
-        return;
-      case GroceryPackage.EXPERATION_DATE__DAY:
-        setDay(DAY_EDEFAULT);
-        return;
-      case GroceryPackage.EXPERATION_DATE__YEAR:
-        setYear(YEAR_EDEFAULT);
+      case GroceryPackage.EXPERATION_DATE__DATE:
+        setDate(DATE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -256,12 +152,8 @@ public class ExperationDateImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case GroceryPackage.EXPERATION_DATE__MONTH:
-        return month != MONTH_EDEFAULT;
-      case GroceryPackage.EXPERATION_DATE__DAY:
-        return day != DAY_EDEFAULT;
-      case GroceryPackage.EXPERATION_DATE__YEAR:
-        return year != YEAR_EDEFAULT;
+      case GroceryPackage.EXPERATION_DATE__DATE:
+        return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
     }
     return super.eIsSet(featureID);
   }
@@ -277,12 +169,8 @@ public class ExperationDateImpl extends MinimalEObjectImpl.Container implements 
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (month: ");
-    result.append(month);
-    result.append(", day: ");
-    result.append(day);
-    result.append(", year: ");
-    result.append(year);
+    result.append(" (date: ");
+    result.append(date);
     result.append(')');
     return result.toString();
   }
