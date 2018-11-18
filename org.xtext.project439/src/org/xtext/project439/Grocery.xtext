@@ -1,0 +1,39 @@
+grammar org.xtext.project439.Grocery with org.eclipse.xtext.common.Terminals
+
+generate grocery "http://www.xtext.org/project439/Grocery"
+
+Grocery: (elements+=Building)* (elements+=DeliveryElement)*;
+
+Building: Store | Warehouse;
+
+DeliveryElement: Driver | Vehicle;
+
+Store: 'store' name=ID '{'
+	(elements+=Shelf)* (elements+=Backroom)
+'}';
+
+Warehouse: name=ID address+=Address '{'
+	(elements+=Item)*
+'}';
+
+Shelf: 'shelf' name=ID (elements+=Item)*;
+
+Backroom: 'backroom' name=ID (elements+=Item)*;
+
+Item : PerishableItem | NonPerishableItem;
+
+NonPerishableItem: 'nonPerishableItem' name=ID price=INT;
+
+PerishableItem: 'perishableItem' name=ID experationDate+=ExperationDate;
+
+Address: 'street' street=STRING 'number' number=INT 'city' city=STRING;
+
+ExperationDate: 'month' month=INT 'day' day=INT 'year' year=INT;
+
+Driver: 'driver' name=ID;
+
+Vehicle: 'vehicle' name=ID;
+
+
+
+
