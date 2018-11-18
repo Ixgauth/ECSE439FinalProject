@@ -9,6 +9,12 @@ package org.xtext.project439.grocery;
  * A representation of the model object '<em><b>Driver</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.project439.grocery.Driver#getDriverName <em>Driver Name</em>}</li>
+ * </ul>
  *
  * @see org.xtext.project439.grocery.GroceryPackage#getDriver()
  * @model
@@ -16,4 +22,30 @@ package org.xtext.project439.grocery;
  */
 public interface Driver extends DeliveryElement
 {
+  /**
+   * Returns the value of the '<em><b>Driver Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Driver Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Driver Name</em>' attribute.
+   * @see #setDriverName(String)
+   * @see org.xtext.project439.grocery.GroceryPackage#getDriver_DriverName()
+   * @model
+   * @generated
+   */
+  String getDriverName();
+
+  /**
+   * Sets the value of the '{@link org.xtext.project439.grocery.Driver#getDriverName <em>Driver Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Driver Name</em>' attribute.
+   * @see #getDriverName()
+   * @generated
+   */
+  void setDriverName(String value);
+
 } // Driver

@@ -6,33 +6,56 @@ Grocery: (elements+=Building)* (elements+=DeliveryElement)*;
 
 Building: Store | Warehouse;
 
+StoreElements: Backroom | Shelf;
+
 DeliveryElement: Driver | Vehicle;
 
 Store: 'store' name=ID '{'
-	(elements+=Shelf)* (elements+=Backroom)
+	(elements+=StoreElements)* 
 '}';
 
-Warehouse: name=ID address+=Address '{'
+Warehouse: 'warehouse' name=ID '{'
+	address+=Address
 	(elements+=Item)*
 '}';
 
-Shelf: 'shelf' name=ID (elements+=Item)*;
+Shelf: 'shelf' name=ID '{'
+	(elements+=Item)*
+'}';
 
-Backroom: 'backroom' name=ID (elements+=Item)*;
+Backroom: 'backroom' name=ID '{'
+	(elements+=Item)*
+'}';
 
 Item : PerishableItem | NonPerishableItem;
 
-NonPerishableItem: 'nonPerishableItem' name=ID price=INT;
+NonPerishableItem: 'nonPerishableItem' name=ID '{'
+	'price' ':' price=INT
+	'quantity' ':' quantity=INT
+'}';
 
-PerishableItem: 'perishableItem' name=ID experationDate+=ExperationDate;
+PerishableItem: 'perishableItem' name=ID '{'
+	'price' ':' price=INT
+	experationDate+=ExperationDate
+'}';
 
-Address: 'street' street=STRING 'number' number=INT 'city' city=STRING;
+Address: 'address' '{'
+	'street' ':' street=STRING 'number' ':' number=INT 'city' ':' city=STRING
+'}';
 
-ExperationDate: 'month' month=INT 'day' day=INT 'year' year=INT;
+ExperationDate: 'ExpirationDate''{'
+	'month' ':' month=INT 'day' ':' day=INT 'year' ':' year=INT
+'}';
 
-Driver: 'driver' name=ID;
+Driver: 'driver' name=ID '{'
+	'name' ':' driverName=STRING
+'}';
 
-Vehicle: 'vehicle' name=ID;
+Vehicle: 'vehicle' name=ID '{'
+	'plateNumber' ':' plateNumber=STRING
+'}';
+
+
 
 
 

@@ -32,6 +32,7 @@ public class GroceryParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, GroceryGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getBuildingAccess().getAlternatives(), "rule__Building__Alternatives");
+			builder.put(grammarAccess.getStoreElementsAccess().getAlternatives(), "rule__StoreElements__Alternatives");
 			builder.put(grammarAccess.getDeliveryElementAccess().getAlternatives(), "rule__DeliveryElement__Alternatives");
 			builder.put(grammarAccess.getItemAccess().getAlternatives(), "rule__Item__Alternatives");
 			builder.put(grammarAccess.getGroceryAccess().getGroup(), "rule__Grocery__Group__0");
@@ -49,26 +50,28 @@ public class GroceryParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGroceryAccess().getElementsAssignment_1(), "rule__Grocery__ElementsAssignment_1");
 			builder.put(grammarAccess.getStoreAccess().getNameAssignment_1(), "rule__Store__NameAssignment_1");
 			builder.put(grammarAccess.getStoreAccess().getElementsAssignment_3(), "rule__Store__ElementsAssignment_3");
-			builder.put(grammarAccess.getStoreAccess().getElementsAssignment_4(), "rule__Store__ElementsAssignment_4");
-			builder.put(grammarAccess.getWarehouseAccess().getNameAssignment_0(), "rule__Warehouse__NameAssignment_0");
-			builder.put(grammarAccess.getWarehouseAccess().getAddressAssignment_1(), "rule__Warehouse__AddressAssignment_1");
-			builder.put(grammarAccess.getWarehouseAccess().getElementsAssignment_3(), "rule__Warehouse__ElementsAssignment_3");
+			builder.put(grammarAccess.getWarehouseAccess().getNameAssignment_1(), "rule__Warehouse__NameAssignment_1");
+			builder.put(grammarAccess.getWarehouseAccess().getAddressAssignment_3(), "rule__Warehouse__AddressAssignment_3");
+			builder.put(grammarAccess.getWarehouseAccess().getElementsAssignment_4(), "rule__Warehouse__ElementsAssignment_4");
 			builder.put(grammarAccess.getShelfAccess().getNameAssignment_1(), "rule__Shelf__NameAssignment_1");
-			builder.put(grammarAccess.getShelfAccess().getElementsAssignment_2(), "rule__Shelf__ElementsAssignment_2");
+			builder.put(grammarAccess.getShelfAccess().getElementsAssignment_3(), "rule__Shelf__ElementsAssignment_3");
 			builder.put(grammarAccess.getBackroomAccess().getNameAssignment_1(), "rule__Backroom__NameAssignment_1");
-			builder.put(grammarAccess.getBackroomAccess().getElementsAssignment_2(), "rule__Backroom__ElementsAssignment_2");
+			builder.put(grammarAccess.getBackroomAccess().getElementsAssignment_3(), "rule__Backroom__ElementsAssignment_3");
 			builder.put(grammarAccess.getNonPerishableItemAccess().getNameAssignment_1(), "rule__NonPerishableItem__NameAssignment_1");
-			builder.put(grammarAccess.getNonPerishableItemAccess().getPriceAssignment_2(), "rule__NonPerishableItem__PriceAssignment_2");
+			builder.put(grammarAccess.getNonPerishableItemAccess().getPriceAssignment_5(), "rule__NonPerishableItem__PriceAssignment_5");
 			builder.put(grammarAccess.getPerishableItemAccess().getNameAssignment_1(), "rule__PerishableItem__NameAssignment_1");
-			builder.put(grammarAccess.getPerishableItemAccess().getExperationDateAssignment_2(), "rule__PerishableItem__ExperationDateAssignment_2");
-			builder.put(grammarAccess.getAddressAccess().getStreetAssignment_1(), "rule__Address__StreetAssignment_1");
-			builder.put(grammarAccess.getAddressAccess().getNumberAssignment_3(), "rule__Address__NumberAssignment_3");
-			builder.put(grammarAccess.getAddressAccess().getCityAssignment_5(), "rule__Address__CityAssignment_5");
-			builder.put(grammarAccess.getExperationDateAccess().getMonthAssignment_1(), "rule__ExperationDate__MonthAssignment_1");
-			builder.put(grammarAccess.getExperationDateAccess().getDayAssignment_3(), "rule__ExperationDate__DayAssignment_3");
-			builder.put(grammarAccess.getExperationDateAccess().getYearAssignment_5(), "rule__ExperationDate__YearAssignment_5");
+			builder.put(grammarAccess.getPerishableItemAccess().getPriceAssignment_5(), "rule__PerishableItem__PriceAssignment_5");
+			builder.put(grammarAccess.getPerishableItemAccess().getExperationDateAssignment_6(), "rule__PerishableItem__ExperationDateAssignment_6");
+			builder.put(grammarAccess.getAddressAccess().getStreetAssignment_4(), "rule__Address__StreetAssignment_4");
+			builder.put(grammarAccess.getAddressAccess().getNumberAssignment_7(), "rule__Address__NumberAssignment_7");
+			builder.put(grammarAccess.getAddressAccess().getCityAssignment_10(), "rule__Address__CityAssignment_10");
+			builder.put(grammarAccess.getExperationDateAccess().getMonthAssignment_4(), "rule__ExperationDate__MonthAssignment_4");
+			builder.put(grammarAccess.getExperationDateAccess().getDayAssignment_7(), "rule__ExperationDate__DayAssignment_7");
+			builder.put(grammarAccess.getExperationDateAccess().getYearAssignment_10(), "rule__ExperationDate__YearAssignment_10");
 			builder.put(grammarAccess.getDriverAccess().getNameAssignment_1(), "rule__Driver__NameAssignment_1");
+			builder.put(grammarAccess.getDriverAccess().getDriverNameAssignment_5(), "rule__Driver__DriverNameAssignment_5");
 			builder.put(grammarAccess.getVehicleAccess().getNameAssignment_1(), "rule__Vehicle__NameAssignment_1");
+			builder.put(grammarAccess.getVehicleAccess().getPlateNumberAssignment_5(), "rule__Vehicle__PlateNumberAssignment_5");
 		}
 	}
 	

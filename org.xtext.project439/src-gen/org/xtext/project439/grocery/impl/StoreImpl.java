@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -18,6 +17,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.project439.grocery.GroceryPackage;
 import org.xtext.project439.grocery.Store;
+import org.xtext.project439.grocery.StoreElements;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +42,7 @@ public class StoreImpl extends BuildingImpl implements Store
    * @generated
    * @ordered
    */
-  protected EList<EObject> elements;
+  protected EList<StoreElements> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -70,11 +70,11 @@ public class StoreImpl extends BuildingImpl implements Store
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EObject> getElements()
+  public EList<StoreElements> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<EObject>(EObject.class, this, GroceryPackage.STORE__ELEMENTS);
+      elements = new EObjectContainmentEList<StoreElements>(StoreElements.class, this, GroceryPackage.STORE__ELEMENTS);
     }
     return elements;
   }
@@ -124,7 +124,7 @@ public class StoreImpl extends BuildingImpl implements Store
     {
       case GroceryPackage.STORE__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends EObject>)newValue);
+        getElements().addAll((Collection<? extends StoreElements>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

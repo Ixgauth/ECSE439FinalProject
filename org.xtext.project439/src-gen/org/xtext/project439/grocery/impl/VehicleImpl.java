@@ -3,7 +3,11 @@
  */
 package org.xtext.project439.grocery.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.project439.grocery.GroceryPackage;
 import org.xtext.project439.grocery.Vehicle;
@@ -12,11 +16,37 @@ import org.xtext.project439.grocery.Vehicle;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Vehicle</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.project439.grocery.impl.VehicleImpl#getPlateNumber <em>Plate Number</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class VehicleImpl extends DeliveryElementImpl implements Vehicle
 {
+  /**
+   * The default value of the '{@link #getPlateNumber() <em>Plate Number</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPlateNumber()
+   * @generated
+   * @ordered
+   */
+  protected static final String PLATE_NUMBER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPlateNumber() <em>Plate Number</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPlateNumber()
+   * @generated
+   * @ordered
+   */
+  protected String plateNumber = PLATE_NUMBER_EDEFAULT;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +66,112 @@ public class VehicleImpl extends DeliveryElementImpl implements Vehicle
   protected EClass eStaticClass()
   {
     return GroceryPackage.Literals.VEHICLE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getPlateNumber()
+  {
+    return plateNumber;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPlateNumber(String newPlateNumber)
+  {
+    String oldPlateNumber = plateNumber;
+    plateNumber = newPlateNumber;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.VEHICLE__PLATE_NUMBER, oldPlateNumber, plateNumber));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case GroceryPackage.VEHICLE__PLATE_NUMBER:
+        return getPlateNumber();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case GroceryPackage.VEHICLE__PLATE_NUMBER:
+        setPlateNumber((String)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case GroceryPackage.VEHICLE__PLATE_NUMBER:
+        setPlateNumber(PLATE_NUMBER_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case GroceryPackage.VEHICLE__PLATE_NUMBER:
+        return PLATE_NUMBER_EDEFAULT == null ? plateNumber != null : !PLATE_NUMBER_EDEFAULT.equals(plateNumber);
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (plateNumber: ");
+    result.append(plateNumber);
+    result.append(')');
+    return result.toString();
   }
 
 } //VehicleImpl

@@ -67,6 +67,7 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
     {
       case GroceryPackage.GROCERY: return createGrocery();
       case GroceryPackage.BUILDING: return createBuilding();
+      case GroceryPackage.STORE_ELEMENTS: return createStoreElements();
       case GroceryPackage.DELIVERY_ELEMENT: return createDeliveryElement();
       case GroceryPackage.STORE: return createStore();
       case GroceryPackage.WAREHOUSE: return createWarehouse();
@@ -104,6 +105,17 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
   {
     BuildingImpl building = new BuildingImpl();
     return building;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StoreElements createStoreElements()
+  {
+    StoreElementsImpl storeElements = new StoreElementsImpl();
+    return storeElements;
   }
 
   /**

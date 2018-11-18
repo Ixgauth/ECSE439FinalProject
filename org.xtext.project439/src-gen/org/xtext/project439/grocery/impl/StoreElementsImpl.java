@@ -3,31 +3,41 @@
  */
 package org.xtext.project439.grocery.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.xtext.project439.grocery.GroceryPackage;
 import org.xtext.project439.grocery.Item;
+import org.xtext.project439.grocery.StoreElements;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Item</b></em>'.
+ * An implementation of the model object '<em><b>Store Elements</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.project439.grocery.impl.ItemImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.project439.grocery.impl.ItemImpl#getPrice <em>Price</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.impl.StoreElementsImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.impl.StoreElementsImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ItemImpl extends MinimalEObjectImpl.Container implements Item
+public class StoreElementsImpl extends MinimalEObjectImpl.Container implements StoreElements
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -50,31 +60,21 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
+   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPrice()
+   * @see #getElements()
    * @generated
    * @ordered
    */
-  protected static final int PRICE_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getPrice() <em>Price</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPrice()
-   * @generated
-   * @ordered
-   */
-  protected int price = PRICE_EDEFAULT;
+  protected EList<Item> elements;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ItemImpl()
+  protected StoreElementsImpl()
   {
     super();
   }
@@ -87,7 +87,7 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
   @Override
   protected EClass eStaticClass()
   {
-    return GroceryPackage.Literals.ITEM;
+    return GroceryPackage.Literals.STORE_ELEMENTS;
   }
 
   /**
@@ -110,7 +110,7 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.ITEM__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.STORE_ELEMENTS__NAME, oldName, name));
   }
 
   /**
@@ -118,9 +118,13 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getPrice()
+  public EList<Item> getElements()
   {
-    return price;
+    if (elements == null)
+    {
+      elements = new EObjectContainmentEList<Item>(Item.class, this, GroceryPackage.STORE_ELEMENTS__ELEMENTS);
+    }
+    return elements;
   }
 
   /**
@@ -128,12 +132,15 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPrice(int newPrice)
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    int oldPrice = price;
-    price = newPrice;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.ITEM__PRICE, oldPrice, price));
+    switch (featureID)
+    {
+      case GroceryPackage.STORE_ELEMENTS__ELEMENTS:
+        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -146,10 +153,10 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
   {
     switch (featureID)
     {
-      case GroceryPackage.ITEM__NAME:
+      case GroceryPackage.STORE_ELEMENTS__NAME:
         return getName();
-      case GroceryPackage.ITEM__PRICE:
-        return getPrice();
+      case GroceryPackage.STORE_ELEMENTS__ELEMENTS:
+        return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -159,16 +166,18 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case GroceryPackage.ITEM__NAME:
+      case GroceryPackage.STORE_ELEMENTS__NAME:
         setName((String)newValue);
         return;
-      case GroceryPackage.ITEM__PRICE:
-        setPrice((Integer)newValue);
+      case GroceryPackage.STORE_ELEMENTS__ELEMENTS:
+        getElements().clear();
+        getElements().addAll((Collection<? extends Item>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -184,11 +193,11 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
   {
     switch (featureID)
     {
-      case GroceryPackage.ITEM__NAME:
+      case GroceryPackage.STORE_ELEMENTS__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case GroceryPackage.ITEM__PRICE:
-        setPrice(PRICE_EDEFAULT);
+      case GroceryPackage.STORE_ELEMENTS__ELEMENTS:
+        getElements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -204,10 +213,10 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
   {
     switch (featureID)
     {
-      case GroceryPackage.ITEM__NAME:
+      case GroceryPackage.STORE_ELEMENTS__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case GroceryPackage.ITEM__PRICE:
-        return price != PRICE_EDEFAULT;
+      case GroceryPackage.STORE_ELEMENTS__ELEMENTS:
+        return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -225,10 +234,8 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", price: ");
-    result.append(price);
     result.append(')');
     return result.toString();
   }
 
-} //ItemImpl
+} //StoreElementsImpl

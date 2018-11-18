@@ -3,7 +3,11 @@
  */
 package org.xtext.project439.grocery.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.project439.grocery.Driver;
 import org.xtext.project439.grocery.GroceryPackage;
@@ -12,11 +16,37 @@ import org.xtext.project439.grocery.GroceryPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Driver</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.project439.grocery.impl.DriverImpl#getDriverName <em>Driver Name</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class DriverImpl extends DeliveryElementImpl implements Driver
 {
+  /**
+   * The default value of the '{@link #getDriverName() <em>Driver Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDriverName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DRIVER_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDriverName() <em>Driver Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDriverName()
+   * @generated
+   * @ordered
+   */
+  protected String driverName = DRIVER_NAME_EDEFAULT;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +66,112 @@ public class DriverImpl extends DeliveryElementImpl implements Driver
   protected EClass eStaticClass()
   {
     return GroceryPackage.Literals.DRIVER;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getDriverName()
+  {
+    return driverName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDriverName(String newDriverName)
+  {
+    String oldDriverName = driverName;
+    driverName = newDriverName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.DRIVER__DRIVER_NAME, oldDriverName, driverName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case GroceryPackage.DRIVER__DRIVER_NAME:
+        return getDriverName();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case GroceryPackage.DRIVER__DRIVER_NAME:
+        setDriverName((String)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case GroceryPackage.DRIVER__DRIVER_NAME:
+        setDriverName(DRIVER_NAME_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case GroceryPackage.DRIVER__DRIVER_NAME:
+        return DRIVER_NAME_EDEFAULT == null ? driverName != null : !DRIVER_NAME_EDEFAULT.equals(driverName);
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (driverName: ");
+    result.append(driverName);
+    result.append(')');
+    return result.toString();
   }
 
 } //DriverImpl

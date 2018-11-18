@@ -9,6 +9,12 @@ package org.xtext.project439.grocery;
  * A representation of the model object '<em><b>Vehicle</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.project439.grocery.Vehicle#getPlateNumber <em>Plate Number</em>}</li>
+ * </ul>
  *
  * @see org.xtext.project439.grocery.GroceryPackage#getVehicle()
  * @model
@@ -16,4 +22,30 @@ package org.xtext.project439.grocery;
  */
 public interface Vehicle extends DeliveryElement
 {
+  /**
+   * Returns the value of the '<em><b>Plate Number</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Plate Number</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Plate Number</em>' attribute.
+   * @see #setPlateNumber(String)
+   * @see org.xtext.project439.grocery.GroceryPackage#getVehicle_PlateNumber()
+   * @model
+   * @generated
+   */
+  String getPlateNumber();
+
+  /**
+   * Sets the value of the '{@link org.xtext.project439.grocery.Vehicle#getPlateNumber <em>Plate Number</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Plate Number</em>' attribute.
+   * @see #getPlateNumber()
+   * @generated
+   */
+  void setPlateNumber(String value);
+
 } // Vehicle

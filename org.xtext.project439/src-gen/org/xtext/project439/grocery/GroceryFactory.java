@@ -42,6 +42,15 @@ public interface GroceryFactory extends EFactory
   Building createBuilding();
 
   /**
+   * Returns a new object of class '<em>Store Elements</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Store Elements</em>'.
+   * @generated
+   */
+  StoreElements createStoreElements();
+
+  /**
    * Returns a new object of class '<em>Delivery Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

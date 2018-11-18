@@ -68,6 +68,25 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		//Warehouse
 		public RuleCall getWarehouseParserRuleCall_1() { return cWarehouseParserRuleCall_1; }
 	}
+	public class StoreElementsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project439.Grocery.StoreElements");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cBackroomParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cShelfParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//StoreElements:
+		//	Backroom | Shelf;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Backroom | Shelf
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Backroom
+		public RuleCall getBackroomParserRuleCall_0() { return cBackroomParserRuleCall_0; }
+		
+		//Shelf
+		public RuleCall getShelfParserRuleCall_1() { return cShelfParserRuleCall_1; }
+	}
 	public class DeliveryElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project439.Grocery.DeliveryElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -95,17 +114,16 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cElementsShelfParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
-		private final Assignment cElementsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cElementsBackroomParserRuleCall_4_0 = (RuleCall)cElementsAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final RuleCall cElementsStoreElementsParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Store:
 		//	'store' name=ID '{'
-		//	elements+=Shelf* elements+=Backroom '}';
+		//	elements+=StoreElements*
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'store' name=ID '{' elements+=Shelf* elements+=Backroom '}'
+		//'store' name=ID '{' elements+=StoreElements* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'store'
@@ -120,53 +138,93 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//elements+=Shelf*
+		//elements+=StoreElements*
 		public Assignment getElementsAssignment_3() { return cElementsAssignment_3; }
 		
-		//Shelf
-		public RuleCall getElementsShelfParserRuleCall_3_0() { return cElementsShelfParserRuleCall_3_0; }
-		
-		//elements+=Backroom
-		public Assignment getElementsAssignment_4() { return cElementsAssignment_4; }
-		
-		//Backroom
-		public RuleCall getElementsBackroomParserRuleCall_4_0() { return cElementsBackroomParserRuleCall_4_0; }
+		//StoreElements
+		public RuleCall getElementsStoreElementsParserRuleCall_3_0() { return cElementsStoreElementsParserRuleCall_3_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class WarehouseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project439.Grocery.Warehouse");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Assignment cAddressAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cAddressAddressParserRuleCall_1_0 = (RuleCall)cAddressAssignment_1.eContents().get(0);
+		private final Keyword cWarehouseKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cAddressAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cAddressAddressParserRuleCall_3_0 = (RuleCall)cAddressAssignment_3.eContents().get(0);
+		private final Assignment cElementsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cElementsItemParserRuleCall_4_0 = (RuleCall)cElementsAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Warehouse:
+		//	'warehouse' name=ID '{'
+		//	address+=Address
+		//	elements+=Item*
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'warehouse' name=ID '{' address+=Address elements+=Item* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'warehouse'
+		public Keyword getWarehouseKeyword_0() { return cWarehouseKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//address+=Address
+		public Assignment getAddressAssignment_3() { return cAddressAssignment_3; }
+		
+		//Address
+		public RuleCall getAddressAddressParserRuleCall_3_0() { return cAddressAddressParserRuleCall_3_0; }
+		
+		//elements+=Item*
+		public Assignment getElementsAssignment_4() { return cElementsAssignment_4; }
+		
+		//Item
+		public RuleCall getElementsItemParserRuleCall_4_0() { return cElementsItemParserRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+	public class ShelfElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project439.Grocery.Shelf");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cShelfKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cElementsItemParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//Warehouse:
-		//	name=ID address+=Address '{'
+		//Shelf:
+		//	'shelf' name=ID '{'
 		//	elements+=Item*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID address+=Address '{' elements+=Item* '}'
+		//'shelf' name=ID '{' elements+=Item* '}'
 		public Group getGroup() { return cGroup; }
 		
+		//'shelf'
+		public Keyword getShelfKeyword_0() { return cShelfKeyword_0; }
+		
 		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
-		
-		//address+=Address
-		public Assignment getAddressAssignment_1() { return cAddressAssignment_1; }
-		
-		//Address
-		public RuleCall getAddressAddressParserRuleCall_1_0() { return cAddressAddressParserRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -180,51 +238,24 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
-	public class ShelfElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project439.Grocery.Shelf");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cShelfKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cElementsItemParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
-		
-		//Shelf:
-		//	'shelf' name=ID elements+=Item*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'shelf' name=ID elements+=Item*
-		public Group getGroup() { return cGroup; }
-		
-		//'shelf'
-		public Keyword getShelfKeyword_0() { return cShelfKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//elements+=Item*
-		public Assignment getElementsAssignment_2() { return cElementsAssignment_2; }
-		
-		//Item
-		public RuleCall getElementsItemParserRuleCall_2_0() { return cElementsItemParserRuleCall_2_0; }
-	}
 	public class BackroomElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project439.Grocery.Backroom");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBackroomKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cElementsItemParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cElementsItemParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Backroom:
-		//	'backroom' name=ID elements+=Item*;
+		//	'backroom' name=ID '{'
+		//	elements+=Item*
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'backroom' name=ID elements+=Item*
+		//'backroom' name=ID '{' elements+=Item* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'backroom'
@@ -236,11 +267,17 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
 		//elements+=Item*
-		public Assignment getElementsAssignment_2() { return cElementsAssignment_2; }
+		public Assignment getElementsAssignment_3() { return cElementsAssignment_3; }
 		
 		//Item
-		public RuleCall getElementsItemParserRuleCall_2_0() { return cElementsItemParserRuleCall_2_0; }
+		public RuleCall getElementsItemParserRuleCall_3_0() { return cElementsItemParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class ItemElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project439.Grocery.Item");
@@ -267,14 +304,20 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNonPerishableItemKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cPriceAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cPriceINTTerminalRuleCall_2_0 = (RuleCall)cPriceAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cPriceKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cPriceAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPriceINTTerminalRuleCall_5_0 = (RuleCall)cPriceAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//NonPerishableItem:
-		//	'nonPerishableItem' name=ID price=INT;
+		//	'nonPerishableItem' name=ID '{'
+		//	'price' ':' price=INT
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'nonPerishableItem' name=ID price=INT
+		//'nonPerishableItem' name=ID '{' 'price' ':' price=INT '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'nonPerishableItem'
@@ -286,11 +329,23 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//'price'
+		public Keyword getPriceKeyword_3() { return cPriceKeyword_3; }
+		
+		//':'
+		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+		
 		//price=INT
-		public Assignment getPriceAssignment_2() { return cPriceAssignment_2; }
+		public Assignment getPriceAssignment_5() { return cPriceAssignment_5; }
 		
 		//INT
-		public RuleCall getPriceINTTerminalRuleCall_2_0() { return cPriceINTTerminalRuleCall_2_0; }
+		public RuleCall getPriceINTTerminalRuleCall_5_0() { return cPriceINTTerminalRuleCall_5_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class PerishableItemElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project439.Grocery.PerishableItem");
@@ -298,14 +353,23 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPerishableItemKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cExperationDateAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cExperationDateExperationDateParserRuleCall_2_0 = (RuleCall)cExperationDateAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cPriceKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cPriceAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPriceINTTerminalRuleCall_5_0 = (RuleCall)cPriceAssignment_5.eContents().get(0);
+		private final Assignment cExperationDateAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cExperationDateExperationDateParserRuleCall_6_0 = (RuleCall)cExperationDateAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//PerishableItem:
-		//	'perishableItem' name=ID experationDate+=ExperationDate;
+		//	'perishableItem' name=ID '{'
+		//	'price' ':' price=INT
+		//	experationDate+=ExperationDate
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'perishableItem' name=ID experationDate+=ExperationDate
+		//'perishableItem' name=ID '{' 'price' ':' price=INT experationDate+=ExperationDate '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'perishableItem'
@@ -317,105 +381,175 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//'price'
+		public Keyword getPriceKeyword_3() { return cPriceKeyword_3; }
+		
+		//':'
+		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+		
+		//price=INT
+		public Assignment getPriceAssignment_5() { return cPriceAssignment_5; }
+		
+		//INT
+		public RuleCall getPriceINTTerminalRuleCall_5_0() { return cPriceINTTerminalRuleCall_5_0; }
+		
 		//experationDate+=ExperationDate
-		public Assignment getExperationDateAssignment_2() { return cExperationDateAssignment_2; }
+		public Assignment getExperationDateAssignment_6() { return cExperationDateAssignment_6; }
 		
 		//ExperationDate
-		public RuleCall getExperationDateExperationDateParserRuleCall_2_0() { return cExperationDateExperationDateParserRuleCall_2_0; }
+		public RuleCall getExperationDateExperationDateParserRuleCall_6_0() { return cExperationDateExperationDateParserRuleCall_6_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class AddressElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project439.Grocery.Address");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cStreetKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cStreetAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cStreetSTRINGTerminalRuleCall_1_0 = (RuleCall)cStreetAssignment_1.eContents().get(0);
-		private final Keyword cNumberKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNumberAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNumberINTTerminalRuleCall_3_0 = (RuleCall)cNumberAssignment_3.eContents().get(0);
-		private final Keyword cCityKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cCityAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cCitySTRINGTerminalRuleCall_5_0 = (RuleCall)cCityAssignment_5.eContents().get(0);
+		private final Keyword cAddressKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cStreetKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cStreetAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cStreetSTRINGTerminalRuleCall_4_0 = (RuleCall)cStreetAssignment_4.eContents().get(0);
+		private final Keyword cNumberKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cNumberAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cNumberINTTerminalRuleCall_7_0 = (RuleCall)cNumberAssignment_7.eContents().get(0);
+		private final Keyword cCityKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cCityAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cCitySTRINGTerminalRuleCall_10_0 = (RuleCall)cCityAssignment_10.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//Address:
-		//	'street' street=STRING 'number' number=INT 'city' city=STRING;
+		//	'address' '{'
+		//	'street' ':' street=STRING 'number' ':' number=INT 'city' ':' city=STRING
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'street' street=STRING 'number' number=INT 'city' city=STRING
+		//'address' '{' 'street' ':' street=STRING 'number' ':' number=INT 'city' ':' city=STRING '}'
 		public Group getGroup() { return cGroup; }
 		
+		//'address'
+		public Keyword getAddressKeyword_0() { return cAddressKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
 		//'street'
-		public Keyword getStreetKeyword_0() { return cStreetKeyword_0; }
+		public Keyword getStreetKeyword_2() { return cStreetKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
 		
 		//street=STRING
-		public Assignment getStreetAssignment_1() { return cStreetAssignment_1; }
+		public Assignment getStreetAssignment_4() { return cStreetAssignment_4; }
 		
 		//STRING
-		public RuleCall getStreetSTRINGTerminalRuleCall_1_0() { return cStreetSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getStreetSTRINGTerminalRuleCall_4_0() { return cStreetSTRINGTerminalRuleCall_4_0; }
 		
 		//'number'
-		public Keyword getNumberKeyword_2() { return cNumberKeyword_2; }
+		public Keyword getNumberKeyword_5() { return cNumberKeyword_5; }
+		
+		//':'
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
 		
 		//number=INT
-		public Assignment getNumberAssignment_3() { return cNumberAssignment_3; }
+		public Assignment getNumberAssignment_7() { return cNumberAssignment_7; }
 		
 		//INT
-		public RuleCall getNumberINTTerminalRuleCall_3_0() { return cNumberINTTerminalRuleCall_3_0; }
+		public RuleCall getNumberINTTerminalRuleCall_7_0() { return cNumberINTTerminalRuleCall_7_0; }
 		
 		//'city'
-		public Keyword getCityKeyword_4() { return cCityKeyword_4; }
+		public Keyword getCityKeyword_8() { return cCityKeyword_8; }
+		
+		//':'
+		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
 		
 		//city=STRING
-		public Assignment getCityAssignment_5() { return cCityAssignment_5; }
+		public Assignment getCityAssignment_10() { return cCityAssignment_10; }
 		
 		//STRING
-		public RuleCall getCitySTRINGTerminalRuleCall_5_0() { return cCitySTRINGTerminalRuleCall_5_0; }
+		public RuleCall getCitySTRINGTerminalRuleCall_10_0() { return cCitySTRINGTerminalRuleCall_10_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 	public class ExperationDateElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project439.Grocery.ExperationDate");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cMonthKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cMonthAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cMonthINTTerminalRuleCall_1_0 = (RuleCall)cMonthAssignment_1.eContents().get(0);
-		private final Keyword cDayKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cDayAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cDayINTTerminalRuleCall_3_0 = (RuleCall)cDayAssignment_3.eContents().get(0);
-		private final Keyword cYearKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cYearAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cYearINTTerminalRuleCall_5_0 = (RuleCall)cYearAssignment_5.eContents().get(0);
+		private final Keyword cExpirationDateKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cMonthKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cMonthAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cMonthINTTerminalRuleCall_4_0 = (RuleCall)cMonthAssignment_4.eContents().get(0);
+		private final Keyword cDayKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cDayAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cDayINTTerminalRuleCall_7_0 = (RuleCall)cDayAssignment_7.eContents().get(0);
+		private final Keyword cYearKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cYearAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cYearINTTerminalRuleCall_10_0 = (RuleCall)cYearAssignment_10.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//ExperationDate:
-		//	'month' month=INT 'day' day=INT 'year' year=INT;
+		//	'ExpirationDate' '{'
+		//	'month' ':' month=INT 'day' ':' day=INT 'year' ':' year=INT
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'month' month=INT 'day' day=INT 'year' year=INT
+		//'ExpirationDate' '{' 'month' ':' month=INT 'day' ':' day=INT 'year' ':' year=INT '}'
 		public Group getGroup() { return cGroup; }
 		
+		//'ExpirationDate'
+		public Keyword getExpirationDateKeyword_0() { return cExpirationDateKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
 		//'month'
-		public Keyword getMonthKeyword_0() { return cMonthKeyword_0; }
+		public Keyword getMonthKeyword_2() { return cMonthKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
 		
 		//month=INT
-		public Assignment getMonthAssignment_1() { return cMonthAssignment_1; }
+		public Assignment getMonthAssignment_4() { return cMonthAssignment_4; }
 		
 		//INT
-		public RuleCall getMonthINTTerminalRuleCall_1_0() { return cMonthINTTerminalRuleCall_1_0; }
+		public RuleCall getMonthINTTerminalRuleCall_4_0() { return cMonthINTTerminalRuleCall_4_0; }
 		
 		//'day'
-		public Keyword getDayKeyword_2() { return cDayKeyword_2; }
+		public Keyword getDayKeyword_5() { return cDayKeyword_5; }
+		
+		//':'
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
 		
 		//day=INT
-		public Assignment getDayAssignment_3() { return cDayAssignment_3; }
+		public Assignment getDayAssignment_7() { return cDayAssignment_7; }
 		
 		//INT
-		public RuleCall getDayINTTerminalRuleCall_3_0() { return cDayINTTerminalRuleCall_3_0; }
+		public RuleCall getDayINTTerminalRuleCall_7_0() { return cDayINTTerminalRuleCall_7_0; }
 		
 		//'year'
-		public Keyword getYearKeyword_4() { return cYearKeyword_4; }
+		public Keyword getYearKeyword_8() { return cYearKeyword_8; }
+		
+		//':'
+		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
 		
 		//year=INT
-		public Assignment getYearAssignment_5() { return cYearAssignment_5; }
+		public Assignment getYearAssignment_10() { return cYearAssignment_10; }
 		
 		//INT
-		public RuleCall getYearINTTerminalRuleCall_5_0() { return cYearINTTerminalRuleCall_5_0; }
+		public RuleCall getYearINTTerminalRuleCall_10_0() { return cYearINTTerminalRuleCall_10_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 	public class DriverElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project439.Grocery.Driver");
@@ -423,12 +557,20 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDriverKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cNameKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cDriverNameAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cDriverNameSTRINGTerminalRuleCall_5_0 = (RuleCall)cDriverNameAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Driver:
-		//	'driver' name=ID;
+		//	'driver' name=ID '{'
+		//	'name' ':' driverName=STRING
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'driver' name=ID
+		//'driver' name=ID '{' 'name' ':' driverName=STRING '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'driver'
@@ -439,6 +581,24 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//'name'
+		public Keyword getNameKeyword_3() { return cNameKeyword_3; }
+		
+		//':'
+		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+		
+		//driverName=STRING
+		public Assignment getDriverNameAssignment_5() { return cDriverNameAssignment_5; }
+		
+		//STRING
+		public RuleCall getDriverNameSTRINGTerminalRuleCall_5_0() { return cDriverNameSTRINGTerminalRuleCall_5_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class VehicleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project439.Grocery.Vehicle");
@@ -446,12 +606,20 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cVehicleKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cPlateNumberKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cPlateNumberAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPlateNumberSTRINGTerminalRuleCall_5_0 = (RuleCall)cPlateNumberAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Vehicle:
-		//	'vehicle' name=ID;
+		//	'vehicle' name=ID '{'
+		//	'plateNumber' ':' plateNumber=STRING
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'vehicle' name=ID
+		//'vehicle' name=ID '{' 'plateNumber' ':' plateNumber=STRING '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'vehicle'
@@ -462,11 +630,30 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//'plateNumber'
+		public Keyword getPlateNumberKeyword_3() { return cPlateNumberKeyword_3; }
+		
+		//':'
+		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+		
+		//plateNumber=STRING
+		public Assignment getPlateNumberAssignment_5() { return cPlateNumberAssignment_5; }
+		
+		//STRING
+		public RuleCall getPlateNumberSTRINGTerminalRuleCall_5_0() { return cPlateNumberSTRINGTerminalRuleCall_5_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	
 	
 	private final GroceryElements pGrocery;
 	private final BuildingElements pBuilding;
+	private final StoreElementsElements pStoreElements;
 	private final DeliveryElementElements pDeliveryElement;
 	private final StoreElements pStore;
 	private final WarehouseElements pWarehouse;
@@ -491,6 +678,7 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pGrocery = new GroceryElements();
 		this.pBuilding = new BuildingElements();
+		this.pStoreElements = new StoreElementsElements();
 		this.pDeliveryElement = new DeliveryElementElements();
 		this.pStore = new StoreElements();
 		this.pWarehouse = new WarehouseElements();
@@ -552,6 +740,16 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		return getBuildingAccess().getRule();
 	}
 	
+	//StoreElements:
+	//	Backroom | Shelf;
+	public StoreElementsElements getStoreElementsAccess() {
+		return pStoreElements;
+	}
+	
+	public ParserRule getStoreElementsRule() {
+		return getStoreElementsAccess().getRule();
+	}
+	
 	//DeliveryElement:
 	//	Driver | Vehicle;
 	public DeliveryElementElements getDeliveryElementAccess() {
@@ -564,7 +762,8 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Store:
 	//	'store' name=ID '{'
-	//	elements+=Shelf* elements+=Backroom '}';
+	//	elements+=StoreElements*
+	//	'}';
 	public StoreElements getStoreAccess() {
 		return pStore;
 	}
@@ -574,7 +773,8 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Warehouse:
-	//	name=ID address+=Address '{'
+	//	'warehouse' name=ID '{'
+	//	address+=Address
 	//	elements+=Item*
 	//	'}';
 	public WarehouseElements getWarehouseAccess() {
@@ -586,7 +786,9 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Shelf:
-	//	'shelf' name=ID elements+=Item*;
+	//	'shelf' name=ID '{'
+	//	elements+=Item*
+	//	'}';
 	public ShelfElements getShelfAccess() {
 		return pShelf;
 	}
@@ -596,7 +798,9 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Backroom:
-	//	'backroom' name=ID elements+=Item*;
+	//	'backroom' name=ID '{'
+	//	elements+=Item*
+	//	'}';
 	public BackroomElements getBackroomAccess() {
 		return pBackroom;
 	}
@@ -616,7 +820,9 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//NonPerishableItem:
-	//	'nonPerishableItem' name=ID price=INT;
+	//	'nonPerishableItem' name=ID '{'
+	//	'price' ':' price=INT
+	//	'}';
 	public NonPerishableItemElements getNonPerishableItemAccess() {
 		return pNonPerishableItem;
 	}
@@ -626,7 +832,10 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//PerishableItem:
-	//	'perishableItem' name=ID experationDate+=ExperationDate;
+	//	'perishableItem' name=ID '{'
+	//	'price' ':' price=INT
+	//	experationDate+=ExperationDate
+	//	'}';
 	public PerishableItemElements getPerishableItemAccess() {
 		return pPerishableItem;
 	}
@@ -636,7 +845,9 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Address:
-	//	'street' street=STRING 'number' number=INT 'city' city=STRING;
+	//	'address' '{'
+	//	'street' ':' street=STRING 'number' ':' number=INT 'city' ':' city=STRING
+	//	'}';
 	public AddressElements getAddressAccess() {
 		return pAddress;
 	}
@@ -646,7 +857,9 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ExperationDate:
-	//	'month' month=INT 'day' day=INT 'year' year=INT;
+	//	'ExpirationDate' '{'
+	//	'month' ':' month=INT 'day' ':' day=INT 'year' ':' year=INT
+	//	'}';
 	public ExperationDateElements getExperationDateAccess() {
 		return pExperationDate;
 	}
@@ -656,7 +869,9 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Driver:
-	//	'driver' name=ID;
+	//	'driver' name=ID '{'
+	//	'name' ':' driverName=STRING
+	//	'}';
 	public DriverElements getDriverAccess() {
 		return pDriver;
 	}
@@ -666,7 +881,9 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Vehicle:
-	//	'vehicle' name=ID;
+	//	'vehicle' name=ID '{'
+	//	'plateNumber' ':' plateNumber=STRING
+	//	'}';
 	public VehicleElements getVehicleAccess() {
 		return pVehicle;
 	}

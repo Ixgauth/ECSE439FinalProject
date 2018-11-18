@@ -8,12 +8,17 @@
   <eClassifiers xsi:type="ecore:EClass" name="Building">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StoreElements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//Item" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeliveryElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Store" eSuperTypes="#//Building">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+        eType="#//StoreElements" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Warehouse" eSuperTypes="#//Building">
     <eStructuralFeatures xsi:type="ecore:EReference" name="address" upperBound="-1"
@@ -21,22 +26,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//Item" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Shelf">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//Item" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Backroom">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//Item" containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Shelf" eSuperTypes="#//StoreElements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Backroom" eSuperTypes="#//StoreElements"/>
   <eClassifiers xsi:type="ecore:EClass" name="Item">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NonPerishableItem" eSuperTypes="#//Item">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NonPerishableItem" eSuperTypes="#//Item"/>
   <eClassifiers xsi:type="ecore:EClass" name="PerishableItem" eSuperTypes="#//Item">
     <eStructuralFeatures xsi:type="ecore:EReference" name="experationDate" upperBound="-1"
         eType="#//ExperationDate" containment="true"/>
@@ -51,6 +47,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Driver" eSuperTypes="#//DeliveryElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Vehicle" eSuperTypes="#//DeliveryElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Driver" eSuperTypes="#//DeliveryElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="driverName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vehicle" eSuperTypes="#//DeliveryElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="plateNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

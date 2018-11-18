@@ -97,15 +97,16 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ADDRESS__CITY));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAddressAccess().getStreetSTRINGTerminalRuleCall_1_0(), semanticObject.getStreet());
-		feeder.accept(grammarAccess.getAddressAccess().getNumberINTTerminalRuleCall_3_0(), semanticObject.getNumber());
-		feeder.accept(grammarAccess.getAddressAccess().getCitySTRINGTerminalRuleCall_5_0(), semanticObject.getCity());
+		feeder.accept(grammarAccess.getAddressAccess().getStreetSTRINGTerminalRuleCall_4_0(), semanticObject.getStreet());
+		feeder.accept(grammarAccess.getAddressAccess().getNumberINTTerminalRuleCall_7_0(), semanticObject.getNumber());
+		feeder.accept(grammarAccess.getAddressAccess().getCitySTRINGTerminalRuleCall_10_0(), semanticObject.getCity());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
+	 *     StoreElements returns Backroom
 	 *     Backroom returns Backroom
 	 *
 	 * Constraint:
@@ -122,15 +123,18 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Driver returns Driver
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID driverName=STRING)
 	 */
 	protected void sequence_Driver(ISerializationContext context, Driver semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.DELIVERY_ELEMENT__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.DELIVERY_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.DRIVER__DRIVER_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.DRIVER__DRIVER_NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getDriverAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDriverAccess().getDriverNameSTRINGTerminalRuleCall_5_0(), semanticObject.getDriverName());
 		feeder.finish();
 	}
 	
@@ -152,9 +156,9 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.EXPERATION_DATE__YEAR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getExperationDateAccess().getMonthINTTerminalRuleCall_1_0(), semanticObject.getMonth());
-		feeder.accept(grammarAccess.getExperationDateAccess().getDayINTTerminalRuleCall_3_0(), semanticObject.getDay());
-		feeder.accept(grammarAccess.getExperationDateAccess().getYearINTTerminalRuleCall_5_0(), semanticObject.getYear());
+		feeder.accept(grammarAccess.getExperationDateAccess().getMonthINTTerminalRuleCall_4_0(), semanticObject.getMonth());
+		feeder.accept(grammarAccess.getExperationDateAccess().getDayINTTerminalRuleCall_7_0(), semanticObject.getDay());
+		feeder.accept(grammarAccess.getExperationDateAccess().getYearINTTerminalRuleCall_10_0(), semanticObject.getYear());
 		feeder.finish();
 	}
 	
@@ -183,12 +187,12 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ITEM__NAME));
-			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.NON_PERISHABLE_ITEM__PRICE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.NON_PERISHABLE_ITEM__PRICE));
+			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__PRICE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ITEM__PRICE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getNonPerishableItemAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getNonPerishableItemAccess().getPriceINTTerminalRuleCall_2_0(), semanticObject.getPrice());
+		feeder.accept(grammarAccess.getNonPerishableItemAccess().getPriceINTTerminalRuleCall_5_0(), semanticObject.getPrice());
 		feeder.finish();
 	}
 	
@@ -199,7 +203,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PerishableItem returns PerishableItem
 	 *
 	 * Constraint:
-	 *     (name=ID experationDate+=ExperationDate)
+	 *     (name=ID price=INT experationDate+=ExperationDate)
 	 */
 	protected void sequence_PerishableItem(ISerializationContext context, PerishableItem semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -208,6 +212,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     StoreElements returns Shelf
 	 *     Shelf returns Shelf
 	 *
 	 * Constraint:
@@ -224,7 +229,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Store returns Store
 	 *
 	 * Constraint:
-	 *     (name=ID elements+=Shelf* elements+=Backroom)
+	 *     (name=ID elements+=StoreElements*)
 	 */
 	protected void sequence_Store(ISerializationContext context, Store semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -237,15 +242,18 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Vehicle returns Vehicle
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID plateNumber=STRING)
 	 */
 	protected void sequence_Vehicle(ISerializationContext context, Vehicle semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.DELIVERY_ELEMENT__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.DELIVERY_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.VEHICLE__PLATE_NUMBER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.VEHICLE__PLATE_NUMBER));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getVehicleAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getVehicleAccess().getPlateNumberSTRINGTerminalRuleCall_5_0(), semanticObject.getPlateNumber());
 		feeder.finish();
 	}
 	

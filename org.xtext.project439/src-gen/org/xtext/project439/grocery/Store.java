@@ -5,8 +5,6 @@ package org.xtext.project439.grocery;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Store</b></em>'.
@@ -27,7 +25,7 @@ public interface Store extends Building
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
+   * The list contents are of type {@link org.xtext.project439.grocery.StoreElements}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
@@ -39,6 +37,6 @@ public interface Store extends Building
    * @model containment="true"
    * @generated
    */
-  EList<EObject> getElements();
+  EList<StoreElements> getElements();
 
 } // Store
