@@ -68,17 +68,25 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
       case GroceryPackage.GROCERY: return createGrocery();
       case GroceryPackage.BUILDING: return createBuilding();
       case GroceryPackage.STORE_ELEMENTS: return createStoreElements();
-      case GroceryPackage.DELIVERY_ELEMENT: return createDeliveryElement();
+      case GroceryPackage.MOVEMENT_ELEMENT: return createMovementElement();
+      case GroceryPackage.PERSON: return createPerson();
+      case GroceryPackage.ITEM: return createItem();
+      case GroceryPackage.FOOD_ITEM: return createFoodItem();
+      case GroceryPackage.MOVEMENT: return createMovement();
       case GroceryPackage.STORE: return createStore();
       case GroceryPackage.WAREHOUSE: return createWarehouse();
       case GroceryPackage.SHELF: return createShelf();
       case GroceryPackage.BACKROOM: return createBackroom();
-      case GroceryPackage.ITEM: return createItem();
       case GroceryPackage.NON_PERISHABLE_ITEM: return createNonPerishableItem();
       case GroceryPackage.PERISHABLE_ITEM: return createPerishableItem();
-      case GroceryPackage.EXPERATION_DATE: return createExperationDate();
+      case GroceryPackage.NON_FOOD_ITEM: return createNonFoodItem();
       case GroceryPackage.DRIVER: return createDriver();
+      case GroceryPackage.EMPLOYEE: return createEmployee();
+      case GroceryPackage.CUSTOMER: return createCustomer();
       case GroceryPackage.VEHICLE: return createVehicle();
+      case GroceryPackage.DELIVERY: return createDelivery();
+      case GroceryPackage.SALE: return createSale();
+      case GroceryPackage.STOCK_MOVEMENT: return createStockMovement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -122,10 +130,54 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DeliveryElement createDeliveryElement()
+  public MovementElement createMovementElement()
   {
-    DeliveryElementImpl deliveryElement = new DeliveryElementImpl();
-    return deliveryElement;
+    MovementElementImpl movementElement = new MovementElementImpl();
+    return movementElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Person createPerson()
+  {
+    PersonImpl person = new PersonImpl();
+    return person;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Item createItem()
+  {
+    ItemImpl item = new ItemImpl();
+    return item;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FoodItem createFoodItem()
+  {
+    FoodItemImpl foodItem = new FoodItemImpl();
+    return foodItem;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Movement createMovement()
+  {
+    MovementImpl movement = new MovementImpl();
+    return movement;
   }
 
   /**
@@ -177,17 +229,6 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Item createItem()
-  {
-    ItemImpl item = new ItemImpl();
-    return item;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public NonPerishableItem createNonPerishableItem()
   {
     NonPerishableItemImpl nonPerishableItem = new NonPerishableItemImpl();
@@ -210,10 +251,10 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExperationDate createExperationDate()
+  public NonFoodItem createNonFoodItem()
   {
-    ExperationDateImpl experationDate = new ExperationDateImpl();
-    return experationDate;
+    NonFoodItemImpl nonFoodItem = new NonFoodItemImpl();
+    return nonFoodItem;
   }
 
   /**
@@ -232,10 +273,65 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Employee createEmployee()
+  {
+    EmployeeImpl employee = new EmployeeImpl();
+    return employee;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Customer createCustomer()
+  {
+    CustomerImpl customer = new CustomerImpl();
+    return customer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Vehicle createVehicle()
   {
     VehicleImpl vehicle = new VehicleImpl();
     return vehicle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Delivery createDelivery()
+  {
+    DeliveryImpl delivery = new DeliveryImpl();
+    return delivery;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Sale createSale()
+  {
+    SaleImpl sale = new SaleImpl();
+    return sale;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StockMovement createStockMovement()
+  {
+    StockMovementImpl stockMovement = new StockMovementImpl();
+    return stockMovement;
   }
 
   /**

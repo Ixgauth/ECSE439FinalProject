@@ -94,10 +94,40 @@ public class GrocerySwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case GroceryPackage.DELIVERY_ELEMENT:
+      case GroceryPackage.MOVEMENT_ELEMENT:
       {
-        DeliveryElement deliveryElement = (DeliveryElement)theEObject;
-        T result = caseDeliveryElement(deliveryElement);
+        MovementElement movementElement = (MovementElement)theEObject;
+        T result = caseMovementElement(movementElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GroceryPackage.PERSON:
+      {
+        Person person = (Person)theEObject;
+        T result = casePerson(person);
+        if (result == null) result = caseMovementElement(person);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GroceryPackage.ITEM:
+      {
+        Item item = (Item)theEObject;
+        T result = caseItem(item);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GroceryPackage.FOOD_ITEM:
+      {
+        FoodItem foodItem = (FoodItem)theEObject;
+        T result = caseFoodItem(foodItem);
+        if (result == null) result = caseItem(foodItem);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GroceryPackage.MOVEMENT:
+      {
+        Movement movement = (Movement)theEObject;
+        T result = caseMovement(movement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -133,17 +163,11 @@ public class GrocerySwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case GroceryPackage.ITEM:
-      {
-        Item item = (Item)theEObject;
-        T result = caseItem(item);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case GroceryPackage.NON_PERISHABLE_ITEM:
       {
         NonPerishableItem nonPerishableItem = (NonPerishableItem)theEObject;
         T result = caseNonPerishableItem(nonPerishableItem);
+        if (result == null) result = caseFoodItem(nonPerishableItem);
         if (result == null) result = caseItem(nonPerishableItem);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -152,14 +176,16 @@ public class GrocerySwitch<T> extends Switch<T>
       {
         PerishableItem perishableItem = (PerishableItem)theEObject;
         T result = casePerishableItem(perishableItem);
+        if (result == null) result = caseFoodItem(perishableItem);
         if (result == null) result = caseItem(perishableItem);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case GroceryPackage.EXPERATION_DATE:
+      case GroceryPackage.NON_FOOD_ITEM:
       {
-        ExperationDate experationDate = (ExperationDate)theEObject;
-        T result = caseExperationDate(experationDate);
+        NonFoodItem nonFoodItem = (NonFoodItem)theEObject;
+        T result = caseNonFoodItem(nonFoodItem);
+        if (result == null) result = caseItem(nonFoodItem);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -167,7 +193,26 @@ public class GrocerySwitch<T> extends Switch<T>
       {
         Driver driver = (Driver)theEObject;
         T result = caseDriver(driver);
-        if (result == null) result = caseDeliveryElement(driver);
+        if (result == null) result = casePerson(driver);
+        if (result == null) result = caseMovementElement(driver);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GroceryPackage.EMPLOYEE:
+      {
+        Employee employee = (Employee)theEObject;
+        T result = caseEmployee(employee);
+        if (result == null) result = casePerson(employee);
+        if (result == null) result = caseMovementElement(employee);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GroceryPackage.CUSTOMER:
+      {
+        Customer customer = (Customer)theEObject;
+        T result = caseCustomer(customer);
+        if (result == null) result = casePerson(customer);
+        if (result == null) result = caseMovementElement(customer);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -175,7 +220,31 @@ public class GrocerySwitch<T> extends Switch<T>
       {
         Vehicle vehicle = (Vehicle)theEObject;
         T result = caseVehicle(vehicle);
-        if (result == null) result = caseDeliveryElement(vehicle);
+        if (result == null) result = caseMovementElement(vehicle);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GroceryPackage.DELIVERY:
+      {
+        Delivery delivery = (Delivery)theEObject;
+        T result = caseDelivery(delivery);
+        if (result == null) result = caseMovement(delivery);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GroceryPackage.SALE:
+      {
+        Sale sale = (Sale)theEObject;
+        T result = caseSale(sale);
+        if (result == null) result = caseMovement(sale);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GroceryPackage.STOCK_MOVEMENT:
+      {
+        StockMovement stockMovement = (StockMovement)theEObject;
+        T result = caseStockMovement(stockMovement);
+        if (result == null) result = caseMovement(stockMovement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -232,17 +301,81 @@ public class GrocerySwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Delivery Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Movement Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Delivery Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Movement Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDeliveryElement(DeliveryElement object)
+  public T caseMovementElement(MovementElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Person</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Person</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePerson(Person object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Item</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Item</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseItem(Item object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Food Item</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Food Item</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFoodItem(FoodItem object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Movement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Movement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMovement(Movement object)
   {
     return null;
   }
@@ -312,22 +445,6 @@ public class GrocerySwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Item</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Item</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseItem(Item object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Non Perishable Item</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -360,17 +477,17 @@ public class GrocerySwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Experation Date</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Non Food Item</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Experation Date</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Non Food Item</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseExperationDate(ExperationDate object)
+  public T caseNonFoodItem(NonFoodItem object)
   {
     return null;
   }
@@ -392,6 +509,38 @@ public class GrocerySwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Employee</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Employee</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEmployee(Employee object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Customer</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Customer</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCustomer(Customer object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Vehicle</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -403,6 +552,54 @@ public class GrocerySwitch<T> extends Switch<T>
    * @generated
    */
   public T caseVehicle(Vehicle object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Delivery</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Delivery</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDelivery(Delivery object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sale</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sale</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSale(Sale object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Stock Movement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Stock Movement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStockMovement(StockMovement object)
   {
     return null;
   }

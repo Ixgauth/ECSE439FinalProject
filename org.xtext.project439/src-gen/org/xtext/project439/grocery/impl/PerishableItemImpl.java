@@ -3,22 +3,12 @@
  */
 package org.xtext.project439.grocery.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.xtext.project439.grocery.ExperationDate;
 import org.xtext.project439.grocery.GroceryPackage;
 import org.xtext.project439.grocery.PerishableItem;
 
@@ -30,43 +20,32 @@ import org.xtext.project439.grocery.PerishableItem;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.project439.grocery.impl.PerishableItemImpl#getPrice <em>Price</em>}</li>
  *   <li>{@link org.xtext.project439.grocery.impl.PerishableItemImpl#getExperationDate <em>Experation Date</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PerishableItemImpl extends ItemImpl implements PerishableItem
+public class PerishableItemImpl extends FoodItemImpl implements PerishableItem
 {
   /**
-   * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPrice()
-   * @generated
-   * @ordered
-   */
-  protected static final int PRICE_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getPrice() <em>Price</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPrice()
-   * @generated
-   * @ordered
-   */
-  protected int price = PRICE_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getExperationDate() <em>Experation Date</em>}' containment reference list.
+   * The default value of the '{@link #getExperationDate() <em>Experation Date</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getExperationDate()
    * @generated
    * @ordered
    */
-  protected EList<ExperationDate> experationDate;
+  protected static final String EXPERATION_DATE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getExperationDate() <em>Experation Date</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExperationDate()
+   * @generated
+   * @ordered
+   */
+  protected String experationDate = EXPERATION_DATE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -94,35 +73,8 @@ public class PerishableItemImpl extends ItemImpl implements PerishableItem
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getPrice()
+  public String getExperationDate()
   {
-    return price;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPrice(int newPrice)
-  {
-    int oldPrice = price;
-    price = newPrice;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.PERISHABLE_ITEM__PRICE, oldPrice, price));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<ExperationDate> getExperationDate()
-  {
-    if (experationDate == null)
-    {
-      experationDate = new EObjectContainmentEList<ExperationDate>(ExperationDate.class, this, GroceryPackage.PERISHABLE_ITEM__EXPERATION_DATE);
-    }
     return experationDate;
   }
 
@@ -131,15 +83,12 @@ public class PerishableItemImpl extends ItemImpl implements PerishableItem
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setExperationDate(String newExperationDate)
   {
-    switch (featureID)
-    {
-      case GroceryPackage.PERISHABLE_ITEM__EXPERATION_DATE:
-        return ((InternalEList<?>)getExperationDate()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    String oldExperationDate = experationDate;
+    experationDate = newExperationDate;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.PERISHABLE_ITEM__EXPERATION_DATE, oldExperationDate, experationDate));
   }
 
   /**
@@ -152,8 +101,6 @@ public class PerishableItemImpl extends ItemImpl implements PerishableItem
   {
     switch (featureID)
     {
-      case GroceryPackage.PERISHABLE_ITEM__PRICE:
-        return getPrice();
       case GroceryPackage.PERISHABLE_ITEM__EXPERATION_DATE:
         return getExperationDate();
     }
@@ -165,18 +112,13 @@ public class PerishableItemImpl extends ItemImpl implements PerishableItem
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case GroceryPackage.PERISHABLE_ITEM__PRICE:
-        setPrice((Integer)newValue);
-        return;
       case GroceryPackage.PERISHABLE_ITEM__EXPERATION_DATE:
-        getExperationDate().clear();
-        getExperationDate().addAll((Collection<? extends ExperationDate>)newValue);
+        setExperationDate((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -192,11 +134,8 @@ public class PerishableItemImpl extends ItemImpl implements PerishableItem
   {
     switch (featureID)
     {
-      case GroceryPackage.PERISHABLE_ITEM__PRICE:
-        setPrice(PRICE_EDEFAULT);
-        return;
       case GroceryPackage.PERISHABLE_ITEM__EXPERATION_DATE:
-        getExperationDate().clear();
+        setExperationDate(EXPERATION_DATE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -212,10 +151,8 @@ public class PerishableItemImpl extends ItemImpl implements PerishableItem
   {
     switch (featureID)
     {
-      case GroceryPackage.PERISHABLE_ITEM__PRICE:
-        return price != PRICE_EDEFAULT;
       case GroceryPackage.PERISHABLE_ITEM__EXPERATION_DATE:
-        return experationDate != null && !experationDate.isEmpty();
+        return EXPERATION_DATE_EDEFAULT == null ? experationDate != null : !EXPERATION_DATE_EDEFAULT.equals(experationDate);
     }
     return super.eIsSet(featureID);
   }
@@ -231,8 +168,8 @@ public class PerishableItemImpl extends ItemImpl implements PerishableItem
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (price: ");
-    result.append(price);
+    result.append(" (experationDate: ");
+    result.append(experationDate);
     result.append(')');
     return result.toString();
   }

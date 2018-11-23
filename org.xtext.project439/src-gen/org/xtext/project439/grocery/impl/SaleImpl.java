@@ -6,54 +6,45 @@ package org.xtext.project439.grocery.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.project439.grocery.ExperationDate;
 import org.xtext.project439.grocery.GroceryPackage;
+import org.xtext.project439.grocery.Sale;
+import org.xtext.project439.grocery.Shelf;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Experation Date</b></em>'.
+ * An implementation of the model object '<em><b>Sale</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.project439.grocery.impl.ExperationDateImpl#getDate <em>Date</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.impl.SaleImpl#getFromShelf <em>From Shelf</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ExperationDateImpl extends MinimalEObjectImpl.Container implements ExperationDate
+public class SaleImpl extends MovementImpl implements Sale
 {
   /**
-   * The default value of the '{@link #getDate() <em>Date</em>}' attribute.
+   * The cached value of the '{@link #getFromShelf() <em>From Shelf</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDate()
+   * @see #getFromShelf()
    * @generated
    * @ordered
    */
-  protected static final String DATE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDate() <em>Date</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDate()
-   * @generated
-   * @ordered
-   */
-  protected String date = DATE_EDEFAULT;
+  protected Shelf fromShelf;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ExperationDateImpl()
+  protected SaleImpl()
   {
     super();
   }
@@ -66,7 +57,7 @@ public class ExperationDateImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return GroceryPackage.Literals.EXPERATION_DATE;
+    return GroceryPackage.Literals.SALE;
   }
 
   /**
@@ -74,9 +65,19 @@ public class ExperationDateImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getDate()
+  public Shelf getFromShelf()
   {
-    return date;
+    if (fromShelf != null && fromShelf.eIsProxy())
+    {
+      InternalEObject oldFromShelf = (InternalEObject)fromShelf;
+      fromShelf = (Shelf)eResolveProxy(oldFromShelf);
+      if (fromShelf != oldFromShelf)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, GroceryPackage.SALE__FROM_SHELF, oldFromShelf, fromShelf));
+      }
+    }
+    return fromShelf;
   }
 
   /**
@@ -84,12 +85,22 @@ public class ExperationDateImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDate(String newDate)
+  public Shelf basicGetFromShelf()
   {
-    String oldDate = date;
-    date = newDate;
+    return fromShelf;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFromShelf(Shelf newFromShelf)
+  {
+    Shelf oldFromShelf = fromShelf;
+    fromShelf = newFromShelf;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.EXPERATION_DATE__DATE, oldDate, date));
+      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.SALE__FROM_SHELF, oldFromShelf, fromShelf));
   }
 
   /**
@@ -102,8 +113,9 @@ public class ExperationDateImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case GroceryPackage.EXPERATION_DATE__DATE:
-        return getDate();
+      case GroceryPackage.SALE__FROM_SHELF:
+        if (resolve) return getFromShelf();
+        return basicGetFromShelf();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +130,8 @@ public class ExperationDateImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case GroceryPackage.EXPERATION_DATE__DATE:
-        setDate((String)newValue);
+      case GroceryPackage.SALE__FROM_SHELF:
+        setFromShelf((Shelf)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +147,8 @@ public class ExperationDateImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case GroceryPackage.EXPERATION_DATE__DATE:
-        setDate(DATE_EDEFAULT);
+      case GroceryPackage.SALE__FROM_SHELF:
+        setFromShelf((Shelf)null);
         return;
     }
     super.eUnset(featureID);
@@ -152,27 +164,10 @@ public class ExperationDateImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case GroceryPackage.EXPERATION_DATE__DATE:
-        return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
+      case GroceryPackage.SALE__FROM_SHELF:
+        return fromShelf != null;
     }
     return super.eIsSet(featureID);
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (date: ");
-    result.append(date);
-    result.append(')');
-    return result.toString();
-  }
-
-} //ExperationDateImpl
+} //SaleImpl

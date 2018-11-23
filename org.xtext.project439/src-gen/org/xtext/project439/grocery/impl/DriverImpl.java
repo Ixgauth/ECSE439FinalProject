@@ -3,14 +3,21 @@
  */
 package org.xtext.project439.grocery.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import org.xtext.project439.grocery.Driver;
 import org.xtext.project439.grocery.GroceryPackage;
+import org.xtext.project439.grocery.Vehicle;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,11 +28,12 @@ import org.xtext.project439.grocery.GroceryPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.project439.grocery.impl.DriverImpl#getDriverName <em>Driver Name</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.impl.DriverImpl#getVehicle <em>Vehicle</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DriverImpl extends DeliveryElementImpl implements Driver
+public class DriverImpl extends PersonImpl implements Driver
 {
   /**
    * The default value of the '{@link #getDriverName() <em>Driver Name</em>}' attribute.
@@ -46,6 +54,16 @@ public class DriverImpl extends DeliveryElementImpl implements Driver
    * @ordered
    */
   protected String driverName = DRIVER_NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getVehicle() <em>Vehicle</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVehicle()
+   * @generated
+   * @ordered
+   */
+  protected EList<Vehicle> vehicle;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,6 +114,20 @@ public class DriverImpl extends DeliveryElementImpl implements Driver
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Vehicle> getVehicle()
+  {
+    if (vehicle == null)
+    {
+      vehicle = new EObjectResolvingEList<Vehicle>(Vehicle.class, this, GroceryPackage.DRIVER__VEHICLE);
+    }
+    return vehicle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -103,6 +135,8 @@ public class DriverImpl extends DeliveryElementImpl implements Driver
     {
       case GroceryPackage.DRIVER__DRIVER_NAME:
         return getDriverName();
+      case GroceryPackage.DRIVER__VEHICLE:
+        return getVehicle();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -112,6 +146,7 @@ public class DriverImpl extends DeliveryElementImpl implements Driver
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -119,6 +154,10 @@ public class DriverImpl extends DeliveryElementImpl implements Driver
     {
       case GroceryPackage.DRIVER__DRIVER_NAME:
         setDriverName((String)newValue);
+        return;
+      case GroceryPackage.DRIVER__VEHICLE:
+        getVehicle().clear();
+        getVehicle().addAll((Collection<? extends Vehicle>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,6 +176,9 @@ public class DriverImpl extends DeliveryElementImpl implements Driver
       case GroceryPackage.DRIVER__DRIVER_NAME:
         setDriverName(DRIVER_NAME_EDEFAULT);
         return;
+      case GroceryPackage.DRIVER__VEHICLE:
+        getVehicle().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -153,6 +195,8 @@ public class DriverImpl extends DeliveryElementImpl implements Driver
     {
       case GroceryPackage.DRIVER__DRIVER_NAME:
         return DRIVER_NAME_EDEFAULT == null ? driverName != null : !DRIVER_NAME_EDEFAULT.equals(driverName);
+      case GroceryPackage.DRIVER__VEHICLE:
+        return vehicle != null && !vehicle.isEmpty();
     }
     return super.eIsSet(featureID);
   }

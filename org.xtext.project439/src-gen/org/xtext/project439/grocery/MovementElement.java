@@ -7,21 +7,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Delivery Element</b></em>'.
+ * A representation of the model object '<em><b>Movement Element</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.project439.grocery.DeliveryElement#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.MovementElement#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see org.xtext.project439.grocery.GroceryPackage#getDeliveryElement()
+ * @see org.xtext.project439.grocery.GroceryPackage#getMovementElement()
  * @model
  * @generated
  */
-public interface DeliveryElement extends EObject
+public interface MovementElement extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -33,14 +33,14 @@ public interface DeliveryElement extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see org.xtext.project439.grocery.GroceryPackage#getDeliveryElement_Name()
+   * @see org.xtext.project439.grocery.GroceryPackage#getMovementElement_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.project439.grocery.DeliveryElement#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.project439.grocery.MovementElement#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -49,4 +49,4 @@ public interface DeliveryElement extends EObject
    */
   void setName(String value);
 
-} // DeliveryElement
+} // MovementElement

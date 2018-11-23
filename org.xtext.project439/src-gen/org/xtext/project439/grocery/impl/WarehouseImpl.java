@@ -6,17 +6,14 @@ package org.xtext.project439.grocery.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.xtext.project439.grocery.GroceryPackage;
 import org.xtext.project439.grocery.Item;
@@ -31,7 +28,7 @@ import org.xtext.project439.grocery.Warehouse;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.project439.grocery.impl.WarehouseImpl#getAddress <em>Address</em>}</li>
- *   <li>{@link org.xtext.project439.grocery.impl.WarehouseImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.impl.WarehouseImpl#getItems <em>Items</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,14 +56,14 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
   protected String address = ADDRESS_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getItems() <em>Items</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElements()
+   * @see #getItems()
    * @generated
    * @ordered
    */
-  protected EList<Item> elements;
+  protected EList<Item> items;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,29 +114,13 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Item> getElements()
+  public EList<Item> getItems()
   {
-    if (elements == null)
+    if (items == null)
     {
-      elements = new EObjectContainmentEList<Item>(Item.class, this, GroceryPackage.WAREHOUSE__ELEMENTS);
+      items = new EObjectResolvingEList<Item>(Item.class, this, GroceryPackage.WAREHOUSE__ITEMS);
     }
-    return elements;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case GroceryPackage.WAREHOUSE__ELEMENTS:
-        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    return items;
   }
 
   /**
@@ -154,8 +135,8 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
     {
       case GroceryPackage.WAREHOUSE__ADDRESS:
         return getAddress();
-      case GroceryPackage.WAREHOUSE__ELEMENTS:
-        return getElements();
+      case GroceryPackage.WAREHOUSE__ITEMS:
+        return getItems();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -174,9 +155,9 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
       case GroceryPackage.WAREHOUSE__ADDRESS:
         setAddress((String)newValue);
         return;
-      case GroceryPackage.WAREHOUSE__ELEMENTS:
-        getElements().clear();
-        getElements().addAll((Collection<? extends Item>)newValue);
+      case GroceryPackage.WAREHOUSE__ITEMS:
+        getItems().clear();
+        getItems().addAll((Collection<? extends Item>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -195,8 +176,8 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
       case GroceryPackage.WAREHOUSE__ADDRESS:
         setAddress(ADDRESS_EDEFAULT);
         return;
-      case GroceryPackage.WAREHOUSE__ELEMENTS:
-        getElements().clear();
+      case GroceryPackage.WAREHOUSE__ITEMS:
+        getItems().clear();
         return;
     }
     super.eUnset(featureID);
@@ -214,8 +195,8 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
     {
       case GroceryPackage.WAREHOUSE__ADDRESS:
         return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
-      case GroceryPackage.WAREHOUSE__ELEMENTS:
-        return elements != null && !elements.isEmpty();
+      case GroceryPackage.WAREHOUSE__ITEMS:
+        return items != null && !items.isEmpty();
     }
     return super.eIsSet(featureID);
   }

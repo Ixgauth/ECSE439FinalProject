@@ -51,13 +51,49 @@ public interface GroceryFactory extends EFactory
   StoreElements createStoreElements();
 
   /**
-   * Returns a new object of class '<em>Delivery Element</em>'.
+   * Returns a new object of class '<em>Movement Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Delivery Element</em>'.
+   * @return a new object of class '<em>Movement Element</em>'.
    * @generated
    */
-  DeliveryElement createDeliveryElement();
+  MovementElement createMovementElement();
+
+  /**
+   * Returns a new object of class '<em>Person</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Person</em>'.
+   * @generated
+   */
+  Person createPerson();
+
+  /**
+   * Returns a new object of class '<em>Item</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Item</em>'.
+   * @generated
+   */
+  Item createItem();
+
+  /**
+   * Returns a new object of class '<em>Food Item</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Food Item</em>'.
+   * @generated
+   */
+  FoodItem createFoodItem();
+
+  /**
+   * Returns a new object of class '<em>Movement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Movement</em>'.
+   * @generated
+   */
+  Movement createMovement();
 
   /**
    * Returns a new object of class '<em>Store</em>'.
@@ -96,15 +132,6 @@ public interface GroceryFactory extends EFactory
   Backroom createBackroom();
 
   /**
-   * Returns a new object of class '<em>Item</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Item</em>'.
-   * @generated
-   */
-  Item createItem();
-
-  /**
    * Returns a new object of class '<em>Non Perishable Item</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -123,13 +150,13 @@ public interface GroceryFactory extends EFactory
   PerishableItem createPerishableItem();
 
   /**
-   * Returns a new object of class '<em>Experation Date</em>'.
+   * Returns a new object of class '<em>Non Food Item</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Experation Date</em>'.
+   * @return a new object of class '<em>Non Food Item</em>'.
    * @generated
    */
-  ExperationDate createExperationDate();
+  NonFoodItem createNonFoodItem();
 
   /**
    * Returns a new object of class '<em>Driver</em>'.
@@ -141,6 +168,24 @@ public interface GroceryFactory extends EFactory
   Driver createDriver();
 
   /**
+   * Returns a new object of class '<em>Employee</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Employee</em>'.
+   * @generated
+   */
+  Employee createEmployee();
+
+  /**
+   * Returns a new object of class '<em>Customer</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Customer</em>'.
+   * @generated
+   */
+  Customer createCustomer();
+
+  /**
    * Returns a new object of class '<em>Vehicle</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -148,6 +193,33 @@ public interface GroceryFactory extends EFactory
    * @generated
    */
   Vehicle createVehicle();
+
+  /**
+   * Returns a new object of class '<em>Delivery</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Delivery</em>'.
+   * @generated
+   */
+  Delivery createDelivery();
+
+  /**
+   * Returns a new object of class '<em>Sale</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sale</em>'.
+   * @generated
+   */
+  Sale createSale();
+
+  /**
+   * Returns a new object of class '<em>Stock Movement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Stock Movement</em>'.
+   * @generated
+   */
+  StockMovement createStockMovement();
 
   /**
    * Returns the package supported by this factory.

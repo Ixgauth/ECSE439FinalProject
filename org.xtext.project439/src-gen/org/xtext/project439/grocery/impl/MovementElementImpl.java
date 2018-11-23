@@ -10,23 +10,23 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.project439.grocery.DeliveryElement;
 import org.xtext.project439.grocery.GroceryPackage;
+import org.xtext.project439.grocery.MovementElement;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Delivery Element</b></em>'.
+ * An implementation of the model object '<em><b>Movement Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.project439.grocery.impl.DeliveryElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.impl.MovementElementImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DeliveryElementImpl extends MinimalEObjectImpl.Container implements DeliveryElement
+public class MovementElementImpl extends MinimalEObjectImpl.Container implements MovementElement
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -53,7 +53,7 @@ public class DeliveryElementImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  protected DeliveryElementImpl()
+  protected MovementElementImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class DeliveryElementImpl extends MinimalEObjectImpl.Container implements
   @Override
   protected EClass eStaticClass()
   {
-    return GroceryPackage.Literals.DELIVERY_ELEMENT;
+    return GroceryPackage.Literals.MOVEMENT_ELEMENT;
   }
 
   /**
@@ -89,7 +89,7 @@ public class DeliveryElementImpl extends MinimalEObjectImpl.Container implements
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.DELIVERY_ELEMENT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.MOVEMENT_ELEMENT__NAME, oldName, name));
   }
 
   /**
@@ -102,7 +102,7 @@ public class DeliveryElementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case GroceryPackage.DELIVERY_ELEMENT__NAME:
+      case GroceryPackage.MOVEMENT_ELEMENT__NAME:
         return getName();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -118,7 +118,7 @@ public class DeliveryElementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case GroceryPackage.DELIVERY_ELEMENT__NAME:
+      case GroceryPackage.MOVEMENT_ELEMENT__NAME:
         setName((String)newValue);
         return;
     }
@@ -135,7 +135,7 @@ public class DeliveryElementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case GroceryPackage.DELIVERY_ELEMENT__NAME:
+      case GroceryPackage.MOVEMENT_ELEMENT__NAME:
         setName(NAME_EDEFAULT);
         return;
     }
@@ -152,7 +152,7 @@ public class DeliveryElementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case GroceryPackage.DELIVERY_ELEMENT__NAME:
+      case GroceryPackage.MOVEMENT_ELEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
@@ -175,4 +175,4 @@ public class DeliveryElementImpl extends MinimalEObjectImpl.Container implements
     return result.toString();
   }
 
-} //DeliveryElementImpl
+} //MovementElementImpl

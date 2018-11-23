@@ -98,9 +98,9 @@ ruleGrocery returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getGroceryAccess().getElementsDeliveryElementParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getGroceryAccess().getElementsMovementElementParserRuleCall_1_0());
 				}
-				lv_elements_1_0=ruleDeliveryElement
+				lv_elements_1_0=ruleMovementElement
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getGroceryRule());
@@ -109,7 +109,64 @@ ruleGrocery returns [EObject current=null]
 						$current,
 						"elements",
 						lv_elements_1_0,
-						"org.xtext.project439.Grocery.DeliveryElement");
+						"org.xtext.project439.Grocery.MovementElement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGroceryAccess().getElementsMovementParserRuleCall_2_0());
+				}
+				lv_elements_2_0=ruleMovement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGroceryRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_2_0,
+						"org.xtext.project439.Grocery.Movement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGroceryAccess().getElementsItemParserRuleCall_3_0());
+				}
+				lv_elements_3_0=ruleItem
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGroceryRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_3_0,
+						"org.xtext.project439.Grocery.Item");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGroceryAccess().getElementsStoreElementsParserRuleCall_4_0());
+				}
+				lv_elements_4_0=ruleStoreElements
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGroceryRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_4_0,
+						"org.xtext.project439.Grocery.StoreElements");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -189,15 +246,15 @@ ruleStoreElements returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleDeliveryElement
-entryRuleDeliveryElement returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getDeliveryElementRule()); }
-	iv_ruleDeliveryElement=ruleDeliveryElement
-	{ $current=$iv_ruleDeliveryElement.current; }
+// Entry rule entryRuleMovementElement
+entryRuleMovementElement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMovementElementRule()); }
+	iv_ruleMovementElement=ruleMovementElement
+	{ $current=$iv_ruleMovementElement.current; }
 	EOF;
 
-// Rule DeliveryElement
-ruleDeliveryElement returns [EObject current=null]
+// Rule MovementElement
+ruleMovementElement returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -206,7 +263,43 @@ ruleDeliveryElement returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getDeliveryElementAccess().getDriverParserRuleCall_0());
+			newCompositeNode(grammarAccess.getMovementElementAccess().getPersonParserRuleCall_0());
+		}
+		this_Person_0=rulePerson
+		{
+			$current = $this_Person_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMovementElementAccess().getVehicleParserRuleCall_1());
+		}
+		this_Vehicle_1=ruleVehicle
+		{
+			$current = $this_Vehicle_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRulePerson
+entryRulePerson returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPersonRule()); }
+	iv_rulePerson=rulePerson
+	{ $current=$iv_rulePerson.current; }
+	EOF;
+
+// Rule Person
+rulePerson returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getPersonAccess().getDriverParserRuleCall_0());
 		}
 		this_Driver_0=ruleDriver
 		{
@@ -215,11 +308,137 @@ ruleDeliveryElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDeliveryElementAccess().getVehicleParserRuleCall_1());
+			newCompositeNode(grammarAccess.getPersonAccess().getEmployeeParserRuleCall_1());
 		}
-		this_Vehicle_1=ruleVehicle
+		this_Employee_1=ruleEmployee
 		{
-			$current = $this_Vehicle_1.current;
+			$current = $this_Employee_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getPersonAccess().getCustomerParserRuleCall_2());
+		}
+		this_Customer_2=ruleCustomer
+		{
+			$current = $this_Customer_2.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleItem
+entryRuleItem returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getItemRule()); }
+	iv_ruleItem=ruleItem
+	{ $current=$iv_ruleItem.current; }
+	EOF;
+
+// Rule Item
+ruleItem returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getItemAccess().getFoodItemParserRuleCall_0());
+		}
+		this_FoodItem_0=ruleFoodItem
+		{
+			$current = $this_FoodItem_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getItemAccess().getNonFoodItemParserRuleCall_1());
+		}
+		this_NonFoodItem_1=ruleNonFoodItem
+		{
+			$current = $this_NonFoodItem_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleFoodItem
+entryRuleFoodItem returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFoodItemRule()); }
+	iv_ruleFoodItem=ruleFoodItem
+	{ $current=$iv_ruleFoodItem.current; }
+	EOF;
+
+// Rule FoodItem
+ruleFoodItem returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getFoodItemAccess().getPerishableItemParserRuleCall_0());
+		}
+		this_PerishableItem_0=rulePerishableItem
+		{
+			$current = $this_PerishableItem_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getFoodItemAccess().getNonPerishableItemParserRuleCall_1());
+		}
+		this_NonPerishableItem_1=ruleNonPerishableItem
+		{
+			$current = $this_NonPerishableItem_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleMovement
+entryRuleMovement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMovementRule()); }
+	iv_ruleMovement=ruleMovement
+	{ $current=$iv_ruleMovement.current; }
+	EOF;
+
+// Rule Movement
+ruleMovement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getMovementAccess().getDeliveryParserRuleCall_0());
+		}
+		this_Delivery_0=ruleDelivery
+		{
+			$current = $this_Delivery_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMovementAccess().getSaleParserRuleCall_1());
+		}
+		this_Sale_1=ruleSale
+		{
+			$current = $this_Sale_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMovementAccess().getStockMovementParserRuleCall_2());
+		}
+		this_StockMovement_2=ruleStockMovement
+		{
+			$current = $this_StockMovement_2.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -270,19 +489,13 @@ ruleStore returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getStoreAccess().getElementsStoreElementsParserRuleCall_3_0());
-				}
-				lv_elements_3_0=ruleStoreElements
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getStoreRule());
+						$current = createModelElement(grammarAccess.getStoreRule());
 					}
-					add(
-						$current,
-						"elements",
-						lv_elements_3_0,
-						"org.xtext.project439.Grocery.StoreElements");
-					afterParserOrEnumRuleCall();
+				}
+				otherlv_3=RULE_ID
+				{
+					newLeafNode(otherlv_3, grammarAccess.getStoreAccess().getElementsStoreElementsCrossReference_3_0());
 				}
 			)
 		)*
@@ -365,19 +578,13 @@ ruleWarehouse returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWarehouseAccess().getElementsItemParserRuleCall_6_0());
-				}
-				lv_elements_6_0=ruleItem
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getWarehouseRule());
+						$current = createModelElement(grammarAccess.getWarehouseRule());
 					}
-					add(
-						$current,
-						"elements",
-						lv_elements_6_0,
-						"org.xtext.project439.Grocery.Item");
-					afterParserOrEnumRuleCall();
+				}
+				otherlv_6=RULE_ID
+				{
+					newLeafNode(otherlv_6, grammarAccess.getWarehouseAccess().getItemsItemCrossReference_6_0());
 				}
 			)
 		)*
@@ -433,19 +640,13 @@ ruleShelf returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getShelfAccess().getElementsItemParserRuleCall_3_0());
-				}
-				lv_elements_3_0=ruleItem
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getShelfRule());
+						$current = createModelElement(grammarAccess.getShelfRule());
 					}
-					add(
-						$current,
-						"elements",
-						lv_elements_3_0,
-						"org.xtext.project439.Grocery.Item");
-					afterParserOrEnumRuleCall();
+				}
+				otherlv_3=RULE_ID
+				{
+					newLeafNode(otherlv_3, grammarAccess.getShelfAccess().getItemsItemCrossReference_3_0());
 				}
 			)
 		)*
@@ -501,61 +702,19 @@ ruleBackroom returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getBackroomAccess().getElementsItemParserRuleCall_3_0());
-				}
-				lv_elements_3_0=ruleItem
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getBackroomRule());
+						$current = createModelElement(grammarAccess.getBackroomRule());
 					}
-					add(
-						$current,
-						"elements",
-						lv_elements_3_0,
-						"org.xtext.project439.Grocery.Item");
-					afterParserOrEnumRuleCall();
+				}
+				otherlv_3=RULE_ID
+				{
+					newLeafNode(otherlv_3, grammarAccess.getBackroomAccess().getItemsItemCrossReference_3_0());
 				}
 			)
 		)*
 		otherlv_4='}'
 		{
 			newLeafNode(otherlv_4, grammarAccess.getBackroomAccess().getRightCurlyBracketKeyword_4());
-		}
-	)
-;
-
-// Entry rule entryRuleItem
-entryRuleItem returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getItemRule()); }
-	iv_ruleItem=ruleItem
-	{ $current=$iv_ruleItem.current; }
-	EOF;
-
-// Rule Item
-ruleItem returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getItemAccess().getPerishableItemParserRuleCall_0());
-		}
-		this_PerishableItem_0=rulePerishableItem
-		{
-			$current = $this_PerishableItem_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getItemAccess().getNonPerishableItemParserRuleCall_1());
-		}
-		this_NonPerishableItem_1=ruleNonPerishableItem
-		{
-			$current = $this_NonPerishableItem_1.current;
-			afterParserOrEnumRuleCall();
 		}
 	)
 ;
@@ -714,9 +873,36 @@ rulePerishableItem returns [EObject current=null]
 		}
 		(
 			(
-				lv_price_5_0=RULE_INT
 				{
-					newLeafNode(lv_price_5_0, grammarAccess.getPerishableItemAccess().getPriceINTTerminalRuleCall_5_0());
+					newCompositeNode(grammarAccess.getPerishableItemAccess().getPriceDECIMALParserRuleCall_5_0());
+				}
+				lv_price_5_0=ruleDECIMAL
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPerishableItemRule());
+					}
+					set(
+						$current,
+						"price",
+						lv_price_5_0,
+						"org.xtext.project439.Grocery.DECIMAL");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_6='quantity'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getPerishableItemAccess().getQuantityKeyword_6());
+		}
+		otherlv_7=':'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getPerishableItemAccess().getColonKeyword_7());
+		}
+		(
+			(
+				lv_quantity_8_0=RULE_INT
+				{
+					newLeafNode(lv_quantity_8_0, grammarAccess.getPerishableItemAccess().getQuantityINTTerminalRuleCall_8_0());
 				}
 				{
 					if ($current==null) {
@@ -724,47 +910,55 @@ rulePerishableItem returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"price",
-						lv_price_5_0,
+						"quantity",
+						lv_quantity_8_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
+		otherlv_9='experationDate'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getPerishableItemAccess().getExperationDateKeyword_9());
+		}
+		otherlv_10=':'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getPerishableItemAccess().getColonKeyword_10());
+		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPerishableItemAccess().getExperationDateExperationDateParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getPerishableItemAccess().getExperationDateDATEParserRuleCall_11_0());
 				}
-				lv_experationDate_6_0=ruleExperationDate
+				lv_experationDate_11_0=ruleDATE
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPerishableItemRule());
 					}
-					add(
+					set(
 						$current,
 						"experationDate",
-						lv_experationDate_6_0,
-						"org.xtext.project439.Grocery.ExperationDate");
+						lv_experationDate_11_0,
+						"org.xtext.project439.Grocery.DATE");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_7='}'
+		otherlv_12='}'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getPerishableItemAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_12, grammarAccess.getPerishableItemAccess().getRightCurlyBracketKeyword_12());
 		}
 	)
 ;
 
-// Entry rule entryRuleExperationDate
-entryRuleExperationDate returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getExperationDateRule()); }
-	iv_ruleExperationDate=ruleExperationDate
-	{ $current=$iv_ruleExperationDate.current; }
+// Entry rule entryRuleNonFoodItem
+entryRuleNonFoodItem returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNonFoodItemRule()); }
+	iv_ruleNonFoodItem=ruleNonFoodItem
+	{ $current=$iv_ruleNonFoodItem.current; }
 	EOF;
 
-// Rule ExperationDate
-ruleExperationDate returns [EObject current=null]
+// Rule NonFoodItem
+ruleNonFoodItem returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -772,44 +966,88 @@ ruleExperationDate returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='ExpirationDate'
+		otherlv_0='nonFoodItem'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getExperationDateAccess().getExpirationDateKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getNonFoodItemAccess().getNonFoodItemKeyword_0());
 		}
-		otherlv_1='{'
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getNonFoodItemAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNonFoodItemRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getExperationDateAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getNonFoodItemAccess().getLeftCurlyBracketKeyword_2());
 		}
-		otherlv_2='date'
+		otherlv_3='price'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getExperationDateAccess().getDateKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getNonFoodItemAccess().getPriceKeyword_3());
 		}
-		otherlv_3=':'
+		otherlv_4=':'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getExperationDateAccess().getColonKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getNonFoodItemAccess().getColonKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getExperationDateAccess().getDateDATEParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getNonFoodItemAccess().getPriceDECIMALParserRuleCall_5_0());
 				}
-				lv_date_4_0=ruleDATE
+				lv_price_5_0=ruleDECIMAL
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getExperationDateRule());
+						$current = createModelElementForParent(grammarAccess.getNonFoodItemRule());
 					}
 					set(
 						$current,
-						"date",
-						lv_date_4_0,
-						"org.xtext.project439.Grocery.DATE");
+						"price",
+						lv_price_5_0,
+						"org.xtext.project439.Grocery.DECIMAL");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_5='}'
+		otherlv_6='quantity'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getExperationDateAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getNonFoodItemAccess().getQuantityKeyword_6());
+		}
+		otherlv_7=':'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getNonFoodItemAccess().getColonKeyword_7());
+		}
+		(
+			(
+				lv_quantity_8_0=RULE_INT
+				{
+					newLeafNode(lv_quantity_8_0, grammarAccess.getNonFoodItemAccess().getQuantityINTTerminalRuleCall_8_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNonFoodItemRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"quantity",
+						lv_quantity_8_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_9='}'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getNonFoodItemAccess().getRightCurlyBracketKeyword_9());
 		}
 	)
 ;
@@ -882,9 +1120,198 @@ ruleDriver returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_6='}'
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDriverRule());
+					}
+				}
+				otherlv_6=RULE_ID
+				{
+					newLeafNode(otherlv_6, grammarAccess.getDriverAccess().getVehicleVehicleCrossReference_6_0());
+				}
+			)
+		)*
+		otherlv_7='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getDriverAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_7, grammarAccess.getDriverAccess().getRightCurlyBracketKeyword_7());
+		}
+	)
+;
+
+// Entry rule entryRuleEmployee
+entryRuleEmployee returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEmployeeRule()); }
+	iv_ruleEmployee=ruleEmployee
+	{ $current=$iv_ruleEmployee.current; }
+	EOF;
+
+// Rule Employee
+ruleEmployee returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='employee'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getEmployeeAccess().getEmployeeKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getEmployeeAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEmployeeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getEmployeeAccess().getLeftCurlyBracketKeyword_2());
+		}
+		otherlv_3='name'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getEmployeeAccess().getNameKeyword_3());
+		}
+		otherlv_4=':'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getEmployeeAccess().getColonKeyword_4());
+		}
+		(
+			(
+				lv_employeeName_5_0=RULE_STRING
+				{
+					newLeafNode(lv_employeeName_5_0, grammarAccess.getEmployeeAccess().getEmployeeNameSTRINGTerminalRuleCall_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEmployeeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"employeeName",
+						lv_employeeName_5_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEmployeeRule());
+					}
+				}
+				otherlv_6=RULE_ID
+				{
+					newLeafNode(otherlv_6, grammarAccess.getEmployeeAccess().getStockMovementStockMovementCrossReference_6_0());
+				}
+			)
+		)*
+		otherlv_7='}'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getEmployeeAccess().getRightCurlyBracketKeyword_7());
+		}
+	)
+;
+
+// Entry rule entryRuleCustomer
+entryRuleCustomer returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCustomerRule()); }
+	iv_ruleCustomer=ruleCustomer
+	{ $current=$iv_ruleCustomer.current; }
+	EOF;
+
+// Rule Customer
+ruleCustomer returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='customer'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCustomerAccess().getCustomerKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getCustomerAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCustomerRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getCustomerAccess().getLeftCurlyBracketKeyword_2());
+		}
+		otherlv_3='name'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getCustomerAccess().getNameKeyword_3());
+		}
+		otherlv_4=':'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getCustomerAccess().getColonKeyword_4());
+		}
+		(
+			(
+				lv_customerName_5_0=RULE_STRING
+				{
+					newLeafNode(lv_customerName_5_0, grammarAccess.getCustomerAccess().getCustomerNameSTRINGTerminalRuleCall_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCustomerRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"customerName",
+						lv_customerName_5_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCustomerRule());
+					}
+				}
+				otherlv_6=RULE_ID
+				{
+					newLeafNode(otherlv_6, grammarAccess.getCustomerAccess().getSaleSaleCrossReference_6_0());
+				}
+			)
+		)*
+		otherlv_7='}'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getCustomerAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;
@@ -957,9 +1384,313 @@ ruleVehicle returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_6='}'
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVehicleRule());
+					}
+				}
+				otherlv_6=RULE_ID
+				{
+					newLeafNode(otherlv_6, grammarAccess.getVehicleAccess().getItemsItemCrossReference_6_0());
+				}
+			)
+		)*
+		otherlv_7='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getVehicleAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_7, grammarAccess.getVehicleAccess().getRightCurlyBracketKeyword_7());
+		}
+	)
+;
+
+// Entry rule entryRuleDelivery
+entryRuleDelivery returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDeliveryRule()); }
+	iv_ruleDelivery=ruleDelivery
+	{ $current=$iv_ruleDelivery.current; }
+	EOF;
+
+// Rule Delivery
+ruleDelivery returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='delivery'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getDeliveryAccess().getDeliveryKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getDeliveryAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDeliveryRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getDeliveryAccess().getLeftCurlyBracketKeyword_2());
+		}
+		otherlv_3='warehouse'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getDeliveryAccess().getWarehouseKeyword_3());
+		}
+		otherlv_4=':'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getDeliveryAccess().getColonKeyword_4());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDeliveryRule());
+					}
+				}
+				otherlv_5=RULE_ID
+				{
+					newLeafNode(otherlv_5, grammarAccess.getDeliveryAccess().getFromWarehouseWarehouseCrossReference_5_0());
+				}
+			)
+		)
+		otherlv_6='store'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getDeliveryAccess().getStoreKeyword_6());
+		}
+		otherlv_7=':'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getDeliveryAccess().getColonKeyword_7());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDeliveryRule());
+					}
+				}
+				otherlv_8=RULE_ID
+				{
+					newLeafNode(otherlv_8, grammarAccess.getDeliveryAccess().getToStoreStoreCrossReference_8_0());
+				}
+			)
+		)
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDeliveryRule());
+					}
+				}
+				otherlv_9=RULE_ID
+				{
+					newLeafNode(otherlv_9, grammarAccess.getDeliveryAccess().getItemsItemCrossReference_9_0());
+				}
+			)
+		)*
+		otherlv_10='}'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getDeliveryAccess().getRightCurlyBracketKeyword_10());
+		}
+	)
+;
+
+// Entry rule entryRuleSale
+entryRuleSale returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSaleRule()); }
+	iv_ruleSale=ruleSale
+	{ $current=$iv_ruleSale.current; }
+	EOF;
+
+// Rule Sale
+ruleSale returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='sale'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSaleAccess().getSaleKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getSaleAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSaleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSaleAccess().getLeftCurlyBracketKeyword_2());
+		}
+		otherlv_3='shelf'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getSaleAccess().getShelfKeyword_3());
+		}
+		otherlv_4=':'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getSaleAccess().getColonKeyword_4());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSaleRule());
+					}
+				}
+				otherlv_5=RULE_ID
+				{
+					newLeafNode(otherlv_5, grammarAccess.getSaleAccess().getFromShelfShelfCrossReference_5_0());
+				}
+			)
+		)
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSaleRule());
+					}
+				}
+				otherlv_6=RULE_ID
+				{
+					newLeafNode(otherlv_6, grammarAccess.getSaleAccess().getItemsItemCrossReference_6_0());
+				}
+			)
+		)*
+		otherlv_7='}'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getSaleAccess().getRightCurlyBracketKeyword_7());
+		}
+	)
+;
+
+// Entry rule entryRuleStockMovement
+entryRuleStockMovement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStockMovementRule()); }
+	iv_ruleStockMovement=ruleStockMovement
+	{ $current=$iv_ruleStockMovement.current; }
+	EOF;
+
+// Rule StockMovement
+ruleStockMovement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='stock'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getStockMovementAccess().getStockKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getStockMovementAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStockMovementRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getStockMovementAccess().getLeftCurlyBracketKeyword_2());
+		}
+		otherlv_3='backroom'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getStockMovementAccess().getBackroomKeyword_3());
+		}
+		otherlv_4=':'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getStockMovementAccess().getColonKeyword_4());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStockMovementRule());
+					}
+				}
+				otherlv_5=RULE_ID
+				{
+					newLeafNode(otherlv_5, grammarAccess.getStockMovementAccess().getFromBackroomBackroomCrossReference_5_0());
+				}
+			)
+		)
+		otherlv_6='shelf'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getStockMovementAccess().getShelfKeyword_6());
+		}
+		otherlv_7=':'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getStockMovementAccess().getColonKeyword_7());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStockMovementRule());
+					}
+				}
+				otherlv_8=RULE_ID
+				{
+					newLeafNode(otherlv_8, grammarAccess.getStockMovementAccess().getToShelfShelfCrossReference_8_0());
+				}
+			)
+		)
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStockMovementRule());
+					}
+				}
+				otherlv_9=RULE_ID
+				{
+					newLeafNode(otherlv_9, grammarAccess.getStockMovementAccess().getItemsItemCrossReference_9_0());
+				}
+			)
+		)*
+		otherlv_10='}'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getStockMovementAccess().getRightCurlyBracketKeyword_10());
 		}
 	)
 ;
@@ -1068,19 +1799,19 @@ ruleADDRESS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 	leaveRule();
 }:
 	(
-		this_STRING_0=RULE_STRING
+		this_INT_0=RULE_INT
 		{
-			$current.merge(this_STRING_0);
+			$current.merge(this_INT_0);
 		}
 		{
-			newLeafNode(this_STRING_0, grammarAccess.getADDRESSAccess().getSTRINGTerminalRuleCall_0());
+			newLeafNode(this_INT_0, grammarAccess.getADDRESSAccess().getINTTerminalRuleCall_0());
 		}
-		this_INT_1=RULE_INT
+		this_STRING_1=RULE_STRING
 		{
-			$current.merge(this_INT_1);
+			$current.merge(this_STRING_1);
 		}
 		{
-			newLeafNode(this_INT_1, grammarAccess.getADDRESSAccess().getINTTerminalRuleCall_1());
+			newLeafNode(this_STRING_1, grammarAccess.getADDRESSAccess().getSTRINGTerminalRuleCall_1());
 		}
 		kw=','
 		{

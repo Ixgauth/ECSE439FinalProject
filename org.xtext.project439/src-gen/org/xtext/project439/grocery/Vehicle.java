@@ -3,6 +3,7 @@
  */
 package org.xtext.project439.grocery;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,13 +15,14 @@ package org.xtext.project439.grocery;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.project439.grocery.Vehicle#getPlateNumber <em>Plate Number</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.Vehicle#getItems <em>Items</em>}</li>
  * </ul>
  *
  * @see org.xtext.project439.grocery.GroceryPackage#getVehicle()
  * @model
  * @generated
  */
-public interface Vehicle extends DeliveryElement
+public interface Vehicle extends MovementElement
 {
   /**
    * Returns the value of the '<em><b>Plate Number</b></em>' attribute.
@@ -47,5 +49,21 @@ public interface Vehicle extends DeliveryElement
    * @generated
    */
   void setPlateNumber(String value);
+
+  /**
+   * Returns the value of the '<em><b>Items</b></em>' reference list.
+   * The list contents are of type {@link org.xtext.project439.grocery.Item}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Items</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Items</em>' reference list.
+   * @see org.xtext.project439.grocery.GroceryPackage#getVehicle_Items()
+   * @model
+   * @generated
+   */
+  EList<Item> getItems();
 
 } // Vehicle

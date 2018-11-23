@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.project439.grocery.Item#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.Item#getPrice <em>Price</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.Item#getQuantity <em>Quantity</em>}</li>
  * </ul>
  *
  * @see org.xtext.project439.grocery.GroceryPackage#getItem()
@@ -48,5 +50,57 @@ public interface Item extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Price</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Price</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Price</em>' attribute.
+   * @see #setPrice(String)
+   * @see org.xtext.project439.grocery.GroceryPackage#getItem_Price()
+   * @model
+   * @generated
+   */
+  String getPrice();
+
+  /**
+   * Sets the value of the '{@link org.xtext.project439.grocery.Item#getPrice <em>Price</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Price</em>' attribute.
+   * @see #getPrice()
+   * @generated
+   */
+  void setPrice(String value);
+
+  /**
+   * Returns the value of the '<em><b>Quantity</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Quantity</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Quantity</em>' attribute.
+   * @see #setQuantity(int)
+   * @see org.xtext.project439.grocery.GroceryPackage#getItem_Quantity()
+   * @model
+   * @generated
+   */
+  int getQuantity();
+
+  /**
+   * Sets the value of the '{@link org.xtext.project439.grocery.Item#getQuantity <em>Quantity</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Quantity</em>' attribute.
+   * @see #getQuantity()
+   * @generated
+   */
+  void setQuantity(int value);
 
 } // Item

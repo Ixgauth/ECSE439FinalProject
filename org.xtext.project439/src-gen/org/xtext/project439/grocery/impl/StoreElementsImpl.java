@@ -6,18 +6,15 @@ package org.xtext.project439.grocery.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.xtext.project439.grocery.GroceryPackage;
 import org.xtext.project439.grocery.Item;
@@ -32,7 +29,7 @@ import org.xtext.project439.grocery.StoreElements;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.project439.grocery.impl.StoreElementsImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.project439.grocery.impl.StoreElementsImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.impl.StoreElementsImpl#getItems <em>Items</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,14 +57,14 @@ public class StoreElementsImpl extends MinimalEObjectImpl.Container implements S
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getItems() <em>Items</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElements()
+   * @see #getItems()
    * @generated
    * @ordered
    */
-  protected EList<Item> elements;
+  protected EList<Item> items;
 
   /**
    * <!-- begin-user-doc -->
@@ -118,29 +115,13 @@ public class StoreElementsImpl extends MinimalEObjectImpl.Container implements S
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Item> getElements()
+  public EList<Item> getItems()
   {
-    if (elements == null)
+    if (items == null)
     {
-      elements = new EObjectContainmentEList<Item>(Item.class, this, GroceryPackage.STORE_ELEMENTS__ELEMENTS);
+      items = new EObjectResolvingEList<Item>(Item.class, this, GroceryPackage.STORE_ELEMENTS__ITEMS);
     }
-    return elements;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case GroceryPackage.STORE_ELEMENTS__ELEMENTS:
-        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    return items;
   }
 
   /**
@@ -155,8 +136,8 @@ public class StoreElementsImpl extends MinimalEObjectImpl.Container implements S
     {
       case GroceryPackage.STORE_ELEMENTS__NAME:
         return getName();
-      case GroceryPackage.STORE_ELEMENTS__ELEMENTS:
-        return getElements();
+      case GroceryPackage.STORE_ELEMENTS__ITEMS:
+        return getItems();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -175,9 +156,9 @@ public class StoreElementsImpl extends MinimalEObjectImpl.Container implements S
       case GroceryPackage.STORE_ELEMENTS__NAME:
         setName((String)newValue);
         return;
-      case GroceryPackage.STORE_ELEMENTS__ELEMENTS:
-        getElements().clear();
-        getElements().addAll((Collection<? extends Item>)newValue);
+      case GroceryPackage.STORE_ELEMENTS__ITEMS:
+        getItems().clear();
+        getItems().addAll((Collection<? extends Item>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -196,8 +177,8 @@ public class StoreElementsImpl extends MinimalEObjectImpl.Container implements S
       case GroceryPackage.STORE_ELEMENTS__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case GroceryPackage.STORE_ELEMENTS__ELEMENTS:
-        getElements().clear();
+      case GroceryPackage.STORE_ELEMENTS__ITEMS:
+        getItems().clear();
         return;
     }
     super.eUnset(featureID);
@@ -215,8 +196,8 @@ public class StoreElementsImpl extends MinimalEObjectImpl.Container implements S
     {
       case GroceryPackage.STORE_ELEMENTS__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case GroceryPackage.STORE_ELEMENTS__ELEMENTS:
-        return elements != null && !elements.isEmpty();
+      case GroceryPackage.STORE_ELEMENTS__ITEMS:
+        return items != null && !items.isEmpty();
     }
     return super.eIsSet(featureID);
   }

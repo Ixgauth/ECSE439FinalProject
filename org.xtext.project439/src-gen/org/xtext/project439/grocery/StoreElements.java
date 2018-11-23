@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.project439.grocery.StoreElements#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.project439.grocery.StoreElements#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.StoreElements#getItems <em>Items</em>}</li>
  * </ul>
  *
  * @see org.xtext.project439.grocery.GroceryPackage#getStoreElements()
@@ -53,19 +53,19 @@ public interface StoreElements extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Items</b></em>' reference list.
    * The list contents are of type {@link org.xtext.project439.grocery.Item}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Items</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Elements</em>' containment reference list.
-   * @see org.xtext.project439.grocery.GroceryPackage#getStoreElements_Elements()
-   * @model containment="true"
+   * @return the value of the '<em>Items</em>' reference list.
+   * @see org.xtext.project439.grocery.GroceryPackage#getStoreElements_Items()
+   * @model
    * @generated
    */
-  EList<Item> getElements();
+  EList<Item> getItems();
 
 } // StoreElements

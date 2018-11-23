@@ -2,33 +2,37 @@ grammar org.xtext.project439.Grocery with org.eclipse.xtext.common.Terminals
 
 generate grocery "http://www.xtext.org/project439/Grocery"
 
-Grocery: (elements+=Building)* (elements+=DeliveryElement)*;
+Grocery: (elements+=Building)* (elements+=MovementElement)* (elements+=Movement)* (elements+=Item)* (elements+=StoreElements)*;
 
 Building: Store | Warehouse;
 
 StoreElements: Backroom | Shelf;
 
-DeliveryElement: Driver | Vehicle | ScheduledDelivery;
+MovementElement: Person | Vehicle;
+
+Person: Driver | Employee | Customer;
 
 Item : FoodItem | NonFoodItem;
 
 FoodItem : PerishableItem | NonPerishableItem;
 
+Movement : Delivery | Sale | StockMovement;
+
 Store: 'store' name=ID '{'
-	(elements+=StoreElements)* 
+	elements+=[StoreElements]* 
 '}';
 
 Warehouse: 'warehouse' name=ID '{'
 	'address' ':' address=ADDRESS
-	(elements+=Item)*
+	items+=[Item]*
 '}';
 
 Shelf: 'shelf' name=ID '{'
-	(elements+=Item)*
+	items+=[Item]*
 '}';
 
 Backroom: 'backroom' name=ID '{'
-	(elements+=Item)*
+	items+=[Item]*
 '}';
 
 NonPerishableItem: 'nonPerishableItem' name=ID '{'
@@ -39,7 +43,7 @@ NonPerishableItem: 'nonPerishableItem' name=ID '{'
 PerishableItem: 'perishableItem' name=ID '{'
 	'price' ':' price=DECIMAL
 	'quantity' ':' quantity=INT
-	experationDate+=ExperationDate
+	'experationDate' ':' experationDate=DATE
 '}';
 
 NonFoodItem: 'nonFoodItem' name=ID '{'
@@ -47,20 +51,42 @@ NonFoodItem: 'nonFoodItem' name=ID '{'
 	'quantity' ':' quantity=INT
 '}';
 
-ExperationDate: 'expirationDate''{'
-	'date' ':' date=DATE
-'}';
-
 Driver: 'driver' name=ID '{'
 	'name' ':' driverName=STRING
+	vehicle+=[Vehicle]*
 '}';
+
+Employee: 'employee' name=ID '{'
+	'name' ':' employeeName=STRING
+	stockMovement+=[StockMovement]*
+'}';
+
+Customer: 'customer' name=ID '{'
+	'name' ':' customerName=STRING
+	sale+=[Sale]*
+'}';
+
 
 Vehicle: 'vehicle' name=ID '{'
 	'plateNumber' ':' plateNumber=STRING
+	items+=[Item]*
 '}';
 
-ScheduledDelivery: 'delivery' name=ID '{'
-	'type' ':' type=STRING
+Delivery: 'delivery' name=ID '{'
+	'warehouse' ':' fromWarehouse=[Warehouse]
+	'store' ':' toStore=[Store]
+	items+=[Item]*
+'}';
+
+Sale: 'sale' name=ID '{'
+	'shelf' ':' fromShelf=[Shelf]
+	items+=[Item]*
+'}';
+
+StockMovement: 'stock' name=ID '{'
+	'backroom' ':' fromBackroom=[Backroom]
+	'shelf' ':' toShelf=[Shelf]
+	items+=[Item]*
 '}';
 
 DECIMAL: INT '.' INT;

@@ -3,7 +3,6 @@
  */
 package org.xtext.project439.grocery;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.project439.grocery.PerishableItem#getPrice <em>Price</em>}</li>
  *   <li>{@link org.xtext.project439.grocery.PerishableItem#getExperationDate <em>Experation Date</em>}</li>
  * </ul>
  *
@@ -22,48 +20,32 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface PerishableItem extends Item
+public interface PerishableItem extends FoodItem
 {
   /**
-   * Returns the value of the '<em><b>Price</b></em>' attribute.
+   * Returns the value of the '<em><b>Experation Date</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Price</em>' attribute isn't clear,
+   * If the meaning of the '<em>Experation Date</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Price</em>' attribute.
-   * @see #setPrice(int)
-   * @see org.xtext.project439.grocery.GroceryPackage#getPerishableItem_Price()
+   * @return the value of the '<em>Experation Date</em>' attribute.
+   * @see #setExperationDate(String)
+   * @see org.xtext.project439.grocery.GroceryPackage#getPerishableItem_ExperationDate()
    * @model
    * @generated
    */
-  int getPrice();
+  String getExperationDate();
 
   /**
-   * Sets the value of the '{@link org.xtext.project439.grocery.PerishableItem#getPrice <em>Price</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.project439.grocery.PerishableItem#getExperationDate <em>Experation Date</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Price</em>' attribute.
-   * @see #getPrice()
+   * @param value the new value of the '<em>Experation Date</em>' attribute.
+   * @see #getExperationDate()
    * @generated
    */
-  void setPrice(int value);
-
-  /**
-   * Returns the value of the '<em><b>Experation Date</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.project439.grocery.ExperationDate}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Experation Date</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Experation Date</em>' containment reference list.
-   * @see org.xtext.project439.grocery.GroceryPackage#getPerishableItem_ExperationDate()
-   * @model containment="true"
-   * @generated
-   */
-  EList<ExperationDate> getExperationDate();
+  void setExperationDate(String value);
 
 } // PerishableItem

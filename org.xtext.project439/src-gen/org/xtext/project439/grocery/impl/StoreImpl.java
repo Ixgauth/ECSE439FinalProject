@@ -5,15 +5,11 @@ package org.xtext.project439.grocery.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.xtext.project439.grocery.GroceryPackage;
 import org.xtext.project439.grocery.Store;
@@ -35,7 +31,7 @@ import org.xtext.project439.grocery.StoreElements;
 public class StoreImpl extends BuildingImpl implements Store
 {
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getElements() <em>Elements</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getElements()
@@ -74,25 +70,9 @@ public class StoreImpl extends BuildingImpl implements Store
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<StoreElements>(StoreElements.class, this, GroceryPackage.STORE__ELEMENTS);
+      elements = new EObjectResolvingEList<StoreElements>(StoreElements.class, this, GroceryPackage.STORE__ELEMENTS);
     }
     return elements;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case GroceryPackage.STORE__ELEMENTS:
-        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**

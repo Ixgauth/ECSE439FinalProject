@@ -24,17 +24,17 @@ import org.eclipse.emf.common.util.EList;
 public interface Store extends Building
 {
   /**
-   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Elements</b></em>' reference list.
    * The list contents are of type {@link org.xtext.project439.grocery.StoreElements}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Elements</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Elements</em>' containment reference list.
+   * @return the value of the '<em>Elements</em>' reference list.
    * @see org.xtext.project439.grocery.GroceryPackage#getStore_Elements()
-   * @model containment="true"
+   * @model
    * @generated
    */
   EList<StoreElements> getElements();
