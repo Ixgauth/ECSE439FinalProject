@@ -3,28 +3,24 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="grocery" nsURI="http://www.xtext.org/project439/Grocery" nsPrefix="grocery">
   <eClassifiers xsi:type="ecore:EClass" name="Grocery">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+        eType="#//AbstractElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Building">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StoreElements">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Building" eSuperTypes="#//AbstractElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StoreElements" eSuperTypes="#//AbstractElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" unique="false" upperBound="-1"
         eType="#//Item"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MovementElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MovementElement" eSuperTypes="#//AbstractElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Person" eSuperTypes="#//MovementElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Item">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//AbstractElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FoodItem" eSuperTypes="#//Item"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Movement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Movement" eSuperTypes="#//AbstractElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" unique="false" upperBound="-1"
         eType="#//Item"/>
   </eClassifiers>
@@ -34,8 +30,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Warehouse" eSuperTypes="#//Building">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="items" unique="false" upperBound="-1"
-        eType="#//Item"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="supplier" eType="#//Supplier"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Shelf" eSuperTypes="#//StoreElements"/>
   <eClassifiers xsi:type="ecore:EClass" name="Backroom" eSuperTypes="#//StoreElements"/>
@@ -58,6 +53,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="customerName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sale" unique="false" upperBound="-1"
         eType="#//Sale"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Supplier" eSuperTypes="#//MovementElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" unique="false" upperBound="-1"
+        eType="#//Item"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Vehicle" eSuperTypes="#//MovementElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="plateNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

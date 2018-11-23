@@ -3,20 +3,15 @@
  */
 package org.xtext.project439.grocery.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.xtext.project439.grocery.GroceryPackage;
-import org.xtext.project439.grocery.Item;
+import org.xtext.project439.grocery.Supplier;
 import org.xtext.project439.grocery.Warehouse;
 
 /**
@@ -28,7 +23,7 @@ import org.xtext.project439.grocery.Warehouse;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.project439.grocery.impl.WarehouseImpl#getAddress <em>Address</em>}</li>
- *   <li>{@link org.xtext.project439.grocery.impl.WarehouseImpl#getItems <em>Items</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.impl.WarehouseImpl#getSupplier <em>Supplier</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,14 +51,14 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
   protected String address = ADDRESS_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getItems() <em>Items</em>}' reference list.
+   * The cached value of the '{@link #getSupplier() <em>Supplier</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getItems()
+   * @see #getSupplier()
    * @generated
    * @ordered
    */
-  protected EList<Item> items;
+  protected Supplier supplier;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,13 +109,42 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Item> getItems()
+  public Supplier getSupplier()
   {
-    if (items == null)
+    if (supplier != null && supplier.eIsProxy())
     {
-      items = new EObjectResolvingEList<Item>(Item.class, this, GroceryPackage.WAREHOUSE__ITEMS);
+      InternalEObject oldSupplier = (InternalEObject)supplier;
+      supplier = (Supplier)eResolveProxy(oldSupplier);
+      if (supplier != oldSupplier)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, GroceryPackage.WAREHOUSE__SUPPLIER, oldSupplier, supplier));
+      }
     }
-    return items;
+    return supplier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Supplier basicGetSupplier()
+  {
+    return supplier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSupplier(Supplier newSupplier)
+  {
+    Supplier oldSupplier = supplier;
+    supplier = newSupplier;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.WAREHOUSE__SUPPLIER, oldSupplier, supplier));
   }
 
   /**
@@ -135,8 +159,9 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
     {
       case GroceryPackage.WAREHOUSE__ADDRESS:
         return getAddress();
-      case GroceryPackage.WAREHOUSE__ITEMS:
-        return getItems();
+      case GroceryPackage.WAREHOUSE__SUPPLIER:
+        if (resolve) return getSupplier();
+        return basicGetSupplier();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -146,7 +171,6 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -155,9 +179,8 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
       case GroceryPackage.WAREHOUSE__ADDRESS:
         setAddress((String)newValue);
         return;
-      case GroceryPackage.WAREHOUSE__ITEMS:
-        getItems().clear();
-        getItems().addAll((Collection<? extends Item>)newValue);
+      case GroceryPackage.WAREHOUSE__SUPPLIER:
+        setSupplier((Supplier)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -176,8 +199,8 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
       case GroceryPackage.WAREHOUSE__ADDRESS:
         setAddress(ADDRESS_EDEFAULT);
         return;
-      case GroceryPackage.WAREHOUSE__ITEMS:
-        getItems().clear();
+      case GroceryPackage.WAREHOUSE__SUPPLIER:
+        setSupplier((Supplier)null);
         return;
     }
     super.eUnset(featureID);
@@ -195,8 +218,8 @@ public class WarehouseImpl extends BuildingImpl implements Warehouse
     {
       case GroceryPackage.WAREHOUSE__ADDRESS:
         return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
-      case GroceryPackage.WAREHOUSE__ITEMS:
-        return items != null && !items.isEmpty();
+      case GroceryPackage.WAREHOUSE__SUPPLIER:
+        return supplier != null;
     }
     return super.eIsSet(featureID);
   }

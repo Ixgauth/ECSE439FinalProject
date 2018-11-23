@@ -9,25 +9,21 @@
     <genClasses ecoreClass="Grocery.ecore#//Grocery">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Grocery.ecore#//Grocery/elements"/>
     </genClasses>
-    <genClasses ecoreClass="Grocery.ecore#//Building">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Building/name"/>
+    <genClasses ecoreClass="Grocery.ecore#//AbstractElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//AbstractElement/name"/>
     </genClasses>
+    <genClasses ecoreClass="Grocery.ecore#//Building"/>
     <genClasses ecoreClass="Grocery.ecore#//StoreElements">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//StoreElements/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Grocery.ecore#//StoreElements/items"/>
     </genClasses>
-    <genClasses ecoreClass="Grocery.ecore#//MovementElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//MovementElement/name"/>
-    </genClasses>
+    <genClasses ecoreClass="Grocery.ecore#//MovementElement"/>
     <genClasses ecoreClass="Grocery.ecore#//Person"/>
     <genClasses ecoreClass="Grocery.ecore#//Item">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Item/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Item/price"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Item/quantity"/>
     </genClasses>
     <genClasses ecoreClass="Grocery.ecore#//FoodItem"/>
     <genClasses ecoreClass="Grocery.ecore#//Movement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Movement/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Grocery.ecore#//Movement/items"/>
     </genClasses>
     <genClasses ecoreClass="Grocery.ecore#//Store">
@@ -35,7 +31,7 @@
     </genClasses>
     <genClasses ecoreClass="Grocery.ecore#//Warehouse">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Warehouse/address"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Grocery.ecore#//Warehouse/items"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Grocery.ecore#//Warehouse/supplier"/>
     </genClasses>
     <genClasses ecoreClass="Grocery.ecore#//Shelf"/>
     <genClasses ecoreClass="Grocery.ecore#//Backroom"/>
@@ -55,6 +51,9 @@
     <genClasses ecoreClass="Grocery.ecore#//Customer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Customer/customerName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Grocery.ecore#//Customer/sale"/>
+    </genClasses>
+    <genClasses ecoreClass="Grocery.ecore#//Supplier">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Grocery.ecore#//Supplier/items"/>
     </genClasses>
     <genClasses ecoreClass="Grocery.ecore#//Vehicle">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Vehicle/plateNumber"/>

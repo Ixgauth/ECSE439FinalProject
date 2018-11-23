@@ -8,7 +8,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.project439.grocery.GroceryPackage;
 import org.xtext.project439.grocery.Item;
@@ -21,35 +20,14 @@ import org.xtext.project439.grocery.Item;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.project439.grocery.impl.ItemImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.project439.grocery.impl.ItemImpl#getPrice <em>Price</em>}</li>
  *   <li>{@link org.xtext.project439.grocery.impl.ItemImpl#getQuantity <em>Quantity</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ItemImpl extends MinimalEObjectImpl.Container implements Item
+public class ItemImpl extends AbstractElementImpl implements Item
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -116,29 +94,6 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.ITEM__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getPrice()
   {
     return price;
@@ -190,8 +145,6 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
   {
     switch (featureID)
     {
-      case GroceryPackage.ITEM__NAME:
-        return getName();
       case GroceryPackage.ITEM__PRICE:
         return getPrice();
       case GroceryPackage.ITEM__QUANTITY:
@@ -210,9 +163,6 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
   {
     switch (featureID)
     {
-      case GroceryPackage.ITEM__NAME:
-        setName((String)newValue);
-        return;
       case GroceryPackage.ITEM__PRICE:
         setPrice((String)newValue);
         return;
@@ -233,9 +183,6 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
   {
     switch (featureID)
     {
-      case GroceryPackage.ITEM__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case GroceryPackage.ITEM__PRICE:
         setPrice(PRICE_EDEFAULT);
         return;
@@ -256,8 +203,6 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
   {
     switch (featureID)
     {
-      case GroceryPackage.ITEM__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case GroceryPackage.ITEM__PRICE:
         return PRICE_EDEFAULT == null ? price != null : !PRICE_EDEFAULT.equals(price);
       case GroceryPackage.ITEM__QUANTITY:
@@ -277,9 +222,7 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", price: ");
+    result.append(" (price: ");
     result.append(price);
     result.append(", quantity: ");
     result.append(quantity);

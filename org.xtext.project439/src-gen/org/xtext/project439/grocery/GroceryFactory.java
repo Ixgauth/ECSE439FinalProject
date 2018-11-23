@@ -33,6 +33,15 @@ public interface GroceryFactory extends EFactory
   Grocery createGrocery();
 
   /**
+   * Returns a new object of class '<em>Abstract Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Abstract Element</em>'.
+   * @generated
+   */
+  AbstractElement createAbstractElement();
+
+  /**
    * Returns a new object of class '<em>Building</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -184,6 +193,15 @@ public interface GroceryFactory extends EFactory
    * @generated
    */
   Customer createCustomer();
+
+  /**
+   * Returns a new object of class '<em>Supplier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Supplier</em>'.
+   * @generated
+   */
+  Supplier createSupplier();
 
   /**
    * Returns a new object of class '<em>Vehicle</em>'.

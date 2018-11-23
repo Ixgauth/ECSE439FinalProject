@@ -3,7 +3,6 @@
  */
 package org.xtext.project439.grocery;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.project439.grocery.Warehouse#getAddress <em>Address</em>}</li>
- *   <li>{@link org.xtext.project439.grocery.Warehouse#getItems <em>Items</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.Warehouse#getSupplier <em>Supplier</em>}</li>
  * </ul>
  *
  * @see org.xtext.project439.grocery.GroceryPackage#getWarehouse()
@@ -51,19 +50,29 @@ public interface Warehouse extends Building
   void setAddress(String value);
 
   /**
-   * Returns the value of the '<em><b>Items</b></em>' reference list.
-   * The list contents are of type {@link org.xtext.project439.grocery.Item}.
+   * Returns the value of the '<em><b>Supplier</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Items</em>' reference list isn't clear,
+   * If the meaning of the '<em>Supplier</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Items</em>' reference list.
-   * @see org.xtext.project439.grocery.GroceryPackage#getWarehouse_Items()
+   * @return the value of the '<em>Supplier</em>' reference.
+   * @see #setSupplier(Supplier)
+   * @see org.xtext.project439.grocery.GroceryPackage#getWarehouse_Supplier()
    * @model
    * @generated
    */
-  EList<Item> getItems();
+  Supplier getSupplier();
+
+  /**
+   * Sets the value of the '{@link org.xtext.project439.grocery.Warehouse#getSupplier <em>Supplier</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Supplier</em>' reference.
+   * @see #getSupplier()
+   * @generated
+   */
+  void setSupplier(Supplier value);
 
 } // Warehouse

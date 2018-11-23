@@ -5,14 +5,9 @@ package org.xtext.project439.grocery.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
@@ -28,34 +23,13 @@ import org.xtext.project439.grocery.StoreElements;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.project439.grocery.impl.StoreElementsImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.project439.grocery.impl.StoreElementsImpl#getItems <em>Items</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class StoreElementsImpl extends MinimalEObjectImpl.Container implements StoreElements
+public class StoreElementsImpl extends AbstractElementImpl implements StoreElements
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getItems() <em>Items</em>}' reference list.
    * <!-- begin-user-doc -->
@@ -92,29 +66,6 @@ public class StoreElementsImpl extends MinimalEObjectImpl.Container implements S
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GroceryPackage.STORE_ELEMENTS__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Item> getItems()
   {
     if (items == null)
@@ -134,8 +85,6 @@ public class StoreElementsImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
-      case GroceryPackage.STORE_ELEMENTS__NAME:
-        return getName();
       case GroceryPackage.STORE_ELEMENTS__ITEMS:
         return getItems();
     }
@@ -153,9 +102,6 @@ public class StoreElementsImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
-      case GroceryPackage.STORE_ELEMENTS__NAME:
-        setName((String)newValue);
-        return;
       case GroceryPackage.STORE_ELEMENTS__ITEMS:
         getItems().clear();
         getItems().addAll((Collection<? extends Item>)newValue);
@@ -174,9 +120,6 @@ public class StoreElementsImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
-      case GroceryPackage.STORE_ELEMENTS__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case GroceryPackage.STORE_ELEMENTS__ITEMS:
         getItems().clear();
         return;
@@ -194,29 +137,10 @@ public class StoreElementsImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
-      case GroceryPackage.STORE_ELEMENTS__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case GroceryPackage.STORE_ELEMENTS__ITEMS:
         return items != null && !items.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //StoreElementsImpl

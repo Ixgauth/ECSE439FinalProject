@@ -66,6 +66,7 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
     switch (eClass.getClassifierID())
     {
       case GroceryPackage.GROCERY: return createGrocery();
+      case GroceryPackage.ABSTRACT_ELEMENT: return createAbstractElement();
       case GroceryPackage.BUILDING: return createBuilding();
       case GroceryPackage.STORE_ELEMENTS: return createStoreElements();
       case GroceryPackage.MOVEMENT_ELEMENT: return createMovementElement();
@@ -83,6 +84,7 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
       case GroceryPackage.DRIVER: return createDriver();
       case GroceryPackage.EMPLOYEE: return createEmployee();
       case GroceryPackage.CUSTOMER: return createCustomer();
+      case GroceryPackage.SUPPLIER: return createSupplier();
       case GroceryPackage.VEHICLE: return createVehicle();
       case GroceryPackage.DELIVERY: return createDelivery();
       case GroceryPackage.SALE: return createSale();
@@ -101,6 +103,17 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
   {
     GroceryImpl grocery = new GroceryImpl();
     return grocery;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AbstractElement createAbstractElement()
+  {
+    AbstractElementImpl abstractElement = new AbstractElementImpl();
+    return abstractElement;
   }
 
   /**
@@ -288,6 +301,17 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
   {
     CustomerImpl customer = new CustomerImpl();
     return customer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Supplier createSupplier()
+  {
+    SupplierImpl supplier = new SupplierImpl();
+    return supplier;
   }
 
   /**

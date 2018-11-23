@@ -81,6 +81,11 @@ public class GroceryAdapterFactory extends AdapterFactoryImpl
         return createGroceryAdapter();
       }
       @Override
+      public Adapter caseAbstractElement(AbstractElement object)
+      {
+        return createAbstractElementAdapter();
+      }
+      @Override
       public Adapter caseBuilding(Building object)
       {
         return createBuildingAdapter();
@@ -166,6 +171,11 @@ public class GroceryAdapterFactory extends AdapterFactoryImpl
         return createCustomerAdapter();
       }
       @Override
+      public Adapter caseSupplier(Supplier object)
+      {
+        return createSupplierAdapter();
+      }
+      @Override
       public Adapter caseVehicle(Vehicle object)
       {
         return createVehicleAdapter();
@@ -218,6 +228,21 @@ public class GroceryAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGroceryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.project439.grocery.AbstractElement <em>Abstract Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.project439.grocery.AbstractElement
+   * @generated
+   */
+  public Adapter createAbstractElementAdapter()
   {
     return null;
   }
@@ -473,6 +498,21 @@ public class GroceryAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCustomerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.project439.grocery.Supplier <em>Supplier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.project439.grocery.Supplier
+   * @generated
+   */
+  public Adapter createSupplierAdapter()
   {
     return null;
   }

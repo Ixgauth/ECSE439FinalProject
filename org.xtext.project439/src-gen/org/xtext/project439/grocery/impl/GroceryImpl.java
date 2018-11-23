@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -18,6 +17,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.xtext.project439.grocery.AbstractElement;
 import org.xtext.project439.grocery.Grocery;
 import org.xtext.project439.grocery.GroceryPackage;
 
@@ -44,7 +44,7 @@ public class GroceryImpl extends MinimalEObjectImpl.Container implements Grocery
    * @generated
    * @ordered
    */
-  protected EList<EObject> elements;
+  protected EList<AbstractElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,11 +72,11 @@ public class GroceryImpl extends MinimalEObjectImpl.Container implements Grocery
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EObject> getElements()
+  public EList<AbstractElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<EObject>(EObject.class, this, GroceryPackage.GROCERY__ELEMENTS);
+      elements = new EObjectContainmentEList<AbstractElement>(AbstractElement.class, this, GroceryPackage.GROCERY__ELEMENTS);
     }
     return elements;
   }
@@ -126,7 +126,7 @@ public class GroceryImpl extends MinimalEObjectImpl.Container implements Grocery
     {
       case GroceryPackage.GROCERY__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends EObject>)newValue);
+        getElements().addAll((Collection<? extends AbstractElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

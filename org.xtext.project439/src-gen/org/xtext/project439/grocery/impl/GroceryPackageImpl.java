@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.xtext.project439.grocery.AbstractElement;
 import org.xtext.project439.grocery.Backroom;
 import org.xtext.project439.grocery.Building;
 import org.xtext.project439.grocery.Customer;
@@ -32,6 +33,7 @@ import org.xtext.project439.grocery.Shelf;
 import org.xtext.project439.grocery.StockMovement;
 import org.xtext.project439.grocery.Store;
 import org.xtext.project439.grocery.StoreElements;
+import org.xtext.project439.grocery.Supplier;
 import org.xtext.project439.grocery.Vehicle;
 import org.xtext.project439.grocery.Warehouse;
 
@@ -49,6 +51,13 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * @generated
    */
   private EClass groceryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass abstractElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -174,6 +183,13 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass supplierEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass vehicleEClass = null;
 
   /**
@@ -285,9 +301,9 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBuilding()
+  public EClass getAbstractElement()
   {
-    return buildingEClass;
+    return abstractElementEClass;
   }
 
   /**
@@ -295,9 +311,19 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBuilding_Name()
+  public EAttribute getAbstractElement_Name()
   {
-    return (EAttribute)buildingEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)abstractElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBuilding()
+  {
+    return buildingEClass;
   }
 
   /**
@@ -315,19 +341,9 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStoreElements_Name()
-  {
-    return (EAttribute)storeElementsEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getStoreElements_Items()
   {
-    return (EReference)storeElementsEClass.getEStructuralFeatures().get(1);
+    return (EReference)storeElementsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -338,16 +354,6 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
   public EClass getMovementElement()
   {
     return movementElementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getMovementElement_Name()
-  {
-    return (EAttribute)movementElementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -375,7 +381,7 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getItem_Name()
+  public EAttribute getItem_Price()
   {
     return (EAttribute)itemEClass.getEStructuralFeatures().get(0);
   }
@@ -385,19 +391,9 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getItem_Price()
-  {
-    return (EAttribute)itemEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getItem_Quantity()
   {
-    return (EAttribute)itemEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)itemEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -425,19 +421,9 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMovement_Name()
-  {
-    return (EAttribute)movementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getMovement_Items()
   {
-    return (EReference)movementEClass.getEStructuralFeatures().get(1);
+    return (EReference)movementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -485,7 +471,7 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getWarehouse_Items()
+  public EReference getWarehouse_Supplier()
   {
     return (EReference)warehouseEClass.getEStructuralFeatures().get(1);
   }
@@ -645,6 +631,26 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getSupplier()
+  {
+    return supplierEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSupplier_Items()
+  {
+    return (EReference)supplierEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getVehicle()
   {
     return vehicleEClass;
@@ -783,27 +789,25 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
     groceryEClass = createEClass(GROCERY);
     createEReference(groceryEClass, GROCERY__ELEMENTS);
 
+    abstractElementEClass = createEClass(ABSTRACT_ELEMENT);
+    createEAttribute(abstractElementEClass, ABSTRACT_ELEMENT__NAME);
+
     buildingEClass = createEClass(BUILDING);
-    createEAttribute(buildingEClass, BUILDING__NAME);
 
     storeElementsEClass = createEClass(STORE_ELEMENTS);
-    createEAttribute(storeElementsEClass, STORE_ELEMENTS__NAME);
     createEReference(storeElementsEClass, STORE_ELEMENTS__ITEMS);
 
     movementElementEClass = createEClass(MOVEMENT_ELEMENT);
-    createEAttribute(movementElementEClass, MOVEMENT_ELEMENT__NAME);
 
     personEClass = createEClass(PERSON);
 
     itemEClass = createEClass(ITEM);
-    createEAttribute(itemEClass, ITEM__NAME);
     createEAttribute(itemEClass, ITEM__PRICE);
     createEAttribute(itemEClass, ITEM__QUANTITY);
 
     foodItemEClass = createEClass(FOOD_ITEM);
 
     movementEClass = createEClass(MOVEMENT);
-    createEAttribute(movementEClass, MOVEMENT__NAME);
     createEReference(movementEClass, MOVEMENT__ITEMS);
 
     storeEClass = createEClass(STORE);
@@ -811,7 +815,7 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
 
     warehouseEClass = createEClass(WAREHOUSE);
     createEAttribute(warehouseEClass, WAREHOUSE__ADDRESS);
-    createEReference(warehouseEClass, WAREHOUSE__ITEMS);
+    createEReference(warehouseEClass, WAREHOUSE__SUPPLIER);
 
     shelfEClass = createEClass(SHELF);
 
@@ -835,6 +839,9 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
     customerEClass = createEClass(CUSTOMER);
     createEAttribute(customerEClass, CUSTOMER__CUSTOMER_NAME);
     createEReference(customerEClass, CUSTOMER__SALE);
+
+    supplierEClass = createEClass(SUPPLIER);
+    createEReference(supplierEClass, SUPPLIER__ITEMS);
 
     vehicleEClass = createEClass(VEHICLE);
     createEAttribute(vehicleEClass, VEHICLE__PLATE_NUMBER);
@@ -881,8 +888,13 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    buildingEClass.getESuperTypes().add(this.getAbstractElement());
+    storeElementsEClass.getESuperTypes().add(this.getAbstractElement());
+    movementElementEClass.getESuperTypes().add(this.getAbstractElement());
     personEClass.getESuperTypes().add(this.getMovementElement());
+    itemEClass.getESuperTypes().add(this.getAbstractElement());
     foodItemEClass.getESuperTypes().add(this.getItem());
+    movementEClass.getESuperTypes().add(this.getAbstractElement());
     storeEClass.getESuperTypes().add(this.getBuilding());
     warehouseEClass.getESuperTypes().add(this.getBuilding());
     shelfEClass.getESuperTypes().add(this.getStoreElements());
@@ -893,6 +905,7 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
     driverEClass.getESuperTypes().add(this.getPerson());
     employeeEClass.getESuperTypes().add(this.getPerson());
     customerEClass.getESuperTypes().add(this.getPerson());
+    supplierEClass.getESuperTypes().add(this.getMovementElement());
     vehicleEClass.getESuperTypes().add(this.getMovementElement());
     deliveryEClass.getESuperTypes().add(this.getMovement());
     saleEClass.getESuperTypes().add(this.getMovement());
@@ -900,29 +913,27 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(groceryEClass, Grocery.class, "Grocery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getGrocery_Elements(), ecorePackage.getEObject(), null, "elements", null, 0, -1, Grocery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGrocery_Elements(), this.getAbstractElement(), null, "elements", null, 0, -1, Grocery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(abstractElementEClass, AbstractElement.class, "AbstractElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAbstractElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, AbstractElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(buildingEClass, Building.class, "Building", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBuilding_Name(), ecorePackage.getEString(), "name", null, 0, 1, Building.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(storeElementsEClass, StoreElements.class, "StoreElements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStoreElements_Name(), ecorePackage.getEString(), "name", null, 0, 1, StoreElements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStoreElements_Items(), this.getItem(), null, "items", null, 0, -1, StoreElements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(movementElementEClass, MovementElement.class, "MovementElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMovementElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, MovementElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(personEClass, Person.class, "Person", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(itemEClass, Item.class, "Item", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getItem_Name(), ecorePackage.getEString(), "name", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getItem_Price(), ecorePackage.getEString(), "price", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getItem_Quantity(), ecorePackage.getEInt(), "quantity", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(foodItemEClass, FoodItem.class, "FoodItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(movementEClass, Movement.class, "Movement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMovement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Movement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMovement_Items(), this.getItem(), null, "items", null, 0, -1, Movement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(storeEClass, Store.class, "Store", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -930,7 +941,7 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
 
     initEClass(warehouseEClass, Warehouse.class, "Warehouse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWarehouse_Address(), ecorePackage.getEString(), "address", null, 0, 1, Warehouse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getWarehouse_Items(), this.getItem(), null, "items", null, 0, -1, Warehouse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWarehouse_Supplier(), this.getSupplier(), null, "supplier", null, 0, 1, Warehouse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(shelfEClass, Shelf.class, "Shelf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -954,6 +965,9 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
     initEClass(customerEClass, Customer.class, "Customer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCustomer_CustomerName(), ecorePackage.getEString(), "customerName", null, 0, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCustomer_Sale(), this.getSale(), null, "sale", null, 0, -1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(supplierEClass, Supplier.class, "Supplier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSupplier_Items(), this.getItem(), null, "items", null, 0, -1, Supplier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(vehicleEClass, Vehicle.class, "Vehicle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVehicle_PlateNumber(), ecorePackage.getEString(), "plateNumber", null, 0, 1, Vehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

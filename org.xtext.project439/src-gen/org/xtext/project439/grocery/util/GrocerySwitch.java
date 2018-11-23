@@ -80,10 +80,18 @@ public class GrocerySwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case GroceryPackage.ABSTRACT_ELEMENT:
+      {
+        AbstractElement abstractElement = (AbstractElement)theEObject;
+        T result = caseAbstractElement(abstractElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case GroceryPackage.BUILDING:
       {
         Building building = (Building)theEObject;
         T result = caseBuilding(building);
+        if (result == null) result = caseAbstractElement(building);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -91,6 +99,7 @@ public class GrocerySwitch<T> extends Switch<T>
       {
         StoreElements storeElements = (StoreElements)theEObject;
         T result = caseStoreElements(storeElements);
+        if (result == null) result = caseAbstractElement(storeElements);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -98,6 +107,7 @@ public class GrocerySwitch<T> extends Switch<T>
       {
         MovementElement movementElement = (MovementElement)theEObject;
         T result = caseMovementElement(movementElement);
+        if (result == null) result = caseAbstractElement(movementElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -106,6 +116,7 @@ public class GrocerySwitch<T> extends Switch<T>
         Person person = (Person)theEObject;
         T result = casePerson(person);
         if (result == null) result = caseMovementElement(person);
+        if (result == null) result = caseAbstractElement(person);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -113,6 +124,7 @@ public class GrocerySwitch<T> extends Switch<T>
       {
         Item item = (Item)theEObject;
         T result = caseItem(item);
+        if (result == null) result = caseAbstractElement(item);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -121,6 +133,7 @@ public class GrocerySwitch<T> extends Switch<T>
         FoodItem foodItem = (FoodItem)theEObject;
         T result = caseFoodItem(foodItem);
         if (result == null) result = caseItem(foodItem);
+        if (result == null) result = caseAbstractElement(foodItem);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -128,6 +141,7 @@ public class GrocerySwitch<T> extends Switch<T>
       {
         Movement movement = (Movement)theEObject;
         T result = caseMovement(movement);
+        if (result == null) result = caseAbstractElement(movement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -136,6 +150,7 @@ public class GrocerySwitch<T> extends Switch<T>
         Store store = (Store)theEObject;
         T result = caseStore(store);
         if (result == null) result = caseBuilding(store);
+        if (result == null) result = caseAbstractElement(store);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -144,6 +159,7 @@ public class GrocerySwitch<T> extends Switch<T>
         Warehouse warehouse = (Warehouse)theEObject;
         T result = caseWarehouse(warehouse);
         if (result == null) result = caseBuilding(warehouse);
+        if (result == null) result = caseAbstractElement(warehouse);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -152,6 +168,7 @@ public class GrocerySwitch<T> extends Switch<T>
         Shelf shelf = (Shelf)theEObject;
         T result = caseShelf(shelf);
         if (result == null) result = caseStoreElements(shelf);
+        if (result == null) result = caseAbstractElement(shelf);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -160,6 +177,7 @@ public class GrocerySwitch<T> extends Switch<T>
         Backroom backroom = (Backroom)theEObject;
         T result = caseBackroom(backroom);
         if (result == null) result = caseStoreElements(backroom);
+        if (result == null) result = caseAbstractElement(backroom);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -169,6 +187,7 @@ public class GrocerySwitch<T> extends Switch<T>
         T result = caseNonPerishableItem(nonPerishableItem);
         if (result == null) result = caseFoodItem(nonPerishableItem);
         if (result == null) result = caseItem(nonPerishableItem);
+        if (result == null) result = caseAbstractElement(nonPerishableItem);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -178,6 +197,7 @@ public class GrocerySwitch<T> extends Switch<T>
         T result = casePerishableItem(perishableItem);
         if (result == null) result = caseFoodItem(perishableItem);
         if (result == null) result = caseItem(perishableItem);
+        if (result == null) result = caseAbstractElement(perishableItem);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -186,6 +206,7 @@ public class GrocerySwitch<T> extends Switch<T>
         NonFoodItem nonFoodItem = (NonFoodItem)theEObject;
         T result = caseNonFoodItem(nonFoodItem);
         if (result == null) result = caseItem(nonFoodItem);
+        if (result == null) result = caseAbstractElement(nonFoodItem);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -195,6 +216,7 @@ public class GrocerySwitch<T> extends Switch<T>
         T result = caseDriver(driver);
         if (result == null) result = casePerson(driver);
         if (result == null) result = caseMovementElement(driver);
+        if (result == null) result = caseAbstractElement(driver);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -204,6 +226,7 @@ public class GrocerySwitch<T> extends Switch<T>
         T result = caseEmployee(employee);
         if (result == null) result = casePerson(employee);
         if (result == null) result = caseMovementElement(employee);
+        if (result == null) result = caseAbstractElement(employee);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -213,6 +236,16 @@ public class GrocerySwitch<T> extends Switch<T>
         T result = caseCustomer(customer);
         if (result == null) result = casePerson(customer);
         if (result == null) result = caseMovementElement(customer);
+        if (result == null) result = caseAbstractElement(customer);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GroceryPackage.SUPPLIER:
+      {
+        Supplier supplier = (Supplier)theEObject;
+        T result = caseSupplier(supplier);
+        if (result == null) result = caseMovementElement(supplier);
+        if (result == null) result = caseAbstractElement(supplier);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -221,6 +254,7 @@ public class GrocerySwitch<T> extends Switch<T>
         Vehicle vehicle = (Vehicle)theEObject;
         T result = caseVehicle(vehicle);
         if (result == null) result = caseMovementElement(vehicle);
+        if (result == null) result = caseAbstractElement(vehicle);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -229,6 +263,7 @@ public class GrocerySwitch<T> extends Switch<T>
         Delivery delivery = (Delivery)theEObject;
         T result = caseDelivery(delivery);
         if (result == null) result = caseMovement(delivery);
+        if (result == null) result = caseAbstractElement(delivery);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -237,6 +272,7 @@ public class GrocerySwitch<T> extends Switch<T>
         Sale sale = (Sale)theEObject;
         T result = caseSale(sale);
         if (result == null) result = caseMovement(sale);
+        if (result == null) result = caseAbstractElement(sale);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -245,6 +281,7 @@ public class GrocerySwitch<T> extends Switch<T>
         StockMovement stockMovement = (StockMovement)theEObject;
         T result = caseStockMovement(stockMovement);
         if (result == null) result = caseMovement(stockMovement);
+        if (result == null) result = caseAbstractElement(stockMovement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -264,6 +301,22 @@ public class GrocerySwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGrocery(Grocery object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Abstract Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Abstract Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAbstractElement(AbstractElement object)
   {
     return null;
   }
@@ -536,6 +589,22 @@ public class GrocerySwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCustomer(Customer object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Supplier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Supplier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSupplier(Supplier object)
   {
     return null;
   }

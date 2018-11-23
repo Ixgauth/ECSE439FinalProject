@@ -31,6 +31,7 @@ public class GroceryParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, GroceryGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getAbstractElementAccess().getAlternatives(), "rule__AbstractElement__Alternatives");
 			builder.put(grammarAccess.getBuildingAccess().getAlternatives(), "rule__Building__Alternatives");
 			builder.put(grammarAccess.getStoreElementsAccess().getAlternatives(), "rule__StoreElements__Alternatives");
 			builder.put(grammarAccess.getMovementElementAccess().getAlternatives(), "rule__MovementElement__Alternatives");
@@ -38,7 +39,6 @@ public class GroceryParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getItemAccess().getAlternatives(), "rule__Item__Alternatives");
 			builder.put(grammarAccess.getFoodItemAccess().getAlternatives(), "rule__FoodItem__Alternatives");
 			builder.put(grammarAccess.getMovementAccess().getAlternatives(), "rule__Movement__Alternatives");
-			builder.put(grammarAccess.getGroceryAccess().getGroup(), "rule__Grocery__Group__0");
 			builder.put(grammarAccess.getStoreAccess().getGroup(), "rule__Store__Group__0");
 			builder.put(grammarAccess.getWarehouseAccess().getGroup(), "rule__Warehouse__Group__0");
 			builder.put(grammarAccess.getShelfAccess().getGroup(), "rule__Shelf__Group__0");
@@ -49,6 +49,7 @@ public class GroceryParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDriverAccess().getGroup(), "rule__Driver__Group__0");
 			builder.put(grammarAccess.getEmployeeAccess().getGroup(), "rule__Employee__Group__0");
 			builder.put(grammarAccess.getCustomerAccess().getGroup(), "rule__Customer__Group__0");
+			builder.put(grammarAccess.getSupplierAccess().getGroup(), "rule__Supplier__Group__0");
 			builder.put(grammarAccess.getVehicleAccess().getGroup(), "rule__Vehicle__Group__0");
 			builder.put(grammarAccess.getDeliveryAccess().getGroup(), "rule__Delivery__Group__0");
 			builder.put(grammarAccess.getSaleAccess().getGroup(), "rule__Sale__Group__0");
@@ -56,16 +57,12 @@ public class GroceryParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDECIMALAccess().getGroup(), "rule__DECIMAL__Group__0");
 			builder.put(grammarAccess.getDATEAccess().getGroup(), "rule__DATE__Group__0");
 			builder.put(grammarAccess.getADDRESSAccess().getGroup(), "rule__ADDRESS__Group__0");
-			builder.put(grammarAccess.getGroceryAccess().getElementsAssignment_0(), "rule__Grocery__ElementsAssignment_0");
-			builder.put(grammarAccess.getGroceryAccess().getElementsAssignment_1(), "rule__Grocery__ElementsAssignment_1");
-			builder.put(grammarAccess.getGroceryAccess().getElementsAssignment_2(), "rule__Grocery__ElementsAssignment_2");
-			builder.put(grammarAccess.getGroceryAccess().getElementsAssignment_3(), "rule__Grocery__ElementsAssignment_3");
-			builder.put(grammarAccess.getGroceryAccess().getElementsAssignment_4(), "rule__Grocery__ElementsAssignment_4");
+			builder.put(grammarAccess.getGroceryAccess().getElementsAssignment(), "rule__Grocery__ElementsAssignment");
 			builder.put(grammarAccess.getStoreAccess().getNameAssignment_1(), "rule__Store__NameAssignment_1");
 			builder.put(grammarAccess.getStoreAccess().getElementsAssignment_3(), "rule__Store__ElementsAssignment_3");
 			builder.put(grammarAccess.getWarehouseAccess().getNameAssignment_1(), "rule__Warehouse__NameAssignment_1");
 			builder.put(grammarAccess.getWarehouseAccess().getAddressAssignment_5(), "rule__Warehouse__AddressAssignment_5");
-			builder.put(grammarAccess.getWarehouseAccess().getItemsAssignment_6(), "rule__Warehouse__ItemsAssignment_6");
+			builder.put(grammarAccess.getWarehouseAccess().getSupplierAssignment_8(), "rule__Warehouse__SupplierAssignment_8");
 			builder.put(grammarAccess.getShelfAccess().getNameAssignment_1(), "rule__Shelf__NameAssignment_1");
 			builder.put(grammarAccess.getShelfAccess().getItemsAssignment_3(), "rule__Shelf__ItemsAssignment_3");
 			builder.put(grammarAccess.getBackroomAccess().getNameAssignment_1(), "rule__Backroom__NameAssignment_1");
@@ -89,6 +86,8 @@ public class GroceryParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCustomerAccess().getNameAssignment_1(), "rule__Customer__NameAssignment_1");
 			builder.put(grammarAccess.getCustomerAccess().getCustomerNameAssignment_5(), "rule__Customer__CustomerNameAssignment_5");
 			builder.put(grammarAccess.getCustomerAccess().getSaleAssignment_6(), "rule__Customer__SaleAssignment_6");
+			builder.put(grammarAccess.getSupplierAccess().getNameAssignment_1(), "rule__Supplier__NameAssignment_1");
+			builder.put(grammarAccess.getSupplierAccess().getItemsAssignment_3(), "rule__Supplier__ItemsAssignment_3");
 			builder.put(grammarAccess.getVehicleAccess().getNameAssignment_1(), "rule__Vehicle__NameAssignment_1");
 			builder.put(grammarAccess.getVehicleAccess().getPlateNumberAssignment_5(), "rule__Vehicle__PlateNumberAssignment_5");
 			builder.put(grammarAccess.getVehicleAccess().getItemsAssignment_6(), "rule__Vehicle__ItemsAssignment_6");

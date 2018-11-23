@@ -28,6 +28,7 @@ import org.xtext.project439.grocery.Sale;
 import org.xtext.project439.grocery.Shelf;
 import org.xtext.project439.grocery.StockMovement;
 import org.xtext.project439.grocery.Store;
+import org.xtext.project439.grocery.Supplier;
 import org.xtext.project439.grocery.Vehicle;
 import org.xtext.project439.grocery.Warehouse;
 import org.xtext.project439.services.GroceryGrammarAccess;
@@ -85,6 +86,9 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 			case GroceryPackage.STORE:
 				sequence_Store(context, (Store) semanticObject); 
 				return; 
+			case GroceryPackage.SUPPLIER:
+				sequence_Supplier(context, (Supplier) semanticObject); 
+				return; 
 			case GroceryPackage.VEHICLE:
 				sequence_Vehicle(context, (Vehicle) semanticObject); 
 				return; 
@@ -98,6 +102,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     AbstractElement returns Backroom
 	 *     StoreElements returns Backroom
 	 *     Backroom returns Backroom
 	 *
@@ -111,6 +116,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     AbstractElement returns Customer
 	 *     MovementElement returns Customer
 	 *     Person returns Customer
 	 *     Customer returns Customer
@@ -125,6 +131,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     AbstractElement returns Delivery
 	 *     Movement returns Delivery
 	 *     Delivery returns Delivery
 	 *
@@ -138,6 +145,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     AbstractElement returns Driver
 	 *     MovementElement returns Driver
 	 *     Person returns Driver
 	 *     Driver returns Driver
@@ -152,6 +160,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     AbstractElement returns Employee
 	 *     MovementElement returns Employee
 	 *     Person returns Employee
 	 *     Employee returns Employee
@@ -169,24 +178,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Grocery returns Grocery
 	 *
 	 * Constraint:
-	 *     (
-	 *         (elements+=Building+ ((elements+=Movement+ elements+=StoreElements+) | elements+=StoreElements+)) | 
-	 *         (
-	 *             ((elements+=Building+ elements+=MovementElement+) | elements+=MovementElement+) 
-	 *             ((elements+=Movement+ elements+=StoreElements+) | elements+=StoreElements+)
-	 *         ) | 
-	 *         (
-	 *             (
-	 *                 (elements+=Building+ ((elements+=MovementElement+ elements+=Movement+) | elements+=Movement+)) | 
-	 *                 (elements+=MovementElement+ elements+=Movement+) | 
-	 *                 elements+=Movement+
-	 *             )? 
-	 *             elements+=Item+ 
-	 *             elements+=StoreElements+
-	 *         ) | 
-	 *         (elements+=Movement+ elements+=StoreElements+) | 
-	 *         elements+=StoreElements+
-	 *     )?
+	 *     elements+=AbstractElement+
 	 */
 	protected void sequence_Grocery(ISerializationContext context, Grocery semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -195,6 +187,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     AbstractElement returns NonFoodItem
 	 *     Item returns NonFoodItem
 	 *     NonFoodItem returns NonFoodItem
 	 *
@@ -203,8 +196,8 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_NonFoodItem(ISerializationContext context, NonFoodItem semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ITEM__NAME));
+			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ABSTRACT_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ABSTRACT_ELEMENT__NAME));
 			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__PRICE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ITEM__PRICE));
 			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__QUANTITY) == ValueTransient.YES)
@@ -220,6 +213,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     AbstractElement returns NonPerishableItem
 	 *     Item returns NonPerishableItem
 	 *     FoodItem returns NonPerishableItem
 	 *     NonPerishableItem returns NonPerishableItem
@@ -229,8 +223,8 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_NonPerishableItem(ISerializationContext context, NonPerishableItem semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ITEM__NAME));
+			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ABSTRACT_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ABSTRACT_ELEMENT__NAME));
 			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__PRICE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ITEM__PRICE));
 			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__QUANTITY) == ValueTransient.YES)
@@ -246,6 +240,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     AbstractElement returns PerishableItem
 	 *     Item returns PerishableItem
 	 *     FoodItem returns PerishableItem
 	 *     PerishableItem returns PerishableItem
@@ -255,8 +250,8 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_PerishableItem(ISerializationContext context, PerishableItem semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ITEM__NAME));
+			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ABSTRACT_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ABSTRACT_ELEMENT__NAME));
 			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__PRICE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ITEM__PRICE));
 			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__QUANTITY) == ValueTransient.YES)
@@ -275,6 +270,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     AbstractElement returns Sale
 	 *     Movement returns Sale
 	 *     Sale returns Sale
 	 *
@@ -288,6 +284,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     AbstractElement returns Shelf
 	 *     StoreElements returns Shelf
 	 *     Shelf returns Shelf
 	 *
@@ -301,6 +298,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     AbstractElement returns StockMovement
 	 *     Movement returns StockMovement
 	 *     StockMovement returns StockMovement
 	 *
@@ -314,6 +312,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     AbstractElement returns Store
 	 *     Building returns Store
 	 *     Store returns Store
 	 *
@@ -327,6 +326,21 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     AbstractElement returns Supplier
+	 *     MovementElement returns Supplier
+	 *     Supplier returns Supplier
+	 *
+	 * Constraint:
+	 *     (name=ID items+=[Item|ID]*)
+	 */
+	protected void sequence_Supplier(ISerializationContext context, Supplier semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractElement returns Vehicle
 	 *     MovementElement returns Vehicle
 	 *     Vehicle returns Vehicle
 	 *
@@ -340,14 +354,27 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     AbstractElement returns Warehouse
 	 *     Building returns Warehouse
 	 *     Warehouse returns Warehouse
 	 *
 	 * Constraint:
-	 *     (name=ID address=ADDRESS items+=[Item|ID]*)
+	 *     (name=ID address=ADDRESS supplier=[Supplier|ID])
 	 */
 	protected void sequence_Warehouse(ISerializationContext context, Warehouse semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ABSTRACT_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ABSTRACT_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.WAREHOUSE__ADDRESS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.WAREHOUSE__ADDRESS));
+			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.WAREHOUSE__SUPPLIER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.WAREHOUSE__SUPPLIER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getWarehouseAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getWarehouseAccess().getAddressADDRESSParserRuleCall_5_0(), semanticObject.getAddress());
+		feeder.accept(grammarAccess.getWarehouseAccess().getSupplierSupplierIDTerminalRuleCall_8_0_1(), semanticObject.eGet(GroceryPackage.Literals.WAREHOUSE__SUPPLIER, false));
+		feeder.finish();
 	}
 	
 	
