@@ -5,6 +5,7 @@ package org.xtext.project439.grocery;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -364,6 +365,25 @@ public interface GroceryPackage extends EPackage
   int MOVEMENT_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.project439.grocery.impl.VehicleElementsImpl <em>Vehicle Elements</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.project439.grocery.impl.VehicleElementsImpl
+   * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getVehicleElements()
+   * @generated
+   */
+  int VEHICLE_ELEMENTS = 9;
+
+  /**
+   * The number of structural features of the '<em>Vehicle Elements</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VEHICLE_ELEMENTS_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link org.xtext.project439.grocery.impl.StoreImpl <em>Store</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -371,7 +391,7 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getStore()
    * @generated
    */
-  int STORE = 9;
+  int STORE = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -408,7 +428,7 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getWarehouse()
    * @generated
    */
-  int WAREHOUSE = 10;
+  int WAREHOUSE = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -454,7 +474,7 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getShelf()
    * @generated
    */
-  int SHELF = 11;
+  int SHELF = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -491,7 +511,7 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getBackroom()
    * @generated
    */
-  int BACKROOM = 12;
+  int BACKROOM = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -521,14 +541,14 @@ public interface GroceryPackage extends EPackage
   int BACKROOM_FEATURE_COUNT = STORE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link org.xtext.project439.grocery.impl.NonPerishableItemImpl <em>Non Perishable Item</em>}' class.
+   * The meta object id for the '{@link org.xtext.project439.grocery.impl.ProduceImpl <em>Produce</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.project439.grocery.impl.NonPerishableItemImpl
-   * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getNonPerishableItem()
+   * @see org.xtext.project439.grocery.impl.ProduceImpl
+   * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getProduce()
    * @generated
    */
-  int NON_PERISHABLE_ITEM = 13;
+  int PRODUCE = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -537,7 +557,7 @@ public interface GroceryPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NON_PERISHABLE_ITEM__NAME = FOOD_ITEM__NAME;
+  int PRODUCE__NAME = FOOD_ITEM__NAME;
 
   /**
    * The feature id for the '<em><b>Price</b></em>' attribute.
@@ -546,7 +566,7 @@ public interface GroceryPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NON_PERISHABLE_ITEM__PRICE = FOOD_ITEM__PRICE;
+  int PRODUCE__PRICE = FOOD_ITEM__PRICE;
 
   /**
    * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -555,16 +575,25 @@ public interface GroceryPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NON_PERISHABLE_ITEM__QUANTITY = FOOD_ITEM__QUANTITY;
+  int PRODUCE__QUANTITY = FOOD_ITEM__QUANTITY;
 
   /**
-   * The number of structural features of the '<em>Non Perishable Item</em>' class.
+   * The feature id for the '<em><b>Quality</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NON_PERISHABLE_ITEM_FEATURE_COUNT = FOOD_ITEM_FEATURE_COUNT + 0;
+  int PRODUCE__QUALITY = FOOD_ITEM_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Produce</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRODUCE_FEATURE_COUNT = FOOD_ITEM_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.project439.grocery.impl.PerishableItemImpl <em>Perishable Item</em>}' class.
@@ -574,7 +603,7 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getPerishableItem()
    * @generated
    */
-  int PERISHABLE_ITEM = 14;
+  int PERISHABLE_ITEM = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -629,7 +658,7 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getNonFoodItem()
    * @generated
    */
-  int NON_FOOD_ITEM = 15;
+  int NON_FOOD_ITEM = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -675,7 +704,7 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getDriver()
    * @generated
    */
-  int DRIVER = 16;
+  int DRIVER = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -705,13 +734,22 @@ public interface GroceryPackage extends EPackage
   int DRIVER__VEHICLE = PERSON_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Delivery</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DRIVER__DELIVERY = PERSON_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Driver</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DRIVER_FEATURE_COUNT = PERSON_FEATURE_COUNT + 2;
+  int DRIVER_FEATURE_COUNT = PERSON_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.xtext.project439.grocery.impl.EmployeeImpl <em>Employee</em>}' class.
@@ -721,7 +759,7 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getEmployee()
    * @generated
    */
-  int EMPLOYEE = 17;
+  int EMPLOYEE = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -767,7 +805,7 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getCustomer()
    * @generated
    */
-  int CUSTOMER = 18;
+  int CUSTOMER = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -813,7 +851,7 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getSupplier()
    * @generated
    */
-  int SUPPLIER = 19;
+  int SUPPLIER = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -850,7 +888,7 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getVehicle()
    * @generated
    */
-  int VEHICLE = 20;
+  int VEHICLE = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -871,13 +909,13 @@ public interface GroceryPackage extends EPackage
   int VEHICLE__PLATE_NUMBER = MOVEMENT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Items</b></em>' reference list.
+   * The feature id for the '<em><b>Delivery</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VEHICLE__ITEMS = MOVEMENT_ELEMENT_FEATURE_COUNT + 1;
+  int VEHICLE__DELIVERY = MOVEMENT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Vehicle</em>' class.
@@ -896,7 +934,7 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getDelivery()
    * @generated
    */
-  int DELIVERY = 21;
+  int DELIVERY = 22;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -951,7 +989,7 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getSale()
    * @generated
    */
-  int SALE = 22;
+  int SALE = 23;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -997,7 +1035,7 @@ public interface GroceryPackage extends EPackage
    * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getStockMovement()
    * @generated
    */
-  int STOCK_MOVEMENT = 23;
+  int STOCK_MOVEMENT = 24;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1043,6 +1081,16 @@ public interface GroceryPackage extends EPackage
    * @ordered
    */
   int STOCK_MOVEMENT_FEATURE_COUNT = MOVEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.project439.grocery.qualityLevel <em>quality Level</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.project439.grocery.qualityLevel
+   * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getqualityLevel()
+   * @generated
+   */
+  int QUALITY_LEVEL = 25;
 
 
   /**
@@ -1202,6 +1250,16 @@ public interface GroceryPackage extends EPackage
   EReference getMovement_Items();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.project439.grocery.VehicleElements <em>Vehicle Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Vehicle Elements</em>'.
+   * @see org.xtext.project439.grocery.VehicleElements
+   * @generated
+   */
+  EClass getVehicleElements();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.project439.grocery.Store <em>Store</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1275,14 +1333,25 @@ public interface GroceryPackage extends EPackage
   EClass getBackroom();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.project439.grocery.NonPerishableItem <em>Non Perishable Item</em>}'.
+   * Returns the meta object for class '{@link org.xtext.project439.grocery.Produce <em>Produce</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Non Perishable Item</em>'.
-   * @see org.xtext.project439.grocery.NonPerishableItem
+   * @return the meta object for class '<em>Produce</em>'.
+   * @see org.xtext.project439.grocery.Produce
    * @generated
    */
-  EClass getNonPerishableItem();
+  EClass getProduce();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project439.grocery.Produce#getQuality <em>Quality</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Quality</em>'.
+   * @see org.xtext.project439.grocery.Produce#getQuality()
+   * @see #getProduce()
+   * @generated
+   */
+  EAttribute getProduce_Quality();
 
   /**
    * Returns the meta object for class '{@link org.xtext.project439.grocery.PerishableItem <em>Perishable Item</em>}'.
@@ -1346,6 +1415,17 @@ public interface GroceryPackage extends EPackage
    * @generated
    */
   EReference getDriver_Vehicle();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.xtext.project439.grocery.Driver#getDelivery <em>Delivery</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Delivery</em>'.
+   * @see org.xtext.project439.grocery.Driver#getDelivery()
+   * @see #getDriver()
+   * @generated
+   */
+  EReference getDriver_Delivery();
 
   /**
    * Returns the meta object for class '{@link org.xtext.project439.grocery.Employee <em>Employee</em>}'.
@@ -1454,15 +1534,15 @@ public interface GroceryPackage extends EPackage
   EAttribute getVehicle_PlateNumber();
 
   /**
-   * Returns the meta object for the reference list '{@link org.xtext.project439.grocery.Vehicle#getItems <em>Items</em>}'.
+   * Returns the meta object for the reference list '{@link org.xtext.project439.grocery.Vehicle#getDelivery <em>Delivery</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Items</em>'.
-   * @see org.xtext.project439.grocery.Vehicle#getItems()
+   * @return the meta object for the reference list '<em>Delivery</em>'.
+   * @see org.xtext.project439.grocery.Vehicle#getDelivery()
    * @see #getVehicle()
    * @generated
    */
-  EReference getVehicle_Items();
+  EReference getVehicle_Delivery();
 
   /**
    * Returns the meta object for class '{@link org.xtext.project439.grocery.Delivery <em>Delivery</em>}'.
@@ -1548,6 +1628,16 @@ public interface GroceryPackage extends EPackage
    * @generated
    */
   EReference getStockMovement_ToShelf();
+
+  /**
+   * Returns the meta object for enum '{@link org.xtext.project439.grocery.qualityLevel <em>quality Level</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>quality Level</em>'.
+   * @see org.xtext.project439.grocery.qualityLevel
+   * @generated
+   */
+  EEnum getqualityLevel();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1711,6 +1801,16 @@ public interface GroceryPackage extends EPackage
     EReference MOVEMENT__ITEMS = eINSTANCE.getMovement_Items();
 
     /**
+     * The meta object literal for the '{@link org.xtext.project439.grocery.impl.VehicleElementsImpl <em>Vehicle Elements</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.project439.grocery.impl.VehicleElementsImpl
+     * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getVehicleElements()
+     * @generated
+     */
+    EClass VEHICLE_ELEMENTS = eINSTANCE.getVehicleElements();
+
+    /**
      * The meta object literal for the '{@link org.xtext.project439.grocery.impl.StoreImpl <em>Store</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1775,14 +1875,22 @@ public interface GroceryPackage extends EPackage
     EClass BACKROOM = eINSTANCE.getBackroom();
 
     /**
-     * The meta object literal for the '{@link org.xtext.project439.grocery.impl.NonPerishableItemImpl <em>Non Perishable Item</em>}' class.
+     * The meta object literal for the '{@link org.xtext.project439.grocery.impl.ProduceImpl <em>Produce</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.project439.grocery.impl.NonPerishableItemImpl
-     * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getNonPerishableItem()
+     * @see org.xtext.project439.grocery.impl.ProduceImpl
+     * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getProduce()
      * @generated
      */
-    EClass NON_PERISHABLE_ITEM = eINSTANCE.getNonPerishableItem();
+    EClass PRODUCE = eINSTANCE.getProduce();
+
+    /**
+     * The meta object literal for the '<em><b>Quality</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PRODUCE__QUALITY = eINSTANCE.getProduce_Quality();
 
     /**
      * The meta object literal for the '{@link org.xtext.project439.grocery.impl.PerishableItemImpl <em>Perishable Item</em>}' class.
@@ -1837,6 +1945,14 @@ public interface GroceryPackage extends EPackage
      * @generated
      */
     EReference DRIVER__VEHICLE = eINSTANCE.getDriver_Vehicle();
+
+    /**
+     * The meta object literal for the '<em><b>Delivery</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DRIVER__DELIVERY = eINSTANCE.getDriver_Delivery();
 
     /**
      * The meta object literal for the '{@link org.xtext.project439.grocery.impl.EmployeeImpl <em>Employee</em>}' class.
@@ -1927,12 +2043,12 @@ public interface GroceryPackage extends EPackage
     EAttribute VEHICLE__PLATE_NUMBER = eINSTANCE.getVehicle_PlateNumber();
 
     /**
-     * The meta object literal for the '<em><b>Items</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Delivery</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VEHICLE__ITEMS = eINSTANCE.getVehicle_Items();
+    EReference VEHICLE__DELIVERY = eINSTANCE.getVehicle_Delivery();
 
     /**
      * The meta object literal for the '{@link org.xtext.project439.grocery.impl.DeliveryImpl <em>Delivery</em>}' class.
@@ -2003,6 +2119,16 @@ public interface GroceryPackage extends EPackage
      * @generated
      */
     EReference STOCK_MOVEMENT__TO_SHELF = eINSTANCE.getStockMovement_ToShelf();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.project439.grocery.qualityLevel <em>quality Level</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.project439.grocery.qualityLevel
+     * @see org.xtext.project439.grocery.impl.GroceryPackageImpl#getqualityLevel()
+     * @generated
+     */
+    EEnum QUALITY_LEVEL = eINSTANCE.getqualityLevel();
 
   }
 

@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.xtext.project439.grocery.Driver#getDriverName <em>Driver Name</em>}</li>
  *   <li>{@link org.xtext.project439.grocery.Driver#getVehicle <em>Vehicle</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.Driver#getDelivery <em>Delivery</em>}</li>
  * </ul>
  *
  * @see org.xtext.project439.grocery.GroceryPackage#getDriver()
@@ -65,5 +66,21 @@ public interface Driver extends Person
    * @generated
    */
   EList<Vehicle> getVehicle();
+
+  /**
+   * Returns the value of the '<em><b>Delivery</b></em>' reference list.
+   * The list contents are of type {@link org.xtext.project439.grocery.Delivery}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Delivery</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Delivery</em>' reference list.
+   * @see org.xtext.project439.grocery.GroceryPackage#getDriver_Delivery()
+   * @model
+   * @generated
+   */
+  EList<Delivery> getDelivery();
 
 } // Driver

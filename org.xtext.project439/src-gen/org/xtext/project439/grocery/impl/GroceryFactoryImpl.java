@@ -4,6 +4,7 @@
 package org.xtext.project439.grocery.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -74,11 +75,12 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
       case GroceryPackage.ITEM: return createItem();
       case GroceryPackage.FOOD_ITEM: return createFoodItem();
       case GroceryPackage.MOVEMENT: return createMovement();
+      case GroceryPackage.VEHICLE_ELEMENTS: return createVehicleElements();
       case GroceryPackage.STORE: return createStore();
       case GroceryPackage.WAREHOUSE: return createWarehouse();
       case GroceryPackage.SHELF: return createShelf();
       case GroceryPackage.BACKROOM: return createBackroom();
-      case GroceryPackage.NON_PERISHABLE_ITEM: return createNonPerishableItem();
+      case GroceryPackage.PRODUCE: return createProduce();
       case GroceryPackage.PERISHABLE_ITEM: return createPerishableItem();
       case GroceryPackage.NON_FOOD_ITEM: return createNonFoodItem();
       case GroceryPackage.DRIVER: return createDriver();
@@ -91,6 +93,40 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
       case GroceryPackage.STOCK_MOVEMENT: return createStockMovement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case GroceryPackage.QUALITY_LEVEL:
+        return createqualityLevelFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case GroceryPackage.QUALITY_LEVEL:
+        return convertqualityLevelToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -198,6 +234,17 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public VehicleElements createVehicleElements()
+  {
+    VehicleElementsImpl vehicleElements = new VehicleElementsImpl();
+    return vehicleElements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Store createStore()
   {
     StoreImpl store = new StoreImpl();
@@ -242,10 +289,10 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NonPerishableItem createNonPerishableItem()
+  public Produce createProduce()
   {
-    NonPerishableItemImpl nonPerishableItem = new NonPerishableItemImpl();
-    return nonPerishableItem;
+    ProduceImpl produce = new ProduceImpl();
+    return produce;
   }
 
   /**
@@ -356,6 +403,28 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
   {
     StockMovementImpl stockMovement = new StockMovementImpl();
     return stockMovement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public qualityLevel createqualityLevelFromString(EDataType eDataType, String initialValue)
+  {
+    qualityLevel result = qualityLevel.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertqualityLevelToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

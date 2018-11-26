@@ -105,6 +105,15 @@ public interface GroceryFactory extends EFactory
   Movement createMovement();
 
   /**
+   * Returns a new object of class '<em>Vehicle Elements</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Vehicle Elements</em>'.
+   * @generated
+   */
+  VehicleElements createVehicleElements();
+
+  /**
    * Returns a new object of class '<em>Store</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -141,13 +150,13 @@ public interface GroceryFactory extends EFactory
   Backroom createBackroom();
 
   /**
-   * Returns a new object of class '<em>Non Perishable Item</em>'.
+   * Returns a new object of class '<em>Produce</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Non Perishable Item</em>'.
+   * @return a new object of class '<em>Produce</em>'.
    * @generated
    */
-  NonPerishableItem createNonPerishableItem();
+  Produce createProduce();
 
   /**
    * Returns a new object of class '<em>Perishable Item</em>'.

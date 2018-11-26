@@ -16,7 +16,7 @@ Person: Driver | Employee | Customer;
 
 Item : FoodItem | NonFoodItem;
 
-FoodItem : PerishableItem | NonPerishableItem;
+FoodItem : PerishableItem | Produce;
 
 Movement : Delivery | Sale | StockMovement;
 
@@ -37,9 +37,10 @@ Backroom: 'backroom' name=ID '{'
 	items+=[Item]*
 '}';
 
-NonPerishableItem: 'nonPerishableItem' name=ID '{'
+Produce: 'produce' name=ID '{'
 	'price' ':' price=DECIMAL
 	'quantity' ':' quantity=INT
+	'quality' ':' quality=qualityLevel
 '}';
 
 PerishableItem: 'perishableItem' name=ID '{'
@@ -55,7 +56,8 @@ NonFoodItem: 'nonFoodItem' name=ID '{'
 
 Driver: 'driver' name=ID '{'
 	'name' ':' driverName=STRING
-	vehicle+=[Vehicle]*
+	vehicle+=[Vehicle]
+	delivery+=[Delivery]*
 '}';
 
 Employee: 'employee' name=ID '{'
@@ -74,7 +76,7 @@ Supplier: 'supplier' name=ID '{'
 
 Vehicle: 'vehicle' name=ID '{'
 	'plateNumber' ':' plateNumber=STRING
-	items+=[Item]*
+	delivery+=[Delivery]*
 '}';
 
 Delivery: 'delivery' name=ID '{'
@@ -99,6 +101,12 @@ DECIMAL: INT '.' INT;
 DATE:INT '/' INT '/' INT;
 
 ADDRESS: INT STRING ',' STRING;
+
+enum qualityLevel:
+	GOOD = "good" |
+	MEDIOCRE = "okay" |
+	NEEDSREMOVAL = "needs removal"
+;
 
 
 

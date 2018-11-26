@@ -23,6 +23,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -383,11 +384,11 @@ ruleFoodItem returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getFoodItemAccess().getNonPerishableItemParserRuleCall_1());
+			newCompositeNode(grammarAccess.getFoodItemAccess().getProduceParserRuleCall_1());
 		}
-		this_NonPerishableItem_1=ruleNonPerishableItem
+		this_Produce_1=ruleProduce
 		{
-			$current = $this_NonPerishableItem_1.current;
+			$current = $this_Produce_1.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -721,15 +722,15 @@ ruleBackroom returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleNonPerishableItem
-entryRuleNonPerishableItem returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getNonPerishableItemRule()); }
-	iv_ruleNonPerishableItem=ruleNonPerishableItem
-	{ $current=$iv_ruleNonPerishableItem.current; }
+// Entry rule entryRuleProduce
+entryRuleProduce returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getProduceRule()); }
+	iv_ruleProduce=ruleProduce
+	{ $current=$iv_ruleProduce.current; }
 	EOF;
 
-// Rule NonPerishableItem
-ruleNonPerishableItem returns [EObject current=null]
+// Rule Produce
+ruleProduce returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -737,19 +738,19 @@ ruleNonPerishableItem returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='nonPerishableItem'
+		otherlv_0='produce'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getNonPerishableItemAccess().getNonPerishableItemKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getProduceAccess().getProduceKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getNonPerishableItemAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getProduceAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getNonPerishableItemRule());
+						$current = createModelElement(grammarAccess.getProduceRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -761,25 +762,25 @@ ruleNonPerishableItem returns [EObject current=null]
 		)
 		otherlv_2='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getNonPerishableItemAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getProduceAccess().getLeftCurlyBracketKeyword_2());
 		}
 		otherlv_3='price'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getNonPerishableItemAccess().getPriceKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getProduceAccess().getPriceKeyword_3());
 		}
 		otherlv_4=':'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getNonPerishableItemAccess().getColonKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getProduceAccess().getColonKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getNonPerishableItemAccess().getPriceDECIMALParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getProduceAccess().getPriceDECIMALParserRuleCall_5_0());
 				}
 				lv_price_5_0=ruleDECIMAL
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getNonPerishableItemRule());
+						$current = createModelElementForParent(grammarAccess.getProduceRule());
 					}
 					set(
 						$current,
@@ -792,21 +793,21 @@ ruleNonPerishableItem returns [EObject current=null]
 		)
 		otherlv_6='quantity'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getNonPerishableItemAccess().getQuantityKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getProduceAccess().getQuantityKeyword_6());
 		}
 		otherlv_7=':'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getNonPerishableItemAccess().getColonKeyword_7());
+			newLeafNode(otherlv_7, grammarAccess.getProduceAccess().getColonKeyword_7());
 		}
 		(
 			(
 				lv_quantity_8_0=RULE_INT
 				{
-					newLeafNode(lv_quantity_8_0, grammarAccess.getNonPerishableItemAccess().getQuantityINTTerminalRuleCall_8_0());
+					newLeafNode(lv_quantity_8_0, grammarAccess.getProduceAccess().getQuantityINTTerminalRuleCall_8_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getNonPerishableItemRule());
+						$current = createModelElement(grammarAccess.getProduceRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -816,9 +817,36 @@ ruleNonPerishableItem returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_9='}'
+		otherlv_9='quality'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getNonPerishableItemAccess().getRightCurlyBracketKeyword_9());
+			newLeafNode(otherlv_9, grammarAccess.getProduceAccess().getQualityKeyword_9());
+		}
+		otherlv_10=':'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getProduceAccess().getColonKeyword_10());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getProduceAccess().getQualityQualityLevelEnumRuleCall_11_0());
+				}
+				lv_quality_11_0=rulequalityLevel
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getProduceRule());
+					}
+					set(
+						$current,
+						"quality",
+						lv_quality_11_0,
+						"org.xtext.project439.Grocery.qualityLevel");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_12='}'
+		{
+			newLeafNode(otherlv_12, grammarAccess.getProduceAccess().getRightCurlyBracketKeyword_12());
 		}
 	)
 ;
@@ -1134,10 +1162,23 @@ ruleDriver returns [EObject current=null]
 					newLeafNode(otherlv_6, grammarAccess.getDriverAccess().getVehicleVehicleCrossReference_6_0());
 				}
 			)
+		)
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDriverRule());
+					}
+				}
+				otherlv_7=RULE_ID
+				{
+					newLeafNode(otherlv_7, grammarAccess.getDriverAccess().getDeliveryDeliveryCrossReference_7_0());
+				}
+			)
 		)*
-		otherlv_7='}'
+		otherlv_8='}'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getDriverAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_8, grammarAccess.getDriverAccess().getRightCurlyBracketKeyword_8());
 		}
 	)
 ;
@@ -1457,7 +1498,7 @@ ruleVehicle returns [EObject current=null]
 				}
 				otherlv_6=RULE_ID
 				{
-					newLeafNode(otherlv_6, grammarAccess.getVehicleAccess().getItemsItemCrossReference_6_0());
+					newLeafNode(otherlv_6, grammarAccess.getVehicleAccess().getDeliveryDeliveryCrossReference_6_0());
 				}
 			)
 		)*
@@ -1889,6 +1930,41 @@ ruleADDRESS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 		{
 			newLeafNode(this_STRING_3, grammarAccess.getADDRESSAccess().getSTRINGTerminalRuleCall_3());
 		}
+	)
+;
+
+// Rule qualityLevel
+rulequalityLevel returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='good'
+			{
+				$current = grammarAccess.getQualityLevelAccess().getGOODEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getQualityLevelAccess().getGOODEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='okay'
+			{
+				$current = grammarAccess.getQualityLevelAccess().getMEDIOCREEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getQualityLevelAccess().getMEDIOCREEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='needs removal'
+			{
+				$current = grammarAccess.getQualityLevelAccess().getNEEDSREMOVALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getQualityLevelAccess().getNEEDSREMOVALEnumLiteralDeclaration_2());
+			}
+		)
 	)
 ;
 

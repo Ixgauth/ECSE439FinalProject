@@ -21,7 +21,7 @@ package org.xtext.project439.grocery;
  * @model
  * @generated
  */
-public interface Delivery extends Movement
+public interface Delivery extends Movement, VehicleElements
 {
   /**
    * Returns the value of the '<em><b>From Warehouse</b></em>' reference.

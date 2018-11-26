@@ -5,24 +5,26 @@ package org.xtext.project439.grocery.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.xtext.project439.grocery.GroceryPackage;
-import org.xtext.project439.grocery.NonPerishableItem;
+import org.xtext.project439.grocery.VehicleElements;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Non Perishable Item</b></em>'.
+ * An implementation of the model object '<em><b>Vehicle Elements</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class NonPerishableItemImpl extends FoodItemImpl implements NonPerishableItem
+public class VehicleElementsImpl extends MinimalEObjectImpl.Container implements VehicleElements
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected NonPerishableItemImpl()
+  protected VehicleElementsImpl()
   {
     super();
   }
@@ -35,7 +37,7 @@ public class NonPerishableItemImpl extends FoodItemImpl implements NonPerishable
   @Override
   protected EClass eStaticClass()
   {
-    return GroceryPackage.Literals.NON_PERISHABLE_ITEM;
+    return GroceryPackage.Literals.VEHICLE_ELEMENTS;
   }
 
-} //NonPerishableItemImpl
+} //VehicleElementsImpl

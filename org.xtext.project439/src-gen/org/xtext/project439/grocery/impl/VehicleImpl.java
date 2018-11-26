@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import org.xtext.project439.grocery.Delivery;
 import org.xtext.project439.grocery.GroceryPackage;
-import org.xtext.project439.grocery.Item;
 import org.xtext.project439.grocery.Vehicle;
 
 /**
@@ -28,7 +28,7 @@ import org.xtext.project439.grocery.Vehicle;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.project439.grocery.impl.VehicleImpl#getPlateNumber <em>Plate Number</em>}</li>
- *   <li>{@link org.xtext.project439.grocery.impl.VehicleImpl#getItems <em>Items</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.impl.VehicleImpl#getDelivery <em>Delivery</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,14 +56,14 @@ public class VehicleImpl extends MovementElementImpl implements Vehicle
   protected String plateNumber = PLATE_NUMBER_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getItems() <em>Items</em>}' reference list.
+   * The cached value of the '{@link #getDelivery() <em>Delivery</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getItems()
+   * @see #getDelivery()
    * @generated
    * @ordered
    */
-  protected EList<Item> items;
+  protected EList<Delivery> delivery;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,13 +114,13 @@ public class VehicleImpl extends MovementElementImpl implements Vehicle
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Item> getItems()
+  public EList<Delivery> getDelivery()
   {
-    if (items == null)
+    if (delivery == null)
     {
-      items = new EObjectResolvingEList<Item>(Item.class, this, GroceryPackage.VEHICLE__ITEMS);
+      delivery = new EObjectResolvingEList<Delivery>(Delivery.class, this, GroceryPackage.VEHICLE__DELIVERY);
     }
-    return items;
+    return delivery;
   }
 
   /**
@@ -135,8 +135,8 @@ public class VehicleImpl extends MovementElementImpl implements Vehicle
     {
       case GroceryPackage.VEHICLE__PLATE_NUMBER:
         return getPlateNumber();
-      case GroceryPackage.VEHICLE__ITEMS:
-        return getItems();
+      case GroceryPackage.VEHICLE__DELIVERY:
+        return getDelivery();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -155,9 +155,9 @@ public class VehicleImpl extends MovementElementImpl implements Vehicle
       case GroceryPackage.VEHICLE__PLATE_NUMBER:
         setPlateNumber((String)newValue);
         return;
-      case GroceryPackage.VEHICLE__ITEMS:
-        getItems().clear();
-        getItems().addAll((Collection<? extends Item>)newValue);
+      case GroceryPackage.VEHICLE__DELIVERY:
+        getDelivery().clear();
+        getDelivery().addAll((Collection<? extends Delivery>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -176,8 +176,8 @@ public class VehicleImpl extends MovementElementImpl implements Vehicle
       case GroceryPackage.VEHICLE__PLATE_NUMBER:
         setPlateNumber(PLATE_NUMBER_EDEFAULT);
         return;
-      case GroceryPackage.VEHICLE__ITEMS:
-        getItems().clear();
+      case GroceryPackage.VEHICLE__DELIVERY:
+        getDelivery().clear();
         return;
     }
     super.eUnset(featureID);
@@ -195,8 +195,8 @@ public class VehicleImpl extends MovementElementImpl implements Vehicle
     {
       case GroceryPackage.VEHICLE__PLATE_NUMBER:
         return PLATE_NUMBER_EDEFAULT == null ? plateNumber != null : !PLATE_NUMBER_EDEFAULT.equals(plateNumber);
-      case GroceryPackage.VEHICLE__ITEMS:
-        return items != null && !items.isEmpty();
+      case GroceryPackage.VEHICLE__DELIVERY:
+        return delivery != null && !delivery.isEmpty();
     }
     return super.eIsSet(featureID);
   }

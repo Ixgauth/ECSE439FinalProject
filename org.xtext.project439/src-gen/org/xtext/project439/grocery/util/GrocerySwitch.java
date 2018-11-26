@@ -125,6 +125,7 @@ public class GrocerySwitch<T> extends Switch<T>
         Item item = (Item)theEObject;
         T result = caseItem(item);
         if (result == null) result = caseAbstractElement(item);
+        if (result == null) result = caseVehicleElements(item);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -134,6 +135,7 @@ public class GrocerySwitch<T> extends Switch<T>
         T result = caseFoodItem(foodItem);
         if (result == null) result = caseItem(foodItem);
         if (result == null) result = caseAbstractElement(foodItem);
+        if (result == null) result = caseVehicleElements(foodItem);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -142,6 +144,13 @@ public class GrocerySwitch<T> extends Switch<T>
         Movement movement = (Movement)theEObject;
         T result = caseMovement(movement);
         if (result == null) result = caseAbstractElement(movement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GroceryPackage.VEHICLE_ELEMENTS:
+      {
+        VehicleElements vehicleElements = (VehicleElements)theEObject;
+        T result = caseVehicleElements(vehicleElements);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -181,13 +190,14 @@ public class GrocerySwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case GroceryPackage.NON_PERISHABLE_ITEM:
+      case GroceryPackage.PRODUCE:
       {
-        NonPerishableItem nonPerishableItem = (NonPerishableItem)theEObject;
-        T result = caseNonPerishableItem(nonPerishableItem);
-        if (result == null) result = caseFoodItem(nonPerishableItem);
-        if (result == null) result = caseItem(nonPerishableItem);
-        if (result == null) result = caseAbstractElement(nonPerishableItem);
+        Produce produce = (Produce)theEObject;
+        T result = caseProduce(produce);
+        if (result == null) result = caseFoodItem(produce);
+        if (result == null) result = caseItem(produce);
+        if (result == null) result = caseAbstractElement(produce);
+        if (result == null) result = caseVehicleElements(produce);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -198,6 +208,7 @@ public class GrocerySwitch<T> extends Switch<T>
         if (result == null) result = caseFoodItem(perishableItem);
         if (result == null) result = caseItem(perishableItem);
         if (result == null) result = caseAbstractElement(perishableItem);
+        if (result == null) result = caseVehicleElements(perishableItem);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -207,6 +218,7 @@ public class GrocerySwitch<T> extends Switch<T>
         T result = caseNonFoodItem(nonFoodItem);
         if (result == null) result = caseItem(nonFoodItem);
         if (result == null) result = caseAbstractElement(nonFoodItem);
+        if (result == null) result = caseVehicleElements(nonFoodItem);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -263,6 +275,7 @@ public class GrocerySwitch<T> extends Switch<T>
         Delivery delivery = (Delivery)theEObject;
         T result = caseDelivery(delivery);
         if (result == null) result = caseMovement(delivery);
+        if (result == null) result = caseVehicleElements(delivery);
         if (result == null) result = caseAbstractElement(delivery);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -434,6 +447,22 @@ public class GrocerySwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Vehicle Elements</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Vehicle Elements</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVehicleElements(VehicleElements object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Store</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -498,17 +527,17 @@ public class GrocerySwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Non Perishable Item</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Produce</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Non Perishable Item</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Produce</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNonPerishableItem(NonPerishableItem object)
+  public T caseProduce(Produce object)
   {
     return null;
   }

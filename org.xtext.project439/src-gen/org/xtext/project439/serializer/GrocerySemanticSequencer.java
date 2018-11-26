@@ -22,8 +22,8 @@ import org.xtext.project439.grocery.Employee;
 import org.xtext.project439.grocery.Grocery;
 import org.xtext.project439.grocery.GroceryPackage;
 import org.xtext.project439.grocery.NonFoodItem;
-import org.xtext.project439.grocery.NonPerishableItem;
 import org.xtext.project439.grocery.PerishableItem;
+import org.xtext.project439.grocery.Produce;
 import org.xtext.project439.grocery.Sale;
 import org.xtext.project439.grocery.Shelf;
 import org.xtext.project439.grocery.StockMovement;
@@ -68,11 +68,11 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 			case GroceryPackage.NON_FOOD_ITEM:
 				sequence_NonFoodItem(context, (NonFoodItem) semanticObject); 
 				return; 
-			case GroceryPackage.NON_PERISHABLE_ITEM:
-				sequence_NonPerishableItem(context, (NonPerishableItem) semanticObject); 
-				return; 
 			case GroceryPackage.PERISHABLE_ITEM:
 				sequence_PerishableItem(context, (PerishableItem) semanticObject); 
+				return; 
+			case GroceryPackage.PRODUCE:
+				sequence_Produce(context, (Produce) semanticObject); 
 				return; 
 			case GroceryPackage.SALE:
 				sequence_Sale(context, (Sale) semanticObject); 
@@ -133,6 +133,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Contexts:
 	 *     AbstractElement returns Delivery
 	 *     Movement returns Delivery
+	 *     VehicleElements returns Delivery
 	 *     Delivery returns Delivery
 	 *
 	 * Constraint:
@@ -151,7 +152,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Driver returns Driver
 	 *
 	 * Constraint:
-	 *     (name=ID driverName=STRING vehicle+=[Vehicle|ID]*)
+	 *     (name=ID driverName=STRING vehicle+=[Vehicle|ID] delivery+=[Delivery|ID]*)
 	 */
 	protected void sequence_Driver(ISerializationContext context, Driver semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -189,6 +190,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Contexts:
 	 *     AbstractElement returns NonFoodItem
 	 *     Item returns NonFoodItem
+	 *     VehicleElements returns NonFoodItem
 	 *     NonFoodItem returns NonFoodItem
 	 *
 	 * Constraint:
@@ -213,36 +215,10 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     AbstractElement returns NonPerishableItem
-	 *     Item returns NonPerishableItem
-	 *     FoodItem returns NonPerishableItem
-	 *     NonPerishableItem returns NonPerishableItem
-	 *
-	 * Constraint:
-	 *     (name=ID price=DECIMAL quantity=INT)
-	 */
-	protected void sequence_NonPerishableItem(ISerializationContext context, NonPerishableItem semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ABSTRACT_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ABSTRACT_ELEMENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__PRICE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ITEM__PRICE));
-			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__QUANTITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ITEM__QUANTITY));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNonPerishableItemAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getNonPerishableItemAccess().getPriceDECIMALParserRuleCall_5_0(), semanticObject.getPrice());
-		feeder.accept(grammarAccess.getNonPerishableItemAccess().getQuantityINTTerminalRuleCall_8_0(), semanticObject.getQuantity());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     AbstractElement returns PerishableItem
 	 *     Item returns PerishableItem
 	 *     FoodItem returns PerishableItem
+	 *     VehicleElements returns PerishableItem
 	 *     PerishableItem returns PerishableItem
 	 *
 	 * Constraint:
@@ -264,6 +240,37 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getPerishableItemAccess().getPriceDECIMALParserRuleCall_5_0(), semanticObject.getPrice());
 		feeder.accept(grammarAccess.getPerishableItemAccess().getQuantityINTTerminalRuleCall_8_0(), semanticObject.getQuantity());
 		feeder.accept(grammarAccess.getPerishableItemAccess().getExperationDateDATEParserRuleCall_11_0(), semanticObject.getExperationDate());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractElement returns Produce
+	 *     Item returns Produce
+	 *     FoodItem returns Produce
+	 *     VehicleElements returns Produce
+	 *     Produce returns Produce
+	 *
+	 * Constraint:
+	 *     (name=ID price=DECIMAL quantity=INT quality=qualityLevel)
+	 */
+	protected void sequence_Produce(ISerializationContext context, Produce semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ABSTRACT_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ABSTRACT_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__PRICE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ITEM__PRICE));
+			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.ITEM__QUANTITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.ITEM__QUANTITY));
+			if (transientValues.isValueTransient(semanticObject, GroceryPackage.Literals.PRODUCE__QUALITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GroceryPackage.Literals.PRODUCE__QUALITY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProduceAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getProduceAccess().getPriceDECIMALParserRuleCall_5_0(), semanticObject.getPrice());
+		feeder.accept(grammarAccess.getProduceAccess().getQuantityINTTerminalRuleCall_8_0(), semanticObject.getQuantity());
+		feeder.accept(grammarAccess.getProduceAccess().getQualityQualityLevelEnumRuleCall_11_0(), semanticObject.getQuality());
 		feeder.finish();
 	}
 	
@@ -345,7 +352,7 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Vehicle returns Vehicle
 	 *
 	 * Constraint:
-	 *     (name=ID plateNumber=STRING items+=[Item|ID]*)
+	 *     (name=ID plateNumber=STRING delivery+=[Delivery|ID]*)
 	 */
 	protected void sequence_Vehicle(ISerializationContext context, Vehicle semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

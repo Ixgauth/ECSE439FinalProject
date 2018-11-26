@@ -6,6 +6,11 @@
     complianceLevel="6.0" copyrightFields="false" runtimeVersion="2.13">
   <genPackages prefix="Grocery" basePackage="org.xtext.project439" disposableProviderFactory="true"
       fileExtensions="grocery" ecorePackage="Grocery.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Grocery.ecore#//qualityLevel">
+      <genEnumLiterals ecoreEnumLiteral="Grocery.ecore#//qualityLevel/GOOD"/>
+      <genEnumLiterals ecoreEnumLiteral="Grocery.ecore#//qualityLevel/MEDIOCRE"/>
+      <genEnumLiterals ecoreEnumLiteral="Grocery.ecore#//qualityLevel/NEEDSREMOVAL"/>
+    </genEnums>
     <genClasses ecoreClass="Grocery.ecore#//Grocery">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Grocery.ecore#//Grocery/elements"/>
     </genClasses>
@@ -26,6 +31,7 @@
     <genClasses ecoreClass="Grocery.ecore#//Movement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Grocery.ecore#//Movement/items"/>
     </genClasses>
+    <genClasses ecoreClass="Grocery.ecore#//VehicleElements"/>
     <genClasses ecoreClass="Grocery.ecore#//Store">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Grocery.ecore#//Store/elements"/>
     </genClasses>
@@ -35,7 +41,9 @@
     </genClasses>
     <genClasses ecoreClass="Grocery.ecore#//Shelf"/>
     <genClasses ecoreClass="Grocery.ecore#//Backroom"/>
-    <genClasses ecoreClass="Grocery.ecore#//NonPerishableItem"/>
+    <genClasses ecoreClass="Grocery.ecore#//Produce">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Produce/quality"/>
+    </genClasses>
     <genClasses ecoreClass="Grocery.ecore#//PerishableItem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//PerishableItem/experationDate"/>
     </genClasses>
@@ -43,6 +51,7 @@
     <genClasses ecoreClass="Grocery.ecore#//Driver">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Driver/driverName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Grocery.ecore#//Driver/vehicle"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Grocery.ecore#//Driver/delivery"/>
     </genClasses>
     <genClasses ecoreClass="Grocery.ecore#//Employee">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Employee/employeeName"/>
@@ -57,7 +66,7 @@
     </genClasses>
     <genClasses ecoreClass="Grocery.ecore#//Vehicle">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Grocery.ecore#//Vehicle/plateNumber"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Grocery.ecore#//Vehicle/items"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Grocery.ecore#//Vehicle/delivery"/>
     </genClasses>
     <genClasses ecoreClass="Grocery.ecore#//Delivery">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Grocery.ecore#//Delivery/fromWarehouse"/>

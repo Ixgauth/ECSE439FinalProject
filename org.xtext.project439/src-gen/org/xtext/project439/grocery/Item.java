@@ -21,7 +21,7 @@ package org.xtext.project439.grocery;
  * @model
  * @generated
  */
-public interface Item extends AbstractElement
+public interface Item extends AbstractElement, VehicleElements
 {
   /**
    * Returns the value of the '<em><b>Price</b></em>' attribute.

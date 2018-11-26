@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import org.xtext.project439.grocery.Delivery;
 import org.xtext.project439.grocery.Driver;
 import org.xtext.project439.grocery.GroceryPackage;
 import org.xtext.project439.grocery.Vehicle;
@@ -29,6 +30,7 @@ import org.xtext.project439.grocery.Vehicle;
  * <ul>
  *   <li>{@link org.xtext.project439.grocery.impl.DriverImpl#getDriverName <em>Driver Name</em>}</li>
  *   <li>{@link org.xtext.project439.grocery.impl.DriverImpl#getVehicle <em>Vehicle</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.impl.DriverImpl#getDelivery <em>Delivery</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,6 +66,16 @@ public class DriverImpl extends PersonImpl implements Driver
    * @ordered
    */
   protected EList<Vehicle> vehicle;
+
+  /**
+   * The cached value of the '{@link #getDelivery() <em>Delivery</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDelivery()
+   * @generated
+   * @ordered
+   */
+  protected EList<Delivery> delivery;
 
   /**
    * <!-- begin-user-doc -->
@@ -128,6 +140,20 @@ public class DriverImpl extends PersonImpl implements Driver
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Delivery> getDelivery()
+  {
+    if (delivery == null)
+    {
+      delivery = new EObjectResolvingEList<Delivery>(Delivery.class, this, GroceryPackage.DRIVER__DELIVERY);
+    }
+    return delivery;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -137,6 +163,8 @@ public class DriverImpl extends PersonImpl implements Driver
         return getDriverName();
       case GroceryPackage.DRIVER__VEHICLE:
         return getVehicle();
+      case GroceryPackage.DRIVER__DELIVERY:
+        return getDelivery();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -159,6 +187,10 @@ public class DriverImpl extends PersonImpl implements Driver
         getVehicle().clear();
         getVehicle().addAll((Collection<? extends Vehicle>)newValue);
         return;
+      case GroceryPackage.DRIVER__DELIVERY:
+        getDelivery().clear();
+        getDelivery().addAll((Collection<? extends Delivery>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -179,6 +211,9 @@ public class DriverImpl extends PersonImpl implements Driver
       case GroceryPackage.DRIVER__VEHICLE:
         getVehicle().clear();
         return;
+      case GroceryPackage.DRIVER__DELIVERY:
+        getDelivery().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -197,6 +232,8 @@ public class DriverImpl extends PersonImpl implements Driver
         return DRIVER_NAME_EDEFAULT == null ? driverName != null : !DRIVER_NAME_EDEFAULT.equals(driverName);
       case GroceryPackage.DRIVER__VEHICLE:
         return vehicle != null && !vehicle.isEmpty();
+      case GroceryPackage.DRIVER__DELIVERY:
+        return delivery != null && !delivery.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.project439.grocery.Vehicle#getPlateNumber <em>Plate Number</em>}</li>
- *   <li>{@link org.xtext.project439.grocery.Vehicle#getItems <em>Items</em>}</li>
+ *   <li>{@link org.xtext.project439.grocery.Vehicle#getDelivery <em>Delivery</em>}</li>
  * </ul>
  *
  * @see org.xtext.project439.grocery.GroceryPackage#getVehicle()
@@ -51,19 +51,19 @@ public interface Vehicle extends MovementElement
   void setPlateNumber(String value);
 
   /**
-   * Returns the value of the '<em><b>Items</b></em>' reference list.
-   * The list contents are of type {@link org.xtext.project439.grocery.Item}.
+   * Returns the value of the '<em><b>Delivery</b></em>' reference list.
+   * The list contents are of type {@link org.xtext.project439.grocery.Delivery}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Items</em>' reference list isn't clear,
+   * If the meaning of the '<em>Delivery</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Items</em>' reference list.
-   * @see org.xtext.project439.grocery.GroceryPackage#getVehicle_Items()
+   * @return the value of the '<em>Delivery</em>' reference list.
+   * @see org.xtext.project439.grocery.GroceryPackage#getVehicle_Delivery()
    * @model
    * @generated
    */
-  EList<Item> getItems();
+  EList<Delivery> getDelivery();
 
 } // Vehicle
