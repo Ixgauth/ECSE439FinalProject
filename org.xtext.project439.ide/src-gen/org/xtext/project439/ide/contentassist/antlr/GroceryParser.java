@@ -39,7 +39,6 @@ public class GroceryParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getItemAccess().getAlternatives(), "rule__Item__Alternatives");
 			builder.put(grammarAccess.getFoodItemAccess().getAlternatives(), "rule__FoodItem__Alternatives");
 			builder.put(grammarAccess.getMovementAccess().getAlternatives(), "rule__Movement__Alternatives");
-			builder.put(grammarAccess.getVehicleElementsAccess().getAlternatives(), "rule__VehicleElements__Alternatives");
 			builder.put(grammarAccess.getQualityLevelAccess().getAlternatives(), "rule__QualityLevel__Alternatives");
 			builder.put(grammarAccess.getStoreAccess().getGroup(), "rule__Store__Group__0");
 			builder.put(grammarAccess.getWarehouseAccess().getGroup(), "rule__Warehouse__Group__0");

@@ -1,0 +1,116 @@
+store firstStore{
+	shelfOne
+	shelfTwo
+	theBack
+}
+
+shelf shelfOne {
+	jarSauce
+}
+
+shelf shelfTwo {
+	salt
+	oranges
+	banana
+}
+
+backroom theBack {
+	hat
+	scarf
+}
+
+warehouse myWarehouse {
+	address : 123 'main street', 'city'
+	supplier : theSupplier
+}
+
+supplier theSupplier {
+	jarSauceWare
+	saltWare
+}
+
+perishableItem jarSauce {
+	price : 3.00
+	quantity : 1000
+	experationDate : 12/12/2018
+}
+
+perishableItem jarSauceWare {
+	price : 2.50
+	quantity : 2000
+	experationDate : 12/12/2018
+}
+
+
+perishableItem salt {
+	price : 1.50
+	quantity : 300
+	experationDate : 12/22/2018
+}
+
+perishableItem saltWare {
+	price : 1.50
+	quantity : 3000
+	experationDate : 12/22/2018
+}
+
+produce oranges{
+	price : 3.49
+	quantity : 20
+	quality : okay
+}
+
+
+produce banana{
+	price : 0.99
+	quantity : 2000
+	quality : needs removal
+}
+
+nonFoodItem hat {
+	price : 15.00
+	quantity : 40
+}
+
+nonFoodItem scarf {
+	price : 4.00
+	quantity : 200
+}
+
+
+driver myDriver {
+	name : 'laurent'
+	firstTruck
+	del
+}
+
+employee emp {
+	name : 'pentcho'
+	stock1
+}
+
+customer cust {
+	name : 'ian'
+	saleOne
+}
+
+vehicle firstTruck {
+	plateNumber : 'ABCDEG'
+	del
+}
+
+delivery del {
+	warehouse : myWarehouse
+	store : firstStore
+}
+
+stock stock1 {
+	backroom : theBack
+	shelf : shelfOne
+	
+}
+
+sale saleOne {
+	shelf : shelfTwo
+}
+

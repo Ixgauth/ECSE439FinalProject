@@ -75,7 +75,6 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
       case GroceryPackage.ITEM: return createItem();
       case GroceryPackage.FOOD_ITEM: return createFoodItem();
       case GroceryPackage.MOVEMENT: return createMovement();
-      case GroceryPackage.VEHICLE_ELEMENTS: return createVehicleElements();
       case GroceryPackage.STORE: return createStore();
       case GroceryPackage.WAREHOUSE: return createWarehouse();
       case GroceryPackage.SHELF: return createShelf();
@@ -227,17 +226,6 @@ public class GroceryFactoryImpl extends EFactoryImpl implements GroceryFactory
   {
     MovementImpl movement = new MovementImpl();
     return movement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VehicleElements createVehicleElements()
-  {
-    VehicleElementsImpl vehicleElements = new VehicleElementsImpl();
-    return vehicleElements;
   }
 
   /**

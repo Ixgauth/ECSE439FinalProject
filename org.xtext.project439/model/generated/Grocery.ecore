@@ -15,7 +15,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MovementElement" eSuperTypes="#//AbstractElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Person" eSuperTypes="#//MovementElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//AbstractElement #//VehicleElements">
+  <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//AbstractElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
@@ -24,7 +24,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" unique="false" upperBound="-1"
         eType="#//Item"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VehicleElements"/>
   <eClassifiers xsi:type="ecore:EClass" name="Store" eSuperTypes="#//Building">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" unique="false"
         upperBound="-1" eType="#//StoreElements"/>
@@ -68,7 +67,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="delivery" unique="false"
         upperBound="-1" eType="#//Delivery"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Delivery" eSuperTypes="#//Movement #//VehicleElements">
+  <eClassifiers xsi:type="ecore:EClass" name="Delivery" eSuperTypes="#//Movement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fromWarehouse" eType="#//Warehouse"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="toStore" eType="#//Store"/>
   </eClassifiers>

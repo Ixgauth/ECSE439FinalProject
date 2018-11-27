@@ -105,15 +105,6 @@ public interface GroceryFactory extends EFactory
   Movement createMovement();
 
   /**
-   * Returns a new object of class '<em>Vehicle Elements</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Vehicle Elements</em>'.
-   * @generated
-   */
-  VehicleElements createVehicleElements();
-
-  /**
    * Returns a new object of class '<em>Store</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

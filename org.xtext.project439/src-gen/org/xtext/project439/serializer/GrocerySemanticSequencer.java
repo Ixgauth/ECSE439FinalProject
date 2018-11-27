@@ -133,7 +133,6 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Contexts:
 	 *     AbstractElement returns Delivery
 	 *     Movement returns Delivery
-	 *     VehicleElements returns Delivery
 	 *     Delivery returns Delivery
 	 *
 	 * Constraint:
@@ -190,7 +189,6 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Contexts:
 	 *     AbstractElement returns NonFoodItem
 	 *     Item returns NonFoodItem
-	 *     VehicleElements returns NonFoodItem
 	 *     NonFoodItem returns NonFoodItem
 	 *
 	 * Constraint:
@@ -218,7 +216,6 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     AbstractElement returns PerishableItem
 	 *     Item returns PerishableItem
 	 *     FoodItem returns PerishableItem
-	 *     VehicleElements returns PerishableItem
 	 *     PerishableItem returns PerishableItem
 	 *
 	 * Constraint:
@@ -249,7 +246,6 @@ public class GrocerySemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     AbstractElement returns Produce
 	 *     Item returns Produce
 	 *     FoodItem returns Produce
-	 *     VehicleElements returns Produce
 	 *     Produce returns Produce
 	 *
 	 * Constraint:

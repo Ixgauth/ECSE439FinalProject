@@ -36,7 +36,6 @@ import org.xtext.project439.grocery.Store;
 import org.xtext.project439.grocery.StoreElements;
 import org.xtext.project439.grocery.Supplier;
 import org.xtext.project439.grocery.Vehicle;
-import org.xtext.project439.grocery.VehicleElements;
 import org.xtext.project439.grocery.Warehouse;
 import org.xtext.project439.grocery.qualityLevel;
 
@@ -110,13 +109,6 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
    * @generated
    */
   private EClass movementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass vehicleElementsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -441,16 +433,6 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
   public EReference getMovement_Items()
   {
     return (EReference)movementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getVehicleElements()
-  {
-    return vehicleElementsEClass;
   }
 
   /**
@@ -867,8 +849,6 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
     movementEClass = createEClass(MOVEMENT);
     createEReference(movementEClass, MOVEMENT__ITEMS);
 
-    vehicleElementsEClass = createEClass(VEHICLE_ELEMENTS);
-
     storeEClass = createEClass(STORE);
     createEReference(storeEClass, STORE__ELEMENTS);
 
@@ -957,7 +937,6 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
     movementElementEClass.getESuperTypes().add(this.getAbstractElement());
     personEClass.getESuperTypes().add(this.getMovementElement());
     itemEClass.getESuperTypes().add(this.getAbstractElement());
-    itemEClass.getESuperTypes().add(this.getVehicleElements());
     foodItemEClass.getESuperTypes().add(this.getItem());
     movementEClass.getESuperTypes().add(this.getAbstractElement());
     storeEClass.getESuperTypes().add(this.getBuilding());
@@ -973,7 +952,6 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
     supplierEClass.getESuperTypes().add(this.getMovementElement());
     vehicleEClass.getESuperTypes().add(this.getMovementElement());
     deliveryEClass.getESuperTypes().add(this.getMovement());
-    deliveryEClass.getESuperTypes().add(this.getVehicleElements());
     saleEClass.getESuperTypes().add(this.getMovement());
     stockMovementEClass.getESuperTypes().add(this.getMovement());
 
@@ -1001,8 +979,6 @@ public class GroceryPackageImpl extends EPackageImpl implements GroceryPackage
 
     initEClass(movementEClass, Movement.class, "Movement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMovement_Items(), this.getItem(), null, "items", null, 0, -1, Movement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(vehicleElementsEClass, VehicleElements.class, "VehicleElements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(storeEClass, Store.class, "Store", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStore_Elements(), this.getStoreElements(), null, "elements", null, 0, -1, Store.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

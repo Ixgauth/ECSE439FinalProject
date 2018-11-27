@@ -217,25 +217,6 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		//StockMovement
 		public RuleCall getStockMovementParserRuleCall_2() { return cStockMovementParserRuleCall_2; }
 	}
-	public class VehicleElementsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project439.Grocery.VehicleElements");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cItemParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cDeliveryParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//VehicleElements:
-		//	Item | Delivery;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//Item | Delivery
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//Item
-		public RuleCall getItemParserRuleCall_0() { return cItemParserRuleCall_0; }
-		
-		//Delivery
-		public RuleCall getDeliveryParserRuleCall_1() { return cDeliveryParserRuleCall_1; }
-	}
 	public class StoreElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project439.Grocery.Store");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1345,7 +1326,6 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 	private final ItemElements pItem;
 	private final FoodItemElements pFoodItem;
 	private final MovementElements pMovement;
-	private final VehicleElementsElements pVehicleElements;
 	private final StoreElements pStore;
 	private final WarehouseElements pWarehouse;
 	private final ShelfElements pShelf;
@@ -1384,7 +1364,6 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 		this.pItem = new ItemElements();
 		this.pFoodItem = new FoodItemElements();
 		this.pMovement = new MovementElements();
-		this.pVehicleElements = new VehicleElementsElements();
 		this.pStore = new StoreElements();
 		this.pWarehouse = new WarehouseElements();
 		this.pShelf = new ShelfElements();
@@ -1521,16 +1500,6 @@ public class GroceryGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getMovementRule() {
 		return getMovementAccess().getRule();
-	}
-	
-	//VehicleElements:
-	//	Item | Delivery;
-	public VehicleElementsElements getVehicleElementsAccess() {
-		return pVehicleElements;
-	}
-	
-	public ParserRule getVehicleElementsRule() {
-		return getVehicleElementsAccess().getRule();
 	}
 	
 	//Store:

@@ -121,11 +121,6 @@ public class GroceryAdapterFactory extends AdapterFactoryImpl
         return createMovementAdapter();
       }
       @Override
-      public Adapter caseVehicleElements(VehicleElements object)
-      {
-        return createVehicleElementsAdapter();
-      }
-      @Override
       public Adapter caseStore(Store object)
       {
         return createStoreAdapter();
@@ -353,21 +348,6 @@ public class GroceryAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMovementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.project439.grocery.VehicleElements <em>Vehicle Elements</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.project439.grocery.VehicleElements
-   * @generated
-   */
-  public Adapter createVehicleElementsAdapter()
   {
     return null;
   }

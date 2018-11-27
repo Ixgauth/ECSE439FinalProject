@@ -31,7 +31,6 @@
     <genClasses ecoreClass="Grocery.ecore#//Movement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Grocery.ecore#//Movement/items"/>
     </genClasses>
-    <genClasses ecoreClass="Grocery.ecore#//VehicleElements"/>
     <genClasses ecoreClass="Grocery.ecore#//Store">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Grocery.ecore#//Store/elements"/>
     </genClasses>
