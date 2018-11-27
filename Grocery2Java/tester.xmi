@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<grocery:Grocery xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:grocery="http://www.xtext.org/project439/Grocery">
+  <elements xsi:type="grocery:Store" name="myStore" elements="//@elements.1 //@elements.2 //@elements.3 //@elements.4"/>
+  <elements xsi:type="grocery:Shelf" name="firstShelf" items="//@elements.9 //@elements.7"/>
+  <elements xsi:type="grocery:Shelf" name="produceShelf" items="//@elements.11 //@elements.12"/>
+  <elements xsi:type="grocery:Shelf" name="nonFoodShelf" items="//@elements.13 //@elements.14"/>
+  <elements xsi:type="grocery:Backroom" name="myBackroom" items="//@elements.15 //@elements.16"/>
+  <elements xsi:type="grocery:Warehouse" name="myWarehouse" address="123 &quot;fake street&quot;, &quot;city&quot;" supplier="//@elements.6"/>
+  <elements xsi:type="grocery:Supplier" name="mySupplier" items="//@elements.8"/>
+  <elements xsi:type="grocery:PerishableItem" name="cannedSoup" price="2.50" quantity="250" experationDate="12/12/2018"/>
+  <elements xsi:type="grocery:PerishableItem" name="cannedSoupWare" price="2.50" quantity="250" experationDate="12/12/2018"/>
+  <elements xsi:type="grocery:PerishableItem" name="pasta" price="1.50" quantity="300" experationDate="12/22/2018"/>
+  <elements xsi:type="grocery:PerishableItem" name="pastaWare" price="1.50" quantity="3000" experationDate="12/22/2018"/>
+  <elements xsi:type="grocery:Produce" name="apple" price="2.00" quantity="50"/>
+  <elements xsi:type="grocery:Produce" name="banana" price="2.00" quantity="100" quality="okay"/>
+  <elements xsi:type="grocery:NonFoodItem" name="rake" price="15.00" quantity="40"/>
+  <elements xsi:type="grocery:NonFoodItem" name="paperTowl" price="4.00" quantity="200"/>
+  <elements xsi:type="grocery:PerishableItem" name="rice" price="12.50" quantity="400" experationDate="6/22/2020"/>
+  <elements xsi:type="grocery:NonFoodItem" name="toiletPaper" price="10.00" quantity="200"/>
+  <elements xsi:type="grocery:Driver" name="firstDriver" driverName="bill" vehicle="//@elements.20" delivery="//@elements.21 //@elements.22"/>
+  <elements xsi:type="grocery:Employee" name="e" employeeName="ron" stockMovement="//@elements.23"/>
+  <elements xsi:type="grocery:Customer" name="c" customerName="ian" sale="//@elements.24"/>
+  <elements xsi:type="grocery:Vehicle" name="truckOne" plateNumber="AWE54T" delivery="//@elements.21 //@elements.22"/>
+  <elements xsi:type="grocery:Delivery" name="d" items="//@elements.8" fromWarehouse="//@elements.5" toStore="//@elements.0"/>
+  <elements xsi:type="grocery:Delivery" name="d2" items="//@elements.10" fromWarehouse="//@elements.5" toStore="//@elements.0"/>
+  <elements xsi:type="grocery:StockMovement" name="s1" items="//@elements.15 //@elements.16" fromBackroom="//@elements.4" toShelf="//@elements.1"/>
+  <elements xsi:type="grocery:Sale" name="saleOne" items="//@elements.11 //@elements.12" fromShelf="//@elements.2"/>
+</grocery:Grocery>
