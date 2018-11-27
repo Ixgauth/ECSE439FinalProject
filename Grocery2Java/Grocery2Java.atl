@@ -1,14 +1,48 @@
 -- @path Grocery=/439Project/org.xtext.project439/model/generated/Grocery.ecore
--- @path Java=/439Project/Grocery2Java/java.ecore
+-- @path Java=/Grocery2Java/java.ecore
 
 module Grocery2Java;
 create OUT : Java from IN : Grocery;
 
-rule createPackage {
-	from
-		g:Grocery!Grocery
+
+rule store2ClassInstance {
+	from 
+		s:Grocery!Store
 	to
-		p:Java!Package (
+		c : Java!ClassInstanceCreation(
+			name <- s.name,
+			type <- 'Store'
+		)
+}
+
+rule warehouse2ClassInstance {
+	from
+		w:Grocery!Warehouse
+	to
+		c:Java!ClassInstanceCreation(
+			name <- w.name,
+			type <- 'Warehouse',
+			expression <- w.address
+			
 			)
 }
 
+rule shelf2ClassInstance {
+	from
+		sh:Grocery!Shelf
+	to 
+		c:Java!ClassInstanceCreation(
+			name <- sh.name,
+			type <- 'Shelf'	
+		)
+}
+
+rule backroom2ClassInstance {
+	from 
+		br: Grocery!Backroom
+	to
+		c: Java!ClassInstanceCreation(
+			name <- br.name,
+			type <- 'Backroom'
+		)
+}
