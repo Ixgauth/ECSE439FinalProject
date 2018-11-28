@@ -46,3 +46,33 @@ rule backroom2ClassInstance {
 			type <- 'Backroom'
 		)
 }
+
+rule supplier2ClassInstance {
+	from 
+		sup: Grocery!Supplier
+	to
+		c : Java!ClassInstanceCreation(
+			name <- sup.name
+			)
+}
+
+rule perish2ClassInstance {
+	from 
+		per:Grocery!PerishableItem
+	to
+		c : Java!ClassInstanceCreation()
+}
+
+rule produce2ClassInstance {
+	from 
+		pro:Grocery!Produce
+	to
+		c : Java!ClassInstanceCreation()
+}
+
+rule nonFood2ClassInstance {
+	from 
+		nfi:Grocery!NonFoodItem
+	to
+		c : Java!ClassInstanceCreation()
+}
