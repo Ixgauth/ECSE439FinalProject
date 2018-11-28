@@ -5,74 +5,36 @@ module Grocery2Java;
 create OUT : Java from IN : Grocery;
 
 
-rule store2ClassInstance {
+rule Grocery2Package {
+	from 
+		g:Grocery!Grocery
+	to
+		m:Java!Model(name <- 'Grocery'),
+		p:Java!Package(model <- m,
+			name <- 'GroceryPackage')
+	do {
+		for(s in g.elements->select(s | s.oclIsTypeOf(Grocery!Store))) {
+			p.ownedElements <- thisModule.store2ClassDeclaration(s);
+		}
+		for(sh in g.elements->select(sh | sh.oclIsTypeOf(Grocery!Shelf))) {
+			p.ownedElements <- thisModule.shelf2ClassDeclaration(sh);
+		}
+	}
+	
+	
+}
+
+lazy rule store2ClassDeclaration {
 	from 
 		s:Grocery!Store
 	to
-		c : Java!ClassInstanceCreation(
-			name <- s.name,
-			type <- 'Store'
-		)
+		cd:Java!ClassDeclaration
 }
 
-rule warehouse2ClassInstance {
-	from
-		w:Grocery!Warehouse
-	to
-		c:Java!ClassInstanceCreation(
-			name <- w.name,
-			type <- 'Warehouse',
-			expression <- w.address
-			
-			)
-}
-
-rule shelf2ClassInstance {
-	from
+lazy rule shelf2ClassDeclaration {
+	from 
 		sh:Grocery!Shelf
-	to 
-		c:Java!ClassInstanceCreation(
-			name <- sh.name,
-			type <- 'Shelf'	
-		)
+	to
+		cd:Java!ClassDeclaration
 }
 
-rule backroom2ClassInstance {
-	from 
-		br: Grocery!Backroom
-	to
-		c: Java!ClassInstanceCreation(
-			name <- br.name,
-			type <- 'Backroom'
-		)
-}
-
-rule supplier2ClassInstance {
-	from 
-		sup: Grocery!Supplier
-	to
-		c : Java!ClassInstanceCreation(
-			name <- sup.name
-			)
-}
-
-rule perish2ClassInstance {
-	from 
-		per:Grocery!PerishableItem
-	to
-		c : Java!ClassInstanceCreation()
-}
-
-rule produce2ClassInstance {
-	from 
-		pro:Grocery!Produce
-	to
-		c : Java!ClassInstanceCreation()
-}
-
-rule nonFood2ClassInstance {
-	from 
-		nfi:Grocery!NonFoodItem
-	to
-		c : Java!ClassInstanceCreation()
-}
