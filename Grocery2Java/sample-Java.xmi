@@ -23,7 +23,9 @@
       <bodyDeclarations xsi:type="java:FieldDeclaration" name="rice"/>
       <bodyDeclarations xsi:type="java:FieldDeclaration" name="toiletPaper"/>
     </ownedElements>
-    <ownedElements xsi:type="java:ClassDeclaration" name="myWarehouse"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="myWarehouse">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="mySupplier"/>
+    </ownedElements>
     <ownedElements xsi:type="java:ClassDeclaration" name="mySupplier">
       <bodyDeclarations xsi:type="java:FieldDeclaration" name="cannedSoupWare"/>
     </ownedElements>
@@ -37,13 +39,35 @@
     <ownedElements xsi:type="java:ClassDeclaration" name="rice"/>
     <ownedElements xsi:type="java:ClassDeclaration" name="apple"/>
     <ownedElements xsi:type="java:ClassDeclaration" name="banana"/>
-    <ownedElements xsi:type="java:ClassDeclaration" name="firstDriver"/>
-    <ownedElements xsi:type="java:ClassDeclaration" name="e"/>
-    <ownedElements xsi:type="java:ClassDeclaration" name="c"/>
-    <ownedElements xsi:type="java:ClassDeclaration" name="truckOne"/>
-    <ownedElements xsi:type="java:ClassDeclaration" name="d"/>
-    <ownedElements xsi:type="java:ClassDeclaration" name="d2"/>
-    <ownedElements xsi:type="java:ClassDeclaration" name="s1"/>
-    <ownedElements xsi:type="java:ClassDeclaration" name="saleOne"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="firstDriver">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="truckOne"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="d"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="d2"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="e">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="s1"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="c">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="saleOne"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="truckOne">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="d"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="d2"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="d">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="myWarehouse"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="myStore"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="d2">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="myWarehouse"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="myStore"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="s1">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="myBackroom"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="firstShelf"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="saleOne">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="produceShelf"/>
+    </ownedElements>
   </ownedElements>
 </java:Model>

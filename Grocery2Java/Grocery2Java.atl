@@ -110,10 +110,7 @@ lazy rule warehouse2ClassDeclaration {
 	to
 		cd:Java!ClassDeclaration(name <- w.name)
 	do{
-		for(sup in w.supplier)
-		{
-			cd.bodyDeclarations <- thisModule.suplierToBodyDec(sup);
-		}
+		cd.bodyDeclarations <- thisModule.supplierToBodyDec(w.supplier);
 	}
 	
 }
@@ -157,6 +154,17 @@ lazy rule driver2ClassDeclaration{
 		d: Grocery!Driver
 	to
 		cd:Java!ClassDeclaration(name <- d.name)
+		
+	do{
+		for(v in d.vehicle)
+		{
+			cd.bodyDeclarations <- thisModule.vehicleToBodyDec(v);
+		}
+		for(del in d.delivery)
+		{
+			cd.bodyDeclarations <- thisModule.deliveryToBodyDec(del);
+		}
+	}
 }
 
 lazy rule employee2ClassDeclaration{
@@ -164,6 +172,12 @@ lazy rule employee2ClassDeclaration{
 		e: Grocery!Employee
 	to
 		cd:Java!ClassDeclaration(name <- e.name)
+	do{
+		for(sm in e.stockMovement)
+		{
+			cd.bodyDeclarations <- thisModule.stockMoveToBodyDec(sm);
+		}
+	}
 }
 
 lazy rule customer2ClassDeclaration{
@@ -171,6 +185,12 @@ lazy rule customer2ClassDeclaration{
 		c: Grocery!Customer
 	to
 		cd:Java!ClassDeclaration(name <- c.name)
+	do{
+		for(sal in c.sale)
+		{
+			cd.bodyDeclarations <- thisModule.saleToBodyDec(sal);
+		}
+	}
 }
 
 lazy rule vehicle2ClassDeclaration{
@@ -178,6 +198,12 @@ lazy rule vehicle2ClassDeclaration{
 		v: Grocery!Vehicle
 	to
 		cd:Java!ClassDeclaration(name <- v.name)
+	do{
+		for(del in v.delivery)
+		{
+			cd.bodyDeclarations <- thisModule.deliveryToBodyDec(del);
+		}
+	}
 }
 
 lazy rule delivery2ClassDeclaration{
@@ -185,6 +211,10 @@ lazy rule delivery2ClassDeclaration{
 		del: Grocery!Delivery
 	to
 		cd:Java!ClassDeclaration(name <- del.name)
+	do{
+		cd.bodyDeclarations <- thisModule.warehouseToBodyDec(del.fromWarehouse);
+		cd.bodyDeclarations <- thisModule.storeToBodyDec(del.toStore);
+	}
 }
 
 lazy rule stockMovement2ClassDeclaration{
@@ -192,6 +222,10 @@ lazy rule stockMovement2ClassDeclaration{
 		sm: Grocery!StockMovement
 	to
 		cd:Java!ClassDeclaration(name <- sm.name)
+	do{
+		cd.bodyDeclarations <- thisModule.backroomToBodyDec(sm.fromBackroom);
+		cd.bodyDeclarations <- thisModule.shelfToBodyDec(sm.toShelf);
+	}
 }
 
 lazy rule sale2ClassDeclaration{
@@ -199,7 +233,12 @@ lazy rule sale2ClassDeclaration{
 		sal: Grocery!Sale
 	to
 		cd:Java!ClassDeclaration(name <- sal.name)
+	do{
+		cd.bodyDeclarations <- thisModule.shelfToBodyDec(sal.fromShelf);
+	}
 }
+
+
 
 lazy rule storeShelfToBodyDec {
 	from 
@@ -222,14 +261,67 @@ lazy rule itemToBodyDec {
 		bd:Java!FieldDeclaration(name <- i.name)
 }
 
-lazy rule suplierToBodyDec {
+lazy rule supplierToBodyDec {
 	from
 		sup: Grocery!Supplier
 	to
 		bd: Java!FieldDeclaration(name <- sup.name)
 }
 
+lazy rule vehicleToBodyDec{
+	from
+		v:Grocery!Vehicle
+	to
+		bd: Java!FieldDeclaration(name <- v.name)
+}
 
+lazy rule deliveryToBodyDec{
+	from
+		del:Grocery!Delivery
+	to
+		bd: Java!FieldDeclaration(name <- del.name)
+}
 
+lazy rule stockMoveToBodyDec{
+	from 
+		sm:Grocery!StockMovement
+	to
+		bd: Java!FieldDeclaration(name <- sm.name)
+}
+
+lazy rule saleToBodyDec{
+	from 
+		sal:Grocery!Sale
+	to
+		bd: Java!FieldDeclaration(name <- sal.name)
+}
+
+lazy rule warehouseToBodyDec{
+	from 
+		w:Grocery!Warehouse
+	to
+		bd: Java!FieldDeclaration(name <- w.name)
+}
+
+lazy rule storeToBodyDec{
+	from 
+		s:Grocery!Store
+	to
+		bd: Java!FieldDeclaration(name <- s.name)
+}
+
+lazy rule backroomToBodyDec{
+	from 
+		b:Grocery!Backroom
+	to
+		bd: Java!FieldDeclaration(name <- b.name)
+}
+
+lazy rule shelfToBodyDec{
+	from 
+		s:Grocery!Shelf
+	to
+		bd: Java!FieldDeclaration(name <- s.name)
+}
 
 
