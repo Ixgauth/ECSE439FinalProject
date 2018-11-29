@@ -19,6 +19,45 @@ rule Grocery2Package {
 		for(sh in g.elements->select(sh | sh.oclIsTypeOf(Grocery!Shelf))) {
 			p.ownedElements <- thisModule.shelf2ClassDeclaration(sh);
 		}
+		for(b in g.elements->select(b | b.oclIsTypeOf(Grocery!Backroom))) {
+			p.ownedElements <- thisModule.backroom2ClassDeclaration(b);
+		}
+		for(w in g.elements->select(w | w.oclIsTypeOf(Grocery!Warehouse))) {
+			p.ownedElements <- thisModule.warehouse2ClassDeclaration(w);
+		}
+		for(s in g.elements->select(s | s.oclIsTypeOf(Grocery!Supplier))) {
+			p.ownedElements <- thisModule.supplier2ClassDeclaration(s);
+		}
+		for(nfi in g.elements->select(nfi | nfi.oclIsTypeOf(Grocery!NonFoodItem))) {
+			p.ownedElements <- thisModule.nonFoodItem2ClassDeclaration(nfi);
+		}
+		for(pi in g.elements->select(pi | pi.oclIsTypeOf(Grocery!PerishableItem))) {
+			p.ownedElements <- thisModule.perishableItem2ClassDeclaration(pi);
+		}
+		for(pro in g.elements->select(pro | pro.oclIsTypeOf(Grocery!Produce))) {
+			p.ownedElements <- thisModule.produceItem2ClassDeclaration(pro);
+		}
+		for(d in g.elements->select(d | d.oclIsTypeOf(Grocery!Driver))) {
+			p.ownedElements <- thisModule.driver2ClassDeclaration(d);
+		}
+		for(e in g.elements->select(e | e.oclIsTypeOf(Grocery!Employee))) {
+			p.ownedElements <- thisModule.employee2ClassDeclaration(e);
+		}
+		for(c in g.elements->select(c | c.oclIsTypeOf(Grocery!Customer))) {
+			p.ownedElements <- thisModule.customer2ClassDeclaration(c);
+		}
+		for(v in g.elements->select(v | v.oclIsTypeOf(Grocery!Vehicle))) {
+			p.ownedElements <- thisModule.vehicle2ClassDeclaration(v);
+		}
+		for(del in g.elements->select(del | del.oclIsTypeOf(Grocery!Delivery))) {
+			p.ownedElements <- thisModule.delivery2ClassDeclaration(del);
+		}
+		for(sm in g.elements->select(sm | sm.oclIsTypeOf(Grocery!StockMovement))) {
+			p.ownedElements <- thisModule.stockMovement2ClassDeclaration(sm);
+		}
+		for(sal in g.elements->select(sal | sal.oclIsTypeOf(Grocery!Sale))) {
+			p.ownedElements <- thisModule.sale2ClassDeclaration(sal);
+		}
 	}
 	
 	
@@ -28,13 +67,169 @@ lazy rule store2ClassDeclaration {
 	from 
 		s:Grocery!Store
 	to
-		cd:Java!ClassDeclaration
+		cd:Java!ClassDeclaration(name <- s.name)
+	do{
+		for(sh in s.elements -> select(sh | sh.oclIsTypeOf(Grocery!Shelf))){
+			cd.bodyDeclarations <- thisModule.storeShelfToBodyDec(sh);
+		}
+		for(b in s.elements -> select(b | b.oclIsTypeOf(Grocery!Backroom))){
+			cd.bodyDeclarations <- thisModule.storeBackroomToBodyDec(b);
+		}
+	}
 }
 
 lazy rule shelf2ClassDeclaration {
 	from 
 		sh:Grocery!Shelf
 	to
-		cd:Java!ClassDeclaration
+		cd:Java!ClassDeclaration(name <- sh.name)
+	do{
+		for(i in sh.items)
+		{
+			cd.bodyDeclarations <- thisModule.itemToBodyDec(i);
+		}
+	}
 }
+
+lazy rule backroom2ClassDeclaration {
+	from
+		b:Grocery!Backroom
+	to
+		cd:Java!ClassDeclaration(name <- b.name)
+	do{
+		for(i in b.items)
+		{
+			cd.bodyDeclarations <- thisModule.itemToBodyDec(i);
+		}
+	}
+}
+
+lazy rule warehouse2ClassDeclaration {
+	from
+		w: Grocery!Warehouse
+	to
+		cd:Java!ClassDeclaration(name <- w.name)
+	do{
+		for(sup in w.supplier)
+		{
+			cd.bodyDeclarations <- thisModule.suplierToBodyDec(sup);
+		}
+	}
+	
+}
+
+lazy rule supplier2ClassDeclaration{
+	from 
+		sup: Grocery!Supplier
+	to 
+		cd:Java!ClassDeclaration(name <- sup.name)
+	do{
+		for(i in sup.items)
+		{
+			cd.bodyDeclarations <- thisModule.itemToBodyDec(i);
+		}
+	}
+}
+
+lazy rule nonFoodItem2ClassDeclaration{
+	from
+		nfi: Grocery!NonFoodItem
+	to
+		cd:Java!ClassDeclaration(name <- nfi.name)
+}
+
+lazy rule perishableItem2ClassDeclaration{
+	from
+		pi: Grocery!PerishableItem
+	to
+		cd:Java!ClassDeclaration(name <- pi.name)
+}
+
+lazy rule produceItem2ClassDeclaration{
+	from
+		pro: Grocery!Produce
+	to
+		cd:Java!ClassDeclaration(name <- pro.name)
+}
+
+lazy rule driver2ClassDeclaration{
+	from
+		d: Grocery!Driver
+	to
+		cd:Java!ClassDeclaration(name <- d.name)
+}
+
+lazy rule employee2ClassDeclaration{
+	from
+		e: Grocery!Employee
+	to
+		cd:Java!ClassDeclaration(name <- e.name)
+}
+
+lazy rule customer2ClassDeclaration{
+	from
+		c: Grocery!Customer
+	to
+		cd:Java!ClassDeclaration(name <- c.name)
+}
+
+lazy rule vehicle2ClassDeclaration{
+	from
+		v: Grocery!Vehicle
+	to
+		cd:Java!ClassDeclaration(name <- v.name)
+}
+
+lazy rule delivery2ClassDeclaration{
+	from
+		del: Grocery!Delivery
+	to
+		cd:Java!ClassDeclaration(name <- del.name)
+}
+
+lazy rule stockMovement2ClassDeclaration{
+	from
+		sm: Grocery!StockMovement
+	to
+		cd:Java!ClassDeclaration(name <- sm.name)
+}
+
+lazy rule sale2ClassDeclaration{
+	from
+		sal: Grocery!Sale
+	to
+		cd:Java!ClassDeclaration(name <- sal.name)
+}
+
+lazy rule storeShelfToBodyDec {
+	from 
+		sh: Grocery!Shelf
+	to
+		bd:Java!FieldDeclaration(name <- sh.name)
+}
+
+lazy rule storeBackroomToBodyDec {
+	from 
+		b: Grocery!Backroom
+	to
+		bd:Java!FieldDeclaration(name <- b.name)
+}
+
+lazy rule itemToBodyDec {
+	from
+		i: Grocery!Item
+	to
+		bd:Java!FieldDeclaration(name <- i.name)
+}
+
+lazy rule suplierToBodyDec {
+	from
+		sup: Grocery!Supplier
+	to
+		bd: Java!FieldDeclaration(name <- sup.name)
+}
+
+
+
+
 

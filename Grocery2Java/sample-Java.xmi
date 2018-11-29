@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <java:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java-neoemf" name="Grocery">
   <ownedElements name="GroceryPackage">
-    <ownedElements xsi:type="java:ClassDeclaration"/>
-    <ownedElements xsi:type="java:ClassDeclaration"/>
-    <ownedElements xsi:type="java:ClassDeclaration"/>
-    <ownedElements xsi:type="java:ClassDeclaration"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="myStore">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="firstShelf"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="produceShelf"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="nonFoodShelf"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="myBackroom"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="firstShelf">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="pasta"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="cannedSoup"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="produceShelf">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="apple"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="banana"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="nonFoodShelf">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="rake"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="paperTowl"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="myBackroom">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="rice"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="toiletPaper"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="myWarehouse"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="mySupplier">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="cannedSoupWare"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="rake"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="paperTowl"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="toiletPaper"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="cannedSoup"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="cannedSoupWare"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="pasta"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="pastaWare"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="rice"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="apple"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="banana"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="firstDriver"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="e"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="c"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="truckOne"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="d"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="d2"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="s1"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="saleOne"/>
   </ownedElements>
 </java:Model>
