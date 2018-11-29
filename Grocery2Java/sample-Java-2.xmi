@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<java:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java-neoemf" name="Grocery">
+  <ownedElements name="GroceryPackage">
+    <ownedElements xsi:type="java:ClassDeclaration" name="firstStore">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="shelfOne"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="shelfTwo"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="theBack"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="shelfOne">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="jarSauce"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="shelfTwo">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="salt"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="oranges"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="banana"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="theBack">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="hat"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="scarf"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="myWarehouse">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="theSupplier"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="theSupplier">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="jarSauceWare"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="saltWare"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="hat"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="scarf"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="jarSauce"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="jarSauceWare"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="salt"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="saltWare"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="oranges"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="banana"/>
+    <ownedElements xsi:type="java:ClassDeclaration" name="myDriver">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="firstTruck"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="del"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="emp">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="stock1"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="cust">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="saleOne"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="firstTruck">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="del"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="del">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="myWarehouse"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="firstStore"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="stock1">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="theBack"/>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="shelfOne"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" name="saleOne">
+      <bodyDeclarations xsi:type="java:FieldDeclaration" name="shelfTwo"/>
+    </ownedElements>
+  </ownedElements>
+</java:Model>
